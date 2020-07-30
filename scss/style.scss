@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+//import main styles and variables
+@import 'base/variables/variables.scss';
+@import 'base/main.scss';
+
+//import componenets styles
+@import 'components/header/nav.scss';
+@import 'components/cards/recipe-card.scss';
+@import 'components/carousel/carousel.scss';
+@import 'components/forms/contact-form.scss';
+@import 'components/forms/user-form.scss';
+@import 'media/media.scss';
+
+//import pages styles
+@import 'page-styles/about.scss';
+@import 'page-styles/contact.scss';
+@import 'page-styles/equipement.scss';
+@import 'page-styles/favourites.scss';
+@import 'page-styles/my-account.scss';
+@import 'page-styles/recipes.scss';
+@import 'page-styles/search-result.scss';
+@import 'page-styles/site-map.scss';
+@import 'components/footer/footer.scss';
