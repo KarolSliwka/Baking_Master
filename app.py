@@ -8,29 +8,27 @@ app = Flask(__name__)
 def home():
     return render_template('layout/base.html')
 
-# Navigation routes
 @app.route('/recipes')
 def recipes():
     return  render_template('pages/recipes.html')
     
-@app.route('/favourite-list')
+@app.route('/favouries')
 def favourites():
     return render_template('pages/favourites.html')
     
-@app.route('/my-recipes')
-def my_recipes():
-    return render_template('pages/search-result.html')
+@app.route('/search_results')
+def search_results():
+    return render_template('pages/search-results.html')
 
 @app.route('/contact')
 def contact():
     return render_template('pages/contact.html')
     
-@app.route('/my-account')
+@app.route('/my_account')
 def my_account():
     return render_template('pages/my-account.html')   
 
-# Footer Useful routes
-@app.route('/what-is-all-about')
+@app.route('/about')
 def about():
     return  render_template('pages/about.html')
     
@@ -38,10 +36,9 @@ def about():
 def site_map():
     return  render_template('pages/site-map.html')
 
-@app.route('/backing-equipement')
+@app.route('/equipement')
 def equipement():
     return  render_template('pages/equipement.html')
-
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

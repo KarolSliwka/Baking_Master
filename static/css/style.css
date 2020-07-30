@@ -16,7 +16,10 @@ body {
 }
 
 .navbar {
-  background-color: red;
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px solid #FF4365;
+  border-radius: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

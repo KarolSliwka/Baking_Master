@@ -1,3 +1,8 @@
 .navbar {
-    background-color: red;
+    background-color: $navigation-bg-color;
+    border: none;
+    border-bottom: 1px solid $navigation-border-color;
+    border-radius: 0;
+    
+    
 }
