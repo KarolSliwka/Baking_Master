@@ -1,8 +1,31 @@
 .navbar {
-    background-color: $navigation-bg-color;
+    background-color: $nav-bg-color;
     border: none;
-    border-bottom: 1px solid $navigation-border-color;
+    border-bottom: 2px solid $nav-border-color;
     border-radius: 0;
-    
-    
+}
+
+li {
+    a {
+        color: $nav-links-color !important;
+
+        &:hover {
+            color: $nav-link-hv !important;
+            background-color: $nav-link-bg-hv !important;
+        }
+    }
+}
+
+.navbar-inverse .navbar-toggle {
+    background-color: #fff;
+    border: none;
+    .icon-bar {
+        background-color: $nav-links-color !important;
+    }
+    &:hover {
+        background-color: $nav-links-color;
+        .icon-bar {
+            background-color: #fff !important;
+        }
+    }
 }

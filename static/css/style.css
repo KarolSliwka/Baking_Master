@@ -18,8 +18,30 @@ body {
 .navbar {
   background-color: #fff;
   border: none;
-  border-bottom: 1px solid #FF4365;
+  border-bottom: 2px solid #FF4365;
   border-radius: 0;
+}
+
+li a {
+  color: #FF4365 !important;
+}
+li a:hover {
+  color: #fff !important;
+  background-color: #FF4365 !important;
+}
+
+.navbar-inverse .navbar-toggle {
+  background-color: #fff;
+  border: none;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #FF4365 !important;
+}
+.navbar-inverse .navbar-toggle:hover {
+  background-color: #FF4365;
+}
+.navbar-inverse .navbar-toggle:hover .icon-bar {
+  background-color: #fff !important;
 }
 
 /*# sourceMappingURL=style.css.map */
