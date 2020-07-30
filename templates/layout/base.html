@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Include head -->
+    {% include 'layout/head.html' %}
+</head>
+
+<body>
+    <header>
+    <!-- Include header - navigation -->
+    {% include 'components/header/nav.html' %}
+    <!-- Include carousel -->
+    {% include 'components/carousel/carousel.html' %}
+    </header>
+    <!-- main page container -->
+    <main>
+    {% block content %} {% endblock %}
+    </main>
+    <!-- Include Footer -->
+    {% include 'components/footer/footer.html' %}
+    <!-- Include Javascript -->
+    {% include 'layout/scripts.html' %}
+</body>
+
+</html>
