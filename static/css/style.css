@@ -106,10 +106,13 @@ body {
 
 .copyrights {
   font-size: 0.85rem;
+  font-weight: 300;
   color: #FFF;
 }
 .copyrights a {
+  font-weight: 400;
   color: #FFF;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */

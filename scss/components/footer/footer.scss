@@ -13,8 +13,14 @@
 
 .copyrights {
     font-size: 0.85rem;
+    font-weight: 300;
     color: $copyrights-color;
     a {
+        font-weight: 400;
         color: $copyrights-color;
+        text-decoration: none;
+        &:hover {
+            
+        }
     }
 }
