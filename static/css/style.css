@@ -92,7 +92,7 @@ body {
   }
 }
 .main-footer {
-  height: 50px;
+  min-height: 60px;
   width: 100%;
   background-color: #FF4365;
   display: flex;
@@ -101,7 +101,7 @@ body {
 .flex-footer {
   width: 100%;
   text-align: center;
-  padding-top: 14px;
+  padding-top: 18px;
 }
 
 .copyrights {
@@ -113,6 +113,7 @@ body {
   font-weight: 400;
   color: #FFF;
   text-decoration: none;
+  word-break: keep-all;
 }
 
 /*# sourceMappingURL=style.css.map */

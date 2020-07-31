@@ -1,5 +1,5 @@
 .main-footer {
-    height: 50px;
+    min-height: 60px;
     width: 100%;
     background-color: $footer-bg;
     display: flex;
@@ -8,7 +8,7 @@
 .flex-footer {
     width: 100%;
     text-align: center;
-    padding-top: 14px;
+    padding-top: 18px;
 }
 
 .copyrights {
@@ -19,8 +19,6 @@
         font-weight: 400;
         color: $copyrights-color;
         text-decoration: none;
-        &:hover {
-            
-        }
+        word-break: keep-all;
     }
 }
