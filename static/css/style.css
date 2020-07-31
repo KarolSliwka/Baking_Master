@@ -15,19 +15,25 @@ body {
   display: none;
 }
 
-.navbar {
-  background-color: #fff;
-  border: none;
-  border-bottom: 2px solid #FF4365;
-  border-radius: 0;
+.navbar-brand {
+  padding: 20px 20px;
 }
 
-li a {
-  color: #FF4365 !important;
+.navbar {
+  height: 60px;
+  background-color: #fff;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.04);
 }
-li a:hover {
-  color: #fff !important;
-  background-color: #FF4365 !important;
+.navbar li a {
+  color: #FF4365 !important;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar-toggle {
+  margin-top: 15px;
 }
 
 .navbar-inverse .navbar-toggle {
@@ -42,6 +48,13 @@ li a:hover {
 }
 .navbar-inverse .navbar-toggle:hover .icon-bar {
   background-color: #fff !important;
+}
+
+.hvr-underline-from-left:before {
+  left: 15px;
+  bottom: 15px;
+  background: #FF4365;
+  height: 2px;
 }
 
 /*# sourceMappingURL=style.css.map */

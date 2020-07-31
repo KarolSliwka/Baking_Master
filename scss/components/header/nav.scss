@@ -1,19 +1,25 @@
-.navbar {
-    background-color: $nav-bg-color;
-    border: none;
-    border-bottom: 2px solid $nav-border-color;
-    border-radius: 0;
+.navbar-brand {
+    padding: 20px 20px;
 }
 
-li {
-    a {
-        color: $nav-links-color !important;
+.navbar {
+    height: 60px;
+    background-color: $nav-bg-color;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.04);
 
-        &:hover {
-            color: $nav-link-hv !important;
-            background-color: $nav-link-bg-hv !important;
+    li {
+        a {
+            color: $nav-links-color !important;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
     }
+}
+
+.navbar-toggle {
+    margin-top: 15px;
 }
 
 .navbar-inverse .navbar-toggle {
@@ -22,10 +28,18 @@ li {
     .icon-bar {
         background-color: $nav-links-color !important;
     }
+    
     &:hover {
         background-color: $nav-links-color;
         .icon-bar {
             background-color: #fff !important;
         }
     }
+}
+
+.hvr-underline-from-left:before {
+    left: 15px;
+    bottom: 15px;
+    background: $nav-link-bg-hv;
+    height: 2px;
 }
