@@ -15,16 +15,6 @@ body {
   display: none;
 }
 
-.navbar-brand {
-  margin-left: 0 !important;
-  padding: 5px;
-}
-
-.logotype {
-  height: 50px;
-  width: 50px;
-}
-
 .navbar {
   height: 60px;
   background-color: #fff;
@@ -38,29 +28,44 @@ body {
   padding-bottom: 20px;
 }
 
-.navbar-toggle {
-  margin-top: 15px;
-}
-
-.navbar-inverse .navbar-toggle {
-  background-color: #fff;
-  border: none;
-}
-.navbar-inverse .navbar-toggle .icon-bar {
-  background-color: #FF4365 !important;
-}
-.navbar-inverse .navbar-toggle:hover {
-  background-color: #FF4365;
-}
-.navbar-inverse .navbar-toggle:hover .icon-bar {
-  background-color: #fff !important;
-}
-
 .hvr-underline-from-left:before {
   left: 15px;
   bottom: 15px;
   background: #FF4365;
   height: 2px;
+}
+
+.navbar-brand {
+  margin-left: 0 !important;
+  padding: 5px;
+}
+
+.logotype {
+  height: 50px;
+  width: 50px;
+}
+
+.navbar-toggle {
+  margin-top: 15px;
+}
+
+.navbar-inverse .navbar-toggle {
+  background-color: #fff !important;
+  border: 1px solid #fff;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #FF4365 !important;
+}
+.navbar-inverse .navbar-toggle:hover {
+  border: 1px solid #FF4365;
+}
+.navbar-inverse .navbar-toggle:hover .icon-bar {
+  background-color: #FF4365 !important;
+}
+
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */

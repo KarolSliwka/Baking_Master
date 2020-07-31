@@ -1,13 +1,3 @@
-.navbar-brand {
-    margin-left: 0 !important;
-    padding: 5px; //20px 20px;
-}
-
-.logotype {
-    height: 50px;
-    width: 50px;
-}
-
 .navbar {
     height: 60px;
     background-color: $nav-bg-color;
@@ -24,28 +14,44 @@
     }
 }
 
-.navbar-toggle {
-    margin-top: 15px;
-}
-
-.navbar-inverse .navbar-toggle {
-    background-color: #fff;
-    border: none;
-    .icon-bar {
-        background-color: $nav-links-color !important;
-    }
-    
-    &:hover {
-        background-color: $nav-links-color;
-        .icon-bar {
-            background-color: #fff !important;
-        }
-    }
-}
-
 .hvr-underline-from-left:before {
     left: 15px;
     bottom: 15px;
     background: $nav-link-bg-hv;
     height: 2px;
+}
+
+.navbar-brand {
+    margin-left: 0 !important;
+    padding: 5px; //20px 20px;
+}
+
+.logotype {
+    height: 50px;
+    width: 50px;
+}
+
+.navbar-toggle {
+    margin-top: 15px;
+}
+
+.navbar-inverse .navbar-toggle {
+    background-color: #fff !important;
+
+    border: 1px solid #fff;
+    .icon-bar {
+        background-color: $nav-links-color !important;
+    }
+
+    &:hover {
+        border: 1px solid $nav-links-color;
+        .icon-bar {
+            background-color: $nav-links-color !important;
+        }
+    }
+}
+
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+    border: none;
 }
