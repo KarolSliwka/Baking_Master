@@ -1,0 +1,20 @@
+.main-footer {
+    height: 50px;
+    width: 100%;
+    background-color: $footer-bg;
+    display: flex;
+}
+
+.flex-footer {
+    width: 100%;
+    text-align: center;
+    padding-top: 14px;
+}
+
+.copyrights {
+    font-size: 0.85rem;
+    color: $copyrights-color;
+    a {
+        color: $copyrights-color;
+    }
+}

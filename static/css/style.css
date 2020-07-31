@@ -91,5 +91,25 @@ body {
     right: 75%;
   }
 }
+.main-footer {
+  height: 50px;
+  width: 100%;
+  background-color: #FF4365;
+  display: flex;
+}
+
+.flex-footer {
+  width: 100%;
+  text-align: center;
+  padding-top: 14px;
+}
+
+.copyrights {
+  font-size: 0.85rem;
+  color: #FFF;
+}
+.copyrights a {
+  color: #FFF;
+}
 
 /*# sourceMappingURL=style.css.map */
