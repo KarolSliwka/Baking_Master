@@ -26,6 +26,7 @@ body {
   color: #FF4365 !important;
   padding-top: 20px;
   padding-bottom: 20px;
+  font-weight: 400;
 }
 
 .hvr-underline-from-left:before {
