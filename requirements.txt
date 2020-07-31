@@ -8,7 +8,6 @@ awscli==1.18.98
 backcall==0.2.0
 binaryornot==0.4.4
 boto3==1.12.14
-botocore==1.17.21
 certifi==2019.11.28
 chardet==3.0.4
 chevron==0.13.1
@@ -34,7 +33,6 @@ itsdangerous==1.1.0
 jedi==0.11.1
 Jinja2==2.11.1
 jinja2-time==0.2.0
-jmespath==0.10.0
 jsonschema==3.2.0
 lazy-object-proxy==1.5.0
 MarkupSafe==1.1.1
@@ -53,7 +51,6 @@ pylint-django==0.8.0
 pylint-flask==0.5
 pylint-plugin-utils==0.6
 pyrsistent==0.15.7
-python-dateutil==2.8.1
 pytz==2020.1
 PyYAML==5.3.1
 regex==2020.2.20
