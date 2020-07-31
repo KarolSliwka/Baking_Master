@@ -37,12 +37,11 @@ body {
 
 .navbar-brand {
   margin-left: 0 !important;
-  padding: 5px;
+  padding: 8px;
 }
 
 .logotype {
-  height: 50px;
-  width: 50px;
+  height: 45px;
 }
 
 .navbar-toggle {
