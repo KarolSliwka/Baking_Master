@@ -55,3 +55,26 @@
 .navbar-inverse .navbar-form {
     border: none;
 }
+
+@media (max-width: 991.98px) {
+    .navbar-brand {
+        margin-left: 15px !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .navbar-inverse .navbar-collapse,
+    .navbar-inverse .navbar-form {
+        background-color: $nav-bg-color-mobile;
+    }
+    .navbar li a {
+        color: $nav-links-color-mobile !important;
+    }
+    .hvr-underline-from-left:before {
+        background: $nav-link-bg-hv-mobile !important;
+    }
+
+    .hvr-underline-from-left:hover:before {
+        right: 75%;
+    }
+}

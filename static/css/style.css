@@ -17,7 +17,7 @@ body {
 
 .navbar {
   height: 60px;
-  background-color: #fff;
+  background-color: #FFF;
   border: none;
   border-radius: 0;
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.04);
@@ -66,6 +66,30 @@ body {
 .navbar-inverse .navbar-collapse,
 .navbar-inverse .navbar-form {
   border: none;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-brand {
+    margin-left: 15px !important;
+  }
+}
+@media (max-width: 767.98px) {
+  .navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+    background-color: #FF4365;
+  }
+
+  .navbar li a {
+    color: #FFF !important;
+  }
+
+  .hvr-underline-from-left:before {
+    background: #FFF !important;
+  }
+
+  .hvr-underline-from-left:hover:before {
+    right: 75%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
