@@ -3,34 +3,32 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    
+
     h4 {
         margin-bottom: 20px;
     }
 }
 
+// colored footer section - white footer part
 .colored-footer {
     background-color: $footer-bg;
     margin-bottom: 20px;
 }
 
+// about comapny section
 .footer-about-section {
     flex-direction: column;
+    margin-bottom: 20px;
 }
-
-.footer-title {
-    width: 100%;
-    order: 1;
-}
-
-.about-company {
-    width: 100%;
-    order: 2;
+.about-website {
     color: #000;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
 }
 
+// footer menu section
 .footer-menu {
+    padding: 0;
+    margin-bottom: 20px;
     li {
         margin-bottom: 10px;
         list-style: none;
@@ -52,14 +50,59 @@
     }
 }
 
+
+// newsletter section
+.newsletter-section {
+    margin-bottom: 20px;
+}
+
 .newsletter-desc {
     font-size: 0.85rem;
 }
 
+.newsletter-form {
+    position: relative;
+    width: 100%;
+    margin-top: 25px;
+    z-index: 999;
+}
 
+.newsletter-form input {
+    height: 50px;
+    width: 100%;
+    padding: 18px 0px 15px 20px;
+    border: 1px solid $newsletter-input-border;
+    border-radius: 25px;
+    outline: none;
+    background-color: $newsletter-input;
+    color: $input-form-text-color;
+    font-size: 0.85rem;
+    line-height: 1;
+}
 
+.newsletter-form button {
+    font-style: normal;
+    width: 80px;
+    height: 30px;
+    transition: background-color .3s cubic-bezier(.165, .84, .44, 1);
+    border-radius: 15px;
+    background-color: $newsletter-button-border;
+    color: #fff;
+    font-size: .85rem;
+    line-height: 1;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+}
 
-
+// copyrigths section
 .flex-copyrights {
     width: 100%;
     display: flex;

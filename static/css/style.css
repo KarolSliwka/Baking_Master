@@ -20,6 +20,7 @@ h4 {
 }
 
 .navbar {
+  z-index: 10000;
   height: 60px;
   background-color: #FFF;
   border: none;
@@ -69,7 +70,9 @@ h4 {
 
 .navbar-inverse .navbar-collapse,
 .navbar-inverse .navbar-form {
+  margin-top: 3px;
   border: none;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.04);
 }
 
 @media (max-width: 991.98px) {
@@ -108,20 +111,18 @@ h4 {
 
 .footer-about-section {
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
-.footer-title {
-  width: 100%;
-  order: 1;
-}
-
-.about-company {
-  width: 100%;
-  order: 2;
+.about-website {
   color: #000;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
 }
 
+.footer-menu {
+  padding: 0;
+  margin-bottom: 20px;
+}
 .footer-menu li {
   margin-bottom: 10px;
   list-style: none;
@@ -141,8 +142,54 @@ h4 {
   text-decoration: none;
 }
 
+.newsletter-section {
+  margin-bottom: 20px;
+}
+
 .newsletter-desc {
   font-size: 0.85rem;
+}
+
+.newsletter-form {
+  position: relative;
+  width: 100%;
+  margin-top: 25px;
+  z-index: 999;
+}
+
+.newsletter-form input {
+  height: 50px;
+  width: 100%;
+  padding: 18px 0px 15px 20px;
+  border: 1px solid #EEE;
+  border-radius: 25px;
+  outline: none;
+  background-color: #FFF;
+  color: #ababab;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.newsletter-form button {
+  font-style: normal;
+  width: 80px;
+  height: 30px;
+  transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 15px;
+  background-color: #FF4365;
+  color: #fff;
+  font-size: 0.85rem;
+  line-height: 1;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: 0px;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .flex-copyrights {
