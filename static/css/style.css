@@ -15,6 +15,10 @@ body {
   display: none;
 }
 
+h4 {
+  color: #FF4365;
+}
+
 .navbar {
   height: 60px;
   background-color: #FFF;
@@ -93,6 +97,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+.main-footer h4 {
+  margin-bottom: 20px;
+}
 
 .colored-footer {
   background-color: #FFF;
@@ -111,11 +118,16 @@ body {
 .about-company {
   width: 100%;
   order: 2;
+  color: #000;
+  font-size: 0.8rem;
 }
 
 .footer-menu li {
   margin-bottom: 10px;
   list-style: none;
+}
+.footer-menu h4 {
+  color: #000;
 }
 
 .footer-link {
@@ -127,6 +139,10 @@ body {
 .footer-link:hover {
   color: red;
   text-decoration: none;
+}
+
+.newsletter-desc {
+  font-size: 0.85rem;
 }
 
 .flex-copyrights {

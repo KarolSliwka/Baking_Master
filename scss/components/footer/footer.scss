@@ -3,6 +3,10 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    
+    h4 {
+        margin-bottom: 20px;
+    }
 }
 
 .colored-footer {
@@ -19,16 +23,20 @@
     order: 1;
 }
 
-
 .about-company {
     width: 100%;
     order: 2;
+    color: #000;
+    font-size: 0.8rem;
 }
 
 .footer-menu {
     li {
         margin-bottom: 10px;
         list-style: none;
+    }
+    h4 {
+        color: #000;
     }
 }
 
@@ -43,6 +51,14 @@
         text-decoration: none;
     }
 }
+
+.newsletter-desc {
+    font-size: 0.85rem;
+}
+
+
+
+
 
 .flex-copyrights {
     width: 100%;
