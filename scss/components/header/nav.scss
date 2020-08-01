@@ -8,15 +8,15 @@
     li {
         a {
             color: $nav-links-color !important;
-            padding-top: 20px;
-            padding-bottom: 20px;
+            margin-left: 15px;
+            margin-right: 15px;
+            padding: 20px 0 20px 0;
             font-weight: 400;
         }
     }
 }
 
-.hvr-underline-from-left:before {
-    left: 15px;
+.hvr-underline-from-left:before { 
     bottom: 15px;
     background: $nav-link-bg-hv;
     height: 2px;
@@ -72,9 +72,5 @@
     }
     .hvr-underline-from-left:before {
         background: $nav-link-bg-hv-mobile !important;
-    }
-
-    .hvr-underline-from-left:hover:before {
-        right: 75%;
     }
 }
