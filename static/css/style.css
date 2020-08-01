@@ -88,16 +88,58 @@ body {
   }
 }
 .main-footer {
-  min-height: 60px;
+  min-height: 300px;
   width: 100%;
-  background-color: #FF4365;
   display: flex;
+  flex-direction: column;
 }
 
-.flex-footer {
+.colored-footer {
+  background-color: #FFF;
+  margin-bottom: 20px;
+}
+
+.footer-about-section {
+  flex-direction: column;
+}
+
+.footer-title {
   width: 100%;
-  text-align: center;
-  padding-top: 18px;
+  order: 1;
+}
+
+.about-company {
+  width: 100%;
+  order: 2;
+}
+
+.footer-menu li {
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.footer-link {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #FF4365;
+  margin-bottom: 5px;
+}
+.footer-link:hover {
+  color: red;
+  text-decoration: none;
+}
+
+.flex-copyrights {
+  width: 100%;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background-color: #FF4365;
+}
+.flex-copyrights p {
+  margin: 0;
 }
 
 .copyrights {

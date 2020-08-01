@@ -1,8 +1,40 @@
+<!-- Footer start -->
 <footer class="main-footer">
-    <div class="flex-footer">
-        <p class="copyrights">&copy; 2020 - 
-            <span class="year-date" id="copyright"></span> | Created by
-            <a href="mailto:">Karol Sliwka</a>
-        </p>
+    <!-- main footer container -->
+    <div class="container colored-footer">
+        <div class="row row-col-4 align-items-start">
+            <!-- Logotype and text about company -->
+            <div class="col-sm-3 col-md-4 col-lg-4 footer-about-section">
+                <!-- footer main title -->
+                <h4 class="footer-title">Baking Master Web Application</h4>
+                <!-- about app section -->
+                <p class="about-company">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, accusantium. Ipsa excepturi vitae perferendis optio iusto, doloribus modi fugiat eligendi non. Expedita voluptates quas tempora necessitatibus, sunt corporis deleniti eaque.</p>
+            </div>
+            <!-- footer menu -->
+            <div class="col-sm-3 col-md-4 col-lg-4">
+                <ul class="footer-menu">
+                    <h4 class="">Menu</h4>
+                    <li><a href="{{url_for('recipes')}}" class="footer-link">Recipes</a></li>
+                    <li><a href="{{url_for('equipement')}}" class="footer-link">Equipement</a></li>
+                    <li><a href="{{url_for('about')}}" class="footer-link">About</a></li>
+                    <li><a href="{{url_for('contact')}}" class="footer-link">Contact</a></li>
+                    <li><a href="{{url_for('my_account')}}" class="footer-link">My Account</a></li>
+                    <li><a href="{{url_for('site_map')}}" class="footer-link">Site-Map</a></li>
+                </ul>
+            </div>
+            <!-- newsletter -->
+            <div class="col-sm-3 col-md-4 col-lg-4">Column</div>
+        </div>
     </div>
+    <!-- copyrights -->
+    <div>
+        <div class="flex-copyrights">
+            <p class="copyrights">&copy; 2020 -
+                <span class="year-date" id="copyright"></span> | Created by
+                <a href="https://www.abovewave.co.uk" target="_blank">Karol Sliwka</a>
+            </p>
+        </div>
+    </div>
+
 </footer>
+<!-- Footer end -->
