@@ -1,4 +1,5 @@
 .navbar {
+    z-index: 10000;
     height: 60px;
     background-color: $nav-bg-color;
     border: none;
@@ -16,7 +17,7 @@
     }
 }
 
-.hvr-underline-from-left:before { 
+.hvr-underline-from-left:before {
     bottom: 15px;
     background: $nav-link-bg-hv;
     height: 2px;
@@ -28,7 +29,7 @@
 }
 
 .logotype {
-  height: 45px;
+    height: 45px;
 }
 
 .navbar-toggle {
@@ -53,7 +54,9 @@
 
 .navbar-inverse .navbar-collapse,
 .navbar-inverse .navbar-form {
+    margin-top: 3px;
     border: none;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.04);
 }
 
 @media (max-width: 991.98px) {
