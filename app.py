@@ -36,9 +36,9 @@ def about():
 def site_map():
     return  render_template('pages/site-map.html')
 
-@app.route('/equipement')
-def equipement():
-    return  render_template('pages/equipement.html')
+@app.route('/equipment')
+def equipment():
+    return  render_template('pages/equipment.html')
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
