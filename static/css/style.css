@@ -186,7 +186,25 @@ h4 {
 }
 
 .form-container {
-  margin-top: 100px;
+  margin-top: 80px;
+}
+
+.form-group {
+  padding: 0 1rem;
+}
+
+.form-control {
+  color: #ABABAB;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #CCC;
+  outline: none !important;
+}
+
+.login-button {
+  padding-top: 10px;
 }
 
 .login-btn {
@@ -201,12 +219,8 @@ h4 {
   border: 1px solid #FF3366;
 }
 
-.login-container {
-  padding: 0 1rem;
-}
-
 .recovery-container {
-  padding: 1rem 1rem;
+  padding: 0 1rem;
   font-size: 0.85rem;
   text-align: left;
   color: #000;
@@ -230,6 +244,11 @@ h4 {
 .forgot-password:hover {
   color: #1DB0B5;
   opacity: 1;
+}
+
+.small,
+small {
+  font-size: 0.75rem;
 }
 
 .main-footer {
