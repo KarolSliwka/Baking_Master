@@ -41,7 +41,7 @@
     0 0 0 0 black !important;
     -webkit-box-shadow: 0 -10px 15px 1px rgba(0, 0, 0, 0.06),
     0 0 0 0 black !important;
-    -moz-box-shadow:0 -10px 15px 1px rgba(0, 0, 0, 0.06),
+    -moz-box-shadow: 0 -10px 15px 1px rgba(0, 0, 0, 0.06),
     0 0 0 0 black !important;
     img {
         background-color: #FFF;
@@ -73,5 +73,34 @@
 }
 
 .login-container {
-    padding: 0 2rem;
+    padding: 0 1rem;
+}
+
+.recovery-container {
+    padding: 1rem 1rem;
+    font-size: 0.85rem;
+    text-align: left;
+    color: $recovery-text-color;
+    a {
+        text-decoration: none;
+    }
+}
+
+.sign-up {}
+
+.sign-up-link {
+    color: $sing-up-link-color;
+    &:hover {
+        color: $sing-up-link-color;
+        text-decoration: underline;
+    }
+}
+
+.forgot-password {
+    color: $forgot-link-color;
+    opacity: 0.8;
+    &:hover {
+        color: $forgot-link-color;
+        opacity: 1;
+    }
 }

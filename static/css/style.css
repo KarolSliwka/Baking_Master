@@ -202,7 +202,34 @@ h4 {
 }
 
 .login-container {
-  padding: 0 2rem;
+  padding: 0 1rem;
+}
+
+.recovery-container {
+  padding: 1rem 1rem;
+  font-size: 0.85rem;
+  text-align: left;
+  color: #000;
+}
+.recovery-container a {
+  text-decoration: none;
+}
+
+.sign-up-link {
+  color: #FF3366;
+}
+.sign-up-link:hover {
+  color: #FF3366;
+  text-decoration: underline;
+}
+
+.forgot-password {
+  color: #1DB0B5;
+  opacity: 0.8;
+}
+.forgot-password:hover {
+  color: #1DB0B5;
+  opacity: 1;
 }
 
 .main-footer {
