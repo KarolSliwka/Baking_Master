@@ -24,9 +24,9 @@ def search_results():
 def contact():
     return render_template('pages/contact.html')
     
-@app.route('/my_account')
-def my_account():
-    return render_template('pages/my-account.html')   
+@app.route('/login')
+def login():
+    return render_template('pages/login.html')   
 
 @app.route('/about')
 def about():
