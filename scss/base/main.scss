@@ -1,6 +1,6 @@
 html,
 body {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     font-size: 1rem;
     font-weight: 300;
@@ -16,4 +16,8 @@ body {
 
 h4 {
     color: $h4-color;
+}
+
+.section-margin{
+    margin-top: 70px;
 }
