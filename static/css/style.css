@@ -87,13 +87,30 @@ h4 {
 .navbar-inverse .navbar-form {
     background-color: #FF4365;
   }
+  .navbar-inverse .navbar-collapse a,
+.navbar-inverse .navbar-form a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
 
   .navbar li a {
     color: #FFF !important;
   }
 
   .hvr-underline-from-left:before {
+    bottom: 8px;
     background: #FFF !important;
+  }
+}
+@media (max-height: 320px) {
+  .navbar-inverse .navbar-collapse a,
+.navbar-inverse .navbar-form a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .hvr-underline-from-left:before {
+    bottom: 4px;
   }
 }
 .main-footer {

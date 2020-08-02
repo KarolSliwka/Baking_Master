@@ -71,11 +71,30 @@
     .navbar-inverse .navbar-collapse,
     .navbar-inverse .navbar-form {
         background-color: $nav-bg-color-mobile;
+
+        a {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
     }
     .navbar li a {
         color: $nav-links-color-mobile !important;
     }
     .hvr-underline-from-left:before {
+        bottom: 8px;
         background: $nav-link-bg-hv-mobile !important;
+    }
+}
+
+@media (max-height: 320px) {
+    .navbar-inverse .navbar-collapse,
+    .navbar-inverse .navbar-form {
+        a {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+    .hvr-underline-from-left:before {
+        bottom: 4px;
     }
 }

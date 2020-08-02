@@ -1,26 +1,26 @@
-<nav class="navbar navbar-inverse">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+<nav class="navbar fixed-top navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-        <a class="navbar-brand" href="{{url_for('home')}}">
+      <a class="navbar-brand" href="{{url_for('home')}}">
         <img src="/static/images/logotype/Logotype.png" class="logotype" alt="Baking-Master-Logotype"></img>
       </a>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li><a href="{{url_for('recipes')}}" class="hvr-underline-from-left">Recipes</a></li>
-                    <li><a href="{{url_for('favourites')}}" class="hvr-underline-from-left"><i class="far fa-heart fav-heart-icon"></i>Favourites</a></li>
-          <li><a href="{{url_for('equipment')}}" class="hvr-underline-from-left">Equipment</a></li>
-          <li><a href="{{url_for('contact')}}" class="hvr-underline-from-left">Contact</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="{{url_for('search_results')}}" class="hvr-underline-from-left">Search</a></li>
-          <li><a href="{{url_for('my_account')}}" class="hvr-underline-from-left">Login</a></li>
-        </ul>
-      </div>
     </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="{{url_for('recipes')}}" class="hvr-underline-from-left">Recipes</a></li>
+        <li><a href="{{url_for('favourites')}}" class="hvr-underline-from-left"><i class="far fa-heart fav-heart-icon"></i>Favourites</a></li>
+        <li><a href="{{url_for('equipment')}}" class="hvr-underline-from-left">Equipment</a></li>
+        <li><a href="{{url_for('contact')}}" class="hvr-underline-from-left">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{url_for('search_results')}}" class="hvr-underline-from-left">Search</a></li>
+        <li><a href="{{url_for('my_account')}}" class="hvr-underline-from-left">Login</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
