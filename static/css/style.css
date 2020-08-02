@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 html,
 body {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   font-size: 1rem;
   font-weight: 300;
@@ -19,7 +19,14 @@ h4 {
   color: #FF4365;
 }
 
+.section-margin {
+  margin-top: 70px;
+}
+
 .navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
   z-index: 10000;
   height: 60px;
   background-color: #FFF;
