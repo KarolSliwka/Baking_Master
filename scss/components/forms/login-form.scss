@@ -65,12 +65,14 @@
 
 .form-control {
     color: $input-box-color;
+    box-shadow: none!important;
 }
 
 .form-control:focus {
     box-shadow: none;
     border-color: #CCC;
     outline: none !important;
+    
 }
 
 .login-button{

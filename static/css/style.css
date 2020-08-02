@@ -195,6 +195,7 @@ h4 {
 
 .form-control {
   color: #ABABAB;
+  box-shadow: none !important;
 }
 
 .form-control:focus {
