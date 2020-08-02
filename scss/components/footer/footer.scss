@@ -20,6 +20,7 @@
     flex-direction: column;
     margin-bottom: 20px;
 }
+
 .about-website {
     color: #000;
     font-size: 0.85rem;
@@ -29,6 +30,7 @@
 .footer-menu {
     padding: 0;
     margin-bottom: 20px;
+    text-align: center;
     li {
         margin-bottom: 10px;
         list-style: none;
@@ -58,6 +60,11 @@
 
 .newsletter-desc {
     font-size: 0.85rem;
+}
+
+.footer-greetings {
+    font-weight: 400;
+    color: $footer-link-color;
 }
 
 .newsletter-form {
@@ -125,5 +132,12 @@
         color: $copyrights-color;
         text-decoration: none;
         word-break: keep-all;
+    }
+}
+
+
+@media (max-width: 567.98px) {
+    .footer-menu {
+        text-align: left;
     }
 }

@@ -8,18 +8,18 @@
                 <!-- footer main title -->
                 <h4>Baking Master Web Application</h4>
                 <!-- about app section -->
-                <p class="about-website">This website was created for studying purposes only. You can find here lots of different baking recipes and baking equipement.</p>
+                <p class="about-website">This web app was created for studying purposes only. You can find here lots of different baking recipes, lots of great ideas how to surprise your friends or family, with your sweet cakes, muffins or even fresh baked bread with seeds. Also
+                    you can find necessary equipemnt to help you become baking master of your home! Save your favourite recipes, create new, edit or remove, if you don't want to share them to world..<br><span class="footer-greetings">Enjoy browsing all recipes!</span></p>
             </div>
             <!-- footer menu -->
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                 <ul class="footer-menu">
-                    <h4>Menu</h4>
+                    <h4>Worth knowing</h4>
                     <li><a href="{{url_for('recipes')}}" class="footer-link">Recipes</a></li>
                     <li><a href="{{url_for('equipment')}}" class="footer-link">Equipement</a></li>
+                    <li><a href="{{url_for('site_map')}}" class="footer-link">Site - Map</a></li>
                     <li><a href="{{url_for('about')}}" class="footer-link">About</a></li>
                     <li><a href="{{url_for('contact')}}" class="footer-link">Contact</a></li>
-                    <li><a href="{{url_for('my_account')}}" class="footer-link">My Account</a></li>
-                    <li><a href="{{url_for('site_map')}}" class="footer-link">Site - Map</a></li>
                 </ul>
             </div>
             <!-- newsletter -->
@@ -27,7 +27,7 @@
                 <h4>Newsletter</h4>
                 <p class="newsletter-desc">Sign up for our newsletter! Receive notifications about new recipes, baking equipement and all possible discounts codes. Don't be late, we're waiting for you!</p>
                 <div class="newsletter-form">
-                    <form method="POST" class="newsletter-form">
+                    <form class="newsletter-form">
                         <input type="email" name="email-address" id="email" placeholder="Enter your email">
                         <button type="submit" class="button">Subscribe</button>
                     </form>

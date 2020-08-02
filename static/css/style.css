@@ -121,6 +121,7 @@ h4 {
 .footer-menu {
   padding: 0;
   margin-bottom: 20px;
+  text-align: center;
 }
 .footer-menu li {
   margin-bottom: 10px;
@@ -147,6 +148,11 @@ h4 {
 
 .newsletter-desc {
   font-size: 0.85rem;
+}
+
+.footer-greetings {
+  font-weight: 400;
+  color: #FF4365;
 }
 
 .newsletter-form {
@@ -214,6 +220,12 @@ h4 {
   color: #FFF;
   text-decoration: none;
   word-break: keep-all;
+}
+
+@media (max-width: 567.98px) {
+  .footer-menu {
+    text-align: left;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
