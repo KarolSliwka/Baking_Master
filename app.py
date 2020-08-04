@@ -26,7 +26,15 @@ def contact():
     
 @app.route('/login')
 def login():
-    return render_template('pages/login.html')   
+    return render_template('pages/login.html')
+    
+@app.route('/register')
+def register():
+    return render_template('pages/register.html')
+    
+@app.route('/pass-recovery')
+def recovery():
+    return render_template('pages/pass-recovery.html')
 
 @app.route('/about')
 def about():
