@@ -1,5 +1,8 @@
 import os
+import bcrypt
 from flask import Flask, render_template, redirect, request, url_for
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
@@ -26,7 +29,7 @@ def contact():
     
 @app.route('/login')
 def login():
-    return render_template('pages/login.html')
+    return render_template('pages/login.html', body_id="login-page")
     
 @app.route('/register')
 def register():

@@ -1,6 +1,8 @@
-@media scren only and(max-height: 1020px) {
-    .sticky-footer {
-        position: fixed;
-        bottom: 0;
+@media screen and (min-height: 1020px) {
+    #login-page {
+        footer {
+            position: fixed;
+            bottom: 0;
+        }
     }
 }
