@@ -8,14 +8,14 @@
 
 <body id="{{ body_id }}">
     <header>
-    <!-- Include header - navigation -->
-    {% include 'components/header/nav.html' %}
-    <!-- Include carousel -->
-    {% include 'components/carousel/carousel.html' %}
+        <!-- Include header - navigation -->
+        {% include 'components/header/nav.html' %}
+        <!-- Include carousel -->
+        {% include 'components/carousel/carousel.html' %}
     </header>
     <!-- main page container -->
-    <main>
-    {% block content %} {% endblock %}
+    <main class="main-container">
+        {% block content %} {% endblock %}
     </main>
     <!-- Include Footer -->
     {% include 'components/footer/footer.html' %}

@@ -1,8 +1,24 @@
+$a: 100%;
+$b: 360px;
 @media screen and (min-height: 1020px) {
-    #login-page {
-        footer {
-            position: fixed;
-            bottom: 0;
+    @media screen and (min-width: 1020px) {
+        #login-page {
+            .main-container {
+                height: calc(#{$a} - #{$b});
+                padding-top: 60px;
+            }
+            .login-flex {
+                display: flex;
+                justify-content: center;
+            }
+            .login-form {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+            footer {
+                position: fixed;
+                bottom: 0;
+            }
         }
     }
 }

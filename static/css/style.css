@@ -37,6 +37,10 @@ h4 {
   padding-bottom: 20px;
 }
 
+:root {
+  --footer-main-height: 300px;
+}
+
 .navbar {
   width: 100%;
   position: fixed;
@@ -272,7 +276,7 @@ small {
 }
 
 .main-footer {
-  min-height: 300px;
+  min-height: var(--hex-parent-height);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -407,7 +411,19 @@ small {
     text-align: left;
   }
 }
-@media screen and (min-height: 1020px) {
+@media screen and (min-height: 1020px) and (min-width: 1020px) {
+  #login-page .main-container {
+    height: calc(100% - 360px);
+    padding-top: 60px;
+  }
+  #login-page .login-flex {
+    display: flex;
+    justify-content: center;
+  }
+  #login-page .login-form {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
   #login-page footer {
     position: fixed;
     bottom: 0;

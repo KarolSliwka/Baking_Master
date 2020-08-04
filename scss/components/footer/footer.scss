@@ -1,5 +1,5 @@
 .main-footer {
-    min-height: 300px;
+    min-height: var(--hex-parent-height);
     width: 100%;
     display: flex;
     flex-direction: column;
