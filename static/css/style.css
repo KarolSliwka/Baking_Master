@@ -407,9 +407,11 @@ small {
     text-align: left;
   }
 }
-.sticky-footer {
-  position: fixed;
-  bottom: 0;
+@media scren only and (max-height: 1020px) {
+  .sticky-footer {
+    position: fixed;
+    bottom: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
