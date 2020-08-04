@@ -134,6 +134,12 @@ h4 {
     bottom: 4px;
   }
 }
+.box-shadow, .user-card {
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+}
+
 .login-form {
   display: flex;
   justify-content: center;
@@ -155,9 +161,6 @@ h4 {
   position: relative;
   flex-direction: column;
   padding: 10px;
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06), 0 0 0 0 black !important;
-  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06), 0 0 0 0 black !important;
-  -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06), 0 0 0 0 black !important;
   border-radius: 5px;
 }
 
@@ -170,12 +173,26 @@ h4 {
   background: #FF3366 !important;
   padding: 5px;
   text-align: center;
-  box-shadow: 0 -10px 15px 1px rgba(0, 0, 0, 0.06), 0 0 0 0 black !important;
-  -webkit-box-shadow: 0 -10px 15px 1px rgba(0, 0, 0, 0.06), 0 0 0 0 black !important;
-  -moz-box-shadow: 0 -10px 15px 1px rgba(0, 0, 0, 0.06), 0 0 0 0 black !important;
 }
 .brand-logo-container img {
   background-color: #FFF;
+}
+
+.half-circle {
+  position: absolute;
+  top: -55px;
+  width: 120px;
+  height: 60px;
+  background-color: white;
+  border-top-left-radius: 150px;
+  border-top-right-radius: 150px;
+  border-bottom: 0;
+  box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.15);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .brand-logo {
@@ -198,8 +215,9 @@ h4 {
   box-shadow: none !important;
 }
 
-.form-control:focus {
-  box-shadow: none;
+.form-control:focus,
+:active {
+  box-shadow: none !important;
   border-color: #CCC;
   outline: none !important;
 }

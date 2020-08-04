@@ -1,3 +1,12 @@
+// userform box shadow
+.box-shadow {
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+    -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+}
+
+
+// main login form style
 .login-form {
     display: flex;
     justify-content: center;
@@ -19,15 +28,11 @@
     position: relative;
     flex-direction: column;
     padding: 10px;
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06),
-    0 0 0 0 rgba(0, 0, 0, 05) !important;
-    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06),
-    0 0 0 0 rgba(0, 0, 0, 05) !important;
-    -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06),
-    0 0 0 0 rgba(0, 0, 0, 05) !important;
+    @extend .box-shadow;
     border-radius: 5px;
 }
 
+// fancy top logo
 .brand-logo-container {
     position: absolute;
     height: 110px;
@@ -37,15 +42,27 @@
     background: $login-form-circle-bg !important;
     padding: 5px;
     text-align: center;
-    box-shadow: 0 -10px 15px 1px rgba(0, 0, 0, 0.06),
-    0 0 0 0 black !important;
-    -webkit-box-shadow: 0 -10px 15px 1px rgba(0, 0, 0, 0.06),
-    0 0 0 0 black !important;
-    -moz-box-shadow: 0 -10px 15px 1px rgba(0, 0, 0, 0.06),
-    0 0 0 0 black !important;
     img {
         background-color: #FFF;
     }
+}
+
+// bootom half-circle
+.half-circle {
+    position: absolute;
+    top: -55px;
+    width: 120px;
+    height: 60px;
+    background-color: white;
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+    border-bottom: 0;
+    box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.15);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .brand-logo {
@@ -55,6 +72,7 @@
     border: 2px solid #FFF;
 }
 
+// userform fields
 .form-container {
     margin-top: 80px;
 }
@@ -65,17 +83,17 @@
 
 .form-control {
     color: $input-box-color;
-    box-shadow: none!important;
+    box-shadow: none !important;
 }
 
-.form-control:focus {
-    box-shadow: none;
+.form-control:focus,
+:active {
+    box-shadow: none !important;
     border-color: #CCC;
     outline: none !important;
-    
 }
 
-.login-button{
+.login-button {
     padding-top: 10px;
 }
 
@@ -92,6 +110,7 @@
     }
 }
 
+// bottom links
 .recovery-container {
     padding: 0 1rem;
     font-size: 0.85rem;
