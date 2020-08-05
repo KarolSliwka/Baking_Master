@@ -149,7 +149,7 @@ h4 {
   display: flex;
   justify-content: center;
   padding-top: 150px;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
 }
 
 .flex-center {
@@ -411,7 +411,7 @@ small {
     text-align: left;
   }
 }
-@media screen and (min-height: 1020px) and (min-width: 1020px) {
+@media screen and (min-height: 983px) and (min-width: 1020px) {
   #login-page .main-container {
     height: calc(100% - 360px);
     padding-top: 60px;
