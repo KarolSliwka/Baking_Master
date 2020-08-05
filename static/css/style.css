@@ -139,7 +139,7 @@ h4 {
     bottom: 4px;
   }
 }
-.box-shadow, .register-user-card, .user-card {
+.box-shadow, .user-card {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
@@ -275,7 +275,7 @@ small {
   font-size: 0.75rem;
 }
 
-.box-shadow, .register-user-card, .user-card {
+.register-box-shadow, .register-user-card {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
@@ -294,7 +294,7 @@ small {
 }
 
 .register-user-card {
-  height: 400px;
+  height: 450px;
   width: 350px;
   margin-top: auto;
   margin-bottom: auto;
@@ -305,8 +305,12 @@ small {
   border-radius: 5px;
 }
 
+.register-form-title {
+  color: #FF3366;
+}
+
 .register-form-container {
-  margin-top: 80px;
+  margin-top: 0;
 }
 
 .form-group {
@@ -326,7 +330,7 @@ small {
 }
 
 .register-button {
-  padding-top: 10px;
+  margin-bottom: 0;
 }
 
 .register-btn {

@@ -1,5 +1,5 @@
 // userform box shadow
-.box-shadow {
+.register-box-shadow {
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
     -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
     -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
@@ -19,21 +19,26 @@
 }
 
 .register-user-card {
-    height: 400px;
+    height: 450px;
     width: 350px;
     margin-top: auto;
     margin-bottom: auto;
-    background: $login-card-bg;
+    background: $register-card-bg;
     position: relative;
     flex-direction: column;
     padding: 10px;
-    @extend .box-shadow;
+    @extend .register-box-shadow;
     border-radius: 5px;
+}
+
+// register form title
+.register-form-title {
+    color: $register-form-title;
 }
 
 // userform fields
 .register-form-container {
-    margin-top: 80px;
+    margin-top: 0;
 }
 
 .form-group {
@@ -54,7 +59,7 @@
 
 // register button
 .register-button {
-    padding-top: 10px;
+    margin-bottom: 0;
 }
 
 .register-btn {
