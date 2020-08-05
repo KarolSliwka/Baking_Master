@@ -19,7 +19,7 @@ def recipes():
 def favourites():
     return render_template('pages/favourites.html', body_id='favourites-page')
     
-@app.route('/search_results')
+@app.route('/search-results')
 def search_results():
     return render_template('pages/search-results.html', body_id='search-page')
 
@@ -35,9 +35,9 @@ def login():
 def register():
     return render_template('pages/register.html', body_id='register-page')
     
-@app.route('/pass-recovery')
+@app.route('/recovery')
 def recovery():
-    return render_template('pages/pass-recovery.html', body_id='recovery-page')
+    return render_template('pages/recovery.html', body_id='recovery-page')
 
 @app.route('/about')
 def about():
