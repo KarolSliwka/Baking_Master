@@ -41,22 +41,6 @@
     margin-top: 0;
 }
 
-.form-group {
-    padding: 0 1rem;
-}
-
-.form-control {
-    color: $input-box-color;
-    box-shadow: none !important;
-}
-
-.form-control:focus,
-:active {
-    box-shadow: none !important;
-    border-color: #CCC;
-    outline: none !important;
-}
-
 // register button
 .register-button {
     margin-bottom: 0;
@@ -91,9 +75,4 @@
         color: $cancel-button-color-hv;
         border: 1px solid $cancel-button-border-color-hv;
     }
-}
-
-.small,
-small {
-    font-size: 0.75rem;
 }
