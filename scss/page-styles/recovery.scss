@@ -1,11 +1,11 @@
 $a: 100%;
 $b: 360px;
-@media screen and (min-height: 983px) {
+@media screen and (min-height: 930px) {
     @media screen and (min-width: 1020px) {
         #recovery-page {
             .main-container {
                 height: calc(#{$a} - #{$b});
-                padding-top: 60px;
+                padding-top: 2rem;
             }
             .recovery-flex {
                 display: flex;

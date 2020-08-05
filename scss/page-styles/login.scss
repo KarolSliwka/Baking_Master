@@ -5,7 +5,7 @@ $b: 360px;
         #login-page {
             .main-container {
                 height: calc(#{$a} - #{$b});
-                padding-top: 60px;
+                padding-top: 2rem;
             }
             .login-flex {
                 display: flex;

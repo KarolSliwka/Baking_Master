@@ -284,7 +284,7 @@ small {
 .recovery-form {
   display: flex;
   justify-content: center;
-  padding-top: 100px;
+  padding-top: 110px;
   padding-bottom: 10px;
 }
 
@@ -543,7 +543,7 @@ small {
 @media screen and (min-height: 983px) and (min-width: 1020px) {
   #login-page .main-container {
     height: calc(100% - 360px);
-    padding-top: 60px;
+    padding-top: 2rem;
   }
   #login-page .login-flex {
     display: flex;
@@ -558,10 +558,10 @@ small {
     bottom: 0;
   }
 }
-@media screen and (min-height: 983px) and (min-width: 1020px) {
+@media screen and (min-height: 930px) and (min-width: 1020px) {
   #recovery-page .main-container {
     height: calc(100% - 360px);
-    padding-top: 60px;
+    padding-top: 2rem;
   }
   #recovery-page .recovery-flex {
     display: flex;
@@ -579,7 +579,7 @@ small {
 @media screen and (min-height: 983px) and (min-width: 1020px) {
   #register-page .main-container {
     height: calc(100% - 360px);
-    padding-top: 60px;
+    padding-top: 2rem;
   }
   #register-page .register-flex {
     display: flex;

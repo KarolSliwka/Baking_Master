@@ -5,7 +5,7 @@ $b: 360px;
         #register-page {
             .main-container {
                 height: calc(#{$a} - #{$b});
-                padding-top: 60px;
+                padding-top: 2rem;
             }
             .register-flex {
                 display: flex;
