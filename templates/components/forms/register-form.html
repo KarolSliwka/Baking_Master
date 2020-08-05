@@ -27,12 +27,14 @@
                     <input type="password" class="form-control" id="register-password" placeholder="Password">
                 </div>
                 <!-- Register button -->
-                <div class="form-group login-button">
+                <div class="form-group register-button">
                     <button type="button" name="button" class="btn register-btn">Register</button>
                 </div>
                 <!-- Cancel button -->
                 <div class="form-group cancel-button">
-                    <button type="button" name="button" class="btn cancel-btn">Cancel</button>
+                    <a href="{{url_for('login')}}">
+                        <button type="button" name="button" class="btn cancel-btn">Cancel</button>
+                    </a>
                 </div>
             </form>
         </div>
