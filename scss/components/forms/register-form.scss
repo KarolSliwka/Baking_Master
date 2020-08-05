@@ -52,48 +52,39 @@
     outline: none !important;
 }
 
-.login-button {
+// register button
+.register-button {
     padding-top: 10px;
 }
 
-.login-btn {
+.register-btn {
     width: 100%;
-    background: $login-button-bg;
-    color: $login-button-color;
-    border: 1px solid $login-button-border-color;
+    background: $register-button-bg;
+    color: $register-button-color;
+    border: 1px solid $register-button-border-color;
 
     &:hover {
-        background: $login-button-bg-hv;
-        color: $login-button-color-hv;
-        border: 1px solid $login-button-border-color-hv;
+        background: $register-button-bg-hv;
+        color: $register-button-color-hv;
+        border: 1px solid $register-button-border-color-hv;
     }
 }
 
-// bottom links
-.recovery-container {
-    padding: 0 1rem;
-    font-size: 0.85rem;
-    text-align: left;
-    color: $recovery-text-color;
-    a {
-        text-decoration: none;
-    }
+// cancel button
+.cancel-button {
+    padding-top: 10px;
 }
 
-.sign-up-link {
-    color: $sing-up-link-color;
-    &:hover {
-        color: $sing-up-link-color;
-        text-decoration: underline;
-    }
-}
+.cancel-btn {
+    width: 100%;
+    background: $cancel-button-bg;
+    color: $cancel-button-color;
+    border: 1px solid $cancel-button-border-color;
 
-.forgot-password {
-    color: $forgot-link-color;
-    opacity: 0.8;
     &:hover {
-        color: $forgot-link-color;
-        opacity: 1;
+        background: $cancel-button-bg-hv;
+        color: $cancel-button-color-hv;
+        border: 1px solid $cancel-button-border-color-hv;
     }
 }
 

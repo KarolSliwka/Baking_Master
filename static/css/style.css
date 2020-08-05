@@ -325,47 +325,36 @@ small {
   outline: none !important;
 }
 
-.login-button {
+.register-button {
   padding-top: 10px;
 }
 
-.login-btn {
+.register-btn {
   width: 100%;
   background: #FFF;
   color: #FF3366;
   border: 1px solid #FF3366;
 }
-.login-btn:hover {
+.register-btn:hover {
   background: #FF3366;
   color: #FFF;
   border: 1px solid #FF3366;
 }
 
-.recovery-container {
-  padding: 0 1rem;
-  font-size: 0.85rem;
-  text-align: left;
-  color: #000;
-}
-.recovery-container a {
-  text-decoration: none;
+.cancel-button {
+  padding-top: 10px;
 }
 
-.sign-up-link {
-  color: #FF3366;
-}
-.sign-up-link:hover {
-  color: #FF3366;
-  text-decoration: underline;
-}
-
-.forgot-password {
+.cancel-btn {
+  width: 100%;
+  background: #FFF;
   color: #1DB0B5;
-  opacity: 0.8;
+  border: 1px solid #1DB0B5;
 }
-.forgot-password:hover {
-  color: #1DB0B5;
-  opacity: 1;
+.cancel-btn:hover {
+  background: #1DB0B5;
+  color: #FFF;
+  border: 1px solid #1DB0B5;
 }
 
 .small,
