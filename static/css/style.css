@@ -275,6 +275,65 @@ small {
   font-size: 0.75rem;
 }
 
+.recovery-box-shadow, .recovery-user-card {
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+}
+
+.recovery-form {
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 10px;
+}
+
+.recovery-flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.recovery-user-card {
+  height: 400px;
+  width: 350px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #FFF;
+  position: relative;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.recovery-form-title {
+  color: #FF3366;
+}
+
+.recovery-form-container {
+  margin-top: 0;
+}
+
+.recovery-button {
+  margin-bottom: 0;
+}
+
+.recovery-btn {
+  width: 100%;
+  background: #FFF;
+  color: #FF3366;
+  border: 1px solid #FF3366;
+}
+.recovery-btn:hover {
+  background: #FF3366;
+  color: #FFF;
+  border: 1px solid #FF3366;
+}
+
+.recovery-text {
+  font-size: 0.85rem;
+  padding: 1rem 0;
+}
+
 .register-box-shadow, .register-user-card {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
@@ -313,22 +372,6 @@ small {
   margin-top: 0;
 }
 
-.form-group {
-  padding: 0 1rem;
-}
-
-.form-control {
-  color: #ABABAB;
-  box-shadow: none !important;
-}
-
-.form-control:focus,
-:active {
-  box-shadow: none !important;
-  border-color: #CCC;
-  outline: none !important;
-}
-
 .register-button {
   margin-bottom: 0;
 }
@@ -359,11 +402,6 @@ small {
   background: #1DB0B5;
   color: #FFF;
   border: 1px solid #1DB0B5;
-}
-
-.small,
-small {
-  font-size: 0.75rem;
 }
 
 .main-footer {
@@ -516,6 +554,24 @@ small {
     padding-bottom: 0;
   }
   #login-page footer {
+    position: fixed;
+    bottom: 0;
+  }
+}
+@media screen and (min-height: 983px) and (min-width: 1020px) {
+  #recovery-page .main-container {
+    height: calc(100% - 360px);
+    padding-top: 60px;
+  }
+  #recovery-page .recovery-flex {
+    display: flex;
+    justify-content: center;
+  }
+  #recovery-page .recovery-form {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  #recovery-page footer {
     position: fixed;
     bottom: 0;
   }
