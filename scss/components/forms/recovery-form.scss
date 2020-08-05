@@ -19,7 +19,7 @@
 }
 
 .recovery-user-card {
-    height: 250px;
+    height: 350px;
     width: 350px;
     margin-top: auto;
     margin-bottom: auto;
@@ -57,4 +57,10 @@
         color: $recovery-button-color-hv;
         border: 1px solid $recovery-button-border-color-hv;
     }
+}
+
+// recovery sample text
+.recovery-text {
+    font-size: 0.85rem;
+    padding: 1rem 0;
 }
