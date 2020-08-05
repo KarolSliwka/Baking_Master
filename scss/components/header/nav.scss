@@ -3,7 +3,7 @@
     position: fixed;
     top: 0;
     z-index: 10000;
-    height: 60px;
+    height: 3.75rem;
     background-color: $nav-bg-color;
     border: none;
     border-radius: 0;
@@ -12,15 +12,15 @@
     li {
         a {
             color: $nav-links-color !important;
-            margin-left: 15px;
-            padding: 20px 0 20px 0;
+            margin-left: 0.9375rem;
+            padding: 1.25rem 0 1.25rem 0;
             font-weight: 400;
         }
     }
 }
 
 .hvr-underline-from-left:before {
-    bottom: 15px;
+    bottom: 0.9375rem;
     background: $nav-link-bg-hv;
     height: 2px;
 }
@@ -31,11 +31,11 @@
 }
 
 .logotype {
-    height: 45px;
+    height: 2.8125rem
 }
 
 .navbar-toggle {
-    margin-top: 15px;
+    margin-top: 0.9375rem
 }
 
 .navbar-inverse .navbar-toggle {
@@ -66,7 +66,7 @@
 
 @media (max-width: 991.98px) {
     .navbar-brand {
-        margin-left: 15px !important;
+        margin-left: 0.9375rem !important;
     }
 }
 
@@ -76,8 +76,8 @@
         background-color: $nav-bg-color-mobile;
 
         a {
-            padding-top: 15px;
-            padding-bottom: 15px;
+            padding-top: 0.9375rem;
+            padding-bottom: 0.9375rem;
             widtH: 150px;
         }
     }
@@ -94,8 +94,8 @@
     .navbar-inverse .navbar-collapse,
     .navbar-inverse .navbar-form {
         a {
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 0.625rem;
+            padding-bottom: 0.625rem;
         }
     }
     .hvr-underline-from-left:before {
