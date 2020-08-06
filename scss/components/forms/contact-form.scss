@@ -9,8 +9,12 @@
 .contact-form {
     display: flex;
     justify-content: center;
-    padding-top: 110px;
+    padding-top: 100px;
     padding-bottom: 10px;
+    
+    .form-container{
+        margin: 0 !important;
+    }
 }
 
 .contact-flex-center {
@@ -19,8 +23,8 @@
 }
 
 .contact-user-form {
-    height: 400px;
-    width: 350px;
+    height: 600px;
+    width: 600px;
     margin-top: auto;
     margin-bottom: auto;
     background: $recovery-card-bg;

@@ -148,8 +148,11 @@ h4 {
 .contact-form {
   display: flex;
   justify-content: center;
-  padding-top: 110px;
+  padding-top: 100px;
   padding-bottom: 10px;
+}
+.contact-form .form-container {
+  margin: 0 !important;
 }
 
 .contact-flex-center {
@@ -158,8 +161,8 @@ h4 {
 }
 
 .contact-user-form {
-  height: 400px;
-  width: 350px;
+  height: 600px;
+  width: 600px;
   margin-top: auto;
   margin-bottom: auto;
   background: #FFF;
@@ -599,6 +602,13 @@ small {
     text-align: left;
   }
 }
+.map-image {
+  background-image: url("/static/images/Backgrounds/google-map-bg.png");
+  background-repeat: no-repeat;
+  width: 100%;
+  opacity: 0.5;
+}
+
 @media screen and (min-height: 983px) and (min-width: 1020px) {
   #contact-page .main-container {
     height: calc(100% - 360px);

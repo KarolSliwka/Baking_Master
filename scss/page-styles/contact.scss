@@ -1,3 +1,10 @@
+.map-image {
+    background-image: url("/static/images/Backgrounds/google-map-bg.png");
+    background-repeat: no-repeat;
+    width: 100%;
+    opacity: 0.5;
+}
+
 $a: 100%;
 $b: 360px;
 @media screen and (min-height: 983px) {
