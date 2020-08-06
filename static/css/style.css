@@ -139,6 +139,65 @@ h4 {
     bottom: 4px;
   }
 }
+.contact-box-shadow {
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+}
+
+.contact-form {
+  display: flex;
+  justify-content: center;
+  padding-top: 110px;
+  padding-bottom: 10px;
+}
+
+.contact-flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-user-form {
+  height: 400px;
+  width: 350px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #FFF;
+  position: relative;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.contact-form-title {
+  color: #FF3366;
+}
+
+.contact-form-container {
+  margin-top: 0;
+}
+
+.send-button {
+  margin-bottom: 0;
+}
+
+.send-btn {
+  width: 100%;
+  background: #FFF;
+  color: #FF3366;
+  border: 1px solid #FF3366;
+}
+.send-btn:hover, .send-btn:focus {
+  background: #FF3366;
+  color: #FFF;
+  border: 1px solid #FF3366;
+}
+
+.contact-text {
+  font-size: 0.85rem;
+  padding: 1rem 0;
+}
+
 .box-shadow, .login-user-form {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
@@ -275,7 +334,7 @@ small {
   font-size: 0.75rem;
 }
 
-.recovery-box-shadow, .recovery-user-form {
+.recovery-box-shadow, .recovery-user-form, .contact-user-form {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
@@ -538,6 +597,24 @@ small {
 @media (max-width: 567.98px) {
   .footer-menu {
     text-align: left;
+  }
+}
+@media screen and (min-height: 983px) and (min-width: 1020px) {
+  #contact-page .main-container {
+    height: calc(100% - 360px);
+    padding-top: 2rem;
+  }
+  #contact-page .contact-flex {
+    display: flex;
+    justify-content: center;
+  }
+  #contact-page .contact-form {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  #contact-page footer {
+    position: fixed;
+    bottom: 0;
   }
 }
 @media screen and (min-height: 983px) and (min-width: 1020px) {
