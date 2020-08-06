@@ -1,3 +1,6 @@
 {% extends 'layout/base.html' %} {% block content %}
-<h1 class="hidden">Contact</h1>
+<div class="container"> <!--contact-flex sticky-footer"-->
+    <h1 class="hidden">Contact Page</h1>
+    {% include 'components/forms/contact-form.html' %}
+</div>
 {% endblock %}
