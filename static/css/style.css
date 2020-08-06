@@ -139,7 +139,7 @@ h4 {
     bottom: 4px;
   }
 }
-.box-shadow, .user-card {
+.box-shadow, .login-user-form {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
@@ -157,7 +157,7 @@ h4 {
   justify-content: center;
 }
 
-.user-card {
+.login-user-form {
   height: 400px;
   width: 350px;
   margin-top: auto;
@@ -275,7 +275,7 @@ small {
   font-size: 0.75rem;
 }
 
-.recovery-box-shadow, .recovery-user-card {
+.recovery-box-shadow, .recovery-user-form {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
@@ -293,7 +293,7 @@ small {
   justify-content: center;
 }
 
-.recovery-user-card {
+.recovery-user-form {
   height: 400px;
   width: 350px;
   margin-top: auto;
@@ -334,7 +334,7 @@ small {
   padding: 1rem 0;
 }
 
-.register-box-shadow, .register-user-card {
+.register-box-shadow, .register-user-form {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
@@ -352,7 +352,7 @@ small {
   justify-content: center;
 }
 
-.register-user-card {
+.register-user-form {
   height: 450px;
   width: 350px;
   margin-top: auto;
