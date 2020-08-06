@@ -52,7 +52,7 @@
     color: $recovery-button-color;
     border: 1px solid $recovery-button-border-color;
 
-    &:hover {
+    &:hover, &:focus {
         background: $recovery-button-bg-hv;
         color: $recovery-button-color-hv;
         border: 1px solid $recovery-button-border-color-hv;

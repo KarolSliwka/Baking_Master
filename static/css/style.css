@@ -237,7 +237,7 @@ h4 {
   color: #FF3366;
   border: 1px solid #FF3366;
 }
-.login-btn:hover {
+.login-btn:hover, .login-btn:focus {
   background: #FF3366;
   color: #FFF;
   border: 1px solid #FF3366;
@@ -323,7 +323,7 @@ small {
   color: #FF3366;
   border: 1px solid #FF3366;
 }
-.recovery-btn:hover {
+.recovery-btn:hover, .recovery-btn:focus {
   background: #FF3366;
   color: #FFF;
   border: 1px solid #FF3366;
@@ -382,7 +382,7 @@ small {
   color: #FF3366;
   border: 1px solid #FF3366;
 }
-.register-btn:hover {
+.register-btn:hover, .register-btn:focus {
   background: #FF3366;
   color: #FFF;
   border: 1px solid #FF3366;
@@ -398,7 +398,7 @@ small {
   color: #1DB0B5;
   border: 1px solid #1DB0B5;
 }
-.cancel-btn:hover {
+.cancel-btn:hover, .cancel-btn:focus {
   background: #1DB0B5;
   color: #FFF;
   border: 1px solid #1DB0B5;
