@@ -1,0 +1,66 @@
+// userform box shadow
+.contact-box-shadow {
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+    -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+}
+
+// main login form style
+.contact-form {
+    display: flex;
+    justify-content: center;
+    padding-top: 110px;
+    padding-bottom: 10px;
+}
+
+.contact-flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-user-form {
+    height: 400px;
+    width: 350px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: $recovery-card-bg;
+    position: relative;
+    flex-direction: column;
+    padding: 10px;
+    @extend .recovery-box-shadow;
+    border-radius: 5px;
+}
+
+// recovery form title
+.contact-form-title {
+    color: $recovery-form-title;
+}
+
+// userform fields
+.contact-form-container {
+    margin-top: 0;
+}
+
+// recovery button
+.send-button {
+    margin-bottom: 0;
+}
+
+.send-btn {
+    width: 100%;
+    background: $recovery-button-bg;
+    color: $recovery-button-color;
+    border: 1px solid $recovery-button-border-color;
+
+    &:hover, &:focus {
+        background: $recovery-button-bg-hv;
+        color: $recovery-button-color-hv;
+        border: 1px solid $recovery-button-border-color-hv;
+    }
+}
+
+// recovery sample text
+.contact-text {
+    font-size: 0.85rem;
+    padding: 1rem 0;
+}
