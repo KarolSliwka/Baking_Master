@@ -11,8 +11,8 @@
     justify-content: center;
     padding-top: 100px;
     padding-bottom: 10px;
-    
-    .form-container{
+
+    .form-container {
         margin: 0 !important;
     }
 }
@@ -27,17 +27,17 @@
     width: 600px;
     margin-top: auto;
     margin-bottom: auto;
-    background: $recovery-card-bg;
+    background: $contact-form-bg;
     position: relative;
     flex-direction: column;
     padding: 10px;
-    @extend .recovery-box-shadow;
+    @extend .contact-box-shadow;
     border-radius: 5px;
 }
 
 // recovery form title
 .contact-form-title {
-    color: $recovery-form-title;
+    color: $contact-form-title;
 }
 
 // userform fields
@@ -51,20 +51,35 @@
 }
 
 .send-btn {
-    width: 100%;
-    background: $recovery-button-bg;
-    color: $recovery-button-color;
-    border: 1px solid $recovery-button-border-color;
+    width: 50%;
+    background: $send-button-bg;
+    color: $send-button-color;
+    border: 1px solid $send-button-border-color;
 
-    &:hover, &:focus {
-        background: $recovery-button-bg-hv;
-        color: $recovery-button-color-hv;
-        border: 1px solid $recovery-button-border-color-hv;
+    &:hover,
+    &:focus {
+        background: $send-button-bg-hv;
+        color: $send-button-color-hv;
+        border: 1px solid $send-button-border-color-hv;
+    }
+}
+
+.clear-form-btn {
+    width: 100%;
+    background: $clear-form-button-bg;
+    color: $clear-form-button-color;
+    border: 1px solid $clear-form-button-border-color;
+
+    &:hover,
+    &:focus {
+        background: $clear-form-button-bg-hv;
+        color: $clear-form-button-color-hv;
+        border: 1px solid $clear-form-button-border-color-hv;
     }
 }
 
 // recovery sample text
 .contact-text {
     font-size: 0.85rem;
-    padding: 1rem 0;
+    padding-bottom: 1rem;
 }

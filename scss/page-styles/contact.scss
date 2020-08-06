@@ -1,21 +1,18 @@
-#contact-page {
-    .main-container {
-        background-image: url("/static/images/Backgrounds/google-map-bg.png");
-        background-repeat: no-repeat;
-    }
+.map-container {
+    background-image: url("/static/images/Backgrounds/google-map-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
 }
 
 $a: 100%;
 $b: 360px;
-@media screen and (min-height: 1150px) {
+@media screen and (min-height: 983px) {
     @media screen and (min-width: 1020px) {
         #contact-page {
             .main-container {
                 height: calc(#{$a} - #{$b});
                 padding-top: 2rem;
-                background-image: url("/static/images/Backgrounds/google-map-bg.png");
-                background-repeat: no-repeat;
-                background-size: cover;
             }
             .contact-flex {
                 display: flex;

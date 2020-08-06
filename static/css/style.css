@@ -1,4 +1,55 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+/*! 
+Heading style
+*/
+/*! 
+Navigation
+*/
+/*! Links and links hover style */
+/*! Dropdown mobile navigation style */
+/*! 
+Footer 
+*/
+/*! Background */
+/*! Footer menu links color */
+/*! Copyrights */
+/*! Newsletter */
+/*! 
+All user forms
+*/
+/*! Userform input boxes font color */
+/*! 
+Login Page
+*/
+/*! Login form background  */
+/*! Login form recovery and sign-up links color */
+/*! Login form login button style */
+/*! Login form login button hover style */
+/*!
+Register Page
+*/
+/*! Register form background */
+/*! Register form title font color */
+/*! Register form register button style */
+/*! Register form register button hover style */
+/*! Register form cancel button style */
+/*! Register form cancel button hover style */
+/*! 
+Recovery Page
+*/
+/*! Recovery form background */
+/*! Recovery form title font color */
+/*! Recovery form recovery button style */
+/*! Recovery form recovery button hover style */
+/*! 
+Contact Page
+*/
+/*! Contact form background */
+/*! Contact form title font color */
+/*! Contact form send button style */
+/*! Contact form send button hover style */
+/*! Contact form cancel button style */
+/*! Contact form send cancel hover style */
 html,
 body {
   height: 100%;
@@ -139,7 +190,7 @@ h4 {
     bottom: 4px;
   }
 }
-.contact-box-shadow {
+.contact-box-shadow, .contact-user-form {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
@@ -185,7 +236,7 @@ h4 {
 }
 
 .send-btn {
-  width: 100%;
+  width: 50%;
   background: #FFF;
   color: #FF3366;
   border: 1px solid #FF3366;
@@ -196,9 +247,21 @@ h4 {
   border: 1px solid #FF3366;
 }
 
+.clear-form-btn {
+  width: 100%;
+  background: #FFF;
+  color: #1DB0B5;
+  border: 1px solid #1DB0B5;
+}
+.clear-form-btn:hover, .clear-form-btn:focus {
+  background: #1DB0B5;
+  color: #FFF;
+  border: 1px solid #1DB0B5;
+}
+
 .contact-text {
   font-size: 0.85rem;
-  padding: 1rem 0;
+  padding-bottom: 1rem;
 }
 
 .box-shadow, .login-user-form {
@@ -337,7 +400,7 @@ small {
   font-size: 0.75rem;
 }
 
-.recovery-box-shadow, .recovery-user-form, .contact-user-form {
+.recovery-box-shadow, .recovery-user-form {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
@@ -602,11 +665,11 @@ small {
     text-align: left;
   }
 }
-.map-image {
+.map-container {
   background-image: url("/static/images/Backgrounds/google-map-bg.png");
   background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
-  opacity: 0.5;
 }
 
 @media screen and (min-height: 983px) and (min-width: 1020px) {
