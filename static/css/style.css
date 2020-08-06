@@ -231,15 +231,19 @@ h4 {
   margin-top: 0;
 }
 
-.send-button {
+.contact-form-buttons {
   margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .send-btn {
-  width: 50%;
+  width: 100px;
+  flex-direction: flex-end;
   background: #FFF;
   color: #FF3366;
   border: 1px solid #FF3366;
+  order: 2;
 }
 .send-btn:hover, .send-btn:focus {
   background: #FF3366;
@@ -248,10 +252,11 @@ h4 {
 }
 
 .clear-form-btn {
-  width: 100%;
+  width: 100px;
   background: #FFF;
   color: #1DB0B5;
   border: 1px solid #1DB0B5;
+  order: 1;
 }
 .clear-form-btn:hover, .clear-form-btn:focus {
   background: #1DB0B5;

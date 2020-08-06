@@ -46,15 +46,19 @@
 }
 
 // recovery button
-.send-button {
+.contact-form-buttons {
     margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .send-btn {
-    width: 50%;
+    width: 100px;
+    flex-direction: flex-end;
     background: $send-button-bg;
     color: $send-button-color;
     border: 1px solid $send-button-border-color;
+    order: 2;
 
     &:hover,
     &:focus {
@@ -65,10 +69,11 @@
 }
 
 .clear-form-btn {
-    width: 100%;
+    width: 100px;
     background: $clear-form-button-bg;
     color: $clear-form-button-color;
     border: 1px solid $clear-form-button-border-color;
+    order: 1;
 
     &:hover,
     &:focus {
