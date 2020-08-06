@@ -1,0 +1,24 @@
+$a: 100%;
+$b: 360px;
+@media screen and (min-height: 983px) {
+    @media screen and (min-width: 1020px) {
+        #contact-page {
+            .main-container {
+                height: calc(#{$a} - #{$b});
+                padding-top: 2rem;
+            }
+            .contact-flex {
+                display: flex;
+                justify-content: center;
+            }
+            .contact-form {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+            footer {
+                position: fixed;
+                bottom: 0;
+            }
+        }
+    }
+}
