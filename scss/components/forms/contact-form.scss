@@ -15,6 +15,10 @@
     .form-container {
         margin: 0 !important;
     }
+    
+    form {
+        padding: 1rem;
+    }
 }
 
 .contact-flex-center {
@@ -23,31 +27,35 @@
 }
 
 .contact-user-form {
-    height: 600px;
+    height: auto;
     width: 600px;
     margin-top: auto;
     margin-bottom: auto;
     background: $contact-form-bg;
     position: relative;
     flex-direction: column;
-    padding: 10px;
     @extend .contact-box-shadow;
     border-radius: 5px;
 }
 
-// recovery form title
+// form title
 .contact-form-title {
     color: $contact-form-title;
 }
+
+// p text
+.contact-text {
+    font-size: 0.85rem;
+    padding-bottom: 1rem;
+}
+
 
 // userform fields
 .contact-form-container {
     margin-top: 0;
 }
 
-// recovery button
 .contact-form-buttons {
-    margin-bottom: 0;
     display: flex;
     justify-content: space-between;
 }
@@ -81,10 +89,4 @@
         color: $clear-form-button-color-hv;
         border: 1px solid $clear-form-button-border-color-hv;
     }
-}
-
-// recovery sample text
-.contact-text {
-    font-size: 0.85rem;
-    padding-bottom: 1rem;
 }

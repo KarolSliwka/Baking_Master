@@ -2,36 +2,33 @@
 <h2 class="hidden">Contact Form</h2>
 <div class="contact-form">
     <div class="contact-user-form">
-        <!-- Form container -->
-        <div class="form-container">
-            <!-- Form -->
-            <form>
-                <!-- Register form title -->
-                <div class="form-group">
-                    <h3 class="contact-form-title">Send us a Message</h3>
-                    <p class="contact-text">Feel free to contact us. We will try to get back to you ASAP but.., you know COVID-19 also attacked our servers.. hehe. We're here for you 24h/6 days a week.</p>
-                </div>
-                <!-- Name input box -->
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="name" class="form-control" id="contact-name" aria-describedby="namelHelp" placeholder="Enter name">
-                </div>
-                <!-- Email input box -->
-                <div class="form-group">
-                    <label>Email address</label>
-                    <input type="email" class="form-control" id="contact-email" aria-describedby="emailHelp" placeholder="Enter email">
-                </div>
-                <!-- Text area input -->
-                <div class="form-group">
-                    <label>Your message</label>
-                    <textarea class="form-control" id="contact-message" rows="5" placeholder="..."></textarea>
-                </div>
-                <!-- Login button -->
-                <div class="form-group contact-form-buttons">
-                    <button type="button" name="button" class="btn send-btn">Send</button>
-                    <button type="button" name="button" class="btn clear-form-btn">Clear form</button>
-                </div>
-            </form>
-        </div>
+        <!-- Form -->
+        <form id="contact-form" name="contact-form" method="POST">
+            <!-- Register form title -->
+            <div class="form-group">
+                <h3 class="contact-form-title">Send us a Message</h3>
+                <p class="contact-text">Feel free to contact us. We will try to get back to you ASAP but.., you know COVID-19 also attacked our servers.. hehe. We're here for you 24h/6 days a week.</p>
+            </div>
+            <!-- Name input box -->
+            <div class="form-group">
+                <label>Name</label>
+                <input type="name" class="form-control" id="contact-name" aria-describedby="namelHelp" placeholder="Enter name">
+            </div>
+            <!-- Email input box -->
+            <div class="form-group">
+                <label>Email address</label>
+                <input type="email" class="form-control" id="contact-email" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <!-- Text area input -->
+            <div class="form-group">
+                <label>Your message</label>
+                <textarea class="form-control" id="contact-message" rows="5" placeholder="..."></textarea>
+            </div>
+            <!-- Login button -->
+            <div class="form-group contact-form-buttons">
+                <button type="button" name="button" class="btn send-btn" id="send-contact-form">Send</button>
+                <button type="button" name="button" class="btn clear-form-btn" id="clear-contact-form">Clear form</button>
+            </div>
+        </form>
     </div>
 </div>
