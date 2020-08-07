@@ -260,12 +260,12 @@ form p {
 .login-form {
   padding-top: 150px;
 }
+.login-form form {
+  margin-top: 40px;
+}
 
 .main-form-container {
   width: 350px;
-}
-.main-form-container form {
-  margin-top: 40px;
 }
 
 .brand-logo-container {
