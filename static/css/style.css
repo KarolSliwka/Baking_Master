@@ -245,16 +245,23 @@ form p {
 }
 
 .contact-form {
-  padding-top: 150px;
+  padding-top: 100px;
+  padding-bottom: 40px;
 }
-
-.main-form-container {
+.contact-form .main-form-container {
   width: 600px;
 }
 
 .contact-form-buttons {
   display: flex;
   justify-content: space-between;
+}
+.contact-form-buttons .btn {
+  width: 100px;
+}
+
+.main-button {
+  order: 2;
 }
 
 .login-form {
@@ -362,6 +369,7 @@ form p {
 .colored-footer {
   background-color: #FFF;
   margin-bottom: 20px;
+  padding: 1rem 2rem;
 }
 
 .footer-about-section {
@@ -492,7 +500,7 @@ form p {
   width: 100%;
 }
 
-@media screen and (min-height: 983px) and (min-width: 1020px) {
+@media screen and (min-height: 1120px) and (min-width: 1020px) {
   #contact-page .main-container {
     height: calc(100% - 360px);
     padding-top: 2rem;

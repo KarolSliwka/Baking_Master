@@ -1,13 +1,21 @@
 // main login form style
 .contact-form {
-    padding-top: 150px;
-}
-
-.main-form-container {
-    width: 600px;
+    padding-top: 100px;
+    padding-bottom: 40px;
+    .main-form-container {
+        width: 600px;
+    }
 }
 
 .contact-form-buttons {
     display: flex;
     justify-content: space-between;
+
+    .btn {
+        width: 100px;
+    }
+}
+
+.main-button {
+    order: 2;
 }
