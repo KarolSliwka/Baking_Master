@@ -27,6 +27,11 @@ h4 {
     padding-top: 20px;
 }
 
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
 .hr-line {
     height: 1px;
     width: 80%;
@@ -38,5 +43,5 @@ h4 {
 
 // footer height
 :root {
-  --footer-main-height: 360px;
+  --footer-main-height: 300px;
 }
