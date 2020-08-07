@@ -1,15 +1,7 @@
 .register-form {
     padding-top: 100px;
 }
-.register-form-container {
-    height: auto;
+.main-form-container {
     width: 350px;
-    margin-top: auto;
-    margin-bottom: auto;
-    background: $form-bg;
-    position: relative;
-    flex-direction: column;
-    @extend .form-shadow;
-    border-radius: 5px;
-    padding: 2rem 1rem;
+
 }

@@ -4,6 +4,20 @@ form {
     }
 }
 
+.main-form-container {
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: $form-bg;
+    position: relative;
+    flex-direction: column;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+    -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+    border-radius: 5px;
+    padding: 2rem 1rem;
+}
+
 .form-flex {
     display: flex;
     justify-content: center;
@@ -40,12 +54,6 @@ form {
         color: $second-button-color-hv;
         border: 1px solid $second-button-border-color-hv;
     }
-}
-
-.form-shadow {
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-    -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
 }
 
 .form-group {

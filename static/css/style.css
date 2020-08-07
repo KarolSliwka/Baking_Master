@@ -180,6 +180,20 @@ form p {
   font-size: 0.85rem;
 }
 
+.main-form-container {
+  height: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #FFF;
+  position: relative;
+  flex-direction: column;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+  border-radius: 5px;
+  padding: 2rem 1rem;
+}
+
 .form-flex {
   display: flex;
   justify-content: center;
@@ -214,12 +228,6 @@ form p {
   border: 1px solid #1DB0B5;
 }
 
-.form-shadow, .register-form-container, .recovery-user-form, .login-form-container, .contact-user-form {
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-  -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-}
-
 .form-group {
   padding: 0 1rem;
 }
@@ -237,31 +245,11 @@ form p {
 }
 
 .contact-form {
-  display: flex;
-  justify-content: center;
-  padding-top: 100px;
-  padding-bottom: 10px;
-}
-.contact-form .form-container {
-  margin: 0 !important;
-}
-.contact-form form {
-  padding: 1rem;
+  padding-top: 150px;
 }
 
-.contact-user-form {
-  height: auto;
+.main-form-container {
   width: 600px;
-  margin-top: auto;
-  margin-bottom: auto;
-  background: #FFF;
-  position: relative;
-  flex-direction: column;
-  border-radius: 5px;
-}
-
-.contact-form-container {
-  margin-top: 0;
 }
 
 .contact-form-buttons {
@@ -273,18 +261,10 @@ form p {
   padding-top: 150px;
 }
 
-.login-form-container {
-  height: auto;
+.main-form-container {
   width: 350px;
-  margin-top: auto;
-  margin-bottom: auto;
-  background: #FFF;
-  position: relative;
-  flex-direction: column;
-  border-radius: 5px;
-  padding: 2rem 1rem;
 }
-.login-form-container form {
+.main-form-container form {
   margin-top: 40px;
 }
 
@@ -357,32 +337,16 @@ form p {
   padding-top: 110px;
 }
 
-.recovery-user-form {
-  height: auto;
+.main-form-container {
   width: 350px;
-  margin-top: auto;
-  margin-bottom: auto;
-  background: #FFF;
-  position: relative;
-  flex-direction: column;
-  padding: 10px;
-  border-radius: 5px;
 }
 
 .register-form {
   padding-top: 100px;
 }
 
-.register-form-container {
-  height: auto;
+.main-form-container {
   width: 350px;
-  margin-top: auto;
-  margin-bottom: auto;
-  background: #FFF;
-  position: relative;
-  flex-direction: column;
-  border-radius: 5px;
-  padding: 2rem 1rem;
 }
 
 .main-footer {

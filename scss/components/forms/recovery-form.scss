@@ -2,15 +2,6 @@
     padding-top: 110px;
 }
 
-.recovery-user-form {
-    height: auto;
+.main-form-container {
     width: 350px;
-    margin-top: auto;
-    margin-bottom: auto;
-    background: $form-bg;
-    position: relative;
-    flex-direction: column;
-    padding: 10px;
-    @extend .form-shadow;
-    border-radius: 5px;
 }
