@@ -10,21 +10,21 @@
             <!-- Name input box -->
             <div class="form-group">
                 <label>Name</label>
-                <input type="name" class="form-control" id="contact-name" aria-describedby="namelHelp" placeholder="Enter name">
+                <input type="name" class="form-control" id="contact-name" aria-describedby="namelHelp" placeholder="Enter name" required>
             </div>
             <!-- Email input box -->
             <div class="form-group">
                 <label>Email address</label>
-                <input type="email" class="form-control" id="contact-email" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email" class="form-control" id="contact-email" aria-describedby="emailHelp" placeholder="Enter email" required>
             </div>
             <!-- Text area input -->
             <div class="form-group">
                 <label>Your message</label>
-                <textarea class="form-control" id="contact-message" rows="5" placeholder="..."></textarea>
+                <textarea class="form-control" id="contact-message" rows="5" placeholder="..." required></textarea>
             </div>
             <!-- Login button -->
             <div class="form-group contact-form-buttons">
-                <button type="button" name="button" class="btn main-button" id="send-contact-form">Send</button>
+                <button type="submit" name="button" class="btn main-button" id="send-contact-form">Send</button>
                 <button type="button" name="button" class="btn second-button" id="clear-contact-form">Clear form</button>
             </div>
         </form>
