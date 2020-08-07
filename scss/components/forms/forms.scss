@@ -11,9 +11,9 @@ form {
     background: $form-bg;
     position: relative;
     flex-direction: column;
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-    -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     padding: 2rem 1rem;
 }
