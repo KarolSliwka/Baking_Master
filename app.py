@@ -6,47 +6,59 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
+
+# Home page
 @app.route('/')
 @app.route('/home')
 def home():
     return render_template('layout/base.html', body_id='home-page')
 
+# All Recieps page
 @app.route('/recipes')
 def recipes():
     return  render_template('pages/recipes.html', body_id='recipes-page')
     
+# Favourites Page
 @app.route('/favouries')
 def favourites():
     return render_template('pages/favourites.html', body_id='favourites-page')
     
+# Search Page
 @app.route('/search-results')
 def search_results():
     return render_template('pages/search-results.html', body_id='search-page')
 
+# Contact Page
 @app.route('/contact')
 def contact():
     return render_template('pages/contact.html', body_id='contact-page')
-    
+ 
+# Login Page   
 @app.route('/login')
 def login():
     return render_template('pages/login.html', body_id='login-page')
-    
+   
+# Register Page 
 @app.route('/register')
 def register():
     return render_template('pages/register.html', body_id='register-page')
     
+# Password Recovery Page
 @app.route('/recovery')
 def recovery():
     return render_template('pages/recovery.html', body_id='recovery-page')
 
+# About Page
 @app.route('/about')
 def about():
     return  render_template('pages/about.html', body_id='about-page')
     
+# Site Map Page
 @app.route('/site-map')
 def site_map():
     return  render_template('pages/site-map.html', body_id='site-map-page')
-
+    
+# Equipment Page
 @app.route('/equipment')
 def equipment():
     return  render_template('pages/equipment.html', body_id='equipment-page')
