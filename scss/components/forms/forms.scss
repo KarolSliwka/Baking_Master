@@ -1,7 +1,53 @@
-.flex-center {}
+.form-second-title {
+    color: $second-form-title;
+}
 
-.from-second-title {}
+.main-button {
+    width: 100%;
+    background: $main-button-bg;
+    color: $main-button-color;
+    border: 1px solid $main-button-border-color;
 
-.main-button {}
+    &:hover,
+    &:focus {
+        background: $main-button-bg-hv;
+        color: $main-button-color-hv;
+        border: 1px solid $main-button-border-color-hv;
+    }
+}
 
-.second-button {}
+.second-button {
+    width: 100%;
+    background: $second-button-bg;
+    color: $second-button-color;
+    border: 1px solid $second-button-border-color;
+
+    &:hover,
+    &:focus {
+        background: $second-button-bg-hv;
+        color: $second-button-color-hv;
+        border: 1px solid $second-button-border-color-hv;
+    }
+}
+
+.form-shadow {
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+    -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+    padding: 0 1rem;
+}
+
+.form-control {
+    color: $input-box-color;
+    box-shadow: none !important;
+}
+
+.form-control:focus,
+:active {
+    box-shadow: none !important;
+    border-color: #CCC;
+    outline: none !important;
+}

@@ -1,27 +1,12 @@
-// userform box shadow
-.box-shadow {
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-    -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-}
-
-// main login form style
-.login-form {
-    display: flex;
-    justify-content: center;
-    padding-top: 150px;
-    padding-bottom: 10px;
-}
-
-.login-user-form {
+.login-form-container {
     height: auto;
     width: 350px;
     margin-top: auto;
     margin-bottom: auto;
-    background: $login-form-bg;
+    background: $form-bg;
     position: relative;
     flex-direction: column;
-    @extend .box-shadow;
+    @extend .form-shadow;
     border-radius: 5px;
     padding: 2rem 1rem;
     
@@ -30,7 +15,6 @@
     }
 }
 
-// fancy top logo
 .brand-logo-container {
     position: absolute;
     height: 110px;
@@ -45,7 +29,6 @@
     }
 }
 
-// bootom half-circle
 .half-circle {
     position: absolute;
     top: -55px;
@@ -70,42 +53,7 @@
     border: 2px solid #FFF;
 }
 
-.form-group {
-    padding: 0 1rem;
-}
-
-.form-control {
-    color: $input-box-color;
-    box-shadow: none !important;
-}
-
-.form-control:focus,
-:active {
-    box-shadow: none !important;
-    border-color: #CCC;
-    outline: none !important;
-}
-
-.login-button {
-    padding-top: 10px;
-}
-
-.login-btn {
-    width: 100%;
-    background: $login-button-bg;
-    color: $login-button-color;
-    border: 1px solid $login-button-border-color;
-
-    &:hover,
-    &:focus {
-        background: $login-button-bg-hv;
-        color: $login-button-color-hv;
-        border: 1px solid $login-button-border-color-hv;
-    }
-}
-
-// bottom links
-.recovery-container {
+.login-additional-links {
     padding: 0rem 1rem;
     font-size: 0.85rem;
     text-align: left;
@@ -131,9 +79,4 @@
         color: $forgot-link-color;
         opacity: 1;
     }
-}
-
-.small,
-small {
-    font-size: 0.75rem;
 }

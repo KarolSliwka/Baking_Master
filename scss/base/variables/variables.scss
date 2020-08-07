@@ -39,64 +39,50 @@ All user forms
 /*! Userform input boxes font color */
 $input-box-color: #ABABAB;
 
+
+
+
+
 /*! 
-Login Page
+Forms
 */
 /*! Login form background  */
-$login-form-bg: #FFF;
+$form-bg: #FFF;
+
+
+
+
+$second-form-title:#FF3366;
+
 $login-form-circle-bg: #FF3366;
+
 /*! Login form recovery and sign-up links color */
 $recovery-text-color: #000;
 $sing-up-link-color: #FF3366;
 $forgot-link-color: #1DB0B5;
-/*! Login form login button style */
-$login-button-bg: #FFF;
-$login-button-color: #FF3366;
-$login-button-border-color: #FF3366;
-/*! Login form login button hover style */
-$login-button-bg-hv: #FF3366;
-$login-button-color-hv: #FFF;
-$login-button-border-color-hv: #FF3366;
 
-/*!
-Register Page
-*/
-/*! Register form background */
-$register-form-bg: #FFF;
-/*! Register form title font color */
-$register-form-title:#FF3366;
-/*! Register form register button style */
-$register-button-bg: #FFF;
-$register-button-color: #FF3366;
-$register-button-border-color: #FF3366;
-/*! Register form register button hover style */
-$register-button-bg-hv: #FF3366;
-$register-button-color-hv: #FFF;
-$register-button-border-color-hv: #FF3366;
-/*! Register form cancel button style */
-$cancel-button-bg: #FFF;
-$cancel-button-color: #1DB0B5;
-$cancel-button-border-color: #1DB0B5;
-/*! Register form cancel button hover style */
-$cancel-button-bg-hv: #1DB0B5;
-$cancel-button-color-hv: #FFF;
-$cancel-button-border-color-hv: #1DB0B5;
 
-/*! 
-Recovery Page
-*/
-/*! Recovery form background */
-$recovery-form-bg: #FFF;
-/*! Recovery form title font color */
-$recovery-form-title:#FF3366;
-/*! Recovery form recovery button style */
-$recovery-button-bg: #FFF;
-$recovery-button-color: #FF3366;
-$recovery-button-border-color: #FF3366;
-/*! Recovery form recovery button hover style */
-$recovery-button-bg-hv: #FF3366;
-$recovery-button-color-hv: #FFF;
-$recovery-button-border-color-hv: #FF3366;
+
+
+$main-button-bg: #FFF;
+$main-button-color: #FF3366;
+$main-button-border-color: #FF3366;
+
+$main-button-bg-hv: #FF3366;
+$main-button-color-hv: #FFF;
+$main-button-border-color-hv: #FF3366;
+
+
+$second-button-bg: #FFF;
+$second-button-color: #1DB0B5;
+$second-button-border-color: #1DB0B5;
+
+$second-button-bg-hv: #1DB0B5;
+$second-button-color-hv: #FFF;
+$second-button-border-color-hv: #1DB0B5;
+
+
+
 
 /*! 
 Contact Page

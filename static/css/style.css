@@ -19,28 +19,10 @@ All user forms
 */
 /*! Userform input boxes font color */
 /*! 
-Login Page
+Forms
 */
 /*! Login form background  */
 /*! Login form recovery and sign-up links color */
-/*! Login form login button style */
-/*! Login form login button hover style */
-/*!
-Register Page
-*/
-/*! Register form background */
-/*! Register form title font color */
-/*! Register form register button style */
-/*! Register form register button hover style */
-/*! Register form cancel button style */
-/*! Register form cancel button hover style */
-/*! 
-Recovery Page
-*/
-/*! Recovery form background */
-/*! Recovery form title font color */
-/*! Recovery form recovery button style */
-/*! Recovery form recovery button hover style */
 /*! 
 Contact Page
 */
@@ -69,6 +51,11 @@ body {
 
 h4 {
   color: #FF3366;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
 }
 
 .container {
@@ -195,6 +182,56 @@ h4 {
     bottom: 4px;
   }
 }
+.form-second-title {
+  color: #FF3366;
+}
+
+.main-button {
+  width: 100%;
+  background: #FFF;
+  color: #FF3366;
+  border: 1px solid #FF3366;
+}
+.main-button:hover, .main-button:focus {
+  background: #FF3366;
+  color: #FFF;
+  border: 1px solid #FF3366;
+}
+
+.second-button {
+  width: 100%;
+  background: #FFF;
+  color: #1DB0B5;
+  border: 1px solid #1DB0B5;
+}
+.second-button:hover, .second-button:focus {
+  background: #1DB0B5;
+  color: #FFF;
+  border: 1px solid #1DB0B5;
+}
+
+.form-shadow, .register-user-form, .recovery-user-form, .login-form-container {
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+  padding: 0 1rem;
+}
+
+.form-control {
+  color: #ABABAB;
+  box-shadow: none !important;
+}
+
+.form-control:focus,
+:active {
+  box-shadow: none !important;
+  border-color: #CCC;
+  outline: none !important;
+}
+
 .contact-box-shadow, .contact-user-form {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
@@ -270,20 +307,7 @@ h4 {
   border: 1px solid #1DB0B5;
 }
 
-.box-shadow, .login-user-form {
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-  -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-}
-
-.login-form {
-  display: flex;
-  justify-content: center;
-  padding-top: 150px;
-  padding-bottom: 10px;
-}
-
-.login-user-form {
+.login-form-container {
   height: auto;
   width: 350px;
   margin-top: auto;
@@ -294,7 +318,7 @@ h4 {
   border-radius: 5px;
   padding: 2rem 1rem;
 }
-.login-user-form form {
+.login-form-container form {
   margin-top: 50px;
 }
 
@@ -336,45 +360,13 @@ h4 {
   border: 2px solid #FFF;
 }
 
-.form-group {
-  padding: 0 1rem;
-}
-
-.form-control {
-  color: #ABABAB;
-  box-shadow: none !important;
-}
-
-.form-control:focus,
-:active {
-  box-shadow: none !important;
-  border-color: #CCC;
-  outline: none !important;
-}
-
-.login-button {
-  padding-top: 10px;
-}
-
-.login-btn {
-  width: 100%;
-  background: #FFF;
-  color: #FF3366;
-  border: 1px solid #FF3366;
-}
-.login-btn:hover, .login-btn:focus {
-  background: #FF3366;
-  color: #FFF;
-  border: 1px solid #FF3366;
-}
-
-.recovery-container {
+.login-additional-links {
   padding: 0rem 1rem;
   font-size: 0.85rem;
   text-align: left;
   color: #000;
 }
-.recovery-container a {
+.login-additional-links a {
   text-decoration: none;
 }
 
@@ -393,17 +385,6 @@ h4 {
 .forgot-password:hover {
   color: #1DB0B5;
   opacity: 1;
-}
-
-.small,
-small {
-  font-size: 0.75rem;
-}
-
-.recovery-box-shadow, .recovery-user-form {
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-  -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
 }
 
 .recovery-form {
@@ -425,41 +406,6 @@ small {
   border-radius: 5px;
 }
 
-.recovery-form-title {
-  color: #FF3366;
-}
-
-.recovery-form-container {
-  margin-top: 0;
-}
-
-.recovery-button {
-  margin-bottom: 0;
-}
-
-.recovery-btn {
-  width: 100%;
-  background: #FFF;
-  color: #FF3366;
-  border: 1px solid #FF3366;
-}
-.recovery-btn:hover, .recovery-btn:focus {
-  background: #FF3366;
-  color: #FFF;
-  border: 1px solid #FF3366;
-}
-
-.recovery-text {
-  font-size: 0.85rem;
-  padding: 1rem 0;
-}
-
-.register-box-shadow, .register-user-form {
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-  -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-}
-
 .register-form {
   display: flex;
   justify-content: center;
@@ -477,46 +423,6 @@ small {
   flex-direction: column;
   padding: 10px;
   border-radius: 5px;
-}
-
-.register-form-title {
-  color: #FF3366;
-}
-
-.register-form-container {
-  margin-top: 0;
-}
-
-.register-button {
-  margin-bottom: 0;
-}
-
-.register-btn {
-  width: 100%;
-  background: #FFF;
-  color: #FF3366;
-  border: 1px solid #FF3366;
-}
-.register-btn:hover, .register-btn:focus {
-  background: #FF3366;
-  color: #FFF;
-  border: 1px solid #FF3366;
-}
-
-.cancel-button {
-  padding-top: 10px;
-}
-
-.cancel-btn {
-  width: 100%;
-  background: #FFF;
-  color: #1DB0B5;
-  border: 1px solid #1DB0B5;
-}
-.cancel-btn:hover, .cancel-btn:focus {
-  background: #1DB0B5;
-  color: #FFF;
-  border: 1px solid #1DB0B5;
 }
 
 .main-footer {
