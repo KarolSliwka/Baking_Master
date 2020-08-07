@@ -310,6 +310,13 @@ h4 {
   border: 1px solid #1DB0B5;
 }
 
+.login-form {
+  display: flex;
+  justify-content: center;
+  padding-top: 150px;
+  padding-bottom: 10px;
+}
+
 .login-form-container {
   height: auto;
   width: 350px;
