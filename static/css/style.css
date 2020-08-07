@@ -564,7 +564,7 @@ form p {
     bottom: 0;
   }
 }
-@media screen and (min-height: 930px) and (min-width: 1020px) {
+@media screen and (min-height: 850px) and (min-width: 1020px) {
   #recovery-page .main-container {
     height: calc(100% - 360px);
     padding-top: 2rem;
