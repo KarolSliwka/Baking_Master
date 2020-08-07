@@ -89,7 +89,7 @@ h4 {
 }
 
 :root {
-  --footer-main-height: 300px;
+  --footer-main-height: 360px;
 }
 
 .navbar {
@@ -536,7 +536,7 @@ small {
 }
 
 .main-footer {
-  min-height: var(--hex-parent-height);
+  min-height: var(--footer-main-height);
   width: 100%;
   display: flex;
   flex-direction: column;
