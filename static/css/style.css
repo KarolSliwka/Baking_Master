@@ -185,6 +185,12 @@ h4 {
     bottom: 4px;
   }
 }
+.form-flex {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
 .form-second-title {
   color: #FF3366;
 }
@@ -213,7 +219,7 @@ h4 {
   border: 1px solid #1DB0B5;
 }
 
-.form-shadow, .register-user-form, .recovery-user-form, .login-form-container {
+.form-shadow, .register-form-container, .recovery-user-form, .login-form-container {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
@@ -311,10 +317,7 @@ h4 {
 }
 
 .login-form {
-  display: flex;
-  justify-content: center;
   padding-top: 150px;
-  padding-bottom: 10px;
 }
 
 .login-form-container {
@@ -417,22 +420,19 @@ h4 {
 }
 
 .register-form {
-  display: flex;
-  justify-content: center;
   padding-top: 100px;
-  padding-bottom: 10px;
 }
 
-.register-user-form {
-  height: 450px;
+.register-form-container {
+  height: auto;
   width: 350px;
   margin-top: auto;
   margin-bottom: auto;
   background: #FFF;
   position: relative;
   flex-direction: column;
-  padding: 10px;
   border-radius: 5px;
+  padding: 2rem 1rem;
 }
 
 .main-footer {

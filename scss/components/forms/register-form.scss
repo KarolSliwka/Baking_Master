@@ -1,20 +1,15 @@
-// main login form style
 .register-form {
-    display: flex;
-    justify-content: center;
     padding-top: 100px;
-    padding-bottom: 10px;
 }
-
-.register-user-form {
-    height: 450px;
+.register-form-container {
+    height: auto;
     width: 350px;
     margin-top: auto;
     margin-bottom: auto;
     background: $form-bg;
     position: relative;
     flex-direction: column;
-    padding: 10px;
     @extend .form-shadow;
     border-radius: 5px;
+    padding: 2rem 1rem;
 }
