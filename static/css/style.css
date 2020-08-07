@@ -26,15 +26,6 @@ All user forms
 /*! second button style */
 /*! second button hover style */
 /*! Login form fancy circle background color */
-/*! 
-Contact Page
-*/
-/*! Contact form background */
-/*! Contact form title font color */
-/*! Contact form send button style */
-/*! Contact form send button hover style */
-/*! Contact form cancel button style */
-/*! Contact form send cancel hover style */
 html,
 body {
   height: 100%;
@@ -185,6 +176,10 @@ h4 {
     bottom: 4px;
   }
 }
+form p {
+  font-size: 0.85rem;
+}
+
 .form-flex {
   display: flex;
   justify-content: center;
@@ -219,7 +214,7 @@ h4 {
   border: 1px solid #1DB0B5;
 }
 
-.form-shadow, .register-form-container, .recovery-user-form, .login-form-container {
+.form-shadow, .register-form-container, .recovery-user-form, .login-form-container, .contact-user-form {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
   -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
@@ -239,12 +234,6 @@ h4 {
   box-shadow: none !important;
   border-color: #CCC;
   outline: none !important;
-}
-
-.contact-box-shadow, .contact-user-form {
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
-  -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.06);
 }
 
 .contact-form {
@@ -271,15 +260,6 @@ h4 {
   border-radius: 5px;
 }
 
-.contact-form-title {
-  color: #FF3366;
-}
-
-.contact-text {
-  font-size: 0.85rem;
-  padding-bottom: 1rem;
-}
-
 .contact-form-container {
   margin-top: 0;
 }
@@ -287,33 +267,6 @@ h4 {
 .contact-form-buttons {
   display: flex;
   justify-content: space-between;
-}
-
-.send-btn {
-  width: 100px;
-  flex-direction: flex-end;
-  background: #FFF;
-  color: #FF3366;
-  border: 1px solid #FF3366;
-  order: 2;
-}
-.send-btn:hover, .send-btn:focus {
-  background: #FF3366;
-  color: #FFF;
-  border: 1px solid #FF3366;
-}
-
-.clear-form-btn {
-  width: 100px;
-  background: #FFF;
-  color: #1DB0B5;
-  border: 1px solid #1DB0B5;
-  order: 1;
-}
-.clear-form-btn:hover, .clear-form-btn:focus {
-  background: #1DB0B5;
-  color: #FFF;
-  border: 1px solid #1DB0B5;
 }
 
 .login-form {
@@ -401,14 +354,11 @@ h4 {
 }
 
 .recovery-form {
-  display: flex;
-  justify-content: center;
   padding-top: 110px;
-  padding-bottom: 10px;
 }
 
 .recovery-user-form {
-  height: 400px;
+  height: auto;
   width: 350px;
   margin-top: auto;
   margin-bottom: auto;
