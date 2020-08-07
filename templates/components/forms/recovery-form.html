@@ -1,33 +1,29 @@
 <!-- Main login container -->
 <h2 class="hidden">Recovery Form</h2>
-<div class="recovery-form">
+<div class="recovery-form flex-form">
     <div class="recovery-user-form">
         <!-- Form container -->
-        <div class="recovery-form-container">
-            <!-- Form -->
-            <form id="recovery-form" name="recovery-form" method="POST">
-                <!-- Register form title -->
-                <div class="form-group">
-                    <h3 class="recovery-form-title">Password recovery</h3>
-                    <p class="recovery-text">Forgot your password ? Don't worry, simply type your email address and we will send you your password back.</p>
-                </div>
-                <!-- Email input box -->
-                <div class="form-group">
-                    <label>Email address</label>
-                    <input type="email" class="form-control" id="recovery-email" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <!-- Register button -->
-                <div class="form-group recovery-button">
-                    <button type="button" name="button" class="btn recovery-btn" id="recovery-button">Recover</button>
-                </div>
-                <!-- Cancel button -->
-                <div class="form-group cancel-button">
-                    <a href="{{url_for('login')}}">
-                        <button type="button" name="button" class="btn cancel-btn" id="recovery-cancel-button">Cancel</button>
-                    </a>
-                </div>
-            </form>
-        </div>
+        <form id="recovery-form" name="recovery-form" method="POST">
+            <!-- Register form title -->
+            <div class="form-group">
+                <h3 class="form-second-title ">Password recovery</h3>
+                <p class="recovery-text">Forgot your password ? Don't worry, simply type your email address and we will send you your password back.</p>
+            </div>
+            <!-- Email input box -->
+            <div class="form-group">
+                <label>Email address</label>
+                <input type="email" class="form-control" id="recovery-email" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <!-- Register button -->
+            <div class="form-group">
+                <button type="button" name="button" class="btn main-button" id="recovery-button">Recover</button>
+            </div>
+            <!-- Cancel button -->
+            <div class="form-group">
+                <a href="{{url_for('login')}}">
+                    <button type="button" name="button" class="btn second-button" id="recovery-cancel-button">Cancel</button>
+                </a>
+            </div>
+        </form>
     </div>
 </div>
