@@ -13,6 +13,15 @@ app.config["MONGO_URI"] = os.getenv('MONGO_URI')
 app.secret_key = os.getenv('SECRET_KEY')
 mongo = PyMongo(app)
 
+# Flask email configuration
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USERNAME'] = os.getenv('EMAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.getenv('EMAIL_PASSWORD')
+mail = Mail(app)
+
+
 # Home page
 @app.route('/')
 @app.route('/home')
@@ -89,7 +98,29 @@ def recovery():
     """
     This function is checking information from database and sending recovered password to email provided in userform
     """
-    
+    if request.method == "POST":
+        users = mongo.db.Users
+        
+        """ Request information from user form """
+        req = request.form
+        
+        """ Get variable from user form"""
+        email = req.get('email')
+        
+        """ Check if users exist in databas """
+        current_user = users.find_one({'email': email})
+        if current_user is None:
+            
+            """ Insert one record to database """
+            users.find({
+                'email' : email
+            })
+            
+            print(users.find(password)
+            
+            flash('Your account was created successfully! Enjoy browsing our amazing recipes','success')
+            return render_template('pages/login.html', body_id='login-page', title='Sign In')
+        flash('This email account already exist in our records. Please use different email addres or recover your password','error')
     
     """ Return recovery template """
     return render_template('pages/recovery.html', body_id='recovery-page', title='Password recovery')
