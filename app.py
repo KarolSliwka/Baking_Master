@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'BakingMaster'
 app.config["MONGO_URI"] = os.getenv('MONGO_URI')
-app.secret_key = os.environ.get('SECRET_KEY')
+app.secret_key = os.getenv('SECRET_KEY')
 mongo = PyMongo(app)
 
 mongo = PyMongo(app)
