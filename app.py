@@ -8,7 +8,7 @@ from bson.objectid import ObjectId
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'BakingMaster'
-app.config["MONGO_URI"] = os.getenv('MONGO_URI')
+app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 
 mongo = PyMongo(app)
 
@@ -60,18 +60,21 @@ def register():
         name = req.get('name')
         email = req.get('email')
         password = req.get('password')
-        print(req)
+
+        """ check if users exist in databas """
+        current_user = users.find_one({'email': email})
+        if current_user is None:
         
-        """ insert one record to database """
-        users.insert_one({
-            'name' : name,
-            'email' : email,
-            'password' : password
-        })
-        
+            """ insert one record to database """
+            users.insert_one({
+                'name' : name,
+                'email' : email,
+                'password' : password
+            })
+            
     """ return register template """
     return render_template('pages/register.html', body_id='register-page')
-    
+
     
 # Password Recovery Page
 @app.route('/recovery')
