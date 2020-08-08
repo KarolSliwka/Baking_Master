@@ -2,6 +2,7 @@ import os
 import pymongo
 import bcrypt
 from flask import Flask, render_template, request, flash, session, redirect, url_for
+from flask_mail import Mail
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -20,7 +21,6 @@ app.config['MAIL_USE_SSL'] = True
 app.config['MAIL_USERNAME'] = os.getenv('EMAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.getenv('EMAIL_PASSWORD')
 mail = Mail(app)
-
 
 # Home page
 @app.route('/')
@@ -116,11 +116,10 @@ def recovery():
                 'email' : email
             })
             
-            print(users.find(password)
             
-            flash('Your account was created successfully! Enjoy browsing our amazing recipes','success')
-            return render_template('pages/login.html', body_id='login-page', title='Sign In')
-        flash('This email account already exist in our records. Please use different email addres or recover your password','error')
+            flash('Your password was send successfully! Check your mailbox','success')
+            return render_template('pages/recovery.html', body_id='login-page', title='Sign In')
+        flash("This email account doesn't exist is our database. Check email address and try once again.","error")
     
     """ Return recovery template """
     return render_template('pages/recovery.html', body_id='recovery-page', title='Password recovery')
