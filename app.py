@@ -7,27 +7,10 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
-MONGODB_URI = os.getenv("MONGO_URI")
-DBS_NAME = "BakingMaster"
-COLLECTION_NAME = "Users"
+app.config["MONGO_DBNAME"] = 'BakingMaster'
+app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 
-def mongo_connect(url):
-    try:
-        conn = pymongo.MongoClient(url)
-        print("Mongo is connected!")
-        return conn
-    except pymongo.errors.ConnectionFailure as e:
-        print("Could not connect to database: %s") %e
-        
-
-conn = mongo_connect(MONGODB_URI)        
-
-coll = conn[DBS_NAME][COLLECTION_NAME]
-
-documents = coll.find()
-
-for doc in documents:
-    print(doc)
+mongo = PyMongo(app)
 
 
 # Home page
@@ -62,9 +45,33 @@ def login():
     return render_template('pages/login.html', body_id='login-page')
    
 # Register Page 
-@app.route('/register')
+@app.route('/register', methods=["GET", "POST"])
 def register():
+    """
+    This function is rendering user registration template, when form is validated, new user is added into database.
+    """
+    
+    if request.method == "POST":
+        users = mongo.db.Users
+        
+        """ request information from user form """
+        req = request.form
+        
+        name = req.get('name')
+        email = req.get('email')
+        password = req.get('password')
+        print(req)
+        
+        """ insert one record to database """
+        users.insert_one({
+            'name' : name,
+            'email' : email,
+            'password' : password
+        })
+        
+    """ return register template """
     return render_template('pages/register.html', body_id='register-page')
+    
     
 # Password Recovery Page
 @app.route('/recovery')
