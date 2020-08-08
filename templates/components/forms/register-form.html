@@ -6,15 +6,21 @@
         <form id="register-form" name="register-form" action="{{ url_for('register') }}" method="POST">
             <!-- Register form title -->
             <div class="form-group">
-                <div class="form-error-message">
-                    <p>This is error message</p>
-                </div>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert-{{ category }}" role="alert">
+                        <p>{{ message }}</p>
+                    </div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
                 <h3 class="form-second-title">Register</h3>
                 <p>You are making your first step to become a Baking Master!</p>
 
             </div>
             <!-- Name input box -->
-            <div class="form-group" >
+            <div class="form-group">
                 <label for="name">Name</label>
                 <input type="name" class="form-control" name="name" aria-describedby="nameHelp" placeholder="Enter Name" required>
             </div>

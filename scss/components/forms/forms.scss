@@ -72,7 +72,7 @@ form {
     outline: none !important;
 }
 
-.form-error-message {
+.alert-error{
     height: 38px;
     width: 100%;
     border: 1px solid #FF3366;
@@ -88,8 +88,8 @@ form {
     }
 }
 
-.form-pass-message {
-    @extend .form-error-message;
+.alert-success {
+    @extend .alert-error;
     border: 1px solid #5aac17;
     background-color: rgba(230, 255, 204, 0.6);
 

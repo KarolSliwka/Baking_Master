@@ -244,7 +244,7 @@ form p {
   outline: none !important;
 }
 
-.form-error-message, .form-pass-message {
+.alert-error, .alert-success {
   height: 38px;
   width: 100%;
   border: 1px solid #FF3366;
@@ -252,18 +252,18 @@ form p {
   border-radius: 5px;
   text-align: center;
 }
-.form-error-message p, .form-pass-message p {
+.alert-error p, .alert-success p {
   padding: 0.5rem;
   font-size: 0.85rem;
   font-weight: 400;
   color: #FF3366;
 }
 
-.form-pass-message {
+.alert-success {
   border: 1px solid #5aac17;
   background-color: rgba(230, 255, 204, 0.6);
 }
-.form-pass-message p {
+.alert-success p {
   color: #5aac17;
 }
 

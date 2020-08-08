@@ -8,7 +8,9 @@ from bson.objectid import ObjectId
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'BakingMaster'
-app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
+app.config["MONGO_URI"] = os.getenv('MONGO_URI')
+app.secret_key = os.environ.get('SECRET_KEY')
+mongo = PyMongo(app)
 
 mongo = PyMongo(app)
 
@@ -72,11 +74,12 @@ def register():
                 'email' : email,
                 'password' : password
             })
-    
-        flash('This email account already exist in our records. Please use different email addres or recover your password.')
+            flash('Your account was created successfully! Enjoy browsing our amazing recipes', 'success')
+            return render_template('pages/login.html', body_id='login-page', title='Sign In')
+        flash('This email account already exist in our records. Please use different email addres or recover your password', 'error')
             
     """ Return register template """
-    return render_template('pages/register.html', body_id='register-page', title="Register account")
+    return render_template('pages/register.html', body_id='register-page', title='Register account')
 
     
 # Password Recovery Page
