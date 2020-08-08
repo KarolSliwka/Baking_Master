@@ -1,7 +1,7 @@
 import os
 import pymongo
 import bcrypt
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, request, flash, session, redirect, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -54,26 +54,29 @@ def register():
     if request.method == "POST":
         users = mongo.db.Users
         
-        """ request information from user form """
+        """ Request information from user form """
         req = request.form
         
+        """ Get all necessery variables from user form"""
         name = req.get('name')
         email = req.get('email')
         password = req.get('password')
-
-        """ check if users exist in databas """
+        
+        """ Check if users exist in databas """
         current_user = users.find_one({'email': email})
         if current_user is None:
-        
-            """ insert one record to database """
+            
+            """ Insert one record to database """
             users.insert_one({
                 'name' : name,
                 'email' : email,
                 'password' : password
             })
+    
+        flash('This email account already exist in our records. Please use different email addres or recover your password.')
             
-    """ return register template """
-    return render_template('pages/register.html', body_id='register-page')
+    """ Return register template """
+    return render_template('pages/register.html', body_id='register-page', title="Register account")
 
     
 # Password Recovery Page
