@@ -3,9 +3,12 @@
 <div class="register-form form-flex">
     <div class="main-form-container">
         <!-- Form -->
-        <form id="register-form" name="register-form" method="POST">
+        <form id="register-form" name="register-form" action="{{ url_for('register') }}" method="POST">
             <!-- Register form title -->
             <div class="form-group">
+                <div class="form-error-message">
+                    <p>This is error message</p>
+                </div>
                 <h3 class="form-second-title">Register</h3>
                 <p>You are making your first step to become a Baking Master!</p>
 

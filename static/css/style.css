@@ -244,6 +244,29 @@ form p {
   outline: none !important;
 }
 
+.form-error-message, .form-pass-message {
+  height: 38px;
+  width: 100%;
+  border: 1px solid #FF3366;
+  background-color: rgba(255, 172, 193, 0.6);
+  border-radius: 5px;
+  text-align: center;
+}
+.form-error-message p, .form-pass-message p {
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #FF3366;
+}
+
+.form-pass-message {
+  border: 1px solid #5aac17;
+  background-color: rgba(230, 255, 204, 0.6);
+}
+.form-pass-message p {
+  color: #5aac17;
+}
+
 .contact-form {
   padding-top: 100px;
   padding-bottom: 40px;
