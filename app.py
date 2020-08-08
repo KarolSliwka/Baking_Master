@@ -1,14 +1,16 @@
 import os
 import pymongo
+import bcrypt
 from flask import Flask, render_template, request, flash, session, redirect, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
+# Initilize connection
 app.config["MONGO_DBNAME"] = 'BakingMaster'
-app.config["MONGO_URI"] = os.getenv('MONGO_URI')
-app.secret_key = os.getenv('SECRET_KEY')
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
+app.secret_key = os.environ.get('SECRET_KEY')
 mongo = PyMongo(app)
 
 # Home page
