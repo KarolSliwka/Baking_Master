@@ -1,10 +1,33 @@
 import os
+import pymongo
 import bcrypt
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
 app = Flask(__name__)
+
+MONGODB_URI = os.getenv("MONGO_URI")
+DBS_NAME = "BakingMaster"
+COLLECTION_NAME = "Users"
+
+def mongo_connect(url):
+    try:
+        conn = pymongo.MongoClient(url)
+        print("Mongo is connected!")
+        return conn
+    except pymongo.errors.ConnectionFailure as e:
+        print("Could not connect to database: %s") %e
+        
+
+conn = mongo_connect(MONGODB_URI)        
+
+coll = conn[DBS_NAME][COLLECTION_NAME]
+
+documents = coll.find()
+
+for doc in documents:
+    print(doc)
 
 
 # Home page
