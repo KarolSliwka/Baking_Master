@@ -9,8 +9,8 @@ app = Flask(__name__)
 
 # Initilize connection
 app.config["MONGO_DBNAME"] = 'BakingMaster'
-app.config["MONGO_URI"] = os.getenv("MONGO_URI")
-app.secret_key = os.environ.get('SECRET_KEY')
+app.config["MONGO_URI"] = os.getenv('MONGO_URI')
+app.secret_key = os.getenv('SECRET_KEY')
 mongo = PyMongo(app)
 
 # Home page
@@ -42,6 +42,11 @@ def contact():
 # Login Page   
 @app.route('/login')
 def login():
+    """
+    This function is comparing information provided in user form with database information
+    If result is positive then it's returning user - my account page, if not shows the error info
+    """
+    
     return render_template('pages/login.html', body_id='login-page')
    
 # Register Page 
@@ -81,6 +86,12 @@ def register():
 # Password Recovery Page
 @app.route('/recovery')
 def recovery():
+    """
+    This function is checking information from database and sending recovered password to email provided in userform
+    """
+    
+    
+    """ Return recovery template """
     return render_template('pages/recovery.html', body_id='recovery-page', title='Password recovery')
 
 # About Page
