@@ -1,6 +1,5 @@
 import os
 import pymongo
-import bcrypt
 from flask import Flask, render_template, request, flash, session, redirect, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
