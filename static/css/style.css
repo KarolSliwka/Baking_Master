@@ -245,14 +245,15 @@ form p {
 }
 
 .alert-error, .alert-success {
-  height: 38px;
+  height: 80px;
   width: 100%;
   border: 1px solid #FF3366;
   background-color: rgba(255, 172, 193, 0.6);
   border-radius: 5px;
-  text-align: center;
+  text-align: left;
 }
 .alert-error p, .alert-success p {
+  margin: 0;
   padding: 0.5rem;
   font-size: 0.85rem;
   font-weight: 400;
@@ -260,6 +261,7 @@ form p {
 }
 
 .alert-success {
+  height: 60px;
   border: 1px solid #5aac17;
   background-color: rgba(230, 255, 204, 0.6);
 }

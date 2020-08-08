@@ -5,7 +5,6 @@
  */
 $('#copyright').html(new Date().getFullYear());
 
-
 /**
  * This function will clear contact form
  */

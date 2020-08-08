@@ -52,7 +52,6 @@ def register():
     """
     This function is rendering user registration template, when form is validated, new user is added into database.
     """
-    
     if request.method == "POST":
         users = mongo.db.Users
         
@@ -74,18 +73,17 @@ def register():
                 'email' : email,
                 'password' : password
             })
-            flash('Your account was created successfully! Enjoy browsing our amazing recipes', 'success')
+            flash('Your account was created successfully! Enjoy browsing our amazing recipes','success')
             return render_template('pages/login.html', body_id='login-page', title='Sign In')
-        flash('This email account already exist in our records. Please use different email addres or recover your password', 'error')
+        flash('This email account already exist in our records. Please use different email addres or recover your password','error')
             
     """ Return register template """
     return render_template('pages/register.html', body_id='register-page', title='Register account')
 
-    
 # Password Recovery Page
 @app.route('/recovery')
 def recovery():
-    return render_template('pages/recovery.html', body_id='recovery-page')
+    return render_template('pages/recovery.html', body_id='recovery-page', title='Password recovery')
 
 # About Page
 @app.route('/about')
