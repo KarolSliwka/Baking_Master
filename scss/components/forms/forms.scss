@@ -99,3 +99,8 @@ form {
         color: #5aac17;
     }
 }
+
+.contact-alert-success {
+    @extend .alert-success;
+    height: 37px;
+}

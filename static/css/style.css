@@ -244,7 +244,7 @@ form p {
   outline: none !important;
 }
 
-.alert-error, .alert-success {
+.alert-error, .alert-success, .contact-alert-success {
   height: 80px;
   width: 100%;
   border: 1px solid #FF3366;
@@ -252,7 +252,7 @@ form p {
   border-radius: 5px;
   text-align: left;
 }
-.alert-error p, .alert-success p {
+.alert-error p, .alert-success p, .contact-alert-success p {
   margin: 0;
   padding: 0.5rem;
   font-size: 0.85rem;
@@ -260,13 +260,17 @@ form p {
   color: #FF3366;
 }
 
-.alert-success {
+.alert-success, .contact-alert-success {
   height: 60px;
   border: 1px solid #5aac17;
   background-color: rgba(230, 255, 204, 0.6);
 }
-.alert-success p {
+.alert-success p, .contact-alert-success p {
   color: #5aac17;
+}
+
+.contact-alert-success {
+  height: 37px;
 }
 
 .contact-form {
