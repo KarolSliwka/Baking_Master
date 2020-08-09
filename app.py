@@ -190,7 +190,7 @@ def equipment():
     return  render_template('pages/equipment.html', body_id='equipment-page')
     
 # Newsletter subscription
-@app.route('/newsletter')
+@app.route('/newsletter', methods=["GET", "POST"])
 def add_to_newsletter():
     
         """ This function will get email addres from newsletter form and store newsletter subscription into Newsletter database """
@@ -201,12 +201,16 @@ def add_to_newsletter():
             req = request.form
             
             """ Get email as variable from user form"""
-            email = req.get('email')
+            newsletter_email = req.get('email')
             
-            newsletter.insert_one({
-                'email' : email,
-                'newsletter' : 'Y'
-            })
+            """ Check if email address already exist in newsletter database """
+            exist_in_newsletter = newsletter.find_one({'email': newsletter_email})
+            if exist_in_newsletter is None:
+        
+                newsletter.insert_one({
+                    'email' : exist_in_newsletter,
+                    'newsletter' : 'Y'
+                })
         
 
 if __name__ == '__main__':
