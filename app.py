@@ -188,6 +188,26 @@ def site_map():
 @app.route('/equipment')
 def equipment():
     return  render_template('pages/equipment.html', body_id='equipment-page')
+    
+# Newsletter subscription
+@app.route('/newsletter')
+def add_to_newsletter():
+    
+        """ This function will get email addres from newsletter form and store newsletter subscription into Newsletter database """
+        if request.method == "POST":
+            newsletter = mongo.db.Newsletter
+            
+            """ Request information from user form """
+            req = request.form
+            
+            """ Get email as variable from user form"""
+            email = req.get('email')
+            
+            newsletter.insert_one({
+                'email' : email,
+                'newsletter' : 'Y'
+            })
+        
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
