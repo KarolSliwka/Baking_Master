@@ -130,7 +130,7 @@ def recovery():
             msg.html = render_template('components/emails/recovery-email.html', user = current_user_name)
             Thread(target=send_email, args=(app, msg)).start()
             
-            flash('Your password was send successfully! Please find a message in your inbox','success')
+            flash('Please find a password recovery message in your inbox or spam folder','success')
             return render_template('pages/recovery.html', body_id='login-page', title='Sign In')
         flash("This email account doesn't exist is our database. Check email address and try once again.","error")
     
