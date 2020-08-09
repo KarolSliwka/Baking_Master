@@ -113,7 +113,9 @@ def register():
             users.insert_one({
                 'name' : name,
                 'email' : email,
-                'password' : password
+                'password' : password,
+                'newsletter' : 'Y'
+                
             })
             flash('Your account was created successfully! Enjoy browsing our amazing recipes','success')
             return render_template('pages/login.html', body_id='login-page', title='Sign In')
