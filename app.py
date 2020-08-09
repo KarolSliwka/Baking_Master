@@ -122,10 +122,10 @@ def recovery():
             
             """ Run email application """
             msg = Message()
-            msg.subject = "Email Subject"
+            msg.subject = 'Password Recovery'
             msg.recipients = [current_user_email]
-            msg.sender = 'bakingmaster2020@gmail.com'
-            msg.body = 'Email body'
+            msg.sender = os.getenv('EMAIL_USERNAME')
+            msg.html = render_template('emails/recovery-email.html')
             mail.send(msg)
             
             flash('Your password was send successfully! Please find a message in your inbox','success')
