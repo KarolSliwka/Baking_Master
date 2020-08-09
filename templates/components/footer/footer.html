@@ -33,13 +33,11 @@
                         <button type="submit" class="button" id="newsletter-button">Subscribe</button>
                     </form>
                     <!-- flash message container -->
-                    {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
-                    <div class="newsletter-flash-{{ category }}">
-                        {% for category, message in messages %}
+                    {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+                    <div class="newsletter-flash-{{ category }} " role="alert">
                         <p>{{ message }}</p>
-                        {% endfor %}
                     </div>
-                    {% endif %} {% endwith %}
+                    {% endfor %} {% endif %} {% endwith %}
                 </div>
             </div>
         </div>
