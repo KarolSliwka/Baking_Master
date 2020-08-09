@@ -1,2 +1,4 @@
+#Ignore Cloud9 files, all map files, pycache folder
 .c9/
 *.map
+__pycache__/
