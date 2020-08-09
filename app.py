@@ -110,16 +110,20 @@ def recovery():
         """ Prevent to sending request when field is empty"""
         
         """ Check if users exist in databas """
-        current_user = users.find_all({'email': email})
-        print(current_user)
+        current_user = users.find_one({'email': email})
         
         """ If users exist do next steps, else show error message """
-        if current_user is None:
+        if current_user is not None:
+            """ If user is found, collect all information from database"""
+            current_user_name = current_user['name']
+            current_user_email = current_user['email']
+            current_user_password = current_user['password']
             
-            """ Insert one record to database """
+            
+            """ Run email application """
             
             
-            flash('Your password was send successfully! Check your mailbox','success')
+            flash('Your password was send successfully! Please find a message in your inbox','success')
             return render_template('pages/recovery.html', body_id='login-page', title='Sign In')
         flash("This email account doesn't exist is our database. Check email address and try once again.","error")
     
