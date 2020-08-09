@@ -32,12 +32,13 @@
                         <input type="email" name="newsletter-email" id="newsletter-email" placeholder="Enter your email" required>
                         <button type="submit" class="button" id="newsletter-button">Subscribe</button>
                     </form>
+                    <!-- flash message container -->
                     {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
-                    <div>
+                    <div class="newsletter-flash-{{ category }}">
                         {% for category, message in messages %}
-                        <p class="newsletter-flash-{{ category }}">{{ message }}</p>
+                        <p>{{ message }}</p>
                         {% endfor %}
-                    <div>
+                    </div>
                     {% endif %} {% endwith %}
                 </div>
             </div>
