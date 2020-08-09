@@ -219,7 +219,7 @@ def add_to_newsletter():
                     'email' : newsletter_email,
                     'newsletter' : 'Y'
                 })
-                flash('Our newsletters are on their way to you!' , 'success')
+                flash("Our newsletters is on it' way to you!" , "success")
             else:    
                 flash('You are subscribing newsletter already', 'error')
     return render_template('layout/base.html', body_id = 'home-page', title = "Home Page")
