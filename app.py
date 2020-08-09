@@ -3,6 +3,7 @@ import pymongo
 import bcrypt
 from flask import Flask, render_template, request, flash, session, redirect, url_for
 from flask_mail import Mail
+from threading import Thread
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -93,7 +94,7 @@ def register():
     return render_template('pages/register.html', body_id='register-page', title='Register account')
 
 # Password Recovery Page
-@app.route('/recovery')
+@app.route('/recovery',  methods=["GET", "POST"])
 def recovery():
     """
     This function is checking information from database and sending recovered password to email provided in userform
@@ -105,16 +106,17 @@ def recovery():
         req = request.form
         
         """ Get variable from user form"""
-        email = req.get('email')
+        email = req.get('recovery_email')
+        """ Prevent to sending request when field is empty"""
         
         """ Check if users exist in databas """
-        current_user = users.find_one({'email': email})
+        current_user = users.find_all({'email': email})
+        print(current_user)
+        
+        """ If users exist do next steps, else show error message """
         if current_user is None:
             
             """ Insert one record to database """
-            users.find({
-                'email' : email
-            })
             
             
             flash('Your password was send successfully! Check your mailbox','success')
