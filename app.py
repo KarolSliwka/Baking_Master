@@ -28,7 +28,7 @@ mail = Mail(app)
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('layout/base.html', body_id='home-page')
+    return render_template('layout/base.html', body_id='home-page', title = "Home Page")
 
 # All Recieps page
 @app.route('/recipes')
@@ -193,24 +193,26 @@ def equipment():
 @app.route('/newsletter', methods=["GET", "POST"])
 def add_to_newsletter():
     
-        """ This function will get email addres from newsletter form and store newsletter subscription into Newsletter database """
-        if request.method == "POST":
-            newsletter = mongo.db.Newsletter
-            
-            """ Request information from user form """
-            req = request.form
-            
-            """ Get email as variable from user form"""
-            newsletter_email = req.get('email')
-            
-            """ Check if email address already exist in newsletter database """
-            exist_in_newsletter = newsletter.find_one({'email': newsletter_email})
-            if exist_in_newsletter is None:
+    """ This function will get email addres from newsletter form and store newsletter subscription into Newsletter database """
+    if request.method == "POST":
+        newsletter = mongo.db.Newsletter
         
-                newsletter.insert_one({
-                    'email' : exist_in_newsletter,
-                    'newsletter' : 'Y'
-                })
+        """ Request information from user form """
+        req = request.form
+        
+        """ Get email as variable from user form"""
+        newsletter_email = req.get('newsletter-email')
+        
+        """ Check if email address already exist in newsletter database """
+        exist_in_newsletter = newsletter.find_one({'email': newsletter_email})
+        if exist_in_newsletter is None:
+    
+            newsletter.insert_one({
+                'email' : newsletter_email,
+                'newsletter' : 'Y'
+            })
+        flash('You are subscribing newsletter already', 'error')
+    return render_template('layout/base.html', body_id = 'home-page', title = "Home Page")
         
 
 if __name__ == '__main__':

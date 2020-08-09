@@ -29,7 +29,7 @@
                 <p class="newsletter-desc">Sign up for our newsletter! Receive notifications about new recipes, baking equipement and all possible discounts codes. Don't be late, we're waiting for you!</p>
                 <div class="newsletter-form">
                     <form name="newsletter-fomr" class="newsletter-form" id="newsletter-form" action="{{ url_for('add_to_newsletter') }}" method="POST">
-                        <input type="email" name="newsletter-email" id="email" placeholder="Enter your email">
+                        <input type="email" name="newsletter-email" id="newsletter-email" placeholder="Enter your email" required>
                         <button type="submit" class="button" id="newsletter-button">Subscribe</button>
                     </form>
                 </div>
