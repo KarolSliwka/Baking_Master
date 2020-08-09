@@ -48,7 +48,12 @@ def search_results():
 # Contact Page
 @app.route('/contact')
 def contact():
-    return render_template('pages/contact.html', body_id='contact-page')
+    
+    
+    
+    
+    
+    return render_template('pages/contact.html', body_id='contact-page', title="Contact Page")
  
 # Login Page   
 @app.route('/login')
