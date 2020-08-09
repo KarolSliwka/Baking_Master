@@ -96,7 +96,7 @@ def register():
     """
     if request.method == "POST":
         users = mongo.db.Users
-        
+        newsletter = mongo.db.Newsletter
         """ Request information from user form """
         req = request.form
         
@@ -109,7 +109,7 @@ def register():
         current_user = users.find_one({'email': email})
         if current_user is None:
             
-            """ Insert one record to database """
+            """ Insert new user, new record to database """
             users.insert_one({
                 'name' : name,
                 'email' : email,
@@ -117,6 +117,13 @@ def register():
                 'newsletter' : 'Y'
                 
             })
+            
+            """ New user newsletter subscription added to newsletters database """
+            newsletter.insert_one({
+                'email' : email,
+                'newsletter' : 'Y'
+            })
+            
             flash('Your account was created successfully! Enjoy browsing our amazing recipes','success')
             return render_template('pages/login.html', body_id='login-page', title='Sign In')
         flash('This email account already exist in our records. Please use different email addres or recover your password','error')
