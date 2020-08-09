@@ -195,6 +195,7 @@ def add_to_newsletter():
     
     """ This function will get email addres from newsletter form and store newsletter subscription into Newsletter database """
     if request.method == "POST":
+        users = mongo.db.Users
         newsletter = mongo.db.Newsletter
         
         """ Request information from user form """
@@ -203,15 +204,25 @@ def add_to_newsletter():
         """ Get email as variable from user form"""
         newsletter_email = req.get('newsletter-email')
         
-        """ Check if email address already exist in newsletter database """
-        exist_in_newsletter = newsletter.find_one({'email': newsletter_email})
-        if exist_in_newsletter is None:
-    
-            newsletter.insert_one({
-                'email' : newsletter_email,
-                'newsletter' : 'Y'
-            })
-        flash('You are subscribing newsletter already', 'error')
+        """ Search for email address in User database """
+        existing_user = users.find_one({'email' : newsletter_email})
+        print(existing_user)
+        
+        """ If user exisit show flash message with error """
+        if existing_user is not None:
+            flash('You are subscribing newsletter already', 'error')
+        else:
+            """ Check if email address already exist in newsletter database """
+            exist_in_newsletter = newsletter.find_one({'email': newsletter_email})
+            if exist_in_newsletter is None:
+        
+                newsletter.insert_one({
+                    'email' : newsletter_email,
+                    'newsletter' : 'Y'
+                })
+                flash('Our newsletters are on their way to you!' , 'success')
+            else:    
+                flash('You are subscribing newsletter already', 'error')
     return render_template('layout/base.html', body_id = 'home-page', title = "Home Page")
         
 
