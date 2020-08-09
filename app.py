@@ -46,7 +46,7 @@ def search_results():
     return render_template('pages/search-results.html', body_id='search-page')
 
 # Contact Page
-@app.route('/contact')
+@app.route('/contact', methods=["GET", "POST"])
 def contact():
     """
     This function is sending email from userform in contact page
@@ -57,10 +57,12 @@ def contact():
         req = request.form
         
         """ Get variable from user form"""
-        username = req.get('contact_name')
-        email_address = req.get('contact_email')
-        message = req.get('contact_message')
+        username = req.get('contact-name')
+        email_address = req.get('contact-email')
+        contact_message = req.get('contact-message')
         email_from = os.getenv('EMAIL_USERNAME')
+        
+        print(username, email_address,contact_message,email_from)
             
         """ Run email application """
         def send_email(app, msg):
@@ -70,7 +72,7 @@ def contact():
         msg.subject = 'Message from contact form'
         msg.recipients = [email_from, email_address]
         msg.sender = email_from
-        msg.html = render_template('components/emails/contact-email.html', username = username, message = message)
+        msg.html = render_template('components/emails/contact-email.html', username = username, contact_message = contact_message)
         Thread(target=send_email, args=(app, msg)).start()
         
         flash('Your message was sent successfully','success')
