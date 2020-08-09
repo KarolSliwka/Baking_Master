@@ -3,6 +3,7 @@ import pymongo
 import bcrypt
 from flask import Flask, render_template, request, flash, session, redirect, url_for
 from flask_mail import Mail
+from flask_mail import Message
 from threading import Thread
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -119,9 +120,13 @@ def recovery():
             current_user_email = current_user['email']
             current_user_password = current_user['password']
             
-            
             """ Run email application """
-            
+            msg = Message()
+            msg.subject = "Email Subject"
+            msg.recipients = [current_user_email]
+            msg.sender = 'bakingmaster2020@gmail.com'
+            msg.body = 'Email body'
+            mail.send(msg)
             
             flash('Your password was send successfully! Please find a message in your inbox','success')
             return render_template('pages/recovery.html', body_id='login-page', title='Sign In')
