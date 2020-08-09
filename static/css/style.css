@@ -381,6 +381,11 @@ form p {
   width: 350px;
 }
 
+.recovery-email-main-text {
+  color: #606060;
+  font-size: 0.85rem;
+}
+
 .main-footer {
   min-height: var(--footer-main-height);
   width: 100%;
