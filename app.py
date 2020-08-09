@@ -206,7 +206,6 @@ def add_to_newsletter():
         
         """ Search for email address in User database """
         existing_user = users.find_one({'email' : newsletter_email})
-        print(existing_user)
         
         """ If user exisit show flash message with error """
         if existing_user is not None:
