@@ -120,12 +120,15 @@ def recovery():
             current_user_email = current_user['email']
             
             """ Run email application """
+            def send_email(app, msg):
+                with app.app_context():
+                    mail.send(msg)
             msg = Message()
             msg.subject = 'Password Recovery'
             msg.recipients = [current_user_email]
             msg.sender = os.getenv('EMAIL_USERNAME')
             msg.html = render_template('components/emails/recovery-email.html', user = current_user_name)
-            mail.send(msg)
+            Thread(target=send_email, args=(app, msg)).start()
             
             flash('Your password was send successfully! Please find a message in your inbox','success')
             return render_template('pages/recovery.html', body_id='login-page', title='Sign In')
