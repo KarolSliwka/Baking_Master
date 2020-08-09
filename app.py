@@ -48,11 +48,31 @@ def search_results():
 # Contact Page
 @app.route('/contact')
 def contact():
-    
-    
-    
-    
-    
+    """
+    This function is sending email from userform in contact page
+    """
+    if request.method == "POST":
+        
+        """ Request information from user form """
+        req = request.form
+        
+        """ Get variable from user form"""
+        username = req.get('contact_name')
+        email_address = req.get('contact_email')
+        message = req.get('contact_message')
+            
+        """ Run email application """
+        def send_email(app, msg):
+            with app.app_context():
+                mail.send(msg)
+        msg = Message()
+        msg.subject = 'Message from contact form'
+        msg.recipients = [email_address]
+        msg.sender = os.getenv('EMAIL_USERNAME')
+        msg.html = render_template('components/emails/contact-email.html', username = username, message = message)
+        Thread(target=send_email, args=(app, msg)).start()
+        
+        flash('Your message was sent successfully','success')
     return render_template('pages/contact.html', body_id='contact-page', title="Contact Page")
  
 # Login Page   
