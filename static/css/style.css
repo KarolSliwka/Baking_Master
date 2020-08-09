@@ -491,6 +491,36 @@ form p {
   cursor: pointer;
 }
 
+.newsletter-flash-main, .newsletter-flash-success, .newsletter-flash-error {
+  height: 20px;
+  border: 1px solid #FF3366;
+  background-color: rgba(255, 172, 193, 0.6);
+  border-radius: 5px;
+  text-align: left;
+}
+.newsletter-flash-main p, .newsletter-flash-success p, .newsletter-flash-error p {
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.newsletter-flash-error {
+  border: 1px solid #FF3366;
+  background-color: rgba(255, 172, 193, 0.6);
+}
+.newsletter-flash-error p {
+  color: #FF3366;
+}
+
+.newsletter-flash-success {
+  border: 1px solid #5aac17;
+  background-color: rgba(230, 255, 204, 0.6);
+}
+.newsletter-flash-success p {
+  color: #5aac17;
+}
+
 .flex-copyrights {
   width: 100%;
   display: flex;

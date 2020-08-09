@@ -110,6 +110,40 @@
     cursor: pointer;
 }
 
+// nesletter flash calesses
+.newsletter-flash-main {
+    height: 20px;
+    border: 1px solid #FF3366;
+    background-color: rgba(255, 172, 193, 0.6);
+    border-radius: 5px;
+    text-align: left;
+
+    p {
+        margin: 0;
+        padding: 0.5rem;
+        font-size: 0.85rem;
+        font-weight: 400;
+    }
+}
+
+.newsletter-flash-error {
+    @extend .newsletter-flash-main;
+    border: 1px solid #FF3366;
+    background-color: rgba(255, 172, 193, 0.6);
+    p {
+        color: #FF3366;
+    }
+}
+
+.newsletter-flash-success {
+    @extend .newsletter-flash-main;
+    border: 1px solid #5aac17;
+    background-color: rgba(230, 255, 204, 0.6);
+    p {
+        color: #5aac17;
+    }
+}
+
 // copyrigths section
 .flex-copyrights {
     width: 100%;
