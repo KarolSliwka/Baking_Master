@@ -118,14 +118,13 @@ def recovery():
             """ If user is found, collect all information from database"""
             current_user_name = current_user['name']
             current_user_email = current_user['email']
-            current_user_password = current_user['password']
             
             """ Run email application """
             msg = Message()
             msg.subject = 'Password Recovery'
             msg.recipients = [current_user_email]
             msg.sender = os.getenv('EMAIL_USERNAME')
-            msg.html = render_template('components/emails/recovery-email.html')
+            msg.html = render_template('components/emails/recovery-email.html', user = current_user_name)
             mail.send(msg)
             
             flash('Your password was send successfully! Please find a message in your inbox','success')
