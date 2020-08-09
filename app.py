@@ -60,6 +60,7 @@ def contact():
         username = req.get('contact_name')
         email_address = req.get('contact_email')
         message = req.get('contact_message')
+        email_from = os.getenv('EMAIL_USERNAME')
             
         """ Run email application """
         def send_email(app, msg):
@@ -67,8 +68,8 @@ def contact():
                 mail.send(msg)
         msg = Message()
         msg.subject = 'Message from contact form'
-        msg.recipients = [email_address]
-        msg.sender = os.getenv('EMAIL_USERNAME')
+        msg.recipients = [email_from, email_address]
+        msg.sender = email_from
         msg.html = render_template('components/emails/contact-email.html', username = username, message = message)
         Thread(target=send_email, args=(app, msg)).start()
         
