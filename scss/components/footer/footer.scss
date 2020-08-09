@@ -112,15 +112,17 @@
 
 // nesletter flash calesses
 .newsletter-flash-main {
-    height: 20px;
+    height: 36px;
     border: 1px solid #FF3366;
     background-color: rgba(255, 172, 193, 0.6);
-    border-radius: 5px;
+    border-radius: 25px;
     text-align: left;
+    margin-top: 15px;
 
     p {
         margin: 0;
         padding: 0.5rem;
+        padding-left: 20px;
         font-size: 0.85rem;
         font-weight: 400;
     }
