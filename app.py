@@ -38,8 +38,8 @@ def recipes():
     return  render_template('pages/recipes.html', body_id='recipes-page')
     
 # Favourites Page
-@app.route('/favouries')
-def favourites():
+@app.route('/top-hundred')
+def top_hundredd():
     return render_template('pages/favourites.html', body_id='favourites-page')
     
 # Search Page
