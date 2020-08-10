@@ -1,5 +1,6 @@
 import os
 import pymongo
+import requests
 import bcrypt
 from flask import Flask, render_template, request, flash, session, redirect, url_for
 from flask_mail import Mail
@@ -28,6 +29,7 @@ mail = Mail(app)
 @app.route('/')
 @app.route('/home')
 def home():
+    
     return render_template('layout/base.html', body_id='home-page', title = "Home Page")
 
 # All Recieps page
@@ -75,7 +77,7 @@ def contact():
         msg.html = render_template('components/emails/contact-email.html', username = username, contact_message = contact_message)
         Thread(target=send_email, args=(app, msg)).start()
         
-        flash('Your message was sent successfully','success')
+        flash('Your message was sent successfully','contact-success')
     return render_template('pages/contact.html', body_id='contact-page', title="Contact Page")
  
 # Login Page   
@@ -124,9 +126,9 @@ def register():
                 'newsletter' : 'Y'
             })
             
-            flash('Your account was created successfully! Enjoy browsing our amazing recipes','success')
+            flash('Your account was created successfully! Enjoy browsing our amazing recipes','register-success')
             return render_template('pages/login.html', body_id='login-page', title='Sign In')
-        flash('This email account already exist in our records. Please use different email addres or recover your password','error')
+        flash('This email account already exist in our records. Please use different email addres or recover your password','register-error')
             
     """ Return register template """
     return render_template('pages/register.html', body_id='register-page', title='Register account')
@@ -167,9 +169,9 @@ def recovery():
             msg.html = render_template('components/emails/recovery-email.html', user = current_user_name)
             Thread(target=send_email, args=(app, msg)).start()
             
-            flash('Please find a password recovery message in your inbox or spam folder','success')
+            flash('Please find a password recovery message in your inbox or spam folder','recovery-success')
             return render_template('pages/recovery.html', body_id='login-page', title='Sign In')
-        flash("This email account doesn't exist is our database. Check email address and try once again.","error")
+        flash("This email account doesn't exist is our database. Check email address and try once again.","recovery-error")
     
     """ Return recovery template """
     return render_template('pages/recovery.html', body_id='recovery-page', title='Password recovery')
@@ -209,7 +211,7 @@ def add_to_newsletter():
         
         """ If user exisit show flash message with error """
         if existing_user is not None:
-            flash('You are subscribing newsletter already', 'error')
+            flash('You are subscribing newsletter already', 'newsletter-error')
         else:
             """ Check if email address already exist in newsletter database """
             exist_in_newsletter = newsletter.find_one({'email': newsletter_email})
@@ -220,9 +222,9 @@ def add_to_newsletter():
                     'newsletter' : 'Y'
                 })
                 
-                flash('Our newsletters is on its way to you!','success')
+                flash('Our newsletters is on its way to you!','newsletter-success')
             else:    
-                flash('You are subscribing newsletter already','error')
+                flash('You are subscribing newsletter already','newsletter-error')
     return render_template('layout/base.html', body_id = 'home-page', title = "Home Page")
         
 
