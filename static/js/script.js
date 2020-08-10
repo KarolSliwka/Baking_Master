@@ -13,3 +13,12 @@ $('#clear-contact-form').click(function() {
     $('#contact-email').val('');
     $('#contact-message').val('');
 });
+
+/**
+ * This function will hide flash messages after few seconds
+ */
+$(document).ready(function() {
+    setTimeout(function() {
+        $('#flash-message').fadeOut('fast');
+    }, 5000);
+});
