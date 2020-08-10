@@ -244,35 +244,6 @@ form p {
   outline: none !important;
 }
 
-.alert-error, .alert-success, .contact-alert-success {
-  height: 80px;
-  width: 100%;
-  border: 1px solid #FF3366;
-  background-color: rgba(255, 172, 193, 0.6);
-  border-radius: 5px;
-  text-align: left;
-}
-.alert-error p, .alert-success p, .contact-alert-success p {
-  margin: 0;
-  padding: 0.5rem;
-  font-size: 0.85rem;
-  font-weight: 400;
-  color: #FF3366;
-}
-
-.alert-success, .contact-alert-success {
-  height: 60px;
-  border: 1px solid #5aac17;
-  background-color: rgba(230, 255, 204, 0.6);
-}
-.alert-success p, .contact-alert-success p {
-  color: #5aac17;
-}
-
-.contact-alert-success {
-  height: 37px;
-}
-
 .contact-form {
   padding-top: 100px;
   padding-bottom: 40px;
@@ -293,7 +264,7 @@ form p {
   order: 2;
 }
 
-.flash-contact-success, .flash-newsletter-error, .flash-register-error, .flash-recovery-error {
+.flash-contact-send {
   display: block !important;
   height: 38px;
   width: 100%;
@@ -302,7 +273,7 @@ form p {
   border-radius: 5px;
   text-align: left;
 }
-.flash-contact-success p, .flash-newsletter-error p, .flash-register-error p, .flash-recovery-error p {
+.flash-contact-send p {
   margin: 0;
   padding: 0.5rem 1.25rem;
   font-size: 0.85rem;
@@ -394,7 +365,7 @@ form p {
   width: 350px;
 }
 
-.flash-recovery-success {
+.flash-recovery-positive, .flash-recovery-negative {
   display: block !important;
   height: 38px;
   width: 100%;
@@ -403,7 +374,7 @@ form p {
   border-radius: 5px;
   text-align: left;
 }
-.flash-recovery-success p {
+.flash-recovery-positive p, .flash-recovery-negative p {
   margin: 0;
   padding: 0.5rem 1.25rem;
   font-size: 0.85rem;
@@ -411,11 +382,11 @@ form p {
   color: #5aac17;
 }
 
-.flash-recovery-error {
+.flash-recovery-negative {
   border: 1px solid #FF3366;
   background-color: rgba(255, 172, 193, 0.6);
 }
-.flash-recovery-error p {
+.flash-recovery-negative p {
   color: #FF3366;
 }
 
@@ -427,7 +398,7 @@ form p {
   width: 350px;
 }
 
-.flash-register-success {
+.flash-register-added, .flash-register-exist {
   display: block !important;
   height: 38px;
   width: 100%;
@@ -436,7 +407,7 @@ form p {
   border-radius: 5px;
   text-align: left;
 }
-.flash-register-success p {
+.flash-register-added p, .flash-register-exist p {
   margin: 0;
   padding: 0.5rem 1.25rem;
   font-size: 0.85rem;
@@ -444,11 +415,11 @@ form p {
   color: #5aac17;
 }
 
-.flash-register-error {
+.flash-register-exist {
   border: 1px solid #FF3366;
   background-color: rgba(255, 172, 193, 0.6);
 }
-.flash-register-error p {
+.flash-register-exist p {
   color: #FF3366;
 }
 
@@ -558,7 +529,7 @@ form p {
   cursor: pointer;
 }
 
-.flash-contact-success, .flash-newsletter-error, .flash-recovery-error, .flash-register-error {
+.flash-newsletter-success, .flash-newsletter-error {
   display: block !important;
   height: 38px;
   width: 100%;
@@ -567,7 +538,7 @@ form p {
   border-radius: 5px;
   text-align: left;
 }
-.flash-contact-success p, .flash-newsletter-error p, .flash-recovery-error p, .flash-register-error p {
+.flash-newsletter-success p, .flash-newsletter-error p {
   margin: 0;
   padding: 0.5rem 1.25rem;
   font-size: 0.85rem;

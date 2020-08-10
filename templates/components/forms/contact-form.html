@@ -6,11 +6,13 @@
         <form id="contact-form" name="contact-form" action="{{ url_for('contact') }}" method="POST">
             <!-- Register form title -->
             <div class="form-group">
-                {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
-                <div class="contact-alert-{{category}}">
-                    <p>{{ message }}</p>
+                {% with errors = get_flashed_messages(category_filter=["contact-send"]) %} {% if errors %}
+                <div class="flash-contact-send">
+                    {%- for msg in errors %}
+                    <p>{{ msg }}</p>
+                    {% endfor -%}
                 </div>
-                {% endfor %} {% endif %} {% endwith %}
+                {% endif %} {% endwith %}
                 <h3 class="form-second-title">Send us a Message</h3>
                 <p class="contact-text">Feel free to contact us. We will try to get back to you ASAP but.., you know COVID-19 also attacked our servers.. hehe. We're here for you 24h/6 days a week.</p>
             </div>

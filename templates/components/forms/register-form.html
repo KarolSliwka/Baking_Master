@@ -6,13 +6,20 @@
         <form id="register-form" name="register-form" action="{{ url_for('register') }}" method="POST">
             <!-- Register form title -->
             <div class="form-group">
-                {% with errors = get_flashed_messages(category_filter=["error"]) %} {% if errors %}
-                <div class="alert-error">
+                {% with errors = get_flashed_messages(category_filter=["register-exist"]) %} {% if errors %}
+                <div class="flash-register-exist">
                     {%- for msg in errors %}
                     <p>{{ msg }}</p>
                     {% endfor -%}
                 </div>
                 {% endif %} {% endwith %}
+                {% with errors = get_flashed_messages(category_filter=["register-added"]) %} {% if errors %}
+                <div class="flash-register-added">
+                    {%- for msg in errors %}
+                    <p>{{ msg }}</p>
+                    {% endfor -%}
+                </div>
+                {% endif %} {% endwith %} 
                 <h3 class="form-second-title">Register</h3>
                 <p>You are making your first step to become a Baking Master!</p>
 

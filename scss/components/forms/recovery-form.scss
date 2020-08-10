@@ -7,7 +7,7 @@
 }
 
 // flash message style
-.flash-recovery-success {
+.flash-recovery-positive {
     display: block !important;
     height: 38px;
     width: 100%;
@@ -25,8 +25,8 @@
     }
 }
 
-.flash-recovery-error {
-    @extend .flash-contact-success;
+.flash-recovery-negative {
+    @extend .flash-recovery-positive;
     border: 1px solid #FF3366;
     background-color: rgba(255, 172, 193, 0.6);
     p {

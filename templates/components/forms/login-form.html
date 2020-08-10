@@ -12,13 +12,11 @@
         <form id="login-form" name="login-form" method="POST">
             <!-- Second title -->
             <div class="form-group">
-                {% with success = get_flashed_messages(category_filter=["success"]) %} {% if success %}
-                <div class="alert-success">
-                    {%- for msg in success %}
-                    <p>{{ msg }}</p>
-                    {% endfor -%}
+                {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+                <div class="hidden flash-{{category}}">
+                    <p>{{ message }}</p>
                 </div>
-                {% endif %} {% endwith %}
+                {% endfor %} {% endif %} {% endwith %}
                 <h3 class="form-second-title">Login</h3>
             </div>
             <!-- Email box -->

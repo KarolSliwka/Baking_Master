@@ -7,7 +7,7 @@
 }
 
 // flash message style
-.flash-register-success {
+.flash-register-added {
     display: block !important;
     height: 38px;
     width: 100%;
@@ -25,8 +25,8 @@
     }
 }
 
-.flash-register-error {
-    @extend .flash-contact-success;
+.flash-register-exist {
+    @extend .flash-register-added;
     border: 1px solid #FF3366;
     background-color: rgba(255, 172, 193, 0.6);
     p {

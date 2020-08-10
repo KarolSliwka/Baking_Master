@@ -63,8 +63,6 @@ def contact():
         email_address = req.get('contact-email')
         contact_message = req.get('contact-message')
         email_from = os.getenv('EMAIL_USERNAME')
-        
-        print(username, email_address,contact_message,email_from)
             
         """ Run email application """
         def send_email(app, msg):
@@ -77,7 +75,7 @@ def contact():
         msg.html = render_template('components/emails/contact-email.html', username = username, contact_message = contact_message)
         Thread(target=send_email, args=(app, msg)).start()
         
-        flash('Your message was sent successfully','contact-success')
+        flash('Your message was sent successfully','contact-send')
     return render_template('pages/contact.html', body_id='contact-page', title="Contact Page")
  
 # Login Page   
@@ -126,9 +124,9 @@ def register():
                 'newsletter' : 'Y'
             })
             
-            flash('Your account was created successfully! Enjoy browsing our amazing recipes','register-success')
+            flash('Your account was created successfully! Enjoy browsing our amazing recipes','register-added')
             return render_template('pages/login.html', body_id='login-page', title='Sign In')
-        flash('This email account already exist in our records. Please use different email addres or recover your password','register-error')
+        flash('This email account already exist in our records. Please use different email addres or recover your password','register-exist')
             
     """ Return register template """
     return render_template('pages/register.html', body_id='register-page', title='Register account')
@@ -169,9 +167,9 @@ def recovery():
             msg.html = render_template('components/emails/recovery-email.html', user = current_user_name)
             Thread(target=send_email, args=(app, msg)).start()
             
-            flash('Please find a password recovery message in your inbox or spam folder','recovery-success')
+            flash('Please find a password recovery message in your inbox or spam folder','recovery-positive')
             return render_template('pages/recovery.html', body_id='login-page', title='Sign In')
-        flash("This email account doesn't exist is our database. Check email address and try once again.","recovery-error")
+        flash("This email account doesn't exist is our database. Check email address and try once again.","recovery-negative")
     
     """ Return recovery template """
     return render_template('pages/recovery.html', body_id='recovery-page', title='Password recovery')
