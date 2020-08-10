@@ -223,7 +223,7 @@ def add_to_newsletter():
                 flash('Our newsletters is on its way to you!','newsletter-success')
             else:    
                 flash('You are subscribing newsletter already','newsletter-error')
-    return render_template('layout/base.html', body_id = 'home-page', title = "Home Page")
+    return redirect(request.referrer)
         
 
 if __name__ == '__main__':
