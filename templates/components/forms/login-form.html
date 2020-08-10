@@ -13,7 +13,7 @@
             <!-- Second title -->
             <div class="form-group">
                 {% with errors = get_flashed_messages(category_filter=["register-added"]) %} {% if errors %}
-                <div class="flash-register-added">
+                <div id="flash-message" class="flash-register-added">
                     {%- for msg in errors %}
                     <p>{{ msg }}</p>
                     {% endfor -%}

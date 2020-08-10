@@ -34,14 +34,14 @@
                     </form>
                     <!-- flash message container -->
                 {% with errors = get_flashed_messages(category_filter=["newsletter-success"]) %} {% if errors %}
-                <div class="flash-newsletter-success">
+                <div id="flash-message" class="flash-newsletter-success">
                     {%- for msg in errors %}
                     <p>{{ msg }}</p>
                     {% endfor -%}
                 </div>
                 {% endif %} {% endwith %} 
                 {% with errors = get_flashed_messages(category_filter=["newsletter-error"]) %} {% if errors %}
-                <div class="flash-newsletter-error">
+                <div  id="flash-message" class="flash-newsletter-error">
                     {%- for msg in errors %}
                     <p>{{ msg }}</p>
                     {% endfor -%}

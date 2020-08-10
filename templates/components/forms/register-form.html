@@ -7,7 +7,7 @@
             <!-- Register form title -->
             <div class="form-group">
                 {% with errors = get_flashed_messages(category_filter=["register-exist"]) %} {% if errors %}
-                <div class="flash-register-exist">
+                <div id="flash-message" class="flash-register-exist">
                     {%- for msg in errors %}
                     <p>{{ msg }}</p>
                     {% endfor -%}

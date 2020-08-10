@@ -7,14 +7,14 @@
             <!-- Register form title -->
             <div class="form-group">
                 {% with errors = get_flashed_messages(category_filter=["recovery-positive"]) %} {% if errors %}
-                <div class="flash-recovery-positive">
+                <div id="flash-message" class="flash-recovery-positive">
                     {%- for msg in errors %}
                     <p>{{ msg }}</p>
                     {% endfor -%}
                 </div>
                 {% endif %} {% endwith %} 
                 {% with errors = get_flashed_messages(category_filter=["recovery-negative"]) %} {% if errors %}
-                <div class="flash-recovery-negative">
+                <div id="flash-message" class="flash-recovery-negative">
                     {%- for msg in errors %}
                     <p>{{ msg }}</p>
                     {% endfor -%}

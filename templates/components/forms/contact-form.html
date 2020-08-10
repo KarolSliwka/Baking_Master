@@ -7,7 +7,7 @@
             <!-- Register form title -->
             <div class="form-group">
                 {% with errors = get_flashed_messages(category_filter=["contact-send"]) %} {% if errors %}
-                <div class="flash-contact-send">
+                <div id="flash-message" class="flash-contact-send">
                     {%- for msg in errors %}
                     <p>{{ msg }}</p>
                     {% endfor -%}
