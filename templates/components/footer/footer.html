@@ -41,7 +41,7 @@
                 </div>
                 {% endif %} {% endwith %} 
                 {% with errors = get_flashed_messages(category_filter=["newsletter-error"]) %} {% if errors %}
-                <div class="flash-newsletter-errir">
+                <div class="flash-newsletter-error">
                     {%- for msg in errors %}
                     <p>{{ msg }}</p>
                     {% endfor -%}
