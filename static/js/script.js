@@ -19,6 +19,6 @@ $('#clear-contact-form').click(function() {
  */
 $(document).ready(function() {
     setTimeout(function() {
-        $('#flash-message').fadeOut('fast');
-    }, 5000);
+        $('#flash-message').animate({ height: 0, opacity: 0 }, 'fast');
+    }, 3500);
 });
