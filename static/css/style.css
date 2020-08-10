@@ -265,7 +265,7 @@ form p {
 }
 
 .flash-contact-send {
-  height: 38px;
+  height: auto;
   width: 100%;
   border: 1px solid #5aac17;
   background-color: rgba(230, 255, 204, 0.6);
@@ -365,7 +365,7 @@ form p {
 }
 
 .flash-recovery-positive, .flash-recovery-negative {
-  height: 58px;
+  height: auto;
   width: 100%;
   border: 1px solid #5aac17;
   background-color: rgba(230, 255, 204, 0.6);
@@ -381,7 +381,6 @@ form p {
 }
 
 .flash-recovery-negative {
-  height: 78px;
   border: 1px solid #FF3366;
   background-color: rgba(255, 172, 193, 0.6);
 }
@@ -398,7 +397,7 @@ form p {
 }
 
 .flash-register-added, .flash-register-exist {
-  height: 58px;
+  height: auto;
   width: 100%;
   border: 1px solid #5aac17;
   background-color: rgba(230, 255, 204, 0.6);
@@ -414,7 +413,6 @@ form p {
 }
 
 .flash-register-exist {
-  height: 78px;
   border: 1px solid #FF3366;
   background-color: rgba(255, 172, 193, 0.6);
 }
@@ -530,7 +528,7 @@ form p {
 
 .flash-newsletter-success, .flash-newsletter-error {
   margin-top: 15px;
-  height: 38px;
+  height: auto;
   width: 100%;
   border: 1px solid #5aac17;
   background-color: rgba(230, 255, 204, 0.6);

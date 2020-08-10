@@ -8,7 +8,7 @@
 
 // flash message style
 .flash-recovery-positive {
-    height: 58px;
+    height: auto;
     width: 100%;
     border: 1px solid #5aac17;
     background-color: rgba(230, 255, 204, 0.6);
@@ -26,7 +26,6 @@
 
 .flash-recovery-negative {
     @extend .flash-recovery-positive;
-    height: 78px;
     border: 1px solid #FF3366;
     background-color: rgba(255, 172, 193, 0.6);
     p {
