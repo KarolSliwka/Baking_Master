@@ -220,7 +220,7 @@ def add_to_newsletter():
                     'newsletter' : 'Y'
                 })
                 
-                flash('Our newsletters is on its way to you!','newsletter-success')
+                flash('Welcome in our newsletter group!','newsletter-success')
             else:    
                 flash('You are subscribing newsletter already','newsletter-error')
     return redirect(request.referrer)
