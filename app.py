@@ -104,6 +104,8 @@ def register():
         name = req.get('name')
         email = req.get('email')
         password = req.get('password')
+        hashpassword = bcrypt.hashpw(
+                    password.encode('utf-8'), bcrypt.gensalt())
         
         """ Check if users exist in databas """
         current_user = users.find_one({'email': email})
@@ -113,7 +115,7 @@ def register():
             users.insert_one({
                 'name' : name,
                 'email' : email,
-                'password' : password,
+                'password' : hashpassword,
                 'newsletter' : 'Y'
                 
             })
