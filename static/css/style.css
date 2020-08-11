@@ -445,6 +445,11 @@ form p {
   font-size: 0.85rem;
 }
 
+#edamam-badge img {
+  height: 30px !important;
+  width: 150px;
+}
+
 .footer-menu {
   padding: 0;
   margin-bottom: 20px;

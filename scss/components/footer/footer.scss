@@ -26,6 +26,14 @@
     font-size: 0.85rem;
 }
 
+// API requirements style changed
+#edamam-badge {
+    img {
+        height: 30px !important;
+        width: 150px;
+    }
+}
+
 // footer menu section
 .footer-menu {
     padding: 0;
