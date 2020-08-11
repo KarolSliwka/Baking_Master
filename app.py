@@ -25,10 +25,20 @@ app.config['MAIL_USERNAME'] = os.getenv('EMAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.getenv('EMAIL_PASSWORD')
 mail = Mail(app)
 
+#API config
+API_ID = os.getenv('API_ID')
+API_KEY = os.getenv('API_KEY')
+
 # Home page
 @app.route('/')
 @app.route('/home')
 def home():
+    
+    
+    #url = "https://api.edamam.com/search?q=chocolate&app_id=3fbc3ca8&app_key="+ API_KEY
+    #response = requests.request("GET", url)
+
+    #print(response.text)
     
     return render_template('layout/base.html', body_id='home-page', title = "Home Page")
 
