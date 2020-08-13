@@ -1,31 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
-/*! 
+/*
 Heading style
 */
-/*! 
+/* 
 Navigation
 */
-/*! Links and links hover style */
-/*! Dropdown mobile navigation style */
-/*! 
+/* Links and links hover style */
+/* Dropdown mobile navigation style */
+/* 
+Pages - all 
+*/
+/* Title color*/
+/*
 Footer 
 */
-/*! Background */
-/*! Footer menu links color */
-/*! Copyrights */
-/*! Newsletter */
-/*! 
+/* Background */
+/* Footer menu links color */
+/* Copyrights */
+/* Newsletter */
+/* 
 All user forms
 */
-/*! Userform input boxes font color */
-/*! Background color */
-/*! Secondary title */
-/*! Login form recovery and sign-up links color */
-/*! main button style */
-/*! main button hover style */
-/*! second button style */
-/*! second button hover style */
-/*! Login form fancy circle background color */
+/* Userform input boxes font color */
+/* Background color */
+/* Secondary title */
+/* Login form recovery and sign-up links color */
+/* main button style */
+/* main button hover style */
+/* second button style */
+/* second button hover style */
+/* Login form fancy circle background color */
 html,
 body {
   height: 100%;
@@ -76,6 +80,11 @@ h4 {
 
 :root {
   --footer-main-height: 300px;
+}
+
+.page-title {
+  font-size: 24px;
+  color: #FF3366;
 }
 
 .navbar {
@@ -586,6 +595,15 @@ form p {
     text-align: left;
   }
 }
+.about-main-container {
+  padding-top: 60px;
+}
+
+.card {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
 .map-container {
   background-image: url("/static/images/Backgrounds/google-map-bg.png");
   background-repeat: no-repeat;

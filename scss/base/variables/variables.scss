@@ -1,67 +1,75 @@
-/*! 
+/*
 Heading style
 */
 $h4-color: #FF3366;
 
-/*! 
+/* 
 Navigation
 */
-/*! Links and links hover style */
+/* Links and links hover style */
 $nav-bg-color: #FFF;
 $nav-border-color: #FF3366;
 $nav-links-color: #FF3366;
 $nav-link-hv: #FFF;
 $nav-link-bg-hv :#FF3366;
-/*! Dropdown mobile navigation style */
+/* Dropdown mobile navigation style */
 $nav-bg-color-mobile: #FF3366;
 $nav-links-color-mobile: #FFF;
 $nav-link-bg-hv-mobile: #FFF;
 
-/*! 
+
+/* 
+Pages - all 
+*/
+/* Title color*/
+$page-title-color: #FF3366;
+
+
+/*
 Footer 
 */
-/*! Background */
+/* Background */
 $footer-bg: #FFF;
-/*! Footer menu links color */
+/* Footer menu links color */
 $footer-link-color: #FF3366;
-/*! Copyrights */
+/* Copyrights */
 $copyrights-color: #FFF;
 $footer-copyrights-bg: #FF3366;
-/*! Newsletter */
+/* Newsletter */
 $newsletter-input-border: #EEE;
 $newsletter-input: #FFF;
 $input-form-text-color:#ababab;
 $newsletter-button-border: #FF3366;
 
-/*! 
+/* 
 All user forms
 */
-/*! Userform input boxes font color */
+/* Userform input boxes font color */
 $input-box-color: #ABABAB;
-/*! Background color */
+/* Background color */
 $form-bg: #FFF;
-/*! Secondary title */
+/* Secondary title */
 $second-form-title:#FF3366;
-/*! Login form recovery and sign-up links color */
+/* Login form recovery and sign-up links color */
 $recovery-text-color: #000;
 $sing-up-link-color: #FF3366;
 $forgot-link-color: #1DB0B5;
-/*! main button style */
+/* main button style */
 $main-button-bg: #FFF;
 $main-button-color: #FF3366;
 $main-button-border-color: #FF3366;
-/*! main button hover style */
+/* main button hover style */
 $main-button-bg-hv: #FF3366;
 $main-button-color-hv: #FFF;
 $main-button-border-color-hv: #FF3366;
-/*! second button style */
+/* second button style */
 $second-button-bg: #FFF;
 $second-button-color: #1DB0B5;
 $second-button-border-color: #1DB0B5;
-/*! second button hover style */
+/* second button hover style */
 $second-button-bg-hv: #1DB0B5;
 $second-button-color-hv: #FFF;
 $second-button-border-color-hv: #1DB0B5;
 
-/*! Login form fancy circle background color */
+/* Login form fancy circle background color */
 $login-form-circle-bg: #FF3366;
