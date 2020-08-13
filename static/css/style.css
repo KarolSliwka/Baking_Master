@@ -647,7 +647,7 @@ form p {
     bottom: 0;
   }
 }
-@media screen and (min-height: 983px) and (min-width: 1020px) {
+@media screen and (min-height: 1150px) and (min-width: 1020px) {
   #register-page .main-container {
     height: calc(100% - 360px);
     padding-top: 2rem;
