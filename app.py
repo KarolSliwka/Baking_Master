@@ -35,7 +35,7 @@ API_KEY = os.getenv('API_KEY')
 def home():
     
     
-    #url = "https://api.edamam.com/search?q=chocolate&app_id=3fbc3ca8&app_key="+ API_KEY
+    #url = "https://api.edamam.com/search?q=apple&app_id=3fbc3ca8&app_key="+ API_KEY
     #response = requests.request("GET", url)
 
     #print(response.text)

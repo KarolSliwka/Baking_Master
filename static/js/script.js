@@ -22,3 +22,11 @@ $(document).ready(function() {
         $('#flash-message').animate({ height: 0, opacity: 0 }, 'fast');
     }, 3500);
 });
+
+
+/**
+ * This function will execut code to collapse info section in about page
+ */
+$('#myCollapsible').collapse({
+  toggle: false
+})
