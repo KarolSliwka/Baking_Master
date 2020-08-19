@@ -11,7 +11,18 @@
     font-size: 14px;
 }
 
-.author-photo {}
+.author-photo {
+    display: inherit;
+    justify-content: center;
+    padding-bottom: 1rem;
+    img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 5px solid #FFF;
+        box-shadow: 0px 0px 5px 1px #ccc;
+    }
+}
 
 .how-to {
     padding: 1rem;
