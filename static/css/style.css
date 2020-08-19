@@ -83,6 +83,7 @@ h4 {
 }
 
 .page-title {
+  padding: 0 1rem;
   font-size: 24px;
   color: #FF3366;
 }
@@ -599,9 +600,32 @@ form p {
   padding-top: 60px;
 }
 
+.about {
+  display: flex;
+  padding: 1rem;
+}
+
+.about-us-text {
+  font-size: 14px;
+}
+
+.how-to {
+  padding: 1rem;
+}
+
+.btn:hover,
+.button-link:hover {
+  text-decoration: none;
+}
+
 .card {
   padding: 0.5rem 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #1DB0B5;
+}
+
+.card-body {
+  padding: 1rem;
+  font-size: 14px;
 }
 
 .map-container {

@@ -1,0 +1,36 @@
+.about-main-container {
+    padding-top: 60px;
+}
+
+.about {
+    display: flex;
+    padding: 1rem;
+}
+
+.about-us-text {
+    font-size: 14px;
+}
+
+.author-photo {}
+
+.how-to {
+    padding: 1rem;
+}
+
+.btn,
+.button-link {
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.card {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #1DB0B5;
+}
+
+.card-body {
+    padding: 1rem;
+    font-size: 14px
+}
