@@ -24,7 +24,7 @@
 
 .about-us-text {
     font-size: 14px;
-    
+
     .ex-link {
         text-decoration: none;
         color: #FF3366;
@@ -38,8 +38,11 @@
 
 .btn,
 .button-link {
-
+    color: #1DB0B5;
+    opacity: 0.6;
     &:hover {
+        color: #1DB0B5;
+        opacity: 1;
         text-decoration: none;
     }
 }

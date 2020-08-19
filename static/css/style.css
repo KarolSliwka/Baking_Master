@@ -633,8 +633,15 @@ form p {
   padding: 1rem;
 }
 
+.btn,
+.button-link {
+  color: #1DB0B5;
+  opacity: 0.6;
+}
 .btn:hover,
 .button-link:hover {
+  color: #1DB0B5;
+  opacity: 1;
   text-decoration: none;
 }
 
