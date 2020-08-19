@@ -603,16 +603,14 @@ form p {
 .about {
   display: flex;
   padding: 1rem;
-}
-
-.about-us-text {
-  font-size: 14px;
+  flex-direction: column;
 }
 
 .author-photo {
   display: inherit;
   justify-content: center;
   padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 .author-photo img {
   width: 150px;
@@ -620,6 +618,10 @@ form p {
   border-radius: 50%;
   border: 5px solid #FFF;
   box-shadow: 0px 0px 5px 1px #ccc;
+}
+
+.about-us-text {
+  font-size: 14px;
 }
 
 .how-to {
