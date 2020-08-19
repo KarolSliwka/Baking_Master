@@ -633,13 +633,11 @@ form p {
   padding: 1rem;
 }
 
-.btn,
-.button-link {
+.button-link-dropdown {
   color: #1DB0B5;
-  opacity: 0.6;
+  opacity: 0.8;
 }
-.btn:hover,
-.button-link:hover {
+.button-link-dropdown:hover {
   color: #1DB0B5;
   opacity: 1;
   text-decoration: none;
