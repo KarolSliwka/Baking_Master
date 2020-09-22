@@ -149,8 +149,9 @@ Whole application was tested durign the designing and deploying period. Each fea
 
 #### Feature Testing :
  * Login & Register Form - Both form has been tested by entering values into entry fields and running script which should add details to database. Result : Worked as expected!
- * Contact form - All different variances with missing fields were tested. Also 
- * 
+ * Contact form - All different variances with missing fields were tested while trying to send an email. Result : Sending failed
+ * Subscribe Newsletter - Validation works with empty field. By clicking 'Subscribe' button, email address is saved in newsletter database. Result : Success!
+ 
 ## Bugs
 
 #### Bugs During Development: 
