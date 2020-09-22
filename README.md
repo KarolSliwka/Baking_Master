@@ -16,7 +16,7 @@ If you decide not to share them, simply removed them. You can save your favourit
     * Icons
     * Colors
 - Wireframes
-- Database Design
+- Database
 - Features:
     * Developed
     * Will be developed in the future
@@ -36,7 +36,7 @@ If you decide not to share them, simply removed them. You can save your favourit
 ## User Experience:
 
 ### About Project
-This project was created to help people develope their baking skills. This web application is giving ccess to thousandes of different recipes. Users are able to create own recipes, add pictures of their bueatiful work, add their loved recipes to favourites list. Their also can remove and amend previously added recipes, if they decied not share them anymore.
+This project was created to help people develope their baking skills. This web application is giving access to thousandes of different recipes. Users are able to create own recipes, add pictures of their bueatiful work, add their loved recipes to favourites list. Their also can remove and amend previously added recipes, if they decied not share them anymore.
 
 ### Users Goals
 - To be able to search through different recipes.
@@ -97,8 +97,11 @@ I Built the wireframes for this project using <a href="https://www.invisionapp.c
 
 View the <a href="https://github.com/KarolSliwka/Baking_Master/tree/master/wireframes">wireframes</a> for this project
  
-## Database Design:
-MongoDB alowed me to use collections option
+## Database:
+I have used Cloud-hosted MongoDB service on AWS, because it's easy to control, it has good access to database. All database instances are deployed in a unique Virtual Private Cloud (VPC) to ensure network isolation. 
+I've created MongoDB Cluster and lots of different collections in my database to suits my needs with this project.
+
+Find more on <a href="https://www.mongodb.com/cloud/atlas/register">MongoDB</a>
 
 ## Features:
 
@@ -144,17 +147,27 @@ Project was well planned with a significant amount of a time. I moustly focused 
 #### Testing: 
 Whole application was tested durign the designing and deploying period. Each feature was tested step by step to avoid user frustriation made by not working website elements. Whole web app responsivity was tested using build in tool in Safari Browser.
 
-To Do ---------------
-
 #### Feature Testing :
-
+ * Login & Register Form - Both form has been tested by entering values into entry fields and running script which should add details to database. Result : Worked as expected!
+ * Contact form - All different variances with missing fields were tested. Also 
+ * 
 ## Bugs
 
 #### Bugs During Development: 
+ * Contact form - After clicking send script should send an email from user form but it didn't work... The issue I faced was, google mailbox client has restrictions which will not allow outside app to send an email.</br>
+       Solution - Google mail restrictions settings change</br>
+         Result - Email sent, work as expected
+ * Contact form - Message input box, while extending box, whole input field was overfloating contact form</br>
+       Solution - Width setted as max width - calculated based on contact form size</br>
+         Result - Message input field is not overflating whole contact form
+ * Heroku pages error codes : H14 and H10</br>
+       Solution - Requirements.txt file, Procfile recreated with small changes, old Python package removed</br>
+         Result - Application successfully deployed to heroku pages
+ * Flash message - All flash messages runned and show by running any of flash message code line from python.py file</br>
+       Solution - Flash message change to messages by categories, 'hiddem' class applied to website elements</br>
+         Result - Single flash message show while running single line of code
 
-<p>During working on this project I faced lots of different issues.</p>
-
-End To Do ---------------
+<p>During working on this project I faced lots of different issues. Some of them were created because of lack of knowledge and wrong code semantic...</p>
 
 ## Deployment
 BakingMaster was developed in AWS Cloud9. GIT and GitHub was used to store Repository.
