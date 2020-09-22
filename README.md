@@ -1,4 +1,6 @@
-# <img src="https://www.abovewave.kylos.pl/bakingMaster/Logotype.png" style="margin-right:20px; margin-bottom:-15px; width:150px"></img> Baking Master
+<img src="https://www.abovewave.kylos.pl/bakingMaster/Logotype.png" style="margin-right:20px; margin-bottom:-15px; width:150px"/>
+
+# Baking Master
 
 Hi! If you're reading this, it means you love to bake.
 This web application will let you develope your baking skills! Search through all amazing recipes, share your own recipes, change them at any time you want!
