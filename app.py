@@ -31,16 +31,14 @@ API_KEY = os.getenv('API_KEY')
 
 # Home page
 @app.route('/')
-@app.route('/home')
 def home():
-    
     
     #url = "https://api.edamam.com/search?q=apple&app_id=3fbc3ca8&app_key="+ API_KEY
     #response = requests.request("GET", url)
 
     #print(response.text)
     
-    return render_template('layout/base.html', body_id='home-page', title = "Home Page")
+    return render_template('layout/landing-page.html', body_id='home-page', title = "Home Page")
 
 # All Recieps page
 @app.route('/recipes')
