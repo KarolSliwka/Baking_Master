@@ -191,11 +191,6 @@ def recovery():
 def about():
     return  render_template('pages/about.html', body_id='about-page')
     
-# Site Map Page
-@app.route('/site-map')
-def site_map():
-    return  render_template('pages/site-map.html', body_id='site-map-page')
-    
 # Equipment Page
 @app.route('/equipment')
 def equipment():
