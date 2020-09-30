@@ -1,5 +1,25 @@
 {% extends 'layout/base.html' %} {% set page = "landin-page" %} {% block content %}
 <h1 class="hidden">Home page</h1>
 <!-- Include carousel -->
-{% include 'components/carousel/carousel.html' %} 
-{% endblock %}
+{% include 'components/carousel/carousel.html' %}
+<div class="container landing-page-main">
+    <h2 class="page-title">First time can be the best time!</h2>
+    <p class="lead">Never give up! Especially when you are starting new beautiful adventure with baking</p>
+    <div class="top-landing-page">
+        <div class="famous-master">
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">First famous chef:<span class="text-muted"> Pierre Hermé</span></h2>
+                    <p class="lead">When you’re dubbed as “The Picasso of Pastry,” it’s clear you have an incredible talent. Pierre Hermé is the ‘Picasso’ of pastries. He is notably most famous for his flavoured macarons that are rich and unusual in taste.His baking
+                        skills have made him well known and he has written over a dozen books. He is the youngest person to ever be named “France’s Pastry Chef of the Year”. Currently, he manages two Michelin star awarded restaurants in France.</p>
+                </div>
+                <div class="col-md-5">
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 300x300">
+                        <rect width="100%" height="100%" fill="#eee"></rect>
+                        <img src="" alt="duffgoldman" class="">
+                        </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
