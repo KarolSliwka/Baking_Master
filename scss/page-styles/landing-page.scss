@@ -4,12 +4,66 @@
     flex-direction: column;
 }
 
+.featurette {
+    padding-top: 40px;
+    display: flex;
+    padding: 0.5rem 1rem;
+}
+
 .featurette-heading {
     font-size: 18px;
-    padding: 0.5rem 1rem;
 }
 
 .lead {
     font-size: 16px;
     padding: 0.5rem 1rem;
+}
+
+.chef-photo {
+    display: inherit;
+    justify-content: center;
+    padding-top: 10px;
+    img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 2px solid #FFF;
+        box-shadow: 0px 0px 5px 1px #ccc;
+    }
+}
+
+.lead-landing {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.bottom-landing-page {
+    padding-top: 60px;
+}
+
+.middle-photo {
+    order: 1;
+}
+
+.middle-text {
+    order: 2;
+}
+
+
+@media screen and (max-width: 768px) {
+    #home-page {
+        .featurette {
+            flex-direction: column;
+            text-align: center;
+        }
+        .middle-photo {
+            order: 2;
+        }
+
+        .middle-text {
+            order: 1;
+        }
+        .first-part{order: 2;}
+        .second-part {order: 1;}
+    }
 }
