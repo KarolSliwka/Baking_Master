@@ -251,6 +251,8 @@ Simple and clear design came from heart of the author. Project coloristic was wi
 *   <a href="https://fonts.google.com/specimen/Roboto">Roboto</a>
 *   <a href="https://fontawesome.com">Font-Awesome</a>
 *   <a href="https://www.invisionapp.com">InvisionApp</a>
+*   <a href="https://blog.sfceurope.com/famous-pastry-chefs-from-around-the-world">Landing page chef's information and images</a>
+*   <a href="https://unsplash.com">Carousel photos</a>
 
 ## Contact
 If you've got any questions please contact me via email: <a href="mailto:contact@karolsliwka.com">contact@karolsliwka.com</a>
