@@ -192,14 +192,36 @@ h4 {
   border: 1px solid black;
 }
 
-.carousel {
+.main-carousel-container {
   min-height: 100%;
   margin-top: 60px;
 }
 
 .carousel-inner {
+  height: auto;
+  max-height: 300px;
+}
+.carousel-inner img {
   width: 100%;
-  max-height: 400px;
+}
+
+.carousel-control.right,
+.carousel-control.right {
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0, rgba(0, 0, 0, 0.1) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0, rgba(0, 0, 0, 0.1) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.1)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0, rgba(0, 0, 0, 0.1) 100%);
+}
+
+.carousel-indicators li {
+  width: 6px;
+  height: 10px;
+}
+
+.carousel-indicators .active {
+  width: 6px;
+  height: 20px;
+  background-color: #FF3366;
 }
 
 form p {
