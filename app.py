@@ -38,7 +38,7 @@ def home():
 
     #print(response.text)
     
-    return render_template('layout/landing-page.html', body_id='home-page', title = "Home Page")
+    return render_template('pages/landing-page.html', body_id='home-page', title = "Home Page")
 
 # All Recieps page
 @app.route('/recipes')
