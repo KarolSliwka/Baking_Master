@@ -814,14 +814,6 @@ form p {
   padding-top: 60px;
 }
 
-.middle-photo {
-  order: 1;
-}
-
-.middle-text {
-  order: 2;
-}
-
 @media screen and (max-width: 768px) {
   #home-page .featurette {
     flex-direction: column;
