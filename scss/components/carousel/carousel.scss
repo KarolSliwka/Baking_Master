@@ -5,10 +5,11 @@
 
 .carousel-inner {
   height: auto;
-  max-height: 300px;
+  max-height: 400px;
 
   img {
     width: 100%;
+    height: inherit;
   }
 }
 

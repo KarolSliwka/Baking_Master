@@ -199,10 +199,11 @@ h4 {
 
 .carousel-inner {
   height: auto;
-  max-height: 300px;
+  max-height: 400px;
 }
 .carousel-inner img {
   width: 100%;
+  height: inherit;
 }
 
 .carousel-control.right,
