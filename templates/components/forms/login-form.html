@@ -19,6 +19,13 @@
                     {% endfor -%}
                 </div>
                 {% endif %} {% endwith %}
+                {% with errors = get_flashed_messages(category_filter=["incorrect-user"]) %} {% if errors %}
+                <div id="flash-message" class="incorrect-user">
+                    {%- for msg in errors %}
+                    <p>{{ msg }}</p>
+                    {% endfor -%}
+                </div>
+                {% endif %} {% endwith %}
                 <h3 class="form-second-title">Login</h3>
             </div>
             <!-- Email box -->
