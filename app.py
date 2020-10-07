@@ -119,9 +119,10 @@ def login():
                              login_user['password']) == login_user['password']:
                 session['username'] = request.form['username']
                 return redirect(url_for('index'))
-            flash('That username/password combination was incorrect')
+            flash('Incorrect username or password, try again.','logged-in-false')
             return redirect(url_for('login'))
-        
+            
+    flash('Welcome back! It is really nice to se you again!','logged-in-false')
     return render_template('pages/index.html', body_id='account-page')
    
 # Register Page 
