@@ -225,7 +225,7 @@ def recovery():
 def logout():
     
     session.clear()
-    return redirect('/home')
+    return redirect(url_for('home'))
 
 # About Page
 @app.route('/about')

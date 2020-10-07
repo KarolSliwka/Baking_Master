@@ -23,12 +23,12 @@
       </ul>
       <!-- search and login links -->
       <ul class="nav navbar-nav navbar-right">
-        {% if session['username'] !='' %}
-        <li><a href="{{url_for('register')}}" class="{{ 'active-link' if page == 'register' else 'hvr-underline-from-left'}}">Register</a></li>
-        <li><a href="{{url_for('login')}}" class="{{ 'active-link' if page == 'login' else 'hvr-underline-from-left'}}">Login</a></li>
+        {% if session['username']%}
+          <li><a href="{{url_for('index')}}" class="{{ 'active-link' if page == 'account' else 'hvr-underline-from-left'}}">Account</a></li>
+          <li><a href="{{url_for('logout')}}" class="{{ 'active-link' if page == 'logout' else 'hvr-underline-from-left'}}">Logout</a></li>
         {% else %}
-        <li><a href="{{url_for('index')}}" class="{{ 'active-link' if page == 'account' else 'hvr-underline-from-left'}}">Account</a></li>
-        <li><a href="{{url_for('logout')}}" class="{{ 'active-link' if page == 'logout' else 'hvr-underline-from-left'}}">Logout</a></li>
+          <li><a href="{{url_for('register')}}" class="{{ 'active-link' if page == 'register' else 'hvr-underline-from-left'}}">Register</a></li>
+          <li><a href="{{url_for('login')}}" class="{{ 'active-link' if page == 'login' else 'hvr-underline-from-left'}}">Login</a></li>
         {% endif %}
       </ul>
     </div>
