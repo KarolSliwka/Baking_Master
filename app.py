@@ -38,7 +38,6 @@ def index():
     """
     try:
         users = mongo.db.users
-        
         return render_template("pages/index.html", body_id="user-account",
                                page_title="Account", current_user=users.find_one(
                                    {'email': session['username']}))
@@ -227,7 +226,6 @@ def logout():
     
     session.clear()
     return redirect('/home')
-
 
 # About Page
 @app.route('/about')
