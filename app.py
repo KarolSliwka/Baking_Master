@@ -2,7 +2,7 @@ import os
 import pymongo
 import requests
 import bcrypt
-from flask import Flask, render_template, request, flash, session, redirect, url_for
+from flask import Flask, render_template, url_for, session, redirect, request, flash
 from flask_mail import Mail
 from flask_mail import Message
 from threading import Thread
@@ -28,6 +28,21 @@ mail = Mail(app)
 #API config
 API_ID = os.getenv('API_ID')
 API_KEY = os.getenv('API_KEY')
+
+
+# Home page
+@app.route('/account')
+def index():
+    """
+    Renders the home page for the website.
+    """
+    try:
+        users = mongo.db.users
+        return render_template("pages/index.html", body_id="user-account",
+                               page_title="Account", current_user=users.find_one(
+                                   {'email': session['username']}))
+    except:
+        return redirect(url_for('home'))
 
 # Home page
 @app.route('/')
@@ -86,7 +101,6 @@ def contact():
         flash('Your message was sent successfully','contact-send')
     return render_template('pages/contact.html', body_id='contact-page', title="Contact Page")
  
- 
 # Login Page   
 @app.route('/login', methods=["GET", "POST"])
 def login():
@@ -100,24 +114,19 @@ def login():
         """ Request information from user form """
         req = request.form
         
-        email_login = req.get('email').lower()
+        email_login = req.get('email')
         password = req.get('password')
-        
-        """ Check if user exist in database """
-        login_user = users.find_one({'email': email_login})
-        
-        if login_user is None:
-            flash("Incorrect username or password / user doesn't exist.","incorrect-user")
 
-        login_user = users.find_one({'email': email_login})
+        login_user = users.find_one({'email': email_login.lower()})
+        
         if login_user:
             if bcrypt.hashpw(password.encode('utf-8'), login_user['password']) == login_user['password']:
-                session['name'] = email_login
+                session['username'] = email_login
                 flash('You have been successfully logged in!')
-                return redirect(url_for('index'))       
+                return redirect(url_for('index'))     
+            return redirect(url_for('login'))
         flash("Incorrect username or password / user doesn't exist.","incorrect-user")
     return render_template('pages/login.html', body_id='login-page', title='Sign In')
-    
 
    
 # Register Page 
@@ -134,7 +143,7 @@ def register():
         
         """ Get all necessery variables from user form"""
         name = req.get('name')
-        email = req.get('email').lower()
+        email = req.get('email')
         password = req.get('password')
         hashpassword = bcrypt.hashpw(
                     password.encode('utf-8'), bcrypt.gensalt())
@@ -145,8 +154,8 @@ def register():
             
             """ Insert new user, new record to database """
             users.insert_one({
-                'email' : email,
                 'name' : name,
+                'email' : email.lower(),
                 'password' : hashpassword,
                 'newsletter' : 'Y'
                 
