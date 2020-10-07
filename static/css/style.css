@@ -405,6 +405,30 @@ form p {
   opacity: 1;
 }
 
+.flash-login, .incorrect-user {
+  height: auto;
+  width: 100%;
+  border: 1px solid #5aac17;
+  background-color: rgba(230, 255, 204, 0.6);
+  border-radius: 5px;
+  text-align: left;
+}
+.flash-login p, .incorrect-user p {
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #5aac17;
+}
+
+.incorrect-user {
+  border: 1px solid #FF3366;
+  background-color: rgba(255, 172, 193, 0.6);
+}
+.incorrect-user p {
+  color: #FF3366;
+}
+
 .recovery-form {
   padding-top: 110px;
 }
