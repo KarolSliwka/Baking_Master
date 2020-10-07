@@ -68,7 +68,7 @@ def contact():
         
         """ Get variable from user form"""
         username = req.get('contact-name')
-        email_address = req.get('contact-email')
+        email_address = req.get('contact-email').lower()
         contact_message = req.get('contact-message')
         email_from = os.getenv('EMAIL_USERNAME')
             
@@ -86,15 +86,43 @@ def contact():
         flash('Your message was sent successfully','contact-send')
     return render_template('pages/contact.html', body_id='contact-page', title="Contact Page")
  
+ 
+@app.route('/account')
+def index():
+    """
+    Render index page
+    """
+    try:
+        users = mongo.db.users
+        return render_template("pages/index.html", body_id="home-page",
+                               page_title="Home", current_user=users.find_one(
+                                   {'name': session['username']}))
+    except:
+        return render_template("pages/index.html", body_id="home-page", page_title="Home")
+ 
+ 
 # Login Page   
-@app.route('/login')
+@app.route('/login', methods=["GET", "POST"])
 def login():
+    
     """
     This function is comparing information provided in user form with database information
     If result is positive then it's returning user - my account page, if not shows the error info
     """
     
-    return render_template('pages/login.html', body_id='login-page')
+    if request.method == 'POST':
+        users = mongo.db.users
+        login_user = users.find_one({'email': request.form['email'].lower()})
+
+        if login_user:
+            if bcrypt.hashpw(request.form['password'].encode('utf-8'),
+                             login_user['password']) == login_user['password']:
+                session['username'] = request.form['username']
+                return redirect(url_for('index'))
+            flash('That username/password combination was incorrect')
+            return redirect(url_for('login'))
+        
+    return render_template('pages/index.html', body_id='account-page')
    
 # Register Page 
 @app.route('/register', methods=["GET", "POST"])
@@ -109,8 +137,8 @@ def register():
         req = request.form
         
         """ Get all necessery variables from user form"""
-        name = req.get('name')
-        email = req.get('email')
+        name = req.get('name').lower()
+        email = req.get('email').lower()
         password = req.get('password')
         hashpassword = bcrypt.hashpw(
                     password.encode('utf-8'), bcrypt.gensalt())
@@ -121,8 +149,8 @@ def register():
             
             """ Insert new user, new record to database """
             users.insert_one({
-                'name' : name,
                 'email' : email,
+                'name' : name,
                 'password' : hashpassword,
                 'newsletter' : 'Y'
                 
@@ -154,7 +182,7 @@ def recovery():
         req = request.form
         
         """ Get variable from user form"""
-        email = req.get('recovery_email')
+        email = req.get('recovery_email').lower()
         """ Prevent to sending request when field is empty"""
         
         """ Check if users exist in databas """
@@ -207,7 +235,7 @@ def add_to_newsletter():
         req = request.form
         
         """ Get email as variable from user form"""
-        newsletter_email = req.get('newsletter-email')
+        newsletter_email = req.get('newsletter-email').lower()
         
         """ Search for email address in User database """
         existing_user = users.find_one({'email' : newsletter_email})
@@ -230,9 +258,6 @@ def add_to_newsletter():
                 flash('You are subscribing newsletter already','newsletter-error')
     return redirect(request.referrer)
         
-
-
-
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
