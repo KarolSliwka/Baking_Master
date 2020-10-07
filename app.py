@@ -108,9 +108,17 @@ def login():
         
         if login_user is None:
             flash("Incorrect username or password / user doesn't exist.","incorrect-user")
-    
+
+        login_user = users.find_one({'email': email_login})
+        if login_user:
+            if bcrypt.hashpw(password.encode('utf-8'), login_user['password']) == login_user['password']:
+                session['name'] = email_login
+                flash('You have been successfully logged in!')
+                return redirect(url_for('index'))       
+        flash("Incorrect username or password / user doesn't exist.","incorrect-user")
     return render_template('pages/login.html', body_id='login-page', title='Sign In')
     
+
    
 # Register Page 
 @app.route('/register', methods=["GET", "POST"])
