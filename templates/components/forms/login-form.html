@@ -9,7 +9,7 @@
             </div>
         </div>
         <!-- Form -->
-        <form id="login-form" name="login-form" method="POST">
+        <form id="login-form" name="login-form" action="{{ url_for('login') }}" method="POST">
             <!-- Second title -->
             <div class="form-group">
                 {% with errors = get_flashed_messages(category_filter=["register-added"]) %} {% if errors %}
