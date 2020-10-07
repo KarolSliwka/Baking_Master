@@ -87,20 +87,6 @@ def contact():
     return render_template('pages/contact.html', body_id='contact-page', title="Contact Page")
  
  
-@app.route('/account')
-def index():
-    """
-    Render index page
-    """
-    try:
-        users = mongo.db.users
-        return render_template("pages/index.html", body_id="account-page",
-                               page_title="Home", current_user=users.find_one(
-                                   {'name': session['name']}))
-    except:
-        return render_template("pages/index.html", body_id="account-page", page_title="Your account")
- 
- 
 # Login Page   
 @app.route('/login', methods=["GET", "POST"])
 def login():
@@ -109,21 +95,22 @@ def login():
     This function is comparing information provided in user form with database information
     If result is positive then it's returning user - my account page, if not shows the error info
     """
+    if request.method == "POST":
+        users = mongo.db.Users
+        """ Request information from user form """
+        req = request.form
+        
+        email_login = req.get('email').lower()
+        password = req.get('password')
+        
+        """ Check if user exist in database """
+        login_user = users.find_one({'email': email_login})
+        
+        if login_user is None:
+            flash("Incorrect username or password / user doesn't exist.","incorrect-user")
     
-    if request.method == 'POST':
-        users = mongo.db.users
-        login_user = users.find_one({'email': request.form['email'].lower()})
-
-        if login_user:
-            if bcrypt.hashpw(request.form['password'].encode('utf-8'),
-                             login_user['password']) == login_user['password']:
-                session['username'] = request.form['username']
-                return redirect(url_for('index'))
-            flash('Incorrect username or password, try again.','logged-in-false')
-            return redirect(url_for('login'))
-            
-    flash('Welcome back! It is really nice to se you again!','logged-in-false')
-    return render_template('pages/index.html', body_id='account-page')
+    return render_template('pages/login.html', body_id='login-page', title='Sign In')
+    
    
 # Register Page 
 @app.route('/register', methods=["GET", "POST"])
@@ -138,7 +125,7 @@ def register():
         req = request.form
         
         """ Get all necessery variables from user form"""
-        name = req.get('name').lower()
+        name = req.get('name')
         email = req.get('email').lower()
         password = req.get('password')
         hashpassword = bcrypt.hashpw(
@@ -169,15 +156,6 @@ def register():
             
     """ Return register template """
     return render_template('pages/register.html', body_id='register-page', title='Register account')
-
-
-@app.route('/logout')
-def logout():
-    """
-    This function clears the session, loggin out the exisitng user
-    """
-    session.clear()
-    return redirect(url_for('home'))
 
 # Password Recovery Page
 @app.route('/recovery',  methods=["GET", "POST"])
