@@ -94,11 +94,11 @@ def index():
     """
     try:
         users = mongo.db.users
-        return render_template("pages/index.html", body_id="home-page",
+        return render_template("pages/index.html", body_id="account-page",
                                page_title="Home", current_user=users.find_one(
-                                   {'name': session['username']}))
+                                   {'name': session['name']}))
     except:
-        return render_template("pages/index.html", body_id="home-page", page_title="Home")
+        return render_template("pages/index.html", body_id="account-page", page_title="Your account")
  
  
 # Login Page   
@@ -169,6 +169,15 @@ def register():
             
     """ Return register template """
     return render_template('pages/register.html', body_id='register-page', title='Register account')
+
+
+@app.route('/logout')
+def logout():
+    """
+    This function clears the session, loggin out the exisitng user
+    """
+    session.clear()
+    return redirect(url_for('home'))
 
 # Password Recovery Page
 @app.route('/recovery',  methods=["GET", "POST"])
