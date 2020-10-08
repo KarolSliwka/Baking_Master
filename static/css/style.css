@@ -856,8 +856,21 @@ form p {
     order: 1;
   }
 }
-#user-account .main-container {
-  padding-top: 3.5rem;
+.account-main-container {
+  padding-top: 60px;
+}
+
+.account {
+  display: flex;
+  padding: 0.5rem 1rem;
+  flex-direction: column;
+}
+
+.welcome-lead {
+  color: #000;
+}
+.welcome-lead span {
+  color: #FF3377;
 }
 
 /*# sourceMappingURL=style.css.map */

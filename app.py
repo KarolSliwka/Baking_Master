@@ -38,7 +38,7 @@ def index():
     """
     try:
         users = mongo.db.users
-        return render_template("pages/index.html", body_id="user-account",page_title="Account", active_user=users.find_one({'email': session['email']}))
+        return render_template("pages/index.html", body_id="user-account",page_title="Account",active_user=users.find_one({'email': session['email']}))
 
     except:
         return render_template("pages/index.html", body_id="user-account", page_title="account")
@@ -127,7 +127,7 @@ def login():
                 session['email'] = email_login
                 session['name'] = username
                 flash('You have been successfully logged in!')
-                return redirect(url_for('index'))     
+                return redirect(url_for('index'))   
             flash("Incorrect username or password / user doesn't exist.","incorrect-user")
             return redirect(url_for('login'))
         flash("Incorrect username or password / user doesn't exist.","incorrect-user")
