@@ -857,7 +857,7 @@ form p {
   }
 }
 .account-main-container {
-  padding-top: 60px;
+  padding-top: 80px;
 }
 
 .account {
@@ -865,12 +865,24 @@ form p {
   padding: 0.5rem 1rem;
   flex-direction: column;
 }
-
-.welcome-lead {
+.account .welcome-lead {
   color: #000;
 }
-.welcome-lead span {
+.account .welcome-lead span {
+  white-space: nowrap;
   color: #FF3377;
+}
+.account ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.account ul li a {
+  text-decoration: none !important;
+  padding-bottom: 5px;
+}
+.account .delete-account {
+  padding-top: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,14 +3,21 @@
     <h1 class="hidden">Account Page</h1>
     <div class="account">
         {% if username !='' %}
-        <h3 class="page-title">Account</h3>
-        <h4 class="welcome-lead">Welcome back
-            <span>{{session['name']}}</span> !
-        </h4>
-    
+        <h3 class="welcome-lead">Hi
+            <span>{{session['name']}}</span> ,it's time to bake something amazing!
+        </h3>
         {% else %}
-        <h4 class="welcome-lead">Welcome back!</h4>
+        <h3 class="welcome-lead">Hi! It's nice to see you again.</h3>
         {% endif %}
+        <h4>User Menu:</h4>
+        <ul>
+            <li><a href="">Add Recipe</a></li>
+            <li><a href="">Edit Recpie</a></li>
+
+            <li><a href="">Your Recipes</a></li>
+            <li><a href=""><i class="far fa-heart fav-heart-icon"></i>Favourites</a></li>
+            <li class="delete-account"><a href="">Delete Account</a></li>
+        </ul>
     </div>
 </div>
 {% endblock %}
