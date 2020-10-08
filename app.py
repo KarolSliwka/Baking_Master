@@ -38,9 +38,8 @@ def index():
     """
     try:
         users = mongo.db.users
-        return render_template("pages/index.html", body_id="user-account",
-                               page_title="Account", current_user=users.find_one(
-                                   {'email': session['username']}))
+        return render_template("pages/index.html", body_id="user-account",page_title="Account", active_user=users.find_one({'email': session['email']}))
+
     except:
         return render_template("pages/index.html", body_id="user-account", page_title="account")
 
@@ -118,12 +117,11 @@ def login():
         password = req.get('password')
 
         login_user = users.find_one({'email': email_login.lower()})
-        print(users.find({'email':email_login}))
-        
         
         if login_user:
             if bcrypt.hashpw(password.encode('utf-8'), login_user['password']) == login_user['password']:
-                session['username'] = 'username'
+                session['email'] = email_login
+                print(session['email'])
                 flash('You have been successfully logged in!')
                 return redirect(url_for('index'))     
             flash("Incorrect username or password / user doesn't exist.","incorrect-user")
