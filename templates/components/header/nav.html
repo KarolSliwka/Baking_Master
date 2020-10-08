@@ -23,7 +23,7 @@
       </ul>
       <!-- search and login links -->
       <ul class="nav navbar-nav navbar-right">
-        {% if session['username']%}
+        {% if session['email']%}
           <li><a href="{{url_for('index')}}" class="{{ 'active-link' if page == 'account' else 'hvr-underline-from-left'}}">Account</a></li>
           <li><a href="{{url_for('logout')}}" class="{{ 'active-link' if page == 'logout' else 'hvr-underline-from-left'}}">Logout</a></li>
         {% else %}
