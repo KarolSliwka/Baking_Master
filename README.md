@@ -6,34 +6,39 @@ Hi! If you're reading this, it means you love to bake.
 This web application will let you develope your baking skills! Search through all amazing recipes, share your own recipes, change them at any time you want!
 If you decide not to share them, simply removed them. You can save your favourite recipes and come back to them whenever you want! <br>Don't waist your time! It's bake time!
 
-## Contents: 
-- UX:
-    * About Porject
-    * User Goals
-    * Author Goals
-    * User Stories
-    * Requirements & Expectations
-- Design:
-    * Fonts
-    * Icons
-    * Colors
-- Wireframes
-- Database
-- Features:
-    * Developed
-    * Will be developed in the future
-- Technologies Used:
-    * Languages
-    * Tools & Libraries
-- Planning and Testing:
-    * Planning
-    * Testing
-    * Feature Testing
-- Bugs
-- Deployment
-- Credits
-- Contact
-- Disclaimer
+ * [Contents:](#contents-)
+  * [User Experience:](#user-experience-)
+    + [About Project](#about-project)
+    + [Users Goals](#users-goals)
+    + [Author Goals:](#author-goals-)
+    + [User Stories:](#user-stories-)
+    + [User Requirements & Expectations:](#user-requirements---expectations-)
+      - [Requirements:](#requirements-)
+      - [Expectations:](#expectations-)
+  * [Design:](#design-)
+    + [Fonts:](#fonts-)
+    + [Icons:](#icons-)
+    + [Colors:](#colors-)
+  * [Wireframes:](#wireframes-)
+  * [Database:](#database-)
+  * [Features:](#features-)
+    + [Features that have been developed:](#features-that-have-been-developed-)
+    + [Features that will be developed in the future:](#features-that-will-be-developed-in-the-future-)
+  * [Technologies Used:](#technologies-used-)
+      - [Languages:](#languages-)
+      - [Tools & Libraries:](#tools---libraries-)
+  * [Planning & Testing:](#planning---testing-)
+      - [Planning:](#planning-)
+      - [Testing:](#testing-)
+      - [Feature Testing :](#feature-testing--)
+  * [Bugs](#bugs)
+      - [Bugs During Development:](#bugs-during-development-)
+  * [Deployment](#deployment)
+    + [Cloning BakingMaster from GitHub:](#cloning-bakingmaster-from-github-)
+    + [Deploying BakingMaster to Heroku:](#deploying-bakingmaster-to-heroku-)
+  * [Credits / Acknowledgement](#credits---acknowledgement)
+  * [Contact](#contact)
+  * [Disclaimer](#disclaimer)
 
 ## User Experience:
 
