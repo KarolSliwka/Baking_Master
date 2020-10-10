@@ -124,7 +124,7 @@ def login():
 @app.route('/account')
 def index():
     """
-    Renders the home page for the website.
+    Renders a 
     """
     try:
         users = mongo.db.users
@@ -226,6 +226,10 @@ def recovery():
 @app.route('/logout')
 def logout():
     
+    """
+    This route is clearing user session variables
+    Redirecting user to landing page (home page)
+    """
     session.clear()
     return redirect(url_for('home'))
 
@@ -274,6 +278,17 @@ def add_to_newsletter():
             else:    
                 flash('You are subscribing newsletter already','newsletter-error')
     return redirect(request.referrer)
+        
+        
+# Page not found error route
+@app.route('/Error404')
+def Error404(error):
+    
+    """
+    This route renders an error page with 404 message.
+    """
+    error404 = str(error)
+    return render_template('pages/error-page.html', error404=error404), 404 
         
 
 if __name__ == '__main__':
