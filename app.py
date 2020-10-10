@@ -292,7 +292,7 @@ def Error404(error):
     This route renders an error 404
     """
     error_type = str(error)
-    return render_template('pages/error-page.html', error_type=error_type), 404 
+    return render_template('pages/error-page.html', error_type=error_type, body_id='error-page'), 404 
 
 # Server error route
 @app.errorhandler(500)
@@ -301,7 +301,7 @@ def Error500(error):
     This route renders server error 500
     """
     error_type = str(error)
-    return render_template('pages/error-page.html', error_type=error_type), 500
+    return render_template('pages/error-page.html', error_type=error_type, body_id='error-page'), 500
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

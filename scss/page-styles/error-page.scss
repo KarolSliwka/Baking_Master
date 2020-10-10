@@ -1,21 +1,41 @@
+.error-page-main {
+    padding-top: 4rem;
+}
+
 $a: 100%;
 $b: 360px;
-#error-page {
-    .error-page-main {
-        height: 100vh;
-        max-height: calc(#{$a} - #{$b});
-        padding-top: 2rem;
-    }
-    footer {
-        position: fixed;
-        bottom: 0;
+@media screen and (min-height: 983px) {
+    @media screen and (min-width: 1020px) {
+        #error-page {
+            height: calc(#{$a} - #{$b});
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+        }
     }
 }
 
+.error-box {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding: 0.5rem 2rem;
+}
+
+.error-page-title {
+    text-align: center;
+    font-size: 124px;
+    font-weight: 700;
+    color: #FF3377;
+}
 
 .error-page-image {
-    width: 640px;
-    height: 400px;
+    width: 100%;
+    max-width: 320px;
+    height: 100%;
+    max-height: 200px;
 }
 
 .error-title {

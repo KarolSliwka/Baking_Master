@@ -1,15 +1,17 @@
 {% extends 'layout/base.html' %} {% set page = "error-page" %} {% block content %}
 <div class="container error-page-main">
     <h1 class="hidden">Error 404</h1>
-    {% if error_type !='' %}
-    <h2 class="page-title">404</h2>
-    {% else %}
-    <h2 class="page-title">500</h2> 
-    {% endif %}
-    <img src="/static/images/errors/Error-404.png" alt="error-page-image" class="error-page-image">
-    <h2 class="error-title">
-        <span class="error-grats">Grats.</span> You broke it.<br>
-        <p>This page doesn't exist or some other horrible error has occured.</p>
-    </h2>
+    <div class="error-box">
+        {% if error_type !='' %}
+        <h2 class="error-page-title">404</h2>
+        {% else %}
+        <h2 class="error-page-title">500</h2>
+        {% endif %}
+        <img src="/static/images/errors/Error-404.png" alt="error-page-image" class="error-page-image">
+        <h2 class="error-title">
+            <span class="error-grats">Grats.</span> You broke it.<br>
+            <p>This page doesn't exist or some other horrible error has occured.</p>
+        </h2>
+    </div>
 </div>
 {% endblock %}
