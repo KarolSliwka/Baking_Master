@@ -893,8 +893,7 @@ form p {
   #error-page {
     height: calc(100% - 360px);
   }
-
-  footer {
+  #error-page footer {
     position: fixed;
     bottom: 0;
   }

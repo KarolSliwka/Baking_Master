@@ -8,10 +8,10 @@ $b: 360px;
     @media screen and (min-width: 1020px) {
         #error-page {
             height: calc(#{$a} - #{$b});
-        }
-        footer {
-            position: fixed;
-            bottom: 0;
+            footer {
+                position: fixed;
+                bottom: 0;
+            }
         }
     }
 }
