@@ -2,3 +2,7 @@
 .c9/
 *.map
 __pycache__/
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
