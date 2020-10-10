@@ -1,10 +1,21 @@
-.error-page-mani {
-    padding-top: 60px;
+$a: 100%;
+$b: 360px;
+#error-page {
+    .error-page-main {
+        height: 100vh;
+        max-height: calc(#{$a} - #{$b});
+        padding-top: 2rem;
+    }
+    footer {
+        position: fixed;
+        bottom: 0;
+    }
 }
 
+
 .error-page-image {
-    width: 320px;
-    height: 200px;
+    width: 640px;
+    height: 400px;
 }
 
 .error-title {
