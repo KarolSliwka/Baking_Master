@@ -12,7 +12,7 @@ from bson.objectid import ObjectId
 app = Flask(__name__)
 
 # Initilize connection
-app.config["MONGO_DBNAME"] = 'BakingMaster'
+app.config["MONGO_DBNAME"] = os.getenv('MDB_NAME')
 app.config["MONGO_URI"] = os.getenv('MONGO_URI')
 app.secret_key = os.getenv('SECRET_KEY')
 mongo = PyMongo(app)
@@ -31,19 +31,6 @@ API_KEY = os.getenv('API_KEY')
 
 
 # Home page
-@app.route('/account')
-def index():
-    """
-    Renders the home page for the website.
-    """
-    try:
-        users = mongo.db.users
-        return render_template("pages/index.html", body_id="user-account",page_title="Account",active_user=users.find_one({'email': session['email']}))
-
-    except:
-        return render_template("pages/index.html", body_id="user-account", page_title="account")
-
-# Home page
 @app.route('/')
 def home():
     
@@ -60,8 +47,8 @@ def recipes():
     return  render_template('pages/recipes.html', body_id='recipes-page')
     
 # Favourites Page
-@app.route('/top-hundred')
-def top_hundredd():
+@app.route('/favourites')
+def favourites():
     return render_template('pages/favourites.html', body_id='favourites-page')
     
 # Search Page
@@ -132,8 +119,21 @@ def login():
             return redirect(url_for('login'))
         flash("Incorrect username or password / user doesn't exist.","incorrect-user")
     return render_template('pages/login.html', body_id='login-page', title='Sign In')
-
    
+# Home page
+@app.route('/account')
+def index():
+    """
+    Renders the home page for the website.
+    """
+    try:
+        users = mongo.db.users
+        return render_template("pages/index.html", body_id="user-account",page_title="Account",active_user=users.find_one({'email': session['email']}))
+
+    except:
+        return render_template("pages/index.html", body_id="user-account", page_title="account")
+
+
 # Register Page 
 @app.route('/register', methods=["GET", "POST"])
 def register():
@@ -279,4 +279,4 @@ def add_to_newsletter():
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=True)
+            debug=os.getenv('MY_DEBUG'))
