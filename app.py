@@ -281,15 +281,22 @@ def add_to_newsletter():
         
         
 # Page not found error route
-@app.route('/Error404')
+@app.route(404)
 def Error404(error):
     
     """
     This route renders an error page with 404 message.
     """
-    error404 = str(error)
-    return render_template('pages/error-page.html', error404=error404), 404 
-        
+    error_type = str(error)
+    return render_template('pages/error-page.html', error_type=error_type), 404 
+
+# Server error route
+@app.route(500)
+def Error500(error):
+    """
+    """
+    error_type = str(error)
+    return render_template('pages/error-page.html', error_type=error_type), 500
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
