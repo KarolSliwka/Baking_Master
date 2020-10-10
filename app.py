@@ -285,7 +285,7 @@ def add_to_newsletter():
 def Error404(error):
     
     """
-    This route renders an error page with 404 message.
+    This route renders an error 404
     """
     error_type = str(error)
     return render_template('pages/error-page.html', error_type=error_type), 404 
@@ -294,6 +294,7 @@ def Error404(error):
 @app.route(500)
 def Error500(error):
     """
+    This route renders server error 500
     """
     error_type = str(error)
     return render_template('pages/error-page.html', error_type=error_type), 500
