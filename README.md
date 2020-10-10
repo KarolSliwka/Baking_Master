@@ -6,41 +6,41 @@ Hi! If you're reading this, it means you love to bake.
 This web application will let you develope your baking skills! Search through all amazing recipes, share your own recipes, change them at any time you want!
 If you decide not to share them, simply removed them. You can save your favourite recipes and come back to them whenever you want! <br>Don't waist your time! It's bake time!
 
- * [Contents:](#contents-)
-  * [User Experience:](#user-experience-)
+ * [Contents](#contents-)
+  * [User Experience](#user-experience-)
     + [About Project](#about-project)
     + [Users Goals](#users-goals)
-    + [Author Goals:](#author-goals-)
-    + [User Stories:](#user-stories-)
-    + [User Requirements & Expectations:](#user-requirements---expectations-)
-      - [Requirements:](#requirements-)
-      - [Expectations:](#expectations-)
-  * [Design:](#design-)
-    + [Fonts:](#fonts-)
-    + [Icons:](#icons-)
-    + [Colors:](#colors-)
-  * [Wireframes:](#wireframes-)
-  * [Database:](#database-)
-  * [Features:](#features-)
-    + [Features that have been developed:](#features-that-have-been-developed-)
-    + [Features that will be developed in the future:](#features-that-will-be-developed-in-the-future-)
-  * [Technologies Used:](#technologies-used-)
-      - [Languages:](#languages-)
-      - [Tools & Libraries:](#tools---libraries-)
-  * [Planning & Testing:](#planning---testing-)
-      - [Planning:](#planning-)
-      - [Testing:](#testing-)
-      - [Feature Testing :](#feature-testing--)
+    + [Author Goals](#author-goals-)
+    + [User Stories](#user-stories-)
+    + [User Requirements & Expectations](#user-requirements---expectations-)
+      - [Requirements](#requirements-)
+      - [Expectations](#expectations-)
+  * [Design](#design-)
+    + [Fonts](#fonts-)
+    + [Icons](#icons-)
+    + [Colors](#colors-)
+  * [Wireframes](#wireframes-)
+  * [Database](#database-)
+  * [Features](#features-)
+    + [Features that have been developed](#features-that-have-been-developed-)
+    + [Features that will be developed in the future](#features-that-will-be-developed-in-the-future-)
+  * [Technologies Used](#technologies-used-)
+      - [Languages](#languages-)
+      - [Tools & Libraries](#tools---libraries-)
+  * [Planning & Testing](#planning---testing-)
+      - [Planning](#planning-)
+      - [Testing](#testing-)
+      - [Feature Testing ](#feature-testing--)
   * [Bugs](#bugs)
-      - [Bugs During Development:](#bugs-during-development-)
+      - [Bugs During Development](#bugs-during-development-)
   * [Deployment](#deployment)
-    + [Cloning BakingMaster from GitHub:](#cloning-bakingmaster-from-github-)
-    + [Deploying BakingMaster to Heroku:](#deploying-bakingmaster-to-heroku-)
+    + [Cloning BakingMaster from GitHub](#cloning-bakingmaster-from-github-)
+    + [Deploying BakingMaster to Heroku](#deploying-bakingmaster-to-heroku-)
   * [Credits / Acknowledgement](#credits---acknowledgement)
   * [Contact](#contact)
   * [Disclaimer](#disclaimer)
 
-## User Experience:
+## User Experience
 
 ### About Project
 This project was created to help people develope their baking skills. This web application is giving access to thousandes of different recipes. Users are able to create own recipes, add pictures of their bueatiful work, add their loved recipes to favourites list. Their also can remove and amend previously added recipes, if they decied not share them anymore.
@@ -54,12 +54,12 @@ This project was created to help people develope their baking skills. This web a
 - A contact form to get more information about cooperation and sharing recipes.
 - To be able to use web application on Desktops, Tablets and Mobile devices (especcialy on Apple products)
 
-### Author Goals:
+### Author Goals
 - Engage users to develope their baking skills and to change their attitude to learn more.
 - Collect user information in terms of site analytics and Edamam API request.
 - Recieve messages from the users/customers about cooperation to expand baking courses etc.
 
-### User Stories:
+### User Stories
 
 Mark says: “I would like to know the website where I can find some great recipes, from very huge range of recipes. Recipes to bake some cakes and other sweets, the most…, but also normal recipes like salads, etc - for my girlfriend .”
 
@@ -69,50 +69,50 @@ Abel says: “I’m a beginner in baking. I would like to find some nice and eas
 
 Debbie say: "It's good to have all in one place. Baking recipes and some equipment for the advance chefs like me."
 
-### User Requirements & Expectations:
+### User Requirements & Expectations
 
-#### Requirements:
+#### Requirements
 - Visually appealing website
 - Easy user interface, navigation and quick website response on user actions
 - Necessery information about recipes, ingridients and level of difficulty
 - Nice and clear layout of all information
 - Create own recipes or save liked ones to favourite list
 
-#### Expectations:
+#### Expectations
 - Application loads in good speed without problems on slow internet connections
 - User information store safely
 - Users can easily interact with website buttons and elements 
 - Website content  renders correctly on desktop, tablet and mobile devices
 - Users have sufficient number of information about equipement and recipes
 
-## Design:
+## Design
 I've decied to use colours of high contrast. This should let the users, to see all the information clearly, on small devices. Especially with small ammount of screen brightnes, also it should help with outdoor/indoor light screen brightnes auto adjustments. I love minimalism that's why design of this application is so nice and clean. I tried not to overload pages with content to do not 'scare' the user with lots of informaiton.
 
-### Fonts:
+### Fonts
 I chose to use only one font from google fonts <a href="https://fonts.google.com/specimen/Roboto">Roboto</a>, as it makes my project more simplify and I think this font style is very good for ease of reading recipes descriptions. I've used a variety of font weight, colours to focus users attention on importnat information.
 
-### Icons:
+### Icons
 All icons used in this project are coming from <a href="https://fontawesome.com">Font-Awesome</a> and their role is to improve visiblity and improve user expirience.
 
-### Colors:
+### Colors
 The colours used in this project where wisely choosen to prevent unreadable recipes descriptions and to provide the best user expirience.
 I've used opacity style option to create hover effects.
 <img src="https://www.abovewave.kylos.pl/bakingMaster/Coloristic.png">
 
-## Wireframes:
+## Wireframes
 I Built the wireframes for this project using <a href="https://www.invisionapp.com">InvisionApp</a>, this application is totally free of charge. I could easily create all wireframes for all platforms, sketch all the features that my website contains. Different colorisitc available, huge number of free templates to start with or simply you can create a blank wireframe. Very easy to use! Strongly recommend
 
 View the <a href="https://github.com/KarolSliwka/Baking_Master/tree/master/wireframes">wireframes</a> for this project
  
-## Database:
+## Database
 I have used Cloud-hosted MongoDB service on AWS, because it's easy to control, it has good access to database. All database instances are deployed in a unique Virtual Private Cloud (VPC) to ensure network isolation. 
 I've created MongoDB Cluster and lots of different collections in my database to suits my needs with this project.
 
 Find more on <a href="https://www.mongodb.com/cloud/atlas/register">MongoDB</a>
 
-## Features:
+## Features
 
-### Features that have been developed:
+### Features that have been developed
 - Main page banner/carousel with beautifull cakes photo/s
 - Register/create new account , Login to existing account, reset password functionality
 - Contact form available for all user ( registered and unregistered )
@@ -120,21 +120,21 @@ Find more on <a href="https://www.mongodb.com/cloud/atlas/register">MongoDB</a>
 - Users can create their own recipes, remove or amend anytime
 - Sign in to Newsletter functionality, to keep up to date with the latest from BakingMaster
 
-### Features that will be developed in the future:
+### Features that will be developed in the future
 - Recipes comments functionality
 - Social media share buttons ( facebook, instagram, tweeter, pinterest )
 - Ingirdients easy print/one-click functionality to print ingridients shopping list
 - Extend equipement option from link to equipement database from cooperating providers
 
-## Technologies Used:
-#### Languages:
+## Technologies Used
+#### Languages
 * <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a>
 * <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>
 * <a href="https://www.w3schools.com/js/">JavaScript</a>
 * <a href="https://www.json.org/json-en.html">JSON</a>
 * <a href="https://www.python.org/">Python</a>
 
-#### Tools & Libraries: 
+#### Tools & Libraries
 
 * <a href="https://jquery.com/">jQuery</a>
 * <a href="https://git-scm.com/">Git</a>
@@ -146,22 +146,20 @@ Find more on <a href="https://www.mongodb.com/cloud/atlas/register">MongoDB</a>
 * <a href="https://flask.palletsprojects.com/en/1.0.x/">Flask</a>
 * <a href="https://jinja.palletsprojects.com/en/2.10.x/">Jinja</a>
 
-## Planning & Testing:
+## Planning & Testing
 
-#### Planning: 
+#### Planning
 Project was well planned with a significant amount of a time. I moustly focused on design, UX/UI, page loading speed
 
-#### Testing: 
+#### Testing
 Whole application was tested durign the designing and deploying period. Each feature was tested step by step to avoid user frustriation made by not working website elements. Whole web app responsivity was tested using build in tool in Safari Browser.
 
-#### Feature Testing :
+#### Feature Testing
  * Login & Register Form - Both form has been tested by entering values into entry fields and running script which should add details to database. Result : Worked as expected!
  * Contact form - All different variances with missing fields were tested while trying to send an email. Result : Sending failed
  * Subscribe Newsletter - Validation works with empty field. By clicking 'Subscribe' button, email address is saved in newsletter database. Result : Success!
- 
-## Bugs
 
-#### Bugs During Development: 
+#### Bugs During Development 
  * Contact form - After clicking send script should send an email from user form but it didn't work... The issue I faced was, google mailbox client has restrictions which will not allow outside app to send an email.</br>
        Solution - Google mail restrictions settings change</br>
          Result - Email sent, work as expected
@@ -180,7 +178,7 @@ Whole application was tested durign the designing and deploying period. Each fea
 ## Deployment
 BakingMaster was developed in AWS Cloud9. GIT and GitHub was used to store Repository.
 
-### Cloning BakingMaster from GitHub:
+### Cloning BakingMaster from GitHub
 
 <strong>Ensure</strong> you have the following installed:
 * PIP
@@ -217,7 +215,7 @@ or
 Python3 app.py
 ```
 
-### Deploying BakingMaster to Heroku:
+### Deploying BakingMaster to Heroku
 
 * 1: Create a <strong>requirements.txt</strong> file using command below.
 ```bash
