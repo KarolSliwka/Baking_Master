@@ -39,7 +39,7 @@ def home():
     return render_template('pages/landing-page.html', body_id='home-page', title = "Home Page")
 
 # All Recieps page
-@app.route('/recipes')
+@app.route('/recipes', methods=["GET", "POST"])
 def recipes():
     
     search_value = 'chocolate'
