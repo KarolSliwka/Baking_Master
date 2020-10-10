@@ -92,8 +92,8 @@ def contact():
 def login():
     
     """
-    This function is comparing information provided in user form with database information
-    If result is positive then it's returning user - my account page, if not shows the error info
+    This funciton will check if user exists in database.
+    When exist, will go to account page. When failed, show flash message.
     """
     if request.method == "POST":
         users = mongo.db.Users
@@ -138,7 +138,8 @@ def index():
 @app.route('/register', methods=["GET", "POST"])
 def register():
     """
-    This function is rendering user registration template, when form is validated, new user is added into database.
+    This function is rendering user registration template.
+    When form is validated correctly, new user is added into database.
     """
     if request.method == "POST":
         users = mongo.db.Users
@@ -174,7 +175,7 @@ def register():
             
             flash('Your account was created successfully! Enjoy browsing our amazing recipes','register-added')
             return render_template('pages/login.html', body_id='login-page', title='Sign In')
-        flash('This email account already exist in our records. Please use different email addres or recover your password','register-exist')
+        flash('This email account already exist. Please use different email addres or recover your password','register-exist')
             
     """ Return register template """
     return render_template('pages/register.html', body_id='register-page', title='Register account')
@@ -183,7 +184,7 @@ def register():
 @app.route('/recovery',  methods=["GET", "POST"])
 def recovery():
     """
-    This function is checking information from database and sending recovered password to email provided in userform
+    This function is sendind recovery message when submit
     """
     if request.method == "POST":
         users = mongo.db.Users
@@ -247,7 +248,10 @@ def equipment():
 @app.route('/newsletter', methods=["GET", "POST"])
 def add_to_newsletter():
     
-    """ This function will get email addres from newsletter form and store newsletter subscription into Newsletter database """
+    """ 
+    This function will collect email addres from inout box
+    Information will be stored in newsletter database
+    """
     if request.method == "POST":
         users = mongo.db.Users
         newsletter = mongo.db.Newsletter
