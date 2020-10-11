@@ -129,13 +129,19 @@ def login():
 @app.route('/account')
 def account():
     """
-    Renders a 
+    Renders user account page
     """
     try:
+        """
+        Return user acocunt page with user name included in greeting text
+        """
         users = mongo.db.users
         return render_template("pages/index.html", body_id="user-account",page_title="Account",active_user=users.find_one({'email': session['email']}))
 
     except:
+        """
+        Return user account page without user name
+        """
         return render_template("pages/index.html", body_id="user-account", page_title="account")
 
 
@@ -242,12 +248,10 @@ def logout():
 # About Page
 @app.route('/about')
 def about():
+    """
+    Renders about page
+    """
     return  render_template('pages/about.html', body_id='about-page')
-    
-# Equipment Page
-@app.route('/equipment')
-def equipment():
-    return  render_template('pages/equipment.html', body_id='equipment-page')
     
 # Newsletter subscription
 @app.route('/newsletter', methods=["GET", "POST"])
