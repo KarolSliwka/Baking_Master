@@ -121,26 +121,25 @@ def login():
 @app.route('/user-menu')
 def user_menu():
     """
-    Renders user menu page
     """
-    try:
-        """
-        Return user acocunt page with user name included in greeting text
-        """
-        users = mongo.db.users
-        return render_template("pages/index.html", body_id="user-account",page_title="Account",active_user=users.find_one({'email': session['email']}))
-
-    except:
-        """
-        Return user account page without user name
-        """
-        return render_template("pages/index.html", body_id="user-account", page_title="account")
+    return render_template("pages/index.html", body_id="user-menu", page_title="user-menu")
 
 # User account page
 @app.route('/account', methods=['GET','POST'])
 def account():
     
-    return render_template('pages/account.html')
+    try:
+        """
+        Return user acocunt page with user name included in greeting text
+        """
+        users = mongo.db.users
+        return render_template("pages/account.html", body_id="user-account",page_title="Account",active_user=users.find_one({'email': session['email']}))
+
+    except:
+        """
+        Return user account page without user name
+        """
+        return render_template("pages/account.html", body_id="user-account", page_title="account")
 
 # Add Recipe
 @app.route('/add-recipe', methods=['GET','POST'])
@@ -263,6 +262,20 @@ def recovery():
     
     """ Return recovery template """
     return render_template('pages/recovery.html', body_id='recovery-page', title='Password recovery')
+
+
+# Remove Account
+@app.route('/account-removed')
+def remove_account():
+    """
+    Renders remove account page
+    Remove account from database and show message
+    """
+    
+    
+    
+    
+    return render_template('pages/remove-account.html')
 
 # Logout user
 @app.route('/logout')
