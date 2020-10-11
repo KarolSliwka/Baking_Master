@@ -1,0 +1,15 @@
+{% extends 'layout/base.html' %} {% set page = "account" %} {% block content %}
+<div class="container account-main-container">
+    <h1 class="hidden">User menu</h1>
+    <!-- welcme text -->
+    <div class="account">
+        {% if username !='' %}
+        <h3 class="welcome-lead">Hi
+            <span>{{session['name']}}</span>
+        </h3>
+        {% else %}
+        <h3 class="welcome-lead">Hi! It's nice to see you again.</h3>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
