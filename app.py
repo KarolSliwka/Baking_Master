@@ -118,10 +118,10 @@ def login():
     return render_template('pages/login.html', body_id='login-page', title='Sign In')
    
 # Home page
-@app.route('/account')
-def account():
+@app.route('/user-menu')
+def user_menu():
     """
-    Renders user account page
+    Renders user menu page
     """
     try:
         """
@@ -136,6 +136,11 @@ def account():
         """
         return render_template("pages/index.html", body_id="user-account", page_title="account")
 
+# User account page
+@app.route('/account', methods=['GET','POST'])
+def account():
+    
+    return render_template('pages/account.html')
 
 # Add Recipe
 @app.route('/add-recipe', methods=['GET','POST'])
@@ -143,7 +148,7 @@ def add_recipe():
     """
     """
 
-    return render_template('')
+    return render_template('pages/add-recipe.html')
 
 # Edit Recipe
 @app.route('/edit-recipe', methods=['GET','POST'])
@@ -151,7 +156,7 @@ def edit_recipe():
     """
     """
 
-    return render_template('')
+    return render_template('pages/edit-recipe.html')
  
 # Your Recipes 
 @app.route('/your-recipes', methods=['GET','POST'])
@@ -159,7 +164,7 @@ def your_recipes():
     """
     """
 
-    return render_template('')   
+    return render_template('pages/your-recipes.html')   
     
 # Favourites Page
 @app.route('/favourites')
