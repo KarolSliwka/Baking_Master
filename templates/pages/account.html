@@ -3,13 +3,20 @@
     <h1 class="hidden">User menu</h1>
     <!-- welcme text -->
     <div class="account">
-        {% if username !='' %}
-        <h3 class="welcome-lead">Hi
-            <span>{{session['name']}}</span>
-        </h3>
-        {% else %}
-        <h3 class="welcome-lead">Hi! It's nice to see you again.</h3>
-        {% endif %}
+        <div class="account-info">
+            <h3 class="welcome-lead">Welcome back!</h3>
+            <div class="user-info">
+                <h4 class="info-label">Name</h4>
+                <span class="user-name">{{session['name']}}</span>
+            </div>
+            <div class="user-info">
+                <h4 class="info-label">E-mail address</h4>
+                <span class="user-email">{{session['email']}}</span>
+            </div>
+        </div>
+        <div class="recipe-info">
+            
+        </div>
     </div>
 </div>
 {% endblock %}
