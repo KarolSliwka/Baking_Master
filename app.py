@@ -42,12 +42,12 @@ def home():
 @app.route('/recipes', methods=["GET", "POST"])
 def recipes():
     
-    search_value = 'chocolate'
+    #search_value = 'chocolate'
     
-    url = "https://api.edamam.com/search?q=" + search_value + "&app_id=" + API_ID + "&app_key="+ API_KEY
-    response = requests.request("GET", url)
+    #url = "https://api.edamam.com/search?q=" + search_value + "&app_id=" + API_ID + "&app_key="+ API_KEY
+    #response = requests.request("GET", url)
 
-    print(response.text)
+    #print(response.text)
     
     return  render_template('pages/recipes.html', body_id='recipes-page')
     

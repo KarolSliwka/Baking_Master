@@ -39,12 +39,6 @@
             bottom: 15px;
             background: $nav-links-color !important;
             height: 2px;
-            -webkit-transition-property: right;
-            transition-property: right;
-            -webkit-transition-duration: .3s;
-            transition-duration: .3s;
-            -webkit-transition-timing-function: ease-out;
-            transition-timing-function: ease-out
         }
     }
 }
@@ -109,8 +103,20 @@
         a {
             padding-top: 0.9375rem;
             padding-bottom: 0.9375rem;
-            widtH: 150px;
+            widtH: 100px;
         }
+
+        .active-link:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            right: 0;
+            bottom: 10px;
+            background: $nav-links-color-mobile !important;
+            height: 2px;
+        }
+
     }
     .navbar li a {
         color: $nav-links-color-mobile !important;
@@ -119,6 +125,7 @@
         bottom: 8px;
         background: $nav-link-bg-hv-mobile !important;
     }
+
 }
 
 @media (max-height: 320px) {
