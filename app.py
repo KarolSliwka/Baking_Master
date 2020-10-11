@@ -54,12 +54,9 @@ def recipes():
 # Favourites Page
 @app.route('/favourites')
 def favourites():
+    """
+    """
     return render_template('pages/favourites.html', body_id='favourites-page')
-    
-# Search Page
-@app.route('/search-results')
-def search_results():
-    return render_template('pages/search-results.html', body_id='search-page')
 
 # Contact Page
 @app.route('/contact', methods=["GET", "POST"])
@@ -95,7 +92,6 @@ def contact():
 # Login Page   
 @app.route('/login', methods=["GET", "POST"])
 def login():
-    
     """
     This funciton will check if user exists in database.
     When exist, will go to account page. When failed, show flash message.
@@ -237,7 +233,6 @@ def recovery():
 # Logout user
 @app.route('/logout')
 def logout():
-    
     """
     This route is clearing user session variables
     Redirecting user to landing page (home page)
@@ -256,7 +251,6 @@ def about():
 # Newsletter subscription
 @app.route('/newsletter', methods=["GET", "POST"])
 def add_to_newsletter():
-    
     """ 
     This function will collect email addres from inout box
     Information will be stored in newsletter database
@@ -292,11 +286,9 @@ def add_to_newsletter():
                 flash('You are subscribing newsletter already','newsletter-error')
     return redirect(request.referrer)
         
-        
 # Page not found error route
 @app.errorhandler(404)
 def Error404(error):
-    
     """
     This route renders an error 404
     """
