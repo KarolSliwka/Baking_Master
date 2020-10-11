@@ -8,7 +8,6 @@ from flask_mail import Message
 from threading import Thread
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-
 app = Flask(__name__)
 
 # Initilize connection
@@ -29,19 +28,20 @@ mail = Mail(app)
 API_ID = os.getenv('API_ID')
 API_KEY = os.getenv('API_KEY')
 
-
 # Home page
 @app.route('/')
 def home():
     """
+    Renders landing page/home page
     """
-    
     return render_template('pages/landing-page.html', body_id='home-page', title = "Home Page")
 
 # All Recieps page
 @app.route('/recipes', methods=["GET", "POST"])
 def recipes():
-    
+    """
+    Renders recipes search page and return search result
+    """
     #search_value = 'chocolate'
     
     #url = "https://api.edamam.com/search?q=" + search_value + "&app_id=" + API_ID + "&app_key="+ API_KEY
@@ -50,13 +50,6 @@ def recipes():
     #print(response.text)
     
     return  render_template('pages/recipes.html', body_id='recipes-page')
-    
-# Favourites Page
-@app.route('/favourites')
-def favourites():
-    """
-    """
-    return render_template('pages/favourites.html', body_id='favourites-page')
 
 # Contact Page
 @app.route('/contact', methods=["GET", "POST"])
@@ -101,21 +94,24 @@ def login():
         """ Request information from user form """
         req = request.form
         
+        """ Collect information from login form """
         email_login = req.get('email')
         password = req.get('password')
 
+        """ Find user details """
         login_user = users.find_one({'email': email_login.lower()})
         result = users.find( login_user )
         for doc in result:
             #create variable with username from doc
             username = doc["name"]
         
+        """ Main login statement """
         if login_user:
             if bcrypt.hashpw(password.encode('utf-8'), login_user['password']) == login_user['password']:
                 session['email'] = email_login
                 session['name'] = username
                 flash('You have been successfully logged in!')
-                return redirect(url_for('index'))   
+                return redirect(url_for('account'))   
             flash("Incorrect username or password / user doesn't exist.","incorrect-user")
             return redirect(url_for('login'))
         flash("Incorrect username or password / user doesn't exist.","incorrect-user")
@@ -139,6 +135,39 @@ def account():
         Return user account page without user name
         """
         return render_template("pages/index.html", body_id="user-account", page_title="account")
+
+
+# Add Recipe
+@app.route('/add-recipe', methods=['GET','POST'])
+def add_recipe():
+    """
+    """
+
+    return render_template('')
+
+# Edit Recipe
+@app.route('/edit-recipe', methods=['GET','POST'])
+def edit_recipe():
+    """
+    """
+
+    return render_template('')
+ 
+# Your Recipes 
+@app.route('/your-recipes', methods=['GET','POST'])
+def your_recipes():
+    """
+    """
+
+    return render_template('')   
+    
+# Favourites Page
+@app.route('/favourites')
+def favourites():
+    """
+    Renders favourite page only when user is logged in
+    """
+    return render_template('pages/favourites.html', body_id='favourites-page')
 
 
 # Register Page 

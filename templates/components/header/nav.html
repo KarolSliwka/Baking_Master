@@ -24,15 +24,21 @@
       <!-- search and login links -->
       <ul class="nav navbar-nav navbar-right">
         {% if session['email']%}
-          <li><a href="{{url_for('account')}}" class="{{ 'active-link' if page == 'account' else 'hvr-underline-from-left'}}">Account</a></li>
-          <li><a href="{{url_for('add_recipe')}}" class="{{ 'active-link' if page == 'add-recipe' else 'hvr-underline-from-left'}}">Add Recipe</a></li>
-          <li><a href="{{url_for('edit_recipe')}}" class="{{ 'active-link' if page == 'edit_recipe' else 'hvr-underline-from-left'}}">Edit Recipe</a></li>
-          <li><a href="{{url_for('your_recipes')}}" class="{{ 'active-link' if page == 'your_recipes' else 'hvr-underline-from-left'}}">Your Recipes</a></li>
-          <li><a href="{{url_for('favourites')}}" class="{{ 'active-link' if page == 'favourites' else 'hvr-underline-from-left'}}">Favourites</a></li>
-          <li><a href="{{url_for('logout')}}" class="{{ 'active-link' if page == 'logout' else 'hvr-underline-from-left'}}">Logout</a></li>
+        <li>
+          <a href="" class="">User Menu</a>
+          <ul class="dropdown-menu">
+            <li><a href="{{url_for('account')}}" class="{{ 'active-link' if page == 'account' else 'hvr-underline-from-left'}}">Account</a></li>
+            <li><a href="{{url_for('add_recipe')}}" class="{{ 'active-link' if page == 'add-recipe' else 'hvr-underline-from-left'}}">Add Recipe</a></li>
+            <li><a href="{{url_for('edit_recipe')}}" class="{{ 'active-link' if page == 'edit_recipe' else 'hvr-underline-from-left'}}">Edit Recipe</a></li>
+            <li><a href="{{url_for('your_recipes')}}" class="{{ 'active-link' if page == 'your_recipes' else 'hvr-underline-from-left'}}">Your Recipes</a></li>
+            <li><a href="{{url_for('favourites')}}" class="{{ 'active-link' if page == 'favourites' else 'hvr-underline-from-left'}}"><i class="far fa-heart fav-heart-icon"></i>Favourites</a></li>
+            <hr class="menu-hr">
+            <li><a href="{{url_for('logout')}}" class="user-menu-logout">Logout</a></li>
+          </ul>
+        </li>
         {% else %}
-          <li><a href="{{url_for('register')}}" class="{{ 'active-link' if page == 'register' else 'hvr-underline-from-left'}}">Register</a></li>
-          <li><a href="{{url_for('login')}}" class="{{ 'active-link' if page == 'login' else 'hvr-underline-from-left'}}">Login</a></li>
+        <li><a href="{{url_for('register')}}" class="{{ 'active-link' if page == 'register' else 'hvr-underline-from-left'}}">Register</a></li>
+        <li><a href="{{url_for('login')}}" class="{{ 'active-link' if page == 'login' else 'hvr-underline-from-left'}}">Login</a></li>
         {% endif %}
       </ul>
     </div>
