@@ -1038,7 +1038,7 @@ form p {
   flex-direction: column;
   padding: 0.5rem 1rem;
   text-align: center;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 400;
 }
 .menu-blocks a:hover {
@@ -1046,11 +1046,11 @@ form p {
 }
 
 .main-card {
-  margin: 20px 0 20px 0;
+  margin: 10px 0 10px 0;
 }
 
 .menu-block-card {
-  padding: 2rem 2rem;
+  padding: 2rem 0.5rem;
   display: flex;
   flex-direction: column;
   color: #000;
