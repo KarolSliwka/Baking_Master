@@ -25,7 +25,7 @@
       <ul class="nav navbar-nav navbar-right">
         {% if session['email']%}
         <li>
-          <a href="" class="">User Menu</a>
+          <a href="{{url_for('user_menu')}}" class="">User Menu</a>
           <ul class="dropdown-menu">
             <li><a href="{{url_for('account')}}" class="{{ 'active-link' if page == 'account' else 'hvr-underline-from-left'}}">Account</a></li>
             <li><a href="{{url_for('add_recipe')}}" class="{{ 'active-link' if page == 'add_recipe' else 'hvr-underline-from-left'}}">Add Recipe</a></li>
