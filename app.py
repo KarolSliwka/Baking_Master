@@ -127,7 +127,7 @@ def login():
    
 # Home page
 @app.route('/account')
-def index():
+def account():
     """
     Renders a 
     """
