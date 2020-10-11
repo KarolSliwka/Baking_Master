@@ -1,6 +1,7 @@
 {% extends 'layout/base.html' %} {% set page = "account" %} {% block content %}
 <div class="container account-main-container">
     <h1 class="hidden">Account Page</h1>
+    <!-- welcme text -->
     <div class="account">
         {% if username !='' %}
         <h3 class="welcome-lead">Hi
@@ -9,13 +10,49 @@
         {% else %}
         <h3 class="welcome-lead">Hi! It's nice to see you again.</h3>
         {% endif %}
-        <ul>
-            <li><a href="">Account</a></li>
-            <li><a href="">Add Recipe</a></li>
-            <li><a href="">Edit Recpie</a></li>
-            <li><a href="">Your Recipes</a></li>
-            <li><a href=""><i class="far fa-heart fav-heart-icon"></i>Favourites</a></li>
-        </ul>
+        <!-- user menu in blocks -->
+        <div class="container menu-blocks">
+            <row class="col-lg-12">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </row>
+            <row class="col-lg-12">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </row>
+        </div>
     </div>
 </div>
 {% endblock %}
