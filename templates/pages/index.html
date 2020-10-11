@@ -3,25 +3,12 @@
     <h1 class="hidden">User menu</h1>
     <!-- user menu in blocks -->
     <div class="container menu-blocks">
-        <row class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-            <div class="col-sm-12">
-                <a href="{{url_for('account')}}" class="">
-                    <div class="card">
-                        <img class="card-img-top" src="/static/images/user-menu-blocks/user.png" alt="account-link-photo">
-                        <div class="card-body">
-                            <p class="card-text">Account</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </row>
-        <row class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-            <div class="col-sm-12">
-                <a href="{{url_for('logout')}}" class="">
-                    <div class="card">
-                        <img class="card-img-top" src="/static/images/user-menu-blocks/log-out.png" alt="log-out-link-photo">
-                        <div class="card-body">
-                            <p class="card-text">Lgout</p>
+        <row class="container">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <a href="{{url_for('your_recipes')}}" class="card-shadow">
+                    <div class="menu-block-card">
+                        <img class="card-img-top" src="/static/images/user-menu-blocks/your-recipes.png" alt="your-recipes-link-photo">
+                            <p class="card-text">Your Recipes</p>
                         </div>
                     </div>
                 </a>
