@@ -28,7 +28,7 @@
           <a href="" class="">User Menu</a>
           <ul class="dropdown-menu">
             <li><a href="{{url_for('account')}}" class="{{ 'active-link' if page == 'account' else 'hvr-underline-from-left'}}">Account</a></li>
-            <li><a href="{{url_for('add_recipe')}}" class="{{ 'active-link' if page == 'add-recipe' else 'hvr-underline-from-left'}}">Add Recipe</a></li>
+            <li><a href="{{url_for('add_recipe')}}" class="{{ 'active-link' if page == 'add_recipe' else 'hvr-underline-from-left'}}">Add Recipe</a></li>
             <li><a href="{{url_for('edit_recipe')}}" class="{{ 'active-link' if page == 'edit_recipe' else 'hvr-underline-from-left'}}">Edit Recipe</a></li>
             <li><a href="{{url_for('your_recipes')}}" class="{{ 'active-link' if page == 'your_recipes' else 'hvr-underline-from-left'}}">Your Recipes</a></li>
             <li><a href="{{url_for('favourites')}}" class="{{ 'active-link' if page == 'favourites' else 'hvr-underline-from-left'}}"><i class="far fa-heart fav-heart-icon"></i>Favourites</a></li>
