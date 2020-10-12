@@ -210,6 +210,7 @@ def register():
         password = req.get('password')
         hashpassword = bcrypt.hashpw(
                     password.encode('utf-8'), bcrypt.gensalt())
+        empty_favourites = []
         
         """ Check if users exist in databas """
         current_user = users.find_one({'email': email})
@@ -220,8 +221,8 @@ def register():
                 'name' : name,
                 'email' : email.lower(),
                 'password' : hashpassword,
-                'newsletter' : 'Y'
-                
+                'newsletter' : 'Y',
+                'favourites' : empty_favourites
             })
             
             """ New user newsletter subscription added to newsletters database """
