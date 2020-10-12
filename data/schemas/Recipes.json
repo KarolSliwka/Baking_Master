@@ -1,3 +1,16 @@
 [{
-    
+    "_id": "<ObjectId()>",
+    "image": "<>",
+    "title": "<>",
+    "difficulty": "<>",
+    "ingridients": {
+        "0": "<String>"
+    }
+    "": "<>",
+    "": "<>",
+    "": "<>",
+    "": "<>",
+    "": "<>",
+    "": "<>",
+    "author": "<String>",
 }]
