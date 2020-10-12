@@ -2,33 +2,35 @@
 <div class="container account-main-container">
     <h1 class="hidden">User menu</h1>
     <!-- welcme text -->
-    <div class="account">
-        <div class="row account-info">
-            <h4 class="welcome-lead">Account Details</h4>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 xSmall">
+        <h4 class="welcome-lead">Account Details</h4>
+        <div class="details-list">
             <div class="user-info">
                 <h4 class="info-label">Name</h4>
-                <span class="user-name">{{active_user}}</span>
+                <span class="info-label-result">{{active_user}}</span>
             </div>
             <div class="user-info">
                 <h4 class="info-label">E-mail address</h4>
-                <span class="user-email">{{email}}</span>
+                <span class="info-label-result">{{email}}</span>
             </div>
-            <div class="remove-account">
-                <button class="btn main-button remove-button">
+        </div>
+        <div class="remove-account">
+            <button class="btn main-button remove-button">
                         <a href="{{url_for('remove_account')}}">Remove Account</a>
                 </button>
-            </div>
-            <p class="before-remove">Please be careful when removing account.<br>All data will be lost</p>
         </div>
-        <div class="row recipe-information">
-            <h4 class="welcome-lead">Recipes information</h4>
+        <p class="before-remove">Please be careful when removing account.<br>All data will be lost</p>
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 xSmall">
+        <h4 class="welcome-lead">Recipes information</h4>
+        <div class="details-list">
             <div class="recipe-info">
                 <h4 class="info-label">Number of your recipes</h4>
-                <span class="recipe-count">{{recipes_count}}</span>
+                <span class="info-label-result">{{recipes_count}}</span>
             </div>
             <div class="recipe-info">
-                <h4 class="info-label">Number of your favourites recpies</h4>
-                <span class="recipe-count">{{fav_recipe_count}}</span>
+                <h4 class="info-label">Number of your favourite recpies</h4>
+                <span class="info-label-result">{{fav_recipe_count}}</span>
             </div>
         </div>
     </div>
