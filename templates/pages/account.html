@@ -7,11 +7,11 @@
             <h4 class="welcome-lead">Account Details</h4>
             <div class="user-info">
                 <h4 class="info-label">Name</h4>
-                <span class="user-name">{{session['name']}}</span>
+                <span class="user-name">{{active_user}}</span>
             </div>
             <div class="user-info">
                 <h4 class="info-label">E-mail address</h4>
-                <span class="user-email">{{session['email']}}</span>
+                <span class="user-email">{{email}}</span>
             </div>
             <div class="remove-account">
                 <button class="btn main-button remove-button">
@@ -24,11 +24,11 @@
             <h4 class="welcome-lead">Recipes information</h4>
             <div class="recipe-info">
                 <h4 class="info-label">Number of your recipes</h4>
-                <span class="recipe-count"><!--user-recpies-count-->54</span>
+                <span class="recipe-count">{{recipes_count}}</span>
             </div>
             <div class="recipe-info">
                 <h4 class="info-label">Number of your favourites recpies</h4>
-                <span class="recipe-count"><!--user-favourites-count-->100</span>
+                <span class="recipe-count">{{fav_recipe_count}}</span>
             </div>
         </div>
     </div>

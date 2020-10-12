@@ -116,11 +116,10 @@ def login():
 
         """ Find user details """
         login_user = users.find_one({'email': email_login.lower()})
-        result = users.find( login_user )
+        result = users.find(login_user)
         for doc in result:
-            #create variable with username from doc
             username = doc["name"]
-        
+            
         """ Main login statement """
         if login_user:
             if bcrypt.hashpw(password.encode('utf-8'), login_user['password']) == login_user['password']:
@@ -148,8 +147,16 @@ def account():
         """
         Return user acocunt page with user name included in greeting text
         """
-        users = mongo.db.users
-        return render_template("pages/account.html", body_id="user-account",page_title="Account",active_user=users.find_one({'email': session['email']}))
+        
+        user_info = mongo.db.Users.find_one({'email': session['email']})
+        user_info_collection = mongo.db.Users.find(user_info)
+        for doc in user_info_collection:
+            active_user = doc["name"]
+            email = doc["email"]
+            recipes_count = doc["recipes"]
+            fav_recipe_count = len(doc['favourites'])
+
+        return render_template("pages/account.html", body_id="user-account",page_title="Account",active_user=active_user,email=email,recipes_count=recipes_count,fav_recipe_count=fav_recipe_count)
 
     except:
         """
