@@ -8,7 +8,19 @@ from flask_mail import Message
 from threading import Thread
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+
+class ReverseProxied(object):
+    def __init__(self, app):
+        self.app = app
+
+    def __call__(self, environ, start_response):
+        scheme = environ.get('HTTP_X_FORWARDED_PROTO')
+        if scheme:
+            environ['wsgi.url_scheme'] = scheme
+        return self.app(environ, start_response)
+
 app = Flask(__name__)
+app.wsgi_app = ReverseProxied(app.wsgi_app)
 
 # Initilize connection
 app.config["MONGO_DBNAME"] = os.getenv('MDB_NAME')
@@ -27,7 +39,12 @@ mail = Mail(app)
 #API config
 API_ID = os.getenv('API_ID')
 API_KEY = os.getenv('API_KEY')
-
+def _force_https(app):
+    def wrapper(environ, start_response):
+        environ['wsgi.url_scheme'] = 'https'
+        return app(environ, start_response)
+    return wrapper
+    
 # Home page
 @app.route('/')
 def home():
@@ -271,8 +288,6 @@ def remove_account():
     Renders remove account page
     Remove account from database and show message
     """
-    
-    
     
     
     return render_template('pages/remove-account.html')
