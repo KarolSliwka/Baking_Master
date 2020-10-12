@@ -144,9 +144,7 @@ def user_menu():
 def account():
     
     try:
-        """
-        Return user acocunt page with user information
-        """
+        """ Return user acocunt page with user information """
         
         user_info = mongo.db.Users.find_one({'email': session['email']})
         user_info_collection = mongo.db.Users.find(user_info)
