@@ -4,7 +4,7 @@
     <!-- welcme text -->
     <div class="account">
         <div class="row account-info">
-            <h4 class="welcome-lead">Welcome back!</h4>
+            <h4 class="welcome-lead">Account Details</h4>
             <div class="user-info">
                 <h4 class="info-label">Name</h4>
                 <span class="user-name">{{session['name']}}</span>
@@ -14,10 +14,11 @@
                 <span class="user-email">{{session['email']}}</span>
             </div>
             <div class="remove-account">
-                <button class="remove-button">
+                <button class="btn main-button remove-button">
                         <a href="{{url_for('remove_account')}}">Remove Account</a>
-                    </button>
+                </button>
             </div>
+            <p class="before-remove">Please be careful when removing account.<br>All data will be lost</p>
         </div>
         <div class="row recipe-information">
             <h4 class="welcome-lead">Recipes information</h4>

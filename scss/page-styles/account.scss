@@ -7,6 +7,28 @@
 
 .recipe-information {}
 
+.remove-account {
+    padding-top: 20px;
+}
+
+.remove-button {
+    width: 150px;
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+            color: #FFF;
+        }
+    }
+}
+
+.before-remove {
+    padding-top: 5px;
+    font-size: 12px;
+    color: red;
+}
+
 .account-removed {
     display: flex;
     align-items: center;
