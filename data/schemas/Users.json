@@ -4,6 +4,7 @@
     "email": "<String>",
     "password": "<Binary>",
     "newsletter": "<String>",
+    "recipes": "<Integer>",
     "favourites": {
         "0": "<ObjectId()>"
     }
