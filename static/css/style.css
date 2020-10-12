@@ -665,7 +665,7 @@ form p {
 .newsletter-form input {
   height: 50px;
   width: 100%;
-  padding: 18px 0px 15px 20px;
+  padding: 15px 0px 15px 20px;
   border: 1px solid #EEE;
   border-radius: 25px;
   outline: none;
@@ -854,6 +854,25 @@ form p {
 }
 .account-main-container {
   display: flex;
+}
+
+.account-removed {
+  display: visible;
+  padding-top: 60px;
+  height: auto;
+  width: 100%;
+  border: 1px solid #FF3366;
+  background-color: rgba(255, 172, 193, 0.6);
+  border-radius: 5px;
+  text-align: left;
+}
+.account-removed p {
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #5aac17;
+  color: #FF3366;
 }
 
 @media screen and (min-height: 1000px) and (min-width: 1020px) {

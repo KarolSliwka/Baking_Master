@@ -1,15 +1,14 @@
 {% extends 'layout/base.html' %} {% set page = "landin-page" %} {% block content %}
 <h1 class="hidden">Home page</h1>
 <!-- Show flash message when user account was removed -->
-{% with errors = get_flashed_messages(category_filter=["account-removed"]) %} {% if errors %}
-<div id="flash-message" class="flash-register-added">
+<!-- Include carousel -->
+{% include 'components/carousel/carousel.html' %} {% with errors = get_flashed_messages(category_filter=["account-removed"]) %} {% if errors %}
+<div id="flash-message" class="{{'account-removed' if account_removed !='' else 'hidden'}}">
     {%- for msg in errors %}
     <p>{{ msg }}</p>
     {% endfor -%}
 </div>
 {% endif %} {% endwith %}
-<!-- Include carousel -->
-{% include 'components/carousel/carousel.html' %}
 <div class="container landing-page-main">
     <h2 class="page-title">First time can be the best time!</h2>
     <p class="lead">Join our baking family and become a <strong>'Picasso'</strong> of pastries.</br>Meet best of the bests:</p>

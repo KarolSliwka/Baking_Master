@@ -309,7 +309,7 @@ def remove_account():
     session.clear()
     
     flash('Your account has been removed successfully!','account-removed')
-    return render_template('pages/landing-page.html', body_id='home-page', title = "Home Page")
+    return render_template('pages/landing-page.html', body_id='home-page', title = "Home Page",account_removed="account-removed")
 
 # Logout user
 @app.route('/logout')
