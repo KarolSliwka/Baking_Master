@@ -1,0 +1,10 @@
+[{
+    "_id": "<ObjectId()>",
+    "name": "<String>",
+    "email": "<String>",
+    "password": "<Binary>",
+    "newsletter": "<String>",
+    "favourites": {
+        "0": "<ObjectId()>"
+    }
+}]
