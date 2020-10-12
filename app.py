@@ -48,9 +48,8 @@ def _force_https(app):
 # Home page
 @app.route('/')
 def home():
-    """
-    Renders landing page/home page
-    """
+    """Renders landing page/home page"""
+
     return render_template('pages/landing-page.html', body_id='home-page', title = "Home Page")
 
 # All Recieps page
@@ -229,7 +228,6 @@ def register():
             login_newsletter = email
             add_to_newsletter(login_newsletter)
         
-            
             flash('Your account was created successfully! Enjoy browsing our amazing recipes','register-added')
             return render_template('pages/login.html', body_id='login-page', title='Sign In')
         flash('This email account already exist. Please use different email addres or recover your password','register-exist')
@@ -288,9 +286,30 @@ def remove_account():
     Renders remove account page
     Remove account from database and show message
     """
+    users = mongo.db.Users
+    newsletter = mongo.db.Newsletter
     
+    users_email = users.find_one({'email': session['email']})
+    users_newsletter = newsletter.find_one({'email': session['email']})
     
-    return render_template('pages/remove-account.html')
+    """ Remove user from Users db """
+    users_result = users.find(users_email)
+    for doc in users_result:
+        user_id = doc["_id"]
+    mongo.db.Users.remove({'_id': user_id})
+    
+    """ Remove user from Newsletter db """
+    newsletter_result = newsletter.find(users_newsletter)
+    for doc in newsletter_result:
+        newsletter_user_id = doc["_id"]
+    mongo.db.Newsletter.remove({'_id': newsletter_user_id})
+    
+    """ Clear session and redirect to main page"""
+    """ Show flash message on main page after redirecting """
+    session.clear()
+    
+    flash('Your account has been removed successfully!','account-removed')
+    return render_template('pages/landing-page.html', body_id='home-page', title = "Home Page")
 
 # Logout user
 @app.route('/logout')
@@ -358,9 +377,8 @@ def add_to_newsletter(login_newsletter):
                     flash('Welcome in our newsletter group!','newsletter-success')
                 else:    
                     flash('You are subscribing newsletter already','newsletter-error')
-        
-        
-            """ NOT WORKING ! """
+                    
+            """ NOT WORKING ....."""
             return redirect(request.referrer)
         
 # Page not found error route
