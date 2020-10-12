@@ -343,12 +343,13 @@ def add_to_newsletter(login_newsletter):
         """ Check if register form string is not empty """
         if login_newsletter !='':
             
-            print(login_newsletter)
+            exist_in_newsletter = newsletter.find_one({'email': login_newsletter})
+            if exist_in_newsletter is None:
             
-            newsletter.insert_one({
-            'email' : login_newsletter,
-            'newsletter' : 'Y'
-            })
+                newsletter.insert_one({
+                'email' : login_newsletter,
+                'newsletter' : 'Y'
+                })
             
         else:
         
