@@ -59,7 +59,7 @@ def recipes():
     """
     Renders recipes search page and return search result
     """
-    #search_value = 'chocolate'
+    #search_value = 'chocolate&cake'
     
     #url = "https://api.edamam.com/search?q=" + search_value + "&app_id=" + API_ID + "&app_key="+ API_KEY
     #response = requests.request("GET", url)
@@ -200,7 +200,6 @@ def register():
     """
     if request.method == "POST":
         users = mongo.db.Users
-        newsletter = mongo.db.Newsletter
         """ Request information from user form """
         req = request.form
         
@@ -222,14 +221,14 @@ def register():
                 'email' : email.lower(),
                 'password' : hashpassword,
                 'newsletter' : 'Y',
-                'favourites' : empty_favourites
+                'favourites' : empty_favourites,
+                'recipes': 0
             })
             
-            """ New user newsletter subscription added to newsletters database """
-            newsletter.insert_one({
-                'email' : email,
-                'newsletter' : 'Y'
-            })
+            """ Use add to newsletter funtcion to add new user to newsletter database """
+            login_newsletter = email
+            add_to_newsletter(login_newsletter)
+        
             
             flash('Your account was created successfully! Enjoy browsing our amazing recipes','register-added')
             return render_template('pages/login.html', body_id='login-page', title='Sign In')
@@ -313,7 +312,7 @@ def about():
     
 # Newsletter subscription
 @app.route('/newsletter', methods=["GET", "POST"])
-def add_to_newsletter():
+def add_to_newsletter(login_newsletter):
     """ 
     This function will collect email addres from inout box
     Information will be stored in newsletter database
@@ -322,32 +321,47 @@ def add_to_newsletter():
         users = mongo.db.Users
         newsletter = mongo.db.Newsletter
         
-        """ Request information from user form """
-        req = request.form
-        
-        """ Get email as variable from user form"""
-        newsletter_email = req.get('newsletter-email').lower()
-        
-        """ Search for email address in User database """
-        existing_user = users.find_one({'email' : newsletter_email})
-        
-        """ If user exisit show flash message with error """
-        if existing_user is not None:
-            flash('You are subscribing newsletter already', 'newsletter-error')
+        """ Check if register form string is not empty """
+        if login_newsletter !='':
+            
+            print(login_newsletter)
+            
+            newsletter.insert_one({
+            'email' : login_newsletter,
+            'newsletter' : 'Y'
+            })
+            
         else:
-            """ Check if email address already exist in newsletter database """
-            exist_in_newsletter = newsletter.find_one({'email': newsletter_email})
-            if exist_in_newsletter is None:
         
-                newsletter.insert_one({
-                    'email' : newsletter_email,
-                    'newsletter' : 'Y'
-                })
-                
-                flash('Welcome in our newsletter group!','newsletter-success')
-            else:    
-                flash('You are subscribing newsletter already','newsletter-error')
-    return redirect(request.referrer)
+            """ Request information from user form """
+            req = request.form
+            
+            """ Get email as variable from user form"""
+            newsletter_email = req.get('newsletter-email').lower()
+            
+            """ Search for email address in User database """
+            existing_user = users.find_one({'email' : newsletter_email})
+        
+            """ If user exisit show flash message with error """
+            if existing_user is not None:
+                flash('You are subscribing newsletter already', 'newsletter-error')
+            else:
+                """ Check if email address already exist in newsletter database """
+                exist_in_newsletter = newsletter.find_one({'email': newsletter_email})
+                if exist_in_newsletter is None:
+            
+                    newsletter.insert_one({
+                        'email' : newsletter_email,
+                        'newsletter' : 'Y'
+                    })
+                    
+                    flash('Welcome in our newsletter group!','newsletter-success')
+                else:    
+                    flash('You are subscribing newsletter already','newsletter-error')
+        
+        
+            """ NOT WORKING ! """
+            return redirect(request.referrer)
         
 # Page not found error route
 @app.errorhandler(404)
