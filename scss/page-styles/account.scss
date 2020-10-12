@@ -8,9 +8,10 @@
 .recipe-information {}
 
 .account-removed {
-    display: visible;
-    padding-top: 60px;
-    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
     width: 100%;
     border: 1px solid #FF3366;
     background-color: rgba(255, 172, 193, 0.6);

@@ -2,7 +2,8 @@
 <h1 class="hidden">Home page</h1>
 <!-- Show flash message when user account was removed -->
 <!-- Include carousel -->
-{% include 'components/carousel/carousel.html' %} {% with errors = get_flashed_messages(category_filter=["account-removed"]) %} {% if errors %}
+{% include 'components/carousel/carousel.html' %} 
+{% with errors = get_flashed_messages(category_filter=["account-removed"]) %} {% if errors %}
 <div id="flash-message" class="{{'account-removed' if account_removed !='' else 'hidden'}}">
     {%- for msg in errors %}
     <p>{{ msg }}</p>
