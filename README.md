@@ -233,6 +233,7 @@ echo web: python3 app.py > Procfile
 :-----:|:-----:
 IP|0.0.0.0
 PORT|5000
+MDB\_NAME | "YOUR-DB-NAME"
 MONGO\_URI|"mongodb+srv://'username':'password'.egcn1.mongodb.net/'clusterName'?""
 SECRET\_KEY|"SECRET-KEY"
 API\_ID|"YOUR-ID"
