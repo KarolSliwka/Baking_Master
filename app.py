@@ -9,6 +9,8 @@ from threading import Thread
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
+
+""" Create HTTPS connection for all rdirected urls """
 class ReverseProxied(object):
     def __init__(self, app):
         self.app = app
