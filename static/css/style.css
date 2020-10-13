@@ -283,6 +283,7 @@ ul li:hover ul.dropdown-menu .menu-hr {
 .card {
   border-radius: 25px;
   max-width: 250px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -994,6 +995,10 @@ form p {
     justify-content: center;
   }
 }
+.search-container {
+  padding-top: 60px;
+}
+
 @media screen and (min-height: 1000px) and (min-width: 1020px) {
   #recovery-page .main-container {
     height: calc(100% - 360px);
