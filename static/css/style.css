@@ -962,6 +962,7 @@ form p {
 }
 
 .featurette {
+  widtH: 100%;
   padding-top: 40px;
   display: flex;
   padding: 0.5rem 1rem;
