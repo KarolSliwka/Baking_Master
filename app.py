@@ -67,7 +67,19 @@ def recipes():
 
     #print(response.text)
     
-    return  render_template('pages/recipes.html', body_id='recipes-page')
+    
+    search_recipe_img = 'src'
+    saerch_recipe_title = 'title'
+    search_recipe_desc = 'desc'
+    
+    return  render_template('pages/recipes.html', body_id='recipes-page',search_recipe_img=search_recipe_img,saerch_recipe_title=saerch_recipe_title,search_recipe_desc=search_recipe_desc)
+
+# This Recipe
+@app.route('/recipe', methods=["GET", "POST"])
+def this_recipe():
+    
+    return (print('ready'))
+    
 
 # Contact Page
 @app.route('/contact', methods=["GET", "POST"])
@@ -188,6 +200,14 @@ def your_recipes():
     """
 
     return render_template('pages/your-recipes.html')   
+    
+# Add to Favourites
+@app.route('/add-to-favourites', methods=['GET','POST'])
+def add_to_favourites():
+    """
+    """
+
+    
     
 # Favourites Page
 @app.route('/favourites')
