@@ -282,7 +282,8 @@ ul li:hover ul.dropdown-menu .menu-hr {
 }
 .card {
   border-radius: 25px;
-  max-width: 250px;
+  max-width: 225px;
+  margin-right: 10px;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
