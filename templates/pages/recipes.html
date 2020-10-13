@@ -1,9 +1,9 @@
 {% extends 'layout/base.html' %} {% set page = "recipes" %} {% block content %}
 <h1 class="hidden">All Recipes</h1>
 <!-- Include carousel -->
-{% include 'components/carousel/carousel.html' %} 
-<div class="search-container">
-    
+{% include 'components/carousel/carousel.html' %}
+<div class="container search-container">
+    {% include 'components/cards/recipe-card.html' %}
 </div>
 
 
