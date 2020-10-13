@@ -599,7 +599,6 @@ form p {
 .colored-footer {
   background-color: #FFF;
   margin-bottom: 20px;
-  padding: 1rem 1rem;
 }
 
 .footer-about-section {
@@ -962,7 +961,7 @@ form p {
 }
 
 .featurette {
-  widtH: 100%;
+  width: 100%;
   padding-top: 40px;
   display: flex;
   padding: 0.5rem 1rem;
@@ -980,6 +979,7 @@ form p {
 .chef-photo {
   display: inherit;
   justify-content: center;
+  text-align: center;
   padding-top: 10px;
 }
 .chef-photo img {
@@ -1000,6 +1000,10 @@ form p {
 }
 
 @media screen and (max-width: 768px) {
+  #home-page .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
   #home-page .featurette {
     flex-direction: column;
     text-align: center;
