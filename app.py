@@ -128,7 +128,7 @@ def login():
                 session['email'] = email_login
                 session['name'] = username
                 flash('You have been successfully logged in!')
-                return redirect(url_for('account'))   
+                return redirect(url_for('user_menu'))   
             flash("Incorrect username or password / user doesn't exist.","incorrect-user")
             return redirect(url_for('login'))
         flash("Incorrect username or password / user doesn't exist.","incorrect-user")
