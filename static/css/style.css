@@ -954,6 +954,11 @@ form p {
     bottom: 0;
   }
 }
+#home-page .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .landing-page-main {
   padding-top: 60px;
   display: flex;
@@ -965,6 +970,8 @@ form p {
   padding-top: 40px;
   display: flex;
   padding: 0.5rem 1rem;
+  min-height: 220px;
+  justify-content: space-between;
 }
 
 .featurette-heading {
@@ -1000,10 +1007,6 @@ form p {
 }
 
 @media screen and (max-width: 768px) {
-  #home-page .row {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
   #home-page .featurette {
     flex-direction: column;
     text-align: center;

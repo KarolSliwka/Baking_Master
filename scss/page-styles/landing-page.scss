@@ -1,3 +1,10 @@
+#home-page {
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
 .landing-page-main {
     padding-top: 60px;
     display: flex;
@@ -9,6 +16,8 @@
     padding-top: 40px;
     display: flex;
     padding: 0.5rem 1rem;
+    min-height: 220px;
+    justify-content: space-between;
 }
 
 .featurette-heading {
@@ -46,10 +55,6 @@
 
 @media screen and (max-width: 768px) {
     #home-page {
-        .row {
-            margin-left: 0 !important;
-            margin-right: 0 !important;
-        }
         .featurette {
             flex-direction: column;
             text-align: center;
@@ -61,7 +66,11 @@
         .middle-text {
             order: 1;
         }
-        .first-part{order: 2;}
-        .second-part {order: 1;}
+        .first-part {
+            order: 2;
+        }
+        .second-part {
+            order: 1;
+        }
     }
 }
