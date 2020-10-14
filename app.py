@@ -8,6 +8,7 @@ from flask_mail import Message
 from threading import Thread
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from py_edamam import PyEdamam
 
 
 """ Create HTTPS connection for all rdirected urls """
@@ -61,31 +62,30 @@ def recipes():
     Renders recipes search page and return search result
     """
 
-    """ Request information from user form """
-    req = request.form
-    
-    """ Get variable from user form"""
-    search = req.get('search')
-    print(search)
+    if request.method == "POST": 
+        """ Request information from user form """
+        req = request.form
         
+        """ Get variable from user form"""
+        search = req.get('search')
         
+        search_recipe_id = ''
+        search_recipe_img = ''
+        saerch_recipe_title = ''
+        search_recipe_desc = ''
         
-    #search_value = 'chocolate&cake'
+        e = PyEdamam(recipes_appid=API_ID,recipes_appkey=API_KEY)
+        
+        for recipe in e.search_recipe(search):
+            print(recipe)
+            print(recipe.calories)
+            print(recipe.cautions, recipe.dietLabels, recipe.healthLabels)
+            print(recipe.url)
+            print(recipe.ingredient_quantities)
     
-    #url = "https://api.edamam.com/search?q=" + search_value + "&app_id=" + API_ID + "&app_key="+ API_KEY
-    #response = requests.request("GET", url)
-
-    #print(response.text)
+        return  render_template('pages/recipes.html', body_id='recipes-page')
     
-    
-    search_recipe_img = 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=960,872'
-    saerch_recipe_title = 'Flavoured Pizza Cake Non'
-    search_recipe_desc = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit,sed diam nonummy nibh euismod tincidunt ut laoreet doloremagna aliquam erat volutpat. Ut wisi enim ad minim veniam,quis nostrud exerci tation ullamcorper suscipit lobortis nislut aliquip ex ea commodo consequat. Duis autem vel eum iriuredolor  hendrerit vulputate velit esse molestie consequat,vel illum dolore eu feugiat nulla facilisis at vero eros etaccumsan et iusto odio dignissim qui blandit praesent luptatumzzril delenit augue duis dolore te feugait nulla facilisi.Nam liber tempor cum soluta nobis eleifend option congue' 
-       
-    #if request.method == "GET"
-       
-    
-    return  render_template('pages/recipes.html', body_id='recipes-page',search_recipe_img=search_recipe_img,saerch_recipe_title=saerch_recipe_title,search_recipe_desc=search_recipe_desc)
+    return  render_template('pages/recipes.html', body_id='recipes-page')
 
 # This Recipe
 @app.route('/recipe', methods=["GET", "POST"])
