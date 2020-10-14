@@ -280,7 +280,7 @@ ul li:hover ul.dropdown-menu .menu-hr {
     bottom: 4px;
   }
 }
-.card {
+.card-recipes {
   border-radius: 25px;
   max-width: 225px;
   margin-left: 5px;
@@ -296,7 +296,7 @@ ul li:hover ul.dropdown-menu .menu-hr {
   /* !importanté */
   border-radius: 1.5em;
 }
-.card:before {
+.card-recipes:before {
   content: "";
   position: absolute;
   top: 0;
