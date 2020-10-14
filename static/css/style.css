@@ -447,6 +447,17 @@ form p {
   border: 1px solid #FF3366;
 }
 
+.main-button-2 {
+  width: 100%;
+  background: #FF3366;
+  color: #FFF;
+  border: 1px solid #FF3366;
+}
+.main-button-2:hover, .main-button-2:focus {
+  color: #FFF;
+  background-image: linear-gradient(to top, #e42f5c, #ff3377);
+}
+
 .second-button {
   width: 100%;
   background: #FFF;
@@ -1009,6 +1020,9 @@ form p {
 }
 #recipes-page .container {
   padding: 0 !important;
+}
+#recipes-page .form-control {
+  border: 1px solid #FF3377;
 }
 
 .search-container {
