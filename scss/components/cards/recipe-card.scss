@@ -48,7 +48,19 @@
         font-size: 18px;
         color: #FF3377;
         text-decoration: none;
+
     }
+}
+
+*>.fa-hover-show,
+*:hover>.fa-hover-hidden,
+*:focus>.fa-hover-hidden {
+    display: none;
+}
+
+*:focus>.fa-hover-show,
+*:hover>.fa-hover-show {
+    display: inline-block;
 }
 
 .card-text {
