@@ -1,8 +1,8 @@
 .card-recipes {
     border-radius: 25px;
-    max-width: 225px;
-    margin-left: 5px;
-    margin-bottom: 10px;
+    max-width: 220px;
+    margin-left: 10px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -81,6 +81,7 @@
         padding: 0 1rem !important;
         color: #FF3377;
         font-size: 16px;
+        margin-top: 20px;
     }
 }
 

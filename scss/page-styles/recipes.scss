@@ -1,3 +1,9 @@
+#recipes-page {
+    .container {
+        padding: 0!important;
+    }
+}
+
 .search-container {
     padding-top: 60px;
 }
@@ -5,12 +11,14 @@
 .sarch-box {}
 
 .card-results {
-    
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 
-@media (max-width: 360px){
+@media (max-width: 460px) {
     .col-min-12 {
-        width: 225px;
+        width: 220px;
     }
 }

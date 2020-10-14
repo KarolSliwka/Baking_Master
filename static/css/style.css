@@ -282,9 +282,9 @@ ul li:hover ul.dropdown-menu .menu-hr {
 }
 .card-recipes {
   border-radius: 25px;
-  max-width: 225px;
-  margin-left: 5px;
-  margin-bottom: 10px;
+  max-width: 220px;
+  margin-left: 10px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -357,6 +357,7 @@ ul li:hover ul.dropdown-menu .menu-hr {
   padding: 0 1rem !important;
   color: #FF3377;
   font-size: 16px;
+  margin-top: 20px;
 }
 
 .card-bottom-section {
@@ -1006,13 +1007,23 @@ form p {
     justify-content: center;
   }
 }
+#recipes-page .container {
+  padding: 0 !important;
+}
+
 .search-container {
   padding-top: 60px;
 }
 
-@media (max-width: 360px) {
+.card-results {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 460px) {
   .col-min-12 {
-    width: 225px;
+    width: 220px;
   }
 }
 @media screen and (min-height: 1000px) and (min-width: 1020px) {

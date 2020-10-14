@@ -1,15 +1,17 @@
-<!-- card body container -->
-<div class="card-body">
-    <div class="card-image">
-        <!-- image source from database -->
-        <img class="card-img-top" src="{{search_recipe_img}}" alt="{{saerch_recipe_title}}">
-    </div>
-    <!-- card top section -->
-    <h5 class="card-title">{{saerch_recipe_title}}</h5>
-    <!-- card bottom section -->
-    <p class="card-text">{{search_recipe_desc}}</p>
-    <div class="card-bottom-section">
-        <a href="{{add_to_favourites}}" class="card-fav-icon"><i class="far fa-heart fa-hover-hidden"></i><i class="fas fa-heart fa-hover-show"></i></a>
-        <a href="{{url_for('this_recipe')}}" class="card-read-more">Read more</a>
+<div class="col-min-12 col-md-3 col-sm-4 col-xs-6 card-recipes">
+    <!-- card body container -->
+    <div class="card-body">
+        <div class="card-image">
+            <!-- image source from database -->
+            <img class="card-img-top" src="{{search_recipe_img}}" alt="{{saerch_recipe_title}}">
+        </div>
+        <!-- card top section -->
+        <h5 class="card-title">{{saerch_recipe_title}}</h5>
+        <!-- card bottom section -->
+        <p class="card-text">{{search_recipe_desc}}</p>
+        <div class="card-bottom-section">
+            <a href="{{add_to_favourites}}" class="card-fav-icon"><i class="far fa-heart fa-hover-hidden"></i><i class="fas fa-heart fa-hover-show"></i></a>
+            <a href="{{url_for('this_recipe')}}" class="card-read-more">Read more</a>
+        </div>
     </div>
 </div>
