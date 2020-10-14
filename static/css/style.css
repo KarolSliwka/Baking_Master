@@ -309,6 +309,8 @@ ul li:hover ul.dropdown-menu .menu-hr {
   border-radius: inherit;
   background: linear-gradient(to top, #51ACEA, #C471EB);
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
 .card-image {
@@ -1024,6 +1026,11 @@ form p {
 #recipes-page .form-control {
   border: 1px solid #FF3377;
 }
+#recipes-page .input-group {
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
 
 .search-container {
   padding-top: 40px;
@@ -1033,10 +1040,18 @@ form p {
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  padding-bottom: 20px;
+}
+.search-box div {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.search-weight {
+  font-weight: 400;
 }
 
 .card-results {
+  margin-top: 40px;
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
