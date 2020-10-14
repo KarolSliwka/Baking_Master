@@ -42,6 +42,19 @@ form {
     }
 }
 
+.main-button-2 {
+    width: 100%;
+    background: $main-button-color;
+    color: $main-button-bg;
+    border: 1px solid $main-button-border-color;
+
+    &:hover,
+    &:focus {
+        color: $main-button-bg;
+        background-image: linear-gradient(to top, rgba(228, 47, 92, 1), rgba(255, 51, 119, 1));
+    }
+}
+
 .second-button {
     width: 100%;
     background: $second-button-bg;

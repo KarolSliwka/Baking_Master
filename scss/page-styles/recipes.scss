@@ -5,11 +5,14 @@
 }
 
 .search-container {
-    padding-top: 60px;
+    padding-top: 40px;
 }
 
-.sarch-box {
-    
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding-bottom: 20px;
 }
 
 .card-results {
