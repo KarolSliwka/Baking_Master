@@ -43,23 +43,11 @@
     }
 }
 
-.card-top-section {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 1rem !important;
-}
-
-.card-title {
-    color: #FF3377;
-    font-size: 16px;
-}
-
 .card-fav-icon {
     i {
         font-size: 18px;
         color: #FF3377;
         text-decoration: none;
-        padding-top: 8px;
     }
 }
 
@@ -76,10 +64,21 @@
     padding: 0!important;
     display: flex;
     flex-direction: column;
+
+    .card-title {
+        padding: 0 1rem !important;
+        color: #FF3377;
+        font-size: 16px;
+    }
+}
+
+.card-bottom-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem !important;
 }
 
 .card-read-more {
-    padding: 1rem;
     text-align: right;
     color: #51ACEA;
 
