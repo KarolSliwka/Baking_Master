@@ -11,6 +11,7 @@ from bson.objectid import ObjectId
 from py_edamam import PyEdamam
 
 
+
 """ Create HTTPS connection for all rdirected urls """
 class ReverseProxied(object):
     def __init__(self, app):
@@ -69,21 +70,16 @@ def recipes():
         """ Get variable from user form"""
         search = req.get('search')
         
-        search_recipe_id = ''
-        search_recipe_img = ''
-        saerch_recipe_title = ''
-        search_recipe_desc = ''
-        
+        """ Request serach from EDAMAM API """
         e = PyEdamam(recipes_appid=API_ID,recipes_appkey=API_KEY)
+        dict = e.search_recipe(search)
         
-        for recipe in e.search_recipe(search):
+        for recipe in dict:
             print(recipe)
             print(recipe.calories)
-            print(recipe.cautions, recipe.dietLabels, recipe.healthLabels)
-            print(recipe.url)
             print(recipe.ingredient_quantities)
     
-        return  render_template('pages/recipes.html', body_id='recipes-page')
+        return  render_template('pages/recipes.html', body_id='recipes-page', search=search)
     
     return  render_template('pages/recipes.html', body_id='recipes-page')
 
