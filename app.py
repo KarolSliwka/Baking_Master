@@ -60,6 +60,9 @@ def recipes():
     """
     Renders recipes search page and return search result
     """
+    
+    if request.method == "GET": 
+            
     #search_value = 'chocolate&cake'
     
     #url = "https://api.edamam.com/search?q=" + search_value + "&app_id=" + API_ID + "&app_key="+ API_KEY
@@ -68,9 +71,10 @@ def recipes():
     #print(response.text)
     
     
-    search_recipe_img = 'src'
-    saerch_recipe_title = 'title'
-    search_recipe_desc = 'desc'
+        search_recipe_img = 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=960,872'
+        saerch_recipe_title = 'Flavoured Pizza Cake Non'
+        search_recipe_desc = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit,sed diam nonummy nibh euismod tincidunt ut laoreet doloremagna aliquam erat volutpat. Ut wisi enim ad minim veniam,quis nostrud exerci tation ullamcorper suscipit lobortis nislut aliquip ex ea commodo consequat. Duis autem vel eum iriuredolor  hendrerit vulputate velit esse molestie consequat,vel illum dolore eu feugiat nulla facilisis at vero eros etaccumsan et iusto odio dignissim qui blandit praesent luptatumzzril delenit augue duis dolore te feugait nulla facilisi.Nam liber tempor cum soluta nobis eleifend option congue' 
+           
     
     return  render_template('pages/recipes.html', body_id='recipes-page',search_recipe_img=search_recipe_img,saerch_recipe_title=saerch_recipe_title,search_recipe_desc=search_recipe_desc)
 
