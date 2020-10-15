@@ -8,9 +8,6 @@ from flask_mail import Message
 from threading import Thread
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from py_edamam import PyEdamam
-
-
 
 """ Create HTTPS connection for all rdirected urls """
 class ReverseProxied(object):
@@ -70,15 +67,7 @@ def recipes():
         """ Get variable from user form"""
         search = req.get('search')
         
-        """ Request serach from EDAMAM API """
-        e = PyEdamam(recipes_appid=API_ID,recipes_appkey=API_KEY)
-        dict = e.search_recipe(search)
         
-        for recipe in dict:
-            print(recipe)
-            print(recipe.calories)
-            print(recipe.ingredient_quantities)
-    
         return  render_template('pages/recipes.html', body_id='recipes-page', search=search)
     
     return  render_template('pages/recipes.html', body_id='recipes-page')
