@@ -1309,4 +1309,9 @@ form p {
   padding-top: 60px;
 }
 
+.additional-tip {
+  display: flex;
+  flex-direction: column;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -11,7 +11,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-details">
                     <div class="form-row">
                         <label for="" class="">Title</label>
-                        <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="2h 32min" required>
+                        <input type="text" class="form-control" id="preparing-title" name="preparing-title" placeholder="Chocolate Cake" required>
                     </div>
                     <div class="form-row">
                         <label for="" class="">Preparing Time</label>
@@ -19,27 +19,36 @@
                     </div>
                     <div class="form-row">
                         <label for="" class="">Difficulty</label>
-                        <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="2h 32min" required>
+                        <select class="form-control form-control-lg">
+                            <option select>Choose level</option>
+                            <option>Easy</option>
+                            <option>Medium</option>
+                            <option>Hard</option>
+                        </select>
                     </div>
                     <div class="form-row">
                         <label for="" class="">Ingirients</label>
                         <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="2h 32min" required>
                         <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="2h 32min" required>
-                        <button class="appendIngridient" type="button">+Add Ingridient</button>
+                        <button class="appendIngridient" type="button">+ Add Ingridient</button>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-preparation">
                     <div class="form-row">
                         <label for="" class="">Preparation Steps</label>
-                        <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="2h 32min" required>
-                        <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="2h 32min" required>
-                        <button class="appendIngridient" type="button">+Add Ingridient</button>
+                        <div class="step-container">
+                            <label id="prepration-label" class="">Preparation Steps</label>
+                            <textarea class="form-control" rows="2" id="preparation-step"></textarea>
+                        </div>
+                        <button class="appendStep" type="button">+ Add Step</button>
                     </div>
                     <div class="form-row">
                         <label for="" class="">Additional Tips</label>
-                        <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="2h 32min" required>
-                        <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="2h 32min" required>
-                        <button class="appendIngridient" type="button">+Add Ingridient</button>
+                        <div class="additional-tip">
+                            <input type="text" class="form-control" id="tip-info-label" name="preparing-time" placeholder="2h 32min" required>
+                            <textarea class="form-control" rows="5" id="tip-info"></textarea>
+                        </div>
+                        <button class="appendTip" type="button">+ Add Tip</button>
                     </div>
                 </div>
             </div>
