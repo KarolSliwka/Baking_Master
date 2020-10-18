@@ -45,23 +45,33 @@
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-preparation">
                     <div class="form-row">
-                        <label class="">Preparation Steps:</label>
-                        <div id="steps" class="step-container">
-                            <div class="step">
-                                <label class="step">Step 1</label>
-                                <textarea class="form-control" rows="2" id="preparation-step" placeholder="Step explanation" required></textarea>
-                                <button class="removeStep btn main-button-small" type="button">x</button>
+                        <div class="steps-container">
+                            <label class="">Preparation Steps:</label>
+                            <div id="steps">
+                                <div class="step">
+                                    <div class="top-step">
+                                        <label class="step-label">Step 1</label>
+                                        <button class="removeStep btn main-button-small" type="button">x</button>
+                                    </div>
+                                    <textarea class="form-control" rows="2" id="preparation-step" placeholder="Step explanation" required></textarea>
+
+                                </div>
                             </div>
+                            <button class="appendStep btn main-button-small" type="button">+ Add Step</button>
                         </div>
-                        <button class="appendStep btn main-button-small" type="button">+ Add Step</button>
                     </div>
                     <div class="form-row">
-                        <label class="">Additional Tips:</label>
-                        <div class="additional-tip">
-                            <input type="text" class="form-control" id="tip-info-label" name="preparing-time" placeholder="Tip title">
-                            <textarea class="form-control" rows="5" id="tip-info" placeholder="Tip explanation"></textarea>
+                        <div class="tip-container">
+                            <label class="">Tips:</label>
+                            <div id="tips">
+                                <div class="tip">
+                                    <label class="tip-label">Tip 1</label>
+                                    <textarea class="form-control" rows="2" id="tip-text" placeholder="Tip explanation" required></textarea>
+                                    <button class="removeTip btn main-button-small" type="button">x</button>
+                                </div>
+                            </div>
+                            <button class="appendTip´ btn main-button-small" type="button">+ Add Step</button>
                         </div>
-                        <button class="appendTip btn main-button-small" type="button">+ Add Tip</button>
                     </div>
                 </div>
             </div>

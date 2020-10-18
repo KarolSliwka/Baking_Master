@@ -37,12 +37,8 @@ $('#myCollapsible').collapse({
 $(".appendIngridient").click(function() {
 
     let cloned = $('#ingridients').children('.ingridient').first().clone();
-    if ($(".ingridient")[0] != undefined) {
-        $("#ingridients").append('<div class="ingridient"><input type="text" class="form-control" id="ingridient-name" name="ingridient-name" placeholder="Ingridient name" required><input type="text" class="form-control" id="ingridient-scale" name="ingridient-scale" placeholder="g,kg,l,ml etc." required><button class="removeIngridient btn main-button-small" type="button">x</button></div>');
-    }
-    else {
-        cloned.appendTo('#ingridients');
-    }
+    cloned.appendTo('#ingridients');
+        
 });
 
 /**
@@ -53,24 +49,47 @@ $('body').on('click', '.removeIngridient', function() {
 });
 
 /**
- * This function will add another ingridient
+ * This function will add another step
  */
 let stepCount = 1;
 $(".appendStep").click(function() {
 
     let clonedSteps = $('#steps').children('.step').first().clone();
 
-    stepCount++;
-    let countLabel = ("<label class='step'>Step " + stepCount + "</label>");
-    clonedSteps.appendTo('#steps');
-    clonedSteps.find('label').replaceWith(countLabel);
-    console.log(countLabel);
+        stepCount++;
+        let countLabel = ("<label class='step-label'>Step " + stepCount + "</label>");
+        clonedSteps.appendTo('#steps');
+        clonedSteps.find('label').replaceWith(countLabel);
+        console.log(countLabel);
 });
 
 /**
- * This function will remove unwanted ingridient fields
+ * This function will remove unwanted step fields
  */
 $('body').on('click', '.removeStep', function() {
     $(this).closest('.step').fadeOut();
     stepCount--;
+});
+
+/**
+ * This function will add another tip
+ */
+let tipCount = 1;
+$(".appendTip").click(function() {
+
+    let clonedTips = $('#tips').children('.tip').first().clone();
+
+        tipCount++;
+        let countTipLabel = ("<label class='tip-label'>Tip " + tipCount + "</label>");
+        clonedTips.appendTo('#tips');
+        clonedTips.find('label').replaceWith(countTipLabel);
+        console.log(countTipLabel);
+});
+
+/**
+ * This function will remove unwanted tip fields
+ */
+$('body').on('click', '.removeTip', function() {
+    $(this).closest('.tip').fadeOut();
+    tipCount--;
 });
