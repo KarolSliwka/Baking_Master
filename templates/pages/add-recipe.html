@@ -2,6 +2,49 @@
 <div class="container">
     <h1 class="hidden">Add Recpie</h1>
 </div>
+<div class="container">
     <h3 class="page-title">New Recipe</h3>
+    <p class="lead"><strong>How to create a new recipe in few easy steps?</strong></br>Find the right name for your recipe, add ingridnets with their weight.</br>Write every step by step preparation process, don't forgot to add some tips to make it even esaier to prepare.</p>
+    <div class="new-recipe-container">
+        <form id="new-recipe-form" name="new-recipe-form" action="{{ url_for('add_recipe') }}" method="POST">
+            <div class="container">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-details">
+                    <div class="form-row">
+                        <label for="" class="">Title</label>
+                        <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="2h 32min" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="" class="">Preparing Time</label>
+                        <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="2h 32min" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="" class="">Difficulty</label>
+                        <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="2h 32min" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="" class="">Ingirients</label>
+                        <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="2h 32min" required>
+                        <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="2h 32min" required>
+                        <button class="appendIngridient" type="button">+Add Ingridient</button>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-preparation">
+                    <div class="form-row">
+                        <label for="" class="">Preparation Steps</label>
+                        <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="2h 32min" required>
+                        <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="2h 32min" required>
+                        <button class="appendIngridient" type="button">+Add Ingridient</button>
+                    </div>
+                    <div class="form-row">
+                        <label for="" class="">Additional Tips</label>
+                        <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="2h 32min" required>
+                        <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="2h 32min" required>
+                        <button class="appendIngridient" type="button">+Add Ingridient</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
 {% endblock %}

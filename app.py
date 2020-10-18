@@ -181,7 +181,7 @@ def add_recipe():
     """
     """
 
-    return render_template('pages/add-recipe.html',body_id='add-recipe-page', page_title='Add Recipe')
+    return render_template('pages/add-recipe.html',body_id='new-recipe-page', page_title='Add Recipe')
 
 # Edit Recipe
 @app.route('/edit-recipe', methods=['GET','POST'])

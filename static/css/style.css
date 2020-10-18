@@ -712,11 +712,6 @@ form p {
   font-size: 0.85rem;
 }
 
-#edamam-badge img {
-  height: 30px !important;
-  width: 150px;
-}
-
 .footer-menu {
   padding: 0;
   margin-bottom: 20px;
@@ -1308,6 +1303,10 @@ form p {
   font-weight: 300;
   color: #a1a1a1;
   font-size: 12px;
+}
+
+#new-recipe-page {
+  padding-top: 60px;
 }
 
 /*# sourceMappingURL=style.css.map */
