@@ -203,7 +203,7 @@ nano .bashrc
 ```
 <strong>Make sure names of these variables match names from app.py file.</strong>
 
-    IP, PORT, MONGO URI, SECRET KEY ,API ID, API KEY, EMAILUSERNAME, EMAIL PASSWORD, MAIL SERVER, MAIL PORT
+    IP, PORT, MONGO URI, SECRET KEY, EMAILUSERNAME, EMAIL PASSWORD, MAIL SERVER, MAIL PORT
 
 * 4: Run the application using <strong>Run</strong> button in your IDE Dashboard or 
 ```bash
@@ -236,8 +236,6 @@ PORT|5000
 MDB\_NAME | "YOUR-DB-NAME"
 MONGO\_URI|"mongodb+srv://'username':'password'.egcn1.mongodb.net/'clusterName'?""
 SECRET\_KEY|"SECRET-KEY"
-API\_ID|"YOUR-ID"
-API\_KEY|"YOUR-KEY"
 EMAIL\_USERNAME|"YOUR-EMAIL-USERNAME"
 EMAIL\_PASSWORD|"YOUR-EMAIL-PASSWORD"
 MAIL\_SERVER|"MAIL-PROTOCOL.DOMAIN.EXTENSION"
@@ -249,7 +247,6 @@ MAIL\_PORT|"YOUR-PORT-NUMBER"
 ## Credits / Acknowledgement
 
 Simple and clear design came from heart of the author. Project coloristic was wisely chosen by the author.<br>
-*   <a href="https://www.edamam.com" target="_blank">Edamam API - Recipes</a>
 *   <a href="https://realfavicongenerator.net/favicon_checker#.X0WHei2ZMUG">Favicon Generator/Checker</a>
 *   <a href="https://fonts.google.com/specimen/Roboto">Roboto</a>
 *   <a href="https://fontawesome.com">Font-Awesome</a>
