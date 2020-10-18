@@ -35,11 +35,9 @@ $('#myCollapsible').collapse({
  * This function will add another ingridient
  */
 $(".appendIngridient").click(function() {
+
     let cloned = $('#ingridients').children('.ingridient').first().clone();
-    let checkIngridients = $('#ingridinets').find('.ingridinet');
-    console.log('checkIngridients');
-    
-    if (checkIngridients !== 0) {
+    if ($(".ingridient")[0] != undefined) {
         $("#ingridients").append('<div class="ingridient"><input type="text" class="form-control" id="ingridient-name" name="ingridient-name" placeholder="Ingridient name" required><input type="text" class="form-control" id="ingridient-scale" name="ingridient-scale" placeholder="g,kg,l,ml etc." required><button class="removeIngridient btn main-button-small" type="button">x</button></div>');
     }
     else {
@@ -52,4 +50,27 @@ $(".appendIngridient").click(function() {
  */
 $('body').on('click', '.removeIngridient', function() {
     $(this).closest('.ingridient').fadeOut();
+});
+
+/**
+ * This function will add another ingridient
+ */
+let stepCount = 1;
+$(".appendStep").click(function() {
+
+    let clonedSteps = $('#steps').children('.step').first().clone();
+
+    stepCount++;
+    let countLabel = ("<label class='step'>Step " + stepCount + "</label>");
+    clonedSteps.appendTo('#steps');
+    clonedSteps.find('label').replaceWith(countLabel);
+    console.log(countLabel);
+});
+
+/**
+ * This function will remove unwanted ingridient fields
+ */
+$('body').on('click', '.removeStep', function() {
+    $(this).closest('.step').fadeOut();
+    stepCount--;
 });
