@@ -3,6 +3,10 @@
     .lead {
         font-size: 14px;
     }
+
+    .main-button {
+        max-width: 150px;
+    }
 }
 
 .new-recipe-container {
@@ -11,7 +15,7 @@
 
 .form-row {
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 
     .form-control {
         margin-top: -8px;
@@ -43,8 +47,24 @@
 
 .ingridients {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
 }
+
+.ingridient {
+    width: 100%;
+    display: flex;
+    margin-bottom: 15px;
+
+    .form-control {
+        width: 250px;
+        margin-right: 10px;
+    }
+
+    .main-button {
+        width: 40px;
+    }
+}
+
 
 .additional-tip {
     display: flex;

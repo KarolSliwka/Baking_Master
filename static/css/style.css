@@ -1311,6 +1311,9 @@ form p {
 #new-recipe-page .lead {
   font-size: 14px;
 }
+#new-recipe-page .main-button {
+  max-width: 150px;
+}
 
 .new-recipe-container {
   margin-top: 30px;
@@ -1318,7 +1321,7 @@ form p {
 
 .form-row {
   display: flex;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .form-row .form-control {
   margin-top: -8px;
@@ -1346,7 +1349,20 @@ form p {
 
 .ingridients {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.ingridient {
+  width: 100%;
+  display: flex;
+  margin-bottom: 15px;
+}
+.ingridient .form-control {
+  width: 250px;
+  margin-right: 10px;
+}
+.ingridient .main-button {
+  width: 40px;
 }
 
 .additional-tip {

@@ -29,11 +29,15 @@ $(document).ready(function() {
  */
 $('#myCollapsible').collapse({
     toggle: false
-})
+});
 
 /** 
  * This function will add another ingridient 
  */
 $(".appendIngridient").click(function() {
-    $("#ingridients").append('<div class="ingridient"><input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="Ingridient name"required><input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="" required></div>').insertBefore('.appendIngridient');
+    $("#ingridients").append('<div class="ingridient"><input type="text" class="form-control" id="ingridient-name" name="ingridient-name" placeholder="Ingridient name" required><input type="text" class="form-control" id="ingridient-scale" name="ingridient-scale" placeholder="g,kg,l,ml etc." required><button class="removeIngridient btn main-button" type="button">x</button></div>');
+});
+
+$('.removeIngridient').on('click', function() {
+    $(this).closest(".ingridient").remove();
 });
