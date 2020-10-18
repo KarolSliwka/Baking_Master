@@ -26,10 +26,14 @@
                             <option>Hard</option>
                         </select>
                     </div>
-                    <div class="form-row">
+                    <div id="ingridient-container" class="form-row">
                         <label for="" class="">Ingirients</label>
-                        <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="2h 32min" required>
-                        <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="2h 32min" required>
+                        <div id="ingridients">
+                            <div class="ingridient">
+                                <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="Ingridient name" required>
+                                <input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="" required>
+                            </div>
+                        </div>
                         <button class="appendIngridient" type="button">+ Add Ingridient</button>
                     </div>
                 </div>

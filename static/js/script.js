@@ -28,5 +28,12 @@ $(document).ready(function() {
  * This function will execut code to collapse info section in about page
  */
 $('#myCollapsible').collapse({
-  toggle: false
+    toggle: false
 })
+
+/** 
+ * This function will add another ingridient 
+ */
+$(".appendIngridient").click(function() {
+    $("#ingridients").append('<div class="ingridient"><input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="Ingridient name"required><input type="text" class="form-control" id="preparing-time" name="preparing-time" placeholder="" required></div>').insertBefore('.appendIngridient');
+});
