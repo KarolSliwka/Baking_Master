@@ -9,6 +9,7 @@
         <form id="new-recipe-form" name="new-recipe-form" action="{{ url_for('add_recipe') }}" method="POST">
             <div class="container">
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-details">
+                    <h4 class="page-title2">Recipe Information:</h4>
                     <div class="form-row">
                         <label class="">Title</label>
                         <input type="text" class="form-control" id="preparing-title" name="preparing-title" placeholder="Chocolate Cake" required>
@@ -46,7 +47,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-preparation">
                     <div class="form-row">
                         <div class="steps-container">
-                            <label class="">Preparation Steps:</label>
+                            <h4 class="page-title2">Preparation Steps:</h4>
                             <div id="steps">
                                 <div class="step">
                                     <div class="top-step">
@@ -62,7 +63,7 @@
                     </div>
                     <div class="form-row">
                         <div class="tip-container">
-                            <label class="">Tips:</label>
+                            <h4 class="page-title2">Tips:</h4>
                             <div id="tips">
                                 <div class="tip">
                                     <label class="tip-label">Tip 1</label>
