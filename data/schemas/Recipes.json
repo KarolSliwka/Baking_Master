@@ -1,16 +1,17 @@
 [{
     "_id": "<ObjectId()>",
     "image": "<>",
-    "title": "<>",
-    "difficulty": "<>",
+    "title": "<String>",
+    "time": "<String>".
+    "difficulty": "<String>",
     "ingridients": {
         "0": "<String>"
     }
-    "": "<>",
-    "": "<>",
-    "": "<>",
-    "": "<>",
-    "": "<>",
-    "": "<>",
+    "preparation": {
+        "0": "<String>"
+    }
+    "tips": {
+        "0": "<String>"
+    }
     "author": "<String>",
 }]
