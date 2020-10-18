@@ -1361,13 +1361,25 @@ form p {
   width: 250px;
   margin-right: 10px;
 }
-.ingridient .main-button {
+.ingridient .main-button-small {
   width: 40px;
 }
 
 .additional-tip {
   display: flex;
   flex-direction: column;
+}
+
+.main-button-small {
+  width: 150px;
+  background: #FFF;
+  color: #FF3366;
+  border: 1px solid #FF3366;
+}
+.main-button-small:hover, .main-button-small:focus {
+  background: #FF3366;
+  color: #FFF;
+  border: 1px solid #FF3366;
 }
 
 /*# sourceMappingURL=style.css.map */

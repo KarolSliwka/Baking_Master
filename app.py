@@ -179,9 +179,13 @@ def account():
 @app.route('/add-recipe', methods=['GET','POST'])
 def add_recipe():
     """
+    Render Add Recipe page, load first step number and allocate it to steps-count
     """
 
-    return render_template('pages/add-recipe.html',body_id='new-recipe-page', page_title='Add Recipe')
+    step_count = 1
+    
+
+    return render_template('pages/add-recipe.html',body_id='new-recipe-page', page_title='Add Recipe', step_count=step_count)
 
 # Edit Recipe
 @app.route('/edit-recipe', methods=['GET','POST'])

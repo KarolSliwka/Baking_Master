@@ -31,13 +31,25 @@ $('#myCollapsible').collapse({
     toggle: false
 });
 
-/** 
- * This function will add another ingridient 
+/**
+ * This function will add another ingridient
  */
 $(".appendIngridient").click(function() {
-    $("#ingridients").append('<div class="ingridient"><input type="text" class="form-control" id="ingridient-name" name="ingridient-name" placeholder="Ingridient name" required><input type="text" class="form-control" id="ingridient-scale" name="ingridient-scale" placeholder="g,kg,l,ml etc." required><button class="removeIngridient btn main-button" type="button">x</button></div>');
+    let cloned = $('#ingridients').children('.ingridient').first().clone();
+    let checkIngridients = $('#ingridinets').find('.ingridinet');
+    console.log('checkIngridients');
+    
+    if (checkIngridients !== 0) {
+        $("#ingridients").append('<div class="ingridient"><input type="text" class="form-control" id="ingridient-name" name="ingridient-name" placeholder="Ingridient name" required><input type="text" class="form-control" id="ingridient-scale" name="ingridient-scale" placeholder="g,kg,l,ml etc." required><button class="removeIngridient btn main-button-small" type="button">x</button></div>');
+    }
+    else {
+        cloned.appendTo('#ingridients');
+    }
 });
 
-$('.removeIngridient').on('click', function() {
-    $(this).closest(".ingridient").remove();
+/**
+ * This function will remove unwanted ingridient fields
+ */
+$('body').on('click', '.removeIngridient', function() {
+    $(this).closest('.ingridient').fadeOut();
 });

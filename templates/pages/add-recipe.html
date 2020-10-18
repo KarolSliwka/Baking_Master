@@ -16,9 +16,9 @@
                     <div class="form-row">
                         <label>Preparing Time</label>
                         <div class="prepare-time">
-                            <input type="text" class="form-control time-text" id="preparing-time-hrs" name="preparing-time-hrs" placeholder="2" maxlength="2"required>
+                            <input type="text" class="form-control time-text" id="preparing-time-hrs" name="preparing-time-hrs" placeholder="2" maxlength="2" required>
                             <small class="">hrs</small>
-                            <input type="text" class="form-control time-text" id="preparing-time-min" name="preparing-time-min" placeholder="32" maxlength="2"required>
+                            <input type="text" class="form-control time-text" id="preparing-time-min" name="preparing-time-min" placeholder="32" maxlength="2" required>
                             <small class="">min</small>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                         <div class="ingridient">
                             <input type="text" class="form-control" id="ingridient-name" name="ingridient-name" placeholder="Ingridient name" required>
                             <input type="text" class="form-control" id="ingridient-scale" name="ingridient-scale" placeholder="g,kg,l,ml etc." required>
-                            <button class="removeIngridient btn main-button" type="button">x</button>
+                            <button class="removeIngridient btn main-button-small" type="button">x</button>
                         </div>
                     </div>
                     <button class="appendIngridient btn main-button" type="button">+ Add Ingridient</button>
@@ -46,11 +46,13 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-preparation">
                     <div class="form-row">
                         <label class="">Preparation Steps:</label>
-                        <div class="step-container">
-                            <label class="">Step 1</label>
-                            <textarea class="form-control" rows="2" id="preparation-step" placeholder="Step explanation"required></textarea>
+                        <div id="step-container" class="step-container">
+                            <div class="step">
+                                <label class="">Step {{step_count}}</label>
+                                <textarea class="form-control" rows="2" id="preparation-step" placeholder="Step explanation" required></textarea>
+                            </div>
                         </div>
-                        <button class="appendStep btn main-button" type="button">+ Add Step</button>
+                        <button class="appendStep btn main-button-small" type="button">+ Add Step</button>
                     </div>
                     <div class="form-row">
                         <label class="">Additional Tips:</label>
@@ -58,7 +60,7 @@
                             <input type="text" class="form-control" id="tip-info-label" name="preparing-time" placeholder="Tip title">
                             <textarea class="form-control" rows="5" id="tip-info" placeholder="Tip explanation"></textarea>
                         </div>
-                        <button class="appendTip btn main-button" type="button">+ Add Tip</button>
+                        <button class="appendTip btn main-button-small" type="button">+ Add Tip</button>
                     </div>
                 </div>
             </div>

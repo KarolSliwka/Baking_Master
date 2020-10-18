@@ -60,13 +60,26 @@
         margin-right: 10px;
     }
 
-    .main-button {
+    .main-button-small {
         width: 40px;
     }
 }
 
-
 .additional-tip {
     display: flex;
     flex-direction: column;
+}
+
+.main-button-small {
+    width: 150px;
+    background: $main-button-bg;
+    color: $main-button-color;
+    border: 1px solid $main-button-border-color;
+
+    &:hover,
+    &:focus {
+        background: $main-button-bg-hv;
+        color: $main-button-color-hv;
+        border: 1px solid $main-button-border-color-hv;
+    }
 }
