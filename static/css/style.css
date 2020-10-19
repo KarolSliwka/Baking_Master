@@ -901,8 +901,11 @@ form p {
 }
 
 .card-body {
-  padding: 1rem;
   font-size: 14px;
+}
+
+.extra-padding {
+  padding: 1rem !important;
 }
 
 .map-container {
@@ -1014,9 +1017,6 @@ form p {
     flex-direction: column;
     justify-content: center;
   }
-}
-#recipes-page .container {
-  padding: 0 !important;
 }
 #recipes-page .form-control {
   border: 1px solid #FF3377;
@@ -1354,44 +1354,42 @@ form p {
   margin-left: 10px;
 }
 
-.ingridients {
-  display: flex;
-  flex-direction: column;
-}
-
-.ingridient {
-  width: 100%;
-  display: flex;
-  margin-bottom: 15px;
-}
-.ingridient .form-control {
-  width: 250px;
-  margin-right: 10px;
-}
-.ingridient .main-button-small {
-  width: 40px;
-}
-
+.ingridient-container,
 .steps-container,
 .tips-container {
   width: 100%;
 }
 
+.ingridient,
 .step,
 .tip {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
+.ingridient .main-button-small,
 .step .main-button-small,
 .tip .main-button-small {
   width: 30px;
   height: 25px;
   padding: 0px 0px;
 }
+.ingridient .form-control,
 .step .form-control,
 .tip .form-control {
   margin-bottom: 15px;
+}
+
+.top-ingridient {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  margin-bottom: 15px;
+  height: 25px;
+}
+.top-ingridient .main-button-small {
+  margin-left: 8px;
+  margin-top: 4px;
 }
 
 .top-step,
@@ -1401,6 +1399,20 @@ form p {
   display: flex;
   margin-bottom: 15px;
   height: 25px;
+}
+
+.ingridient-inputs {
+  width: 100%;
+  display: flex;
+}
+
+#ingridient-scale {
+  margin-left: 10px;
+  max-width: 60px;
+}
+
+#ingridient-name {
+  max-width: 250px;
 }
 
 .main-button-small {
@@ -1413,6 +1425,13 @@ form p {
   background: linear-gradient(to bottom, #51acea, #2e60eb);
   color: #FFF;
   border: 1px solid #51acea;
+}
+
+@media (max-width: 768px) {
+  .recipe-details,
+.recipe-preparation {
+    padding: 0 !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

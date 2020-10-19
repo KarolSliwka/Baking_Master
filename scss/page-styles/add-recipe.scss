@@ -53,31 +53,13 @@
     }
 }
 
-.ingridients {
-    display: flex;
-    flex-direction: column;
-}
-
-.ingridient {
-    width: 100%;
-    display: flex;
-    margin-bottom: 15px;
-
-    .form-control {
-        width: 250px;
-        margin-right: 10px;
-    }
-
-    .main-button-small {
-        width: 40px;
-    }
-}
-
+.ingridient-container,
 .steps-container,
 .tips-container {
     width: 100%;
 }
 
+.ingridient,
 .step,
 .tip {
     width: 100%;
@@ -93,6 +75,18 @@
     }
 }
 
+.top-ingridient {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 15px;
+    height: 25px;
+    .main-button-small {
+        margin-left: 8px;
+        margin-top: 4px;
+    }
+}
+
 .top-step,
 .top-tip {
     width: 100%;
@@ -100,6 +94,20 @@
     display: flex;
     margin-bottom: 15px;
     height: 25px;
+}
+
+.ingridient-inputs {
+    width: 100%;
+    display: flex;
+}
+
+#ingridient-scale {
+    margin-left: 10px;
+    max-width: 60px;
+}
+
+#ingridient-name {
+    max-width: 250px;
 }
 
 .main-button-small {
@@ -113,5 +121,13 @@
         background: linear-gradient(to bottom, #51acea, #2e60eb);
         color: $main-button-color-hv;
         border: 1px solid #51acea;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .recipe-details,
+    .recipe-preparation {
+        padding: 0!important;
     }
 }
