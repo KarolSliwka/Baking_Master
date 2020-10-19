@@ -38,14 +38,14 @@ $(".appendIngridient").click(function() {
 
     let cloned = $('#ingridients').children('.ingridient').first().clone();
     cloned.appendTo('#ingridients');
-        
+
 });
 
 /**
  * This function will remove unwanted ingridient fields
  */
 $('body').on('click', '.removeIngridient', function() {
-    $(this).closest('.ingridient').fadeOut();
+    $(this).closest('.ingridient').remove();
 });
 
 /**
@@ -54,20 +54,27 @@ $('body').on('click', '.removeIngridient', function() {
 let stepCount = 1;
 $(".appendStep").click(function() {
 
-    let clonedSteps = $('#steps').children('.step').first().clone();
+    if ($('.step')[0]) {
+
+        let clonedSteps = $('#steps').children('.step').first().clone();
 
         stepCount++;
         let countLabel = ("<label class='step-label'>Step " + stepCount + "</label>");
         clonedSteps.appendTo('#steps');
         clonedSteps.find('label').replaceWith(countLabel);
         console.log(countLabel);
+
+    }
+    else {
+        
+    }
 });
 
 /**
  * This function will remove unwanted step fields
  */
 $('body').on('click', '.removeStep', function() {
-    $(this).closest('.step').fadeOut();
+    $(this).closest('.step').remove();
     stepCount--;
 });
 
@@ -79,17 +86,17 @@ $(".appendTip").click(function() {
 
     let clonedTips = $('#tips').children('.tip').first().clone();
 
-        tipCount++;
-        let countTipLabel = ("<label class='tip-label'>Tip " + tipCount + "</label>");
-        clonedTips.appendTo('#tips');
-        clonedTips.find('label').replaceWith(countTipLabel);
-        console.log(countTipLabel);
+    tipCount++;
+    let countTipLabel = ("<label class='tip-label'>Tip " + tipCount + "</label>");
+    clonedTips.appendTo('#tips');
+    clonedTips.find('label').replaceWith(countTipLabel);
+    console.log(countTipLabel);
 });
 
 /**
  * This function will remove unwanted tip fields
  */
 $('body').on('click', '.removeTip', function() {
-    $(this).closest('.tip').fadeOut();
+    $(this).closest('.tip').remove();
     tipCount--;
 });

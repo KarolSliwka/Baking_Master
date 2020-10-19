@@ -1408,9 +1408,9 @@ form p {
   border: 1px solid #51acea;
 }
 .main-button-small:hover, .main-button-small:focus {
-  background: linear-gradient(to top, #51acea, #c471eb);
+  background: linear-gradient(to bottom, #51acea, #2e60eb);
   color: #FFF;
-  border: 1px solid #c471eb;
+  border: 1px solid #51acea;
 }
 
 /*# sourceMappingURL=style.css.map */
