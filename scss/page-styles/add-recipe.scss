@@ -1,5 +1,9 @@
 #new-recipe-page {
     padding-top: 60px;
+
+    .page-title2 {
+        margin-bottom: 30px;
+    }
     .lead {
         font-size: 14px;
     }
@@ -64,11 +68,11 @@
     }
 }
 
-.steps-container {
+.steps-container, .tips-container{
     width: 100%;
 }
 
-.step {
+.step, .tip {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -81,22 +85,11 @@
     }
 }
 
-.top-step {
+.top-step, .top-tip {
     width: 100%;
     justify-content: space-between;
     display: flex;
     margin-bottom: 15px;
-}
-
-.tip {
-    width: 100%;
-    display: flex;
-    .main-button-small {
-        width: 40px;
-    }
-    .form-control {
-        margin-bottom: 15px;
-    }
 }
 
 .main-button-small {
