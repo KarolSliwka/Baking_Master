@@ -1459,6 +1459,15 @@ form p {
   .ingridient-inputs {
     flex-direction: column;
   }
+
+  .top-ingridient {
+    height: auto;
+  }
+
+  #ingridient-scale {
+    margin-left: 0;
+    max-width: 250px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
