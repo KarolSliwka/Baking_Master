@@ -66,7 +66,9 @@ $(".appendStep").click(function() {
 
     }
     else {
-        
+        stepCount++;
+        let countLabel = ("<label class='step-label'>Step " + stepCount + "</label>");
+        $('#steps').append('<div class="step"><div class="top-step"><label class="step-label">' + countLabel + '</label><button class="removeStep btn main-button-small" type="button">x</button></div><textarea class="form-control" rows="2" id="preparation-step" placeholder="Step explanation" required></textarea></div>');
     }
 });
 

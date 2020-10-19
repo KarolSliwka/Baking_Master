@@ -1386,6 +1386,7 @@ form p {
 .step .main-button-small,
 .tip .main-button-small {
   width: 30px;
+  height: 25px;
   padding: 0px 0px;
 }
 .step .form-control,
@@ -1399,6 +1400,7 @@ form p {
   justify-content: space-between;
   display: flex;
   margin-bottom: 15px;
+  height: 25px;
 }
 
 .main-button-small {
