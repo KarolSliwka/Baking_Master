@@ -42,7 +42,7 @@ $(".appendIngridient").click(function() {
         cloned.appendTo('#ingridients');
     }
     else {
-         $('#ingridients').append('<div class="ingridient"><div class="top-ingridient"><div class="ingridient-inputs"><input type="text" class="form-control" id="ingridient-name" name="ingridient-name" placeholder="Ingiridnet" required><input type="text" class="form-control" id="ingridient-scale" name="ingridient-scale" placeholder="g/ml" required></div><button class="removeIngridient btn main-button-small" type="button">x</button></div></div>');
+         $('#ingridients').append('<div class="ingridient"><div class="top-ingridient"><button class="removeIngridient btn main-button-small" type="button">x</button><div class="ingridient-inputs"><input type="text" class="form-control" id="ingridient-name" name="ingridient-name" placeholder="Ingiridnet" required><input type="text" class="form-control" id="ingridient-scale" name="ingridient-scale" placeholder="g/ml" required></div></div></div>');
     }
 });
 
