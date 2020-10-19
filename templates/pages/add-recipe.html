@@ -11,16 +11,24 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-details">
                     <h4 class="page-title2">Recipe Information:</h4>
                     <div class="form-row">
+                        <label>Image</label>
+                        <input type="file" class="form-control" id="preparing-image" name="preparing-image" required>
+                    </div>
+                    <div class="form-row">
                         <label>Title</label>
                         <input type="text" class="form-control" id="preparing-title" name="preparing-title" placeholder="Chocolate Cake" required>
                     </div>
                     <div class="form-row">
                         <label>Preparing Time</label>
                         <div class="prepare-time">
-                            <input type="text" class="form-control time-text" id="preparing-time-hrs" name="preparing-time-hrs" placeholder="2" maxlength="2" required>
-                            <small class="">hrs</small>
-                            <input type="text" class="form-control time-text" id="preparing-time-min" name="preparing-time-min" placeholder="32" maxlength="2" required>
-                            <small class="">min</small>
+                            <div class="sticky-container">
+                                <input type="text" class="form-control time-text" id="preparing-time-hrs" name="preparing-time-hrs" placeholder="2" maxlength="2" required>
+                                <small>hrs</small>
+                            </div>
+                            <div class="sticky-container">
+                                <input type="text" class="form-control time-text" id="preparing-time-min" name="preparing-time-min" placeholder="32" maxlength="2" required>
+                                <small>min</small>
+                            </div>
                         </div>
                     </div>
                     <div class="form-row">
@@ -32,21 +40,23 @@
                             <option>Hard</option>
                         </select>
                     </div>
-                    <div id="ingridient-container" class="form-row">
-                        <h4 class="page-title2">Ingridients List:</h4>
-                    </div>
-                    <div id="ingridients">
-                        <div class="ingridient">
-                            <div class="top-ingridient">
-                                <div class="ingridient-inputs">
-                                    <input type="text" class="form-control" id="ingridient-name" name="ingridient-name" placeholder="Ingiridnet" required>
-                                    <input type="text" class="form-control" id="ingridient-scale" name="ingridient-scale" placeholder="g/ml" required>
+                    <div class="form-row">
+                        <div class="ingridient-container">
+                            <h4 class="page-title2">Ingridients List:</h4>
+                            <div id="ingridients">
+                                <div class="ingridient">
+                                    <div class="top-ingridient">
+                                        <button class="removeIngridient btn main-button-small" type="button">x</button>
+                                        <div class="ingridient-inputs">
+                                            <input type="text" class="form-control" id="ingridient-name" name="ingridient-name" placeholder="Ingiridnet" required>
+                                            <input type="text" class="form-control" id="ingridient-scale" name="ingridient-scale" placeholder="g/ml" required>
+                                        </div>
+                                    </div>
                                 </div>
-                                <button class="removeIngridient btn main-button-small" type="button">x</button>
                             </div>
+                            <button class="appendIngridient btn main-button-small" type="button">+ Add Ingridient</button>
                         </div>
                     </div>
-                    <button class="appendIngridient btn main-button-small" type="button">+ Add Ingridient</button>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-preparation">
                     <div class="form-row">
