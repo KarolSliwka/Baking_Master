@@ -86,13 +86,22 @@ $('body').on('click', '.removeStep', function() {
 let tipCount = 1;
 $(".appendTip").click(function() {
 
-    let clonedTips = $('#tips').children('.tip').first().clone();
+    if ($('.tips')[0]) {
 
-    tipCount++;
-    let countTipLabel = ("<label class='tip-label'>Tip " + tipCount + "</label>");
-    clonedTips.appendTo('#tips');
-    clonedTips.find('label').replaceWith(countTipLabel);
-    console.log(countTipLabel);
+        let clonedTips = $('#tips').children('.tip').first().clone();
+
+        tipCount++;
+        let countTipLabel = ("<label class='tip-label'>Tip " + tipCount + "</label>");
+        clonedTips.appendTo('#tips');
+        clonedTips.find('label').replaceWith(countTipLabel);
+        console.log(countTipLabel);
+
+    }
+    else {
+        tipCount++;
+        let countTipLabel = ("<label class='tip-label'>Tip " + tipCount + "</label>");
+        $('#tips').append('<div class="tip"><div class="top-tip"><label class="tip-label">' + countTipLabel + '</label><button class="removeTip btn main-button-small" type="button">x</button></div><textarea class="form-control" rows="2" id="preparation-tip" placeholder="Tip explanation" required></textarea></div>');
+    }
 });
 
 /**
