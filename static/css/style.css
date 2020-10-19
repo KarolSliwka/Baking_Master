@@ -1368,24 +1368,29 @@ form p {
   width: 40px;
 }
 
-.steps-container, .tips-container {
+.steps-container,
+.tips-container {
   width: 100%;
 }
 
-.step, .tip {
+.step,
+.tip {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.step .main-button-small, .tip .main-button-small {
+.step .main-button-small,
+.tip .main-button-small {
   width: 30px;
   padding: 0px 0px;
 }
-.step .form-control, .tip .form-control {
+.step .form-control,
+.tip .form-control {
   margin-bottom: 15px;
 }
 
-.top-step, .top-tip {
+.top-step,
+.top-tip {
   width: 100%;
   justify-content: space-between;
   display: flex;
@@ -1395,13 +1400,13 @@ form p {
 .main-button-small {
   width: 150px;
   background: #FFF;
-  color: #FF3366;
-  border: 1px solid #FF3366;
+  color: #51acea;
+  border: 1px solid #51acea;
 }
 .main-button-small:hover, .main-button-small:focus {
-  background: #FF3366;
+  background: linear-gradient(to top, #51acea, #c471eb);
   color: #FFF;
-  border: 1px solid #FF3366;
+  border: 1px solid #c471eb;
 }
 
 /*# sourceMappingURL=style.css.map */

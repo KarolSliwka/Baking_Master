@@ -68,11 +68,13 @@
     }
 }
 
-.steps-container, .tips-container{
+.steps-container,
+.tips-container {
     width: 100%;
 }
 
-.step, .tip {
+.step,
+.tip {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -85,7 +87,8 @@
     }
 }
 
-.top-step, .top-tip {
+.top-step,
+.top-tip {
     width: 100%;
     justify-content: space-between;
     display: flex;
@@ -95,13 +98,13 @@
 .main-button-small {
     width: 150px;
     background: $main-button-bg;
-    color: $main-button-color;
-    border: 1px solid $main-button-border-color;
+    color: #51acea;
+    border: 1px solid #51acea;
 
     &:hover,
     &:focus {
-        background: $main-button-bg-hv;
+        background: linear-gradient(to top, #51acea, #c471eb);
         color: $main-button-color-hv;
-        border: 1px solid $main-button-border-color-hv;
+        border: 1px solid #c471eb;
     }
 }
