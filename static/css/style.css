@@ -1444,6 +1444,22 @@ form p {
   margin-top: 20px;
 }
 
+.recipe-added-success {
+  height: auto;
+  width: 100%;
+  border: 1px solid #5aac17;
+  background-color: rgba(230, 255, 204, 0.6);
+  border-radius: 5px;
+  text-align: left;
+}
+.recipe-added-success p {
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #5aac17;
+}
+
 @media (max-width: 768px) {
   .recipe-details,
 .recipe-preparation {

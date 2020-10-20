@@ -67,7 +67,6 @@ def recipes():
         """ Get variable from user form"""
         search = req.get('search')
         
-        
         return  render_template('pages/recipes.html', body_id='recipes-page', page_title='Recieps', search=search)
     
     return  render_template('pages/recipes.html', body_id='recipes-page', page_title='Recipes')
@@ -182,7 +181,7 @@ def add_recipe():
     Render Add Recipe page, load first step number and allocate it to steps-count
     """
 
-
+    flash('Your recipe was added successfully, enjoy baking!','recipe-added')
     return render_template('pages/add-recipe.html',body_id='new-recipe-page', page_title='Add Recipe')
 
 # Edit Recipe

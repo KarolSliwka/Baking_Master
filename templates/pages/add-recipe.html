@@ -5,6 +5,13 @@
 <div class="container">
     <h3 class="page-title">Add new recipe</h3>
     <p class="lead"><strong>How to create a new recipe in few easy steps?</strong></br>Find the right name for your recipe, add ingridnets with their weight.</br>Write every step by step preparation process, don't forgot to add some tips to make it even esaier to prepare.</p>
+    {% with errors = get_flashed_messages(category_filter=["recipe-added"]) %} {% if errors %}
+    <div id="flash-message" class="recipe-added-success">
+        {%- for msg in errors %}
+        <p>{{ msg }}</p>
+        {% endfor -%}
+    </div>
+    {% endif %} {% endwith %}
     <div class="new-recipe-container">
         <div class="container">
             <form id="new-recipe-form" name="new-recipe-form" action="{{ url_for('add_recipe') }}" method="POST">
@@ -67,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn main-button-100w" type="submit" name="add-recipe" >Add to Recipes</button>
+                <button class="btn main-button-100w" type="submit" name="add-recipe">Add to Recipes</button>
             </form>
         </div>
     </div>
