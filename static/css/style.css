@@ -1441,6 +1441,7 @@ form p {
 
 .main-button-100w {
   max-width: 100% !important;
+  margin-top: 20px;
 }
 
 @media (max-width: 768px) {
