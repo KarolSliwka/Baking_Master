@@ -437,13 +437,13 @@ form p {
   color: #FF3366;
 }
 
-.main-button {
+.main-button, .main-button-100w {
   width: 100%;
   background: #FFF;
   color: #FF3366;
   border: 1px solid #FF3366;
 }
-.main-button:hover, .main-button:focus {
+.main-button:hover, .main-button-100w:hover, .main-button:focus, .main-button-100w:focus {
   background: #FF3366;
   color: #FFF;
   border: 1px solid #FF3366;
@@ -504,7 +504,7 @@ form p {
   width: 100px;
 }
 
-.main-button {
+.main-button, .main-button-100w {
   order: 2;
 }
 
@@ -1314,7 +1314,7 @@ form p {
 #new-recipe-page .lead {
   font-size: 16px;
 }
-#new-recipe-page .main-button {
+#new-recipe-page .main-button, #new-recipe-page .main-button-100w {
   max-width: 150px;
 }
 
@@ -1437,6 +1437,10 @@ form p {
   background: linear-gradient(to bottom, #51acea, #2e60eb);
   color: #FFF;
   border: 1px solid #51acea;
+}
+
+.main-button-100w {
+  max-width: 100% !important;
 }
 
 @media (max-width: 768px) {

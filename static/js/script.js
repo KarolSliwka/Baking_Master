@@ -56,7 +56,7 @@ $('body').on('click', '.removeIngridient', function() {
 /**
  * This function will add another step
  */
-let stepCount = 1;
+let stepCount = 0;
 $(".appendStep").click(function() {
 
     if ($('.step')[0]) {
@@ -88,7 +88,7 @@ $('body').on('click', '.removeStep', function() {
 /**
  * This function will add another tip
  */
-let tipCount = 1;
+let tipCount = 0;
 $(".appendTip").click(function() {
 
     if ($('.tips')[0]) {

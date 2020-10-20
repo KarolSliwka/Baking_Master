@@ -6,8 +6,8 @@
     <h3 class="page-title">Add new recipe</h3>
     <p class="lead"><strong>How to create a new recipe in few easy steps?</strong></br>Find the right name for your recipe, add ingridnets with their weight.</br>Write every step by step preparation process, don't forgot to add some tips to make it even esaier to prepare.</p>
     <div class="new-recipe-container">
-        <form id="new-recipe-form" name="new-recipe-form" action="{{ url_for('add_recipe') }}" method="POST">
-            <div class="container">
+        <div class="container">
+            <form id="new-recipe-form" name="new-recipe-form" action="{{ url_for('add_recipe') }}" method="POST">
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-details">
                     <h4 class="page-title2">Recipe Information:</h4>
                     <div class="form-row">
@@ -44,15 +44,6 @@
                         <div class="ingridient-container">
                             <h4 class="page-title2">Ingridients List:</h4>
                             <div id="ingridients">
-                                <div class="ingridient">
-                                    <div class="top-ingridient">
-                                        <button class="removeIngridient btn main-button-small" type="button">x</button>
-                                        <div class="ingridient-inputs">
-                                            <input type="text" class="form-control" id="ingridient-name" name="ingridient-name" placeholder="Ingiridnet" required>
-                                            <input type="text" class="form-control" id="ingridient-scale" name="ingridient-scale" placeholder="g/ml" required>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <button class="appendIngridient btn main-button-small" type="button">+ Add Ingridient</button>
                         </div>
@@ -63,13 +54,6 @@
                         <div class="steps-container">
                             <h4 class="page-title2">Preparation Steps:</h4>
                             <div id="steps">
-                                <div class="step">
-                                    <div class="top-step">
-                                        <label class="step-label">Step 1</label>
-                                        <button class="removeStep btn main-button-small" type="button">x</button>
-                                    </div>
-                                    <textarea class="form-control" rows="2" id="preparation-step" placeholder="Step explanation" required></textarea>
-                                </div>
                             </div>
                             <button class="appendStep btn main-button-small" type="button">+ Add Step</button>
                         </div>
@@ -78,20 +62,14 @@
                         <div class="tips-container">
                             <h4 class="page-title2">Additional Tips:</h4>
                             <div id="tips">
-                                <div class="tip">
-                                    <div class="top-tip">
-                                        <label class="tip-label">Tip 1</label>
-                                        <button class="removeTip btn main-button-small" type="button">x</button>
-                                    </div>
-                                    <textarea class="form-control" rows="2" id="preparation-tip" placeholder="Tip explanation" required></textarea>
-                                </div>
                             </div>
                             <button class="appendTip btn main-button-small" type="button">+ Add Tip</button>
                         </div>
                     </div>
                 </div>
-            </div>
-        </form>
+                <button class="btn main-button-100w" type="submit" name="add-recipe" >Add to Recipes</button>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}

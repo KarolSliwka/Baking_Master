@@ -136,6 +136,11 @@
     }
 }
 
+.main-button-100w {
+    @extend .main-button;
+    max-width: 100% !important;
+}
+
 @media (max-width: 768px) {
     .recipe-details,
     .recipe-preparation {
