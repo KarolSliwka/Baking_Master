@@ -13,12 +13,12 @@
     </div>
     {% endif %} {% endwith %}
     <div class="new-recipe-container">
-            <form id="new-recipe-form" name="new-recipe-form" action="{{ url_for('add_recipe') }}" method="POST">
+            <form id="new-recipe-form" name="new-recipe-form" action="{{ url_for('add_recipe') }}" method="POST" enctype="multipart/form-data">
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-details">
                     <h4 class="page-title2">Recipe Information:</h4>
                     <div class="form-row">
                         <label>Image</label>
-                        <input type="file" class="form-control" id="preparing-image" name="preparing-image" required>
+                        <input type="file" class="form-control" id="preparing-image" name="preparing_image" required>
                     </div>
                     <div class="form-row">
                         <label>Title</label>
