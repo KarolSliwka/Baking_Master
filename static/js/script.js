@@ -32,25 +32,25 @@ $('#myCollapsible').collapse({
 });
 
 /**
- * This function will add another ingridient
+ * This function will add another ingredient
  */
-$(".appendIngridient").click(function() {
+$(".appendIngredient").click(function() {
 
-    if ($('.ingridient')[0]) {
+    if ($('.ingredient')[0]) {
 
-        let cloned = $('#ingridients').children('.ingridient').first().clone();
-        cloned.appendTo('#ingridients');
+        let cloned = $('#ingredients').children('.ingredient').first().clone();
+        cloned.appendTo('#ingredients');
     }
     else {
-         $('#ingridients').append('<div class="ingridient"><div class="top-ingridient"><button class="removeIngridient btn main-button-small" type="button">x</button><div class="ingridient-inputs"><input type="text" class="form-control" id="ingridient-name" name="ingridient-name" placeholder="Ingiridnet" required><input type="text" class="form-control" id="ingridient-scale" name="ingridient-scale" placeholder="g/ml" required></div></div></div>');
+         $('#ingredients').append('<div class="ingredient"><div class="top-ingredient"><button class="removeingredient btn main-button-small" type="button">x</button><div class="ingredient-inputs"><input type="text" class="form-control" id="ingredient-name" name="ingredient-name" placeholder="Ingredient" required><input type="text" class="form-control" id="ingredient-scale" name="ingredient-scale" placeholder="g/ml" required></div></div></div>');
     }
 });
 
 /**
- * This function will remove unwanted ingridient fields
+ * This function will remove unwanted ingredient fields
  */
-$('body').on('click', '.removeIngridient', function() {
-    $(this).closest('.ingridient').remove();
+$('body').on('click', '.removeingredient', function() {
+    $(this).closest('.ingredient').remove();
 });
 
 /**

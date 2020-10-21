@@ -64,14 +64,14 @@
     justify-content: space-between;
 }
 
-.ingridient-container,
+.ingredient-container,
 .steps-container,
 .tips-container {
     height: auto;
     width: 100%;
 }
 
-.ingridient,
+.ingredient,
 .step,
 .tip {
     height: auto;
@@ -88,7 +88,7 @@
     }
 }
 
-.top-ingridient {
+.top-ingredient {
     width: 100%;
     justify-content: space-between;
     display: flex;
@@ -110,17 +110,17 @@
     height: 25px;
 }
 
-.ingridient-inputs {
+.ingredient-inputs {
     width: 100%;
     display: flex;
 }
 
-#ingridient-scale {
+#ingredient-scale {
     margin-left: 10px;
     max-width: 60px;
 }
 
-#ingridient-name {
+#ingredient-name {
     max-width: 250px;
 }
 
@@ -177,14 +177,14 @@
         flex-direction: row;
         margin-bottom: 15px;
     }
-    .ingridient-inputs {
+    .ingredient-inputs {
         flex-direction: column;
     }
-    .top-ingridient {
+    .top-ingeidient {
         height: auto;
     }
 
-    #ingridient-scale {
+    #ingredient-scale {
         margin-left: 0;
         max-width: 250px;
     }

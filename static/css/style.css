@@ -1365,14 +1365,14 @@ form p {
   justify-content: space-between;
 }
 
-.ingridient-container,
+.ingredient-container,
 .steps-container,
 .tips-container {
   height: auto;
   width: 100%;
 }
 
-.ingridient,
+.ingredient,
 .step,
 .tip {
   height: auto;
@@ -1380,27 +1380,27 @@ form p {
   display: flex;
   flex-direction: column;
 }
-.ingridient .main-button-small,
+.ingredient .main-button-small,
 .step .main-button-small,
 .tip .main-button-small {
   width: 30px;
   height: 25px;
   padding: 0px 0px;
 }
-.ingridient .form-control,
+.ingredient .form-control,
 .step .form-control,
 .tip .form-control {
   margin-bottom: 15px;
 }
 
-.top-ingridient {
+.top-ingredient {
   width: 100%;
   justify-content: space-between;
   display: flex;
   margin-bottom: 15px;
   height: 25px;
 }
-.top-ingridient .main-button-small {
+.top-ingredient .main-button-small {
   margin-right: 9px;
   margin-top: -7px;
   height: 33px;
@@ -1415,17 +1415,17 @@ form p {
   height: 25px;
 }
 
-.ingridient-inputs {
+.ingredient-inputs {
   width: 100%;
   display: flex;
 }
 
-#ingridient-scale {
+#ingredient-scale {
   margin-left: 10px;
   max-width: 60px;
 }
 
-#ingridient-name {
+#ingredient-name {
   max-width: 250px;
 }
 
@@ -1479,15 +1479,15 @@ form p {
     margin-bottom: 15px;
   }
 
-  .ingridient-inputs {
+  .ingredient-inputs {
     flex-direction: column;
   }
 
-  .top-ingridient {
+  .top-ingeidient {
     height: auto;
   }
 
-  #ingridient-scale {
+  #ingredient-scale {
     margin-left: 0;
     max-width: 250px;
   }
