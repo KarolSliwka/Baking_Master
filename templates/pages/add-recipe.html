@@ -22,24 +22,24 @@
                     </div>
                     <div class="form-row">
                         <label>Title</label>
-                        <input type="text" class="form-control" id="preparing-title" name="preparing-title" placeholder="Chocolate Cake" required>
+                        <input type="text" class="form-control" id="recipe-title" name="recipe-title" placeholder="Chocolate Cake" required>
                     </div>
                     <div class="form-row">
                         <label>Preparing Time</label>
                         <div class="prepare-time">
                             <div class="sticky-container">
-                                <input type="text" class="form-control time-text" id="preparing-time-hrs" name="preparing-time-hrs" placeholder="2" maxlength="2" required>
+                                <input type="text" class="form-control time-text" id="preparing-time-hrs" name="preparing-time-hrs" placeholder="00" maxlength="2" minlength="2" required>
                                 <small>hrs</small>
                             </div>
                             <div class="sticky-container">
-                                <input type="text" class="form-control time-text" id="preparing-time-min" name="preparing-time-min" placeholder="32" maxlength="2" required>
+                                <input type="text" class="form-control time-text" id="preparing-time-min" name="preparing-time-min" placeholder="00" maxlength="2" minlength="2" required>
                                 <small>min</small>
                             </div>
                         </div>
                     </div>
                     <div class="form-row">
                         <label>Difficulty</label>
-                        <select class="form-control form-control-lg" required>
+                        <select class="form-control form-control-lg" name="difficulty-level" required>
                             <option select></option>
                             <option>Easy</option>
                             <option>Medium</option>

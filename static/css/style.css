@@ -1320,6 +1320,8 @@ form p {
 
 .new-recipe-container {
   margin-top: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .form-row {
