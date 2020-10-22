@@ -1,8 +1,6 @@
 {% extends 'layout/base.html' %} {% set page = "add-recipe" %} {% block content %}
 <div class="container">
     <h1 class="hidden">Add Recpie</h1>
-</div>
-<div class="container">
     <h3 class="page-title">Add new recipe</h3>
     <p class="lead"><strong>How to create a new recipe in few easy steps?</strong></br>Find the right name for your recipe, add ingridnets with their weight.</br>Write every step by step preparation process, don't forgot to add some tips to make it even esaier to prepare.</p>
     {% with errors = get_flashed_messages(category_filter=["recipe-added"]) %} {% if errors %}
@@ -13,69 +11,68 @@
     </div>
     {% endif %} {% endwith %}
     <div class="new-recipe-container">
-            <form id="new-recipe-form" name="new-recipe-form" action="{{ url_for('add_recipe') }}" method="POST" enctype="multipart/form-data">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-details">
-                    <h4 class="page-title2">Recipe Information:</h4>
-                    <div class="form-row">
-                        <label>Image</label>
-                        <input type="file" class="form-control" id="preparing-image" name="preparing_image" required>
-                    </div>
-                    <div class="form-row">
-                        <label>Title</label>
-                        <input type="text" class="form-control" id="recipe-title" name="recipe-title" placeholder="Chocolate Cake" required>
-                    </div>
-                    <div class="form-row">
-                        <label>Preparing Time</label>
-                        <div class="prepare-time">
-                            <div class="sticky-container">
-                                <input type="text" class="form-control time-text" id="preparing-time-hrs" name="preparing-time-hrs" placeholder="00" maxlength="2" minlength="2" required>
-                                <small>hrs</small>
-                            </div>
-                            <div class="sticky-container">
-                                <input type="text" class="form-control time-text" id="preparing-time-min" name="preparing-time-min" placeholder="00" maxlength="2" minlength="2" required>
-                                <small>min</small>
-                            </div>
+        <form id="new-recipe-form" name="new-recipe-form" action="{{ url_for('add_recipe') }}" method="POST" enctype="multipart/form-data">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-details">
+                <h4 class="page-title2">Recipe Information:</h4>
+                <div class="form-row">
+                    <label>Image</label>
+                    <input type="file" class="form-control" id="preparing-image" name="preparing_image" required>
+                </div>
+                <div class="form-row">
+                    <label>Title</label>
+                    <input type="text" class="form-control" id="recipe-title" name="recipe-title" placeholder="Chocolate Cake" required>
+                </div>
+                <div class="form-row">
+                    <label>Preparing Time</label>
+                    <div class="prepare-time">
+                        <div class="sticky-container">
+                            <input type="text" class="form-control time-text" id="preparing-time-hrs" name="preparing-time-hrs" placeholder="00" maxlength="2" minlength="2" required>
+                            <small>hrs</small>
+                        </div>
+                        <div class="sticky-container">
+                            <input type="text" class="form-control time-text" id="preparing-time-min" name="preparing-time-min" placeholder="00" maxlength="2" minlength="2" required>
+                            <small>min</small>
                         </div>
                     </div>
-                    <div class="form-row">
-                        <label>Difficulty</label>
-                        <select class="form-control form-control-lg" name="difficulty-level" required>
+                </div>
+                <div class="form-row">
+                    <label>Difficulty</label>
+                    <select class="form-control form-control-lg" name="difficulty-level" required>
                             <option select></option>
                             <option>Easy</option>
                             <option>Medium</option>
                             <option>Hard</option>
                         </select>
-                    </div>
-                    <div class="form-row">
-                        <div class="ingredient-container">
-                            <h4 class="page-title2">Ingredients List:</h4>
-                            <div id="ingredients">
-                            </div>
-                            <button class="appendIngredient btn main-button-small" type="button">+ Add Ingredient</button>
+                </div>
+                <div class="form-row">
+                    <div class="ingredient-container">
+                        <h4 class="page-title2">Ingredients List:</h4>
+                        <div id="ingredients">
                         </div>
+                        <button class="appendIngredient btn main-button-small" type="button">+ Add Ingredient</button>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-preparation">
-                    <div class="form-row">
-                        <div class="steps-container">
-                            <h4 class="page-title2">Preparation Steps:</h4>
-                            <div id="steps">
-                            </div>
-                            <button class="appendStep btn main-button-small" type="button">+ Add Step</button>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-preparation">
+                <div class="form-row">
+                    <div class="steps-container">
+                        <h4 class="page-title2">Preparation Steps:</h4>
+                        <div id="steps">
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="tips-container">
-                            <h4 class="page-title2">Additional Tips:</h4>
-                            <div id="tips">
-                            </div>
-                            <button class="appendTip btn main-button-small" type="button">+ Add Tip</button>
-                        </div>
+                        <button class="appendStep btn main-button-small" type="button">+ Add Step</button>
                     </div>
                 </div>
-                <button class="btn main-button-100w" type="submit" name="add-recipe">Add to Recipes</button>
-            </form>
-        </div>
+                <div class="form-row">
+                    <div class="tips-container">
+                        <h4 class="page-title2">Additional Tips:</h4>
+                        <div id="tips">
+                        </div>
+                        <button class="appendTip btn main-button-small" type="button">+ Add Tip</button>
+                    </div>
+                </div>
+            </div>
+            <button class="btn main-button-100w" type="submit" name="add-recipe">Add to Recipes</button>
+        </form>
     </div>
 </div>
 {% endblock %}
