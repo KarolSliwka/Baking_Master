@@ -184,6 +184,7 @@ def add_recipe():
     if request.method == "POST":
         
         recipes = mongo.db.Recipes
+        users = mongo.db.Users
         """ Request information from user form """
         req = request.form
         
@@ -243,6 +244,16 @@ def add_recipe():
                 'tips': tips_array,
                 'author': recipe_author
             })
+            
+            """ Remove user from Users db """
+            users_result = users.find({'email':recipe_author})
+            for doc in users_result:
+                recipe_count = doc["recipes"]
+                recipe_count = recipe_count + 1
+
+            print(recipe_count)
+
+            users.find_one_and_update({'email': recipe_author},{'$set': {'recipes': recipe_count}})
 
         
         flash('Your recipe was added successfully, enjoy baking!','recipe-added')
