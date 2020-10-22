@@ -147,6 +147,7 @@ def login():
 @app.route('/user-menu')
 def user_menu():
     """
+    Render user menu page
     """
     return render_template("pages/index.html", body_id="user-menu", page_title='User Menu')
 
@@ -271,9 +272,16 @@ def edit_recipe():
 @app.route('/your-recipes', methods=['GET','POST'])
 def your_recipes():
     """
+    Render user recipes pages, present all user recipes as cards
     """
-
-    return render_template('pages/your-recipes.html',body_id='your-recipes-page', page_title='Your Recipes')   
+    users = mongo.db.Users
+    
+    current_user = session['email']
+    users_result = users.find({'email':current_user})
+    for doc in users_result:
+        your_recipes_count = doc["recipes"]
+    
+    return render_template('pages/your-recipes.html',body_id='your-recipes-page', page_title='Your Recipes',your_recipes_count=your_recipes_count)   
     
 # Add to Favourites
 @app.route('/add-to-favourites', methods=['GET','POST'])
