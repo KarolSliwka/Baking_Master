@@ -437,13 +437,13 @@ form p {
   color: #FF3366;
 }
 
-.main-button {
+.main-button, .main-button-100w {
   width: 100%;
   background: #FFF;
   color: #FF3366;
   border: 1px solid #FF3366;
 }
-.main-button:hover, .main-button:focus {
+.main-button:hover, .main-button-100w:hover, .main-button:focus, .main-button-100w:focus {
   background: #FF3366;
   color: #FFF;
   border: 1px solid #FF3366;
@@ -504,7 +504,7 @@ form p {
   width: 100px;
 }
 
-.main-button {
+.main-button, .main-button-100w {
   order: 2;
 }
 
@@ -901,8 +901,11 @@ form p {
 }
 
 .card-body {
-  padding: 1rem;
   font-size: 14px;
+}
+
+.extra-padding {
+  padding: 1rem !important;
 }
 
 .map-container {
@@ -1014,9 +1017,6 @@ form p {
     flex-direction: column;
     justify-content: center;
   }
-}
-#recipes-page .container {
-  padding: 0 !important;
 }
 #recipes-page .form-control {
   border: 1px solid #FF3377;
@@ -1303,6 +1303,199 @@ form p {
   font-weight: 300;
   color: #a1a1a1;
   font-size: 12px;
+}
+
+#new-recipe-page {
+  padding-top: 60px;
+}
+#new-recipe-page .page-title2 {
+  margin-bottom: 30px;
+}
+#new-recipe-page .lead {
+  font-size: 16px;
+}
+#new-recipe-page .main-button, #new-recipe-page .main-button-100w {
+  max-width: 150px;
+}
+
+.new-recipe-container {
+  margin-top: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.form-row {
+  display: flex;
+  margin-bottom: 20px;
+}
+.form-row .form-control {
+  color: #000;
+  margin-top: -8px;
+  padding: 2px 10px;
+}
+.form-row #preparing-image {
+  padding-top: 6px !important;
+}
+.form-row textarea {
+  max-width: 100% !important;
+}
+.form-row .time-text {
+  width: 40px;
+  text-align: center;
+}
+.form-row label {
+  font-size: 14px;
+  min-width: 100px;
+  margin-right: 10px;
+}
+
+.prepare-time {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.prepare-time small {
+  width: 100%;
+  margin-left: 10px;
+}
+
+.sticky-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ingredient-container,
+.steps-container,
+.tips-container {
+  height: auto;
+  width: 100%;
+}
+
+.ingredient,
+.step,
+.tip {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.ingredient .main-button-small,
+.step .main-button-small,
+.tip .main-button-small {
+  width: 30px;
+  height: 25px;
+  padding: 0px 0px;
+}
+.ingredient .form-control,
+.step .form-control,
+.tip .form-control {
+  margin-bottom: 15px;
+}
+
+.top-ingredient {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  margin-bottom: 15px;
+  height: 25px;
+}
+.top-ingredient .main-button-small {
+  margin-right: 9px;
+  margin-top: -7px;
+  height: 33px;
+}
+
+.top-step,
+.top-tip {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  margin-bottom: 15px;
+  height: 25px;
+}
+
+.ingredient-inputs {
+  width: 100%;
+  display: flex;
+}
+
+#ingredient-scale {
+  margin-left: 10px;
+  max-width: 65px;
+}
+
+#ingredient-name {
+  max-width: 250px;
+}
+
+.main-button-small {
+  width: 150px;
+  background: #FFF;
+  color: #51acea;
+  border: 1px solid #51acea;
+}
+.main-button-small:hover, .main-button-small:focus {
+  background: linear-gradient(to bottom, #51acea, #2e60eb);
+  color: #FFF;
+  border: 1px solid #51acea;
+}
+
+.main-button-100w {
+  max-width: 100% !important;
+  margin-top: 20px;
+}
+
+.recipe-added-success {
+  height: auto;
+  width: 100%;
+  border: 1px solid #5aac17;
+  background-color: rgba(230, 255, 204, 0.6);
+  border-radius: 5px;
+  text-align: left;
+}
+.recipe-added-success p {
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #5aac17;
+}
+
+@media (max-width: 768px) {
+  .recipe-details,
+.recipe-preparation {
+    padding: 0 !important;
+  }
+}
+@media (max-width: 320px) {
+  .prepare-time {
+    flex-direction: column;
+  }
+
+  .sticky-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+  }
+
+  .ingredient {
+    height: 90px;
+  }
+
+  .ingredient-inputs {
+    flex-direction: column;
+    height: 82px;
+  }
+
+  .top-ingeidient {
+    height: 70px;
+  }
+
+  #ingredient-scale {
+    margin-left: 0;
+    max-width: 250px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

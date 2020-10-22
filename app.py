@@ -51,7 +51,7 @@ def _force_https(app):
 def home():
     """Renders landing page/home page"""
 
-    return render_template('pages/landing-page.html', body_id='home-page', title = "Home Page")
+    return render_template('pages/landing-page.html', body_id='home-page', page_title = "Home Page")
 
 # All Recieps page
 @app.route('/recipes', methods=["GET", "POST"])
@@ -67,10 +67,9 @@ def recipes():
         """ Get variable from user form"""
         search = req.get('search')
         
-        
-        return  render_template('pages/recipes.html', body_id='recipes-page', search=search)
+        return  render_template('pages/recipes.html', body_id='recipes-page', page_title='Recieps', search=search)
     
-    return  render_template('pages/recipes.html', body_id='recipes-page')
+    return  render_template('pages/recipes.html', body_id='recipes-page', page_title='Recipes')
 
 # This Recipe
 @app.route('/recipe', methods=["GET", "POST"])
@@ -108,7 +107,7 @@ def contact():
         Thread(target=send_email, args=(app, msg)).start()
         
         flash('Your message was sent successfully','contact-send')
-    return render_template('pages/contact.html', body_id='contact-page', title="Contact Page")
+    return render_template('pages/contact.html', body_id='contact-page', page_title="Contact Page")
  
 # Login Page   
 @app.route('/login', methods=["GET", "POST"])
@@ -142,14 +141,14 @@ def login():
             flash("Incorrect username or password / user doesn't exist.","incorrect-user")
             return redirect(url_for('login'))
         flash("Incorrect username or password / user doesn't exist.","incorrect-user")
-    return render_template('pages/login.html', body_id='login-page', title='Sign In')
+    return render_template('pages/login.html', body_id='login-page', page_title='Sign In')
    
 # Home page
 @app.route('/user-menu')
 def user_menu():
     """
     """
-    return render_template("pages/index.html", body_id="user-menu", page_title="user-menu")
+    return render_template("pages/index.html", body_id="user-menu", page_title='User Menu')
 
 # User account page
 @app.route('/account', methods=['GET','POST'])
@@ -167,21 +166,87 @@ def account():
             recipes_count = doc["recipes"]
             fav_recipe_count = len(doc['favourites'])
 
-        return render_template("pages/account.html", body_id="user-account",page_title="Account",active_user=active_user,email=email,recipes_count=recipes_count,fav_recipe_count=fav_recipe_count)
+        return render_template("pages/account.html", body_id="user-account", page_title="User Account",active_user=active_user,email=email,recipes_count=recipes_count,fav_recipe_count=fav_recipe_count)
 
     except:
         """
         Return user account page without user name
         """
-        return render_template("pages/account.html", body_id="user-account", page_title="account")
+        return render_template("pages/account.html", body_id="user-account", page_title="User Account")
 
 # Add Recipe
 @app.route('/add-recipe', methods=['GET','POST'])
 def add_recipe():
     """
+    Render Add Recipe page, load first step number and allocate it to steps-count
     """
+    
+    if request.method == "POST":
+        
+        recipes = mongo.db.Recipes
+        """ Request information from user form """
+        req = request.form
+        
+        """ collect userform information """
+        recipe_title = req.get('recipe-title')
+        recipe_prepare_time = req.get('preparing-time-hrs') + ":" + req.get('preparing-time-min')
+        recpie_difficulty = req.get('difficulty-level')
+        
+        """ collect all information into arrays """
+        ingredients_array = []
+        ingredients_scale_array = []
+        preparation_array = []  
+        tips_array = []
+        
+        
+        """ loop through each input field contains selected class to created arrays """
+        for key in request.form:
+            if key !="":
+                if key.startswith('ingredient-name-'):
+                    value = request.form[key]
+                    ingredients_array.append(value)
+                    
+        for key in request.form:
+            if key !="":
+                if key.startswith('ingredient-scale-'):
+                    value = request.form[key]
+                    ingredients_scale_array.append(value)
+                
+        for key in request.form:
+            if key != "":
+                if key.startswith('preparation-step-'):
+                    value = request.form[key]
+                    preparation_array.append(value)
+                
+        for key in request.form:
+            if key !="":
+                if key.startswith('tip-step-'):
+                    value = request.form[key]
+                    tips_array.append(value)
+                    
+            
+        """ collect user email addres to assing it as recipe author """
+        recipe_author = session['email']
 
-    return render_template('pages/add-recipe.html')
+        """ save recipe image to database with current filename and recipe information """ 
+        if 'preparing_image' in request.files:
+            preparing_image = request.files['preparing_image']
+            mongo.save_file(preparing_image.filename, preparing_image)
+            recipes.insert_one({
+                'image': preparing_image.filename,
+                'title': recipe_title,
+                'time': recipe_prepare_time,
+                'difficulty': recpie_difficulty,
+                'ingiridnets': ingredients_array,
+                'ingiridnets-scale' :ingredients_scale_array,
+                'preparation': preparation_array,
+                'tips': tips_array,
+                'author': recipe_author
+            })
+
+        
+        flash('Your recipe was added successfully, enjoy baking!','recipe-added')
+    return render_template('pages/add-recipe.html',body_id='new-recipe-page', page_title='Add Recipe')
 
 # Edit Recipe
 @app.route('/edit-recipe', methods=['GET','POST'])
@@ -189,7 +254,7 @@ def edit_recipe():
     """
     """
 
-    return render_template('pages/edit-recipe.html')
+    return render_template('pages/edit-recipe.html',body_id='edit-recipe-page', page_title='Edit Recipe')
  
 # Your Recipes 
 @app.route('/your-recipes', methods=['GET','POST'])
@@ -197,7 +262,7 @@ def your_recipes():
     """
     """
 
-    return render_template('pages/your-recipes.html')   
+    return render_template('pages/your-recipes.html',body_id='your-recipes-page', page_title='Your Recipes')   
     
 # Add to Favourites
 @app.route('/add-to-favourites', methods=['GET','POST'])
@@ -213,7 +278,7 @@ def favourites():
     """
     Renders favourite page only when user is logged in
     """
-    return render_template('pages/favourites.html', body_id='favourites-page')
+    return render_template('pages/favourites.html', body_id='favourites-page', page_title='Favourites')
 
 
 # Register Page 
@@ -255,11 +320,11 @@ def register():
             add_to_newsletter(login_newsletter)
         
             flash('Your account was created successfully! Enjoy browsing our amazing recipes','register-added')
-            return render_template('pages/login.html', body_id='login-page', title='Sign In')
+            return render_template('pages/login.html', body_id='login-page', page_title='Sign In')
         flash('This email account already exist. Please use different email addres or recover your password','register-exist')
             
     """ Return register template """
-    return render_template('pages/register.html', body_id='register-page', title='Register account')
+    return render_template('pages/register.html', body_id='register-page', page_title='Register account')
 
 # Password Recovery Page
 @app.route('/recovery',  methods=["GET", "POST"])
@@ -298,11 +363,11 @@ def recovery():
             Thread(target=send_email, args=(app, msg)).start()
             
             flash('Please find a password recovery message in your inbox or spam folder','recovery-positive')
-            return render_template('pages/recovery.html', body_id='login-page', title='Sign In')
+            return render_template('pages/recovery.html', body_id='login-page', page_title='Sign In')
         flash("This email account doesn't exist is our database. Check email address and try once again.","recovery-negative")
     
     """ Return recovery template """
-    return render_template('pages/recovery.html', body_id='recovery-page', title='Password recovery')
+    return render_template('pages/recovery.html', body_id='recovery-page', page_title='Password recovery')
 
 
 # Remove Account
@@ -335,7 +400,7 @@ def remove_account():
     session.clear()
     
     flash('Your account has been removed successfully!','account-removed')
-    return render_template('pages/landing-page.html', body_id='home-page', title = "Home Page",account_removed="account-removed")
+    return render_template('pages/landing-page.html', body_id='home-page', page_title='Home Page',account_removed="account-removed")
 
 # Logout user
 @app.route('/logout')
@@ -415,7 +480,7 @@ def Error404(error):
     This route renders an error 404
     """
     error_type = str(error)
-    return render_template('pages/error-page.html', error_type=error_type, body_id='error-page'), 404 
+    return render_template('pages/error-page.html', error_type=error_type, body_id='error-page',paga_title='Error 404'), 404 
 
 # Server error route
 @app.errorhandler(500)
@@ -424,7 +489,7 @@ def Error500(error):
     This route renders server error 500
     """
     error_type = str(error)
-    return render_template('pages/error-page.html', error_type=error_type, body_id='error-page'), 500
+    return render_template('pages/error-page.html', error_type=error_type, body_id='error-page', page_title='Error 500'), 500
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
