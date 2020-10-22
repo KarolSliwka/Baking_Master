@@ -7,6 +7,9 @@
     "ingridients": {
         "0": "<String>"
     }
+    "ingridients-scale": {
+        "0": "<String>"
+    }
     "preparation": {
         "0": "<String>"
     }
