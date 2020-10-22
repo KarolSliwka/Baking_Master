@@ -34,15 +34,11 @@ $('#myCollapsible').collapse({
 /**
  * This function will add another ingredient
  */
+let ingrCount = 0;
 $(".appendIngredient").click(function() {
-
-    if ($('.ingredient')[0]) {
-
-        $('#ingredients').append('<div class="ingredient"><div class="top-ingredient"><button class="removeingredient btn main-button-small" type="button">x</button><div class="ingredient-inputs"><input type="text" class="form-control" id="ingredient-name" name="ingredient-name" placeholder="Ingredient" required><input type="text" class="form-control" id="ingredient-scale" name="ingredient-scale" placeholder="2g/5ml" required></div></div></div>');
-    }
-    else {
-        $('#ingredients').append('<div class="ingredient"><div class="top-ingredient"><button class="removeingredient btn main-button-small" type="button">x</button><div class="ingredient-inputs"><input type="text" class="form-control" id="ingredient-name" name="ingredient-name" placeholder="Ingredient" required><input type="text" class="form-control" id="ingredient-scale" name="ingredient-scale" placeholder="2g/5ml" required></div></div></div>');
-    }
+    $('#ingredients').append('<div class="ingredient"><div class="top-ingredient"><button class="removeingredient btn main-button-small" type="button">x</button><div class="ingredient-inputs"><input type="text" class="form-control" id="ingredient-name" name="ingredient-name-' + ingrCount +'" placeholder="Ingredient" required><input type="text" class="form-control" id="ingredient-scale" name="ingredient-scale= ' + ingrCount + '" placeholder="2g/5ml" required></div></div></div>');
+    ingrCount++;
+    console.log(ingrCount);
 });
 
 /**
@@ -50,6 +46,7 @@ $(".appendIngredient").click(function() {
  */
 $('body').on('click', '.removeingredient', function() {
     $(this).closest('.ingredient').remove();
+    ingrCount--;
 });
 
 /**
@@ -62,12 +59,12 @@ $(".appendStep").click(function() {
 
         stepCount++;
         let countLabel = ("<label class='step-label'>Step " + stepCount + "</label>");
-        $('#steps').append('<div class="step"><div class="top-step"><label class="step-label">' + countLabel + '</label><button class="removeStep btn main-button-small" type="button">x</button></div><textarea class="form-control" rows="2" id="preparation-step" placeholder="Step explanation" required></textarea></div>');
+        $('#steps').append('<div class="step"><div class="top-step"><label class="step-label">' + countLabel + '</label><button class="removeStep btn main-button-small" type="button">x</button></div><textarea class="form-control" name="preparation-step-' + stepCount + '"rows="2" id="preparation-step" placeholder="Step explanation" required></textarea></div>');
     }
     else {
         stepCount++;
         let countLabel = ("<label class='step-label'>Step " + stepCount + "</label>");
-        $('#steps').append('<div class="step"><div class="top-step"><label class="step-label">' + countLabel + '</label><button class="removeStep btn main-button-small" type="button">x</button></div><textarea class="form-control" rows="2" id="preparation-step" placeholder="Step explanation" required></textarea></div>');
+        $('#steps').append('<div class="step"><div class="top-step"><label class="step-label">' + countLabel + '</label><button class="removeStep btn main-button-small" type="button">x</button></div><textarea class="form-control" name="preparation-step-' + stepCount + '"rows="2" id="preparation-step" placeholder="Step explanation" required></textarea></div>');
     }
 });
 
@@ -94,12 +91,12 @@ $(".appendTip").click(function() {
 
         tipCount++;
         let countTipLabel = ("<label class='tip-label'>Tip " + tipCount + "</label>");
-        $('#tips').append('<div class="tip"><div class="top-tip"><label class="tip-label">' + countTipLabel + '</label><button class="removeTip btn main-button-small" type="button">x</button></div><textarea class="form-control" rows="2" id="preparation-tip" placeholder="Tip explanation" required></textarea></div>');
+        $('#tips').append('<div class="tip"><div class="top-tip"><label class="tip-label">' + countTipLabel + '</label><button class="removeTip btn main-button-small" type="button">x</button></div><textarea class="form-control" name="tip-step-' + tipCount + ' "rows="2" id="preparation-tip" placeholder="Tip explanation" required></textarea></div>');
     }
     else {
         tipCount++;
         let countTipLabel = ("<label class='tip-label'>Tip " + tipCount + "</label>");
-        $('#tips').append('<div class="tip"><div class="top-tip"><label class="tip-label">' + countTipLabel + '</label><button class="removeTip btn main-button-small" type="button">x</button></div><textarea class="form-control" rows="2" id="preparation-tip" placeholder="Tip explanation" required></textarea></div>');
+        $('#tips').append('<div class="tip"><div class="top-tip"><label class="tip-label">' + countTipLabel + '</label><button class="removeTip btn main-button-small" type="button">x</button></div><textarea class="form-control" name="tip-step-' + tipCount + ' "rows="2" id="preparation-tip" placeholder="Tip explanation" required></textarea></div>');
     }
 });
 
