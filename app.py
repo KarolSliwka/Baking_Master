@@ -188,16 +188,43 @@ def add_recipe():
         req = request.form
         
         """ collect userform information """
-        recipe_image = req.get('preparing-image')
         recipe_title = req.get('recipe-title')
         recipe_prepare_time = req.get('preparing-time-hrs') + ":" + req.get('preparing-time-min')
         recpie_difficulty = req.get('difficulty-level')
         
         """ collect all information into arrays """
-        ingridients_array = []
-        preparation_array = []
+        ingredients_array = []
+        ingredients_scale_array = []
+        preparation_array = []  
         tips_array = []
         
+        
+        """ loop through each input field contains selected class to created arrays """
+        for key in request.form:
+            if key !="":
+                if key.startswith('ingredient-name-'):
+                    value = request.form[key]
+                    ingredients_array.append(value)
+                    
+        for key in request.form:
+            if key !="":
+                if key.startswith('ingredient-scale-'):
+                    value = request.form[key]
+                    ingredients_scale_array.append(value)
+                
+        for key in request.form:
+            if key != "":
+                if key.startswith('preparation-step-'):
+                    value = request.form[key]
+                    preparation_array.append(value)
+                
+        for key in request.form:
+            if key !="":
+                if key.startswith('tip-step-'):
+                    value = request.form[key]
+                    tips_array.append(value)
+                    
+            
         """ collect user email addres to assing it as recipe author """
         recipe_author = session['email']
 
@@ -210,13 +237,13 @@ def add_recipe():
                 'title': recipe_title,
                 'time': recipe_prepare_time,
                 'difficulty': recpie_difficulty,
-                'ingiridnets': ingridients_array,
+                'ingiridnets': ingredients_array,
+                'ingiridnets-scale' :ingredients_scale_array,
                 'preparation': preparation_array,
                 'tips': tips_array,
                 'author': recipe_author
             })
 
-        print(recipe_image, recipe_prepare_time, recipe_title, recpie_difficulty, recipe_author)
         
         flash('Your recipe was added successfully, enjoy baking!','recipe-added')
     return render_template('pages/add-recipe.html',body_id='new-recipe-page', page_title='Add Recipe')
