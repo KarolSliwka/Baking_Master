@@ -117,7 +117,7 @@
 
 #ingredient-scale {
     margin-left: 10px;
-    max-width: 60px;
+    max-width: 65px;
 }
 
 #ingredient-name {
@@ -177,13 +177,16 @@
         flex-direction: row;
         margin-bottom: 15px;
     }
+    .ingredient {
+        height: 90px;
+    }
     .ingredient-inputs {
         flex-direction: column;
+        height: 82px;
     }
     .top-ingeidient {
-        height: auto;
+        height: 70px;
     }
-
     #ingredient-scale {
         margin-left: 0;
         max-width: 250px;

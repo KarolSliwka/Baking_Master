@@ -1422,7 +1422,7 @@ form p {
 
 #ingredient-scale {
   margin-left: 10px;
-  max-width: 60px;
+  max-width: 65px;
 }
 
 #ingredient-name {
@@ -1479,12 +1479,17 @@ form p {
     margin-bottom: 15px;
   }
 
+  .ingredient {
+    height: 90px;
+  }
+
   .ingredient-inputs {
     flex-direction: column;
+    height: 82px;
   }
 
   .top-ingeidient {
-    height: auto;
+    height: 70px;
   }
 
   #ingredient-scale {
