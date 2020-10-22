@@ -36,7 +36,7 @@ $('#myCollapsible').collapse({
  */
 let ingrCount = 0;
 $(".appendIngredient").click(function() {
-    $('#ingredients').append('<div class="ingredient"><div class="top-ingredient"><button class="removeingredient btn main-button-small" type="button">x</button><div class="ingredient-inputs"><input type="text" class="form-control" id="ingredient-name" name="ingredient-name-' + ingrCount +'" placeholder="Ingredient" required><input type="text" class="form-control" id="ingredient-scale" name="ingredient-scale= ' + ingrCount + '" placeholder="2g/5ml" required></div></div></div>');
+    $('#ingredients').append('<div class="ingredient"><div class="top-ingredient"><button class="removeingredient btn main-button-small" type="button">x</button><div class="ingredient-inputs"><input type="text" class="form-control" id="ingredient-name" name="ingredient-name-' + ingrCount +'" placeholder="Ingredient" required><input type="text" class="form-control" id="ingredient-scale" name="ingredient-scale- ' + ingrCount + '" placeholder="2g/5ml" required></div></div></div>');
     ingrCount++;
     console.log(ingrCount);
 });
