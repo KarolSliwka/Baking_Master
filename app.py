@@ -269,11 +269,25 @@ def add_recipe():
     body_id='new-recipe-page', page_title='Add Recipe')
 
 # Edit Recipe
-@app.route('/remove-recipe', methods=['GET','POST'])
-def remove_recipe():
+@app.route('/remove-recipe/<recipe_id>', methods=['GET','POST'])
+def remove_recipe(recipe_id):
     """
     Render your recipes page and remove recipe record from database
     """
+    current_user = session['email']
+    current_user = mongo.db.Users.find_one({'email':current_user})
+    
+    """ remove id from user recipes_id array and update recipes count """
+    mongo.db.Users.find_one_and_update(current_user,{'$pull': {'recipes_id': ObjectId(recipe_id)}})
+    your_recipes_count = len(current_user['recipes_id'])
+    mongo.db.Users.find_one_and_update(current_user,{'$set': {'recipes': your_recipes_count}})
+    
+    """ remove recipe from recipes collection """
+    mongo.db.Recipes.remove({'_id': ObjectId(recipe_id)})
+    
+    """ remove all files and chunks for recipe_id in mongo """
+    
+    return your_recipes()
 
 # Edit Recipe
 @app.route('/edit-recipe', methods=['GET','POST'])
