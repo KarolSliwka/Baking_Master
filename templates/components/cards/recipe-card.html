@@ -8,14 +8,23 @@
         <!-- card top section -->
         <h2 class="hidden">{{recipes_user['title']}}</h2>
         <h5 class="card-title">{{recipes_user['title']}}</h5>
+        {% if body_id == 'your-recipes-page' %} 
+            <div class="card-bottom-section">
+                <a href="{{url_for('edit_recipe')}}" class="edit-recipe">Edit</a>
+                <a href="{{url_for('remove_recipe')}}" class="remove-recipe">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </div>
+        {% else %}
         <!-- card bottom section -->
-        <p class="card-text"><span class="difficulty-title">Difficulty : </span>{{recipes_user['difficulty']}}</p>
-        <div class="card-bottom-section">
-            
-            <a href="{{url_for('add_to_favourites')}}" class="card-fav-icon">
-                <i class="far fa-heart fa-hover-hidden"></i>
-                <i class="fas fa-heart fa-hover-show"></i></a>
-            <a href="{{url_for('this_recipe')}}" class="card-read-more">Read more</a>
-        </div>
+            <p class="card-text"><span class="difficulty-title">Difficulty : </span>{{recipes_user['difficulty']}}</p>
+            <div class="card-bottom-section">
+                <a href="{{url_for('add_to_favourites')}}" class="card-fav-icon">
+                    <i class="far fa-heart fa-hover-hidden"></i>
+                    <i class="fas fa-heart fa-hover-show"></i>
+                </a>
+                <a href="{{url_for('this_recipe')}}" class="card-read-more">Read more</a>
+            </div>
+        {% endif %}
     </div>
 </div>
