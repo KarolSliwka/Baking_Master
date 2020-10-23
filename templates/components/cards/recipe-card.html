@@ -24,7 +24,11 @@
             </div>
             <!-- card top section -->
             <h2 class="hidden">{{recipes_user['title']}}</h2>
-            <h5 class="card-title">{{recipes_user['title']}}</h5>
+            <h5 class="card-title">
+                <a href="{{url_for('recipe_page', recipe_id = recipes_user['_id'])}}">
+                {{recipes_user['title']}}
+                </a>
+            </h5>
             <!-- card bottom section -->
             <div class="card-bottom-section">
                 <button class="none-button edit-recipe" onclick="window.location.href='{{url_for('edit_recipe',recipe_id = recipes_user['_id'])}}';">Edit</button>
