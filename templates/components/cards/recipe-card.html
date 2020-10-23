@@ -25,9 +25,7 @@
             <!-- card top section -->
             <h2 class="hidden">{{recipes_user['title']}}</h2>
             <h5 class="card-title">
-                <a href="{{url_for('recipe_page', recipe_id = recipes_user['_id'])}}">
-                {{recipes_user['title']}}
-                </a>
+                <a href="{{url_for('recipe_page', recipe_id = recipes_user['_id'])}}">{{recipes_user['title']}}</a>
             </h5>
             <!-- card bottom section -->
             <div class="card-bottom-section">

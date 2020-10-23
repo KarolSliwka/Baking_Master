@@ -4,7 +4,6 @@
     "email": "<String>",
     "password": "<Binary>",
     "newsletter": "<String>",
-    "recipes": "<Integer>",
     "recipes_id": {
     },
     "favourites": {
