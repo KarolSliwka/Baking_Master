@@ -3,23 +3,23 @@
     <h1 class="hidden">Your Recpies</h1>
     <div class="your-recipe-main">
         {% if your_recipes_count == 0 %}
-        <h2 class="page-title">Your Recipes</h2>
-        <p class="lead">You haven't added any recipes yet.</p>
-        <div class="container no-recipe-container">
-            <p class="info-label-result">Don't waste your time and add some great recipe.</p>
-            <button type="button" class="btn main-button-small" onclick="window.location.href='{{ url_for('add_recipe' ) }}';">Add recipe</button>
-        </div>
+            <h2 class="page-title">Your Recipes</h2>
+            <p class="lead">You haven't added any recipes yet.</p>
+            <div class="container no-recipe-container">
+                <p class="info-label-result">Don't waste your time and add some great recipe.</p>
+                <button type="button" class="btn main-button-small" onclick="window.location.href='{{ url_for('add_recipe' ) }}';">Add recipe</button>
+            </div>
         {% else %}
-        <h2 class="page-title">Your Recipes</h2>
-        {% if your_recipes_count == 1 %}
-        <p class="lead">You have got {{your_recipes_count}} recipe.</p>
-        {% else %}
-        <p class="lead">You have got {{your_recipes_count}} recipes.</p>
-        {% endif %} {% endif %}
+            <h2 class="page-title">Your Recipes</h2>
+            {% if your_recipes_count == 1 %}
+            <p class="lead">You have got {{your_recipes_count}} recipe.</p>
+            {% else %}
+            <p class="lead">You have got {{your_recipes_count}} recipes.</p>
+            {% endif %} 
+            <div class="container recipes-cards-container">
+            </div>
+        {% endif %}
+        
     </div>
-
-
-
-
 </div>
 {% endblock %}

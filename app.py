@@ -251,8 +251,9 @@ def add_recipe():
             """ find user and update recipe count record """
             recipe_author_count= users.find_one({'email':recipe_author})
             recipe_count = len(recipe_author_count['recipes_id'])
-            print(recipe_count)
             users.find_one_and_update({'email': recipe_author},{'$set': {'recipes': recipe_count}})
+            
+            
 
         flash('Your recipe was added successfully, enjoy baking!','recipe-added')
     return render_template('pages/add-recipe.html',body_id='new-recipe-page', page_title='Add Recipe')
@@ -275,14 +276,10 @@ def your_recipes():
     recipes = mongo.db.Recipes
     
     current_user = session['email']
-    users_result = users.find({'email':current_user})
-    for doc in users_result:
-        your_recipes_count = doc["recipes"]
+    current_user = users.find_one({'email':current_user})
+    your_recipes_count = len(current_user['recipes_id'])
         
-    current_user_recipes = recipes.find({'email':current_user})
-    print(current_user_recipes)
-    
-    return render_template('pages/your-recipes.html',body_id='your-recipes-page', page_title='Your Recipes',your_recipes_count=your_recipes_count, current_user_recipes=current_user_recipes)   
+    return render_template('pages/your-recipes.html',body_id='your-recipes-page', page_title='Your Recipes',your_recipes_count=your_recipes_count)   
     
 # Add to Favourites
 @app.route('/add-to-favourites', methods=['GET','POST'])
@@ -319,6 +316,7 @@ def register():
         password = req.get('password')
         hashpassword = bcrypt.hashpw(
                     password.encode('utf-8'), bcrypt.gensalt())
+        empty_recipes_id = []
         empty_favourites = []
         
         """ Check if users exist in databas """
@@ -331,8 +329,9 @@ def register():
                 'email' : email.lower(),
                 'password' : hashpassword,
                 'newsletter' : 'Y',
-                'favourites' : empty_favourites,
-                'recipes': 0
+                'recipes': 0,
+                'recipes_id': empty_recipes_id,
+                'favourites' : empty_favourites
             })
             
             """ Use add to newsletter funtcion to add new user to newsletter database """
