@@ -9,7 +9,7 @@
         <h2 class="hidden">{{recipes_user['title']}}</h2>
         <h5 class="card-title">{{recipes_user['title']}}</h5>
         <!-- card bottom section -->
-        <p class="card-text"><span class="difficulty-title">Difficulty </span>{{recipes_user['difficulty']}}</p>
+        <p class="card-text"><span class="difficulty-title">Difficulty : </span>{{recipes_user['difficulty']}}</p>
         <div class="card-bottom-section">
             <a href="{{url_for('add_to_favourites')}}" class="card-fav-icon"><i class="far fa-heart fa-hover-hidden"></i><i class="fas fa-heart fa-hover-show"></i></a>
             <a href="{{url_for('this_recipe')}}" class="card-read-more">Read more</a>
