@@ -3,7 +3,7 @@
     <div class="card-body">
         <div class="card-image">
             <!-- image source from database -->
-            <img class="card-img-top" src="/file/{{recipes_user['recipe_image']}}" alt="">
+            <img class="card-img-top" src="/file/{{recipes_user['recipe_image']}}" alt="{{recipes_user['title']}} image title">
         </div>
         <!-- card top section -->
         <h2 class="hidden">{{recipes_user['title']}}</h2>
@@ -11,6 +11,7 @@
         <!-- card bottom section -->
         <p class="card-text"><span class="difficulty-title">Difficulty : </span>{{recipes_user['difficulty']}}</p>
         <div class="card-bottom-section">
+            
             <a href="{{url_for('add_to_favourites')}}" class="card-fav-icon">
                 <i class="far fa-heart fa-hover-hidden"></i>
                 <i class="fas fa-heart fa-hover-show"></i></a>
