@@ -9,6 +9,7 @@ from threading import Thread
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
+
 """ Create HTTPS connection for all rdirected urls """
 class ReverseProxied(object):
     def __init__(self, app):
@@ -235,6 +236,7 @@ def add_recipe():
             
         """ collect user email addres to assing it as recipe author """
         recipe_author = session['email']
+        
 
         """ save recipe image to database with current filename and recipe information """ 
         if 'preparing_image' in request.files:
@@ -249,7 +251,7 @@ def add_recipe():
                 'ingredients-scale' :ingredients_scale_array,
                 'preparation': preparation_array,
                 'tips': tips_array,
-                'author': recipe_author
+                'author': recipe_author,
             })
             
             """ add recipe_id to recipes-id array """
@@ -267,9 +269,17 @@ def add_recipe():
     body_id='new-recipe-page', page_title='Add Recipe')
 
 # Edit Recipe
+@app.route('/remove-recipe', methods=['GET','POST'])
+def remove_recipe():
+    """
+    Render your recipes page and remove recipe record from database
+    """
+
+# Edit Recipe
 @app.route('/edit-recipe', methods=['GET','POST'])
 def edit_recipe():
     """
+    Render edit recipe page, update edited recipe record
     """
 
     return render_template('pages/edit-recipe.html',
