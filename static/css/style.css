@@ -383,6 +383,13 @@ ul li:hover ul.dropdown-menu .menu-hr {
   color: #C471EB;
 }
 
+.none-button {
+  border: none;
+  background: white;
+  font-size: 14px;
+  -webkit-appearance: attachment;
+}
+
 .main-carousel-container {
   min-height: 100%;
   margin-top: 60px;
