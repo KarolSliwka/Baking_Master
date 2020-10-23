@@ -325,10 +325,10 @@ def your_recipes():
     page_title='Your Recipes',your_recipes_count=your_recipes_count,
     recipes_user=recipes_user,all_recipes=all_recipes)   
     
-@app.route('recipe-page/<recipe_id>', methods=['GET','POST'])
+@app.route('/recipe-page/<recipe_id>', methods=['GET','POST'])
 def recipe_page(recipe_id):
     
-    return print('recipe page found')
+    return render_template('pages/your-recipes.html')   
     
 # Add to Favourites
 @app.route('/add-to-favourites', methods=['GET','POST'])
