@@ -23,7 +23,11 @@
                     <input type="text" class="form-control" id="recipe-title" name="recipe-title" placeholder="Chocolate Cake" required>
                 </div>
                 <div class="form-row">
-                    <label>Preparing Time</label>
+                    <label>Preparing Time
+                        <p class="prepare-tip"><i class="fas fa-question"></i>
+                            <span class="tooltiptext">Please keep '00' format</br> exemple: 02hrs, 33min</span>
+                        </p>
+                    </label>
                     <div class="prepare-time">
                         <div class="sticky-container">
                             <input type="text" class="form-control time-text" id="preparing-time-hrs" name="preparing-time-hrs" placeholder="00" maxlength="2" minlength="2" required>
