@@ -314,8 +314,8 @@ def your_recipes():
 @app.route('/add-to-favourites', methods=['GET','POST'])
 def add_to_favourites():
     """
+    Add to favourite list and render refferer page
     """
-
     
     
 # Favourites Page
