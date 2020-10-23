@@ -1,3 +1,28 @@
 #your-recipes-page {
     padding-top: 60px;
 }
+
+.font-w400 {
+    font-weight: 400;
+}
+
+.recipe-count {
+    color: #FF3377;
+}
+
+.your-cards-result {
+    margin-top: 40px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.lo {
+    text-align: right;
+    color: #51ACEA;
+
+    &:hover {
+        color: #C471EB;
+    }
+}

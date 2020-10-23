@@ -12,15 +12,21 @@
         {% else %}
             <h2 class="page-title">Your Recipes</h2>
             {% if your_recipes_count == 1 %}
-            <p class="lead">You have got {{your_recipes_count}} recipe.</p>
+            <p class="lead font-w400">You have got <span class="recipe-count">{{your_recipes_count}}</span> recipe :</p>
                 {% for recipes_user in all_recipes %}
-                    {% include 'components/cards/recipe-card.html' %}
+                <div class="container your-cards-result">
+                    {% for recipes_user in all_recipes %}
+                        {% include 'components/cards/recipe-card.html' %}
+                    {% endfor %}
+                </div>
                 {% endfor %}
             {% else %}
-            <p class="lead">You have got {{your_recipes_count}} recipes.</p>
-                {% for recipes_user in all_recipes %}
-                    {% include 'components/cards/recipe-card.html' %}
-                {% endfor %}
+            <p class="lead font-w400">You have got <span class="recipe-count">{{your_recipes_count}}</span> recipes :</p>
+                <div class="container your-cards-result">
+                    {% for recipes_user in all_recipes %}
+                        {% include 'components/cards/recipe-card.html' %}
+                    {% endfor %}
+                </div>
             {% endif %} 
             <div class="container recipes-cards-container">
             </div>
