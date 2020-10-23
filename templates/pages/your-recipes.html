@@ -2,33 +2,23 @@
 <div class="container">
     <h1 class="hidden">Your Recpies</h1>
     <div class="your-recipe-main">
+        <h2 class="page-title">Your Recipes</h2>
         {% if your_recipes_count == 0 %}
-            <h2 class="page-title">Your Recipes</h2>
             <p class="lead">You haven't added any recipes yet.</p>
             <div class="container no-recipe-container">
                 <p class="info-label-result">Don't waste your time and add some great recipe.</p>
-                <button type="button" class="btn main-button-small" onclick="window.location.href='{{ url_for('add_recipe' ) }}';">Add recipe</button>
+                <button type="button" class="btn main-button-small" onclick="window.location.href='{{url_for('add_recipe')}}';">Add recipe</button>
             </div>
         {% else %}
-            <h2 class="page-title">Your Recipes</h2>
             {% if your_recipes_count == 1 %}
             <p class="lead font-w400">You have got <span class="recipe-count">{{your_recipes_count}}</span> recipe :</p>
-                {% for recipes_user in all_recipes %}
-                <div class="container your-cards-result">
-                    {% for recipes_user in all_recipes %}
-                        {% include 'components/cards/recipe-card.html' %}
-                    {% endfor %}
-                </div>
-                {% endfor %}
             {% else %}
             <p class="lead font-w400">You have got <span class="recipe-count">{{your_recipes_count}}</span> recipes :</p>
-                <div class="container your-cards-result">
-                    {% for recipes_user in all_recipes %}
-                        {% include 'components/cards/recipe-card.html' %}
-                    {% endfor %}
-                </div>
-            {% endif %} 
-            <div class="container recipes-cards-container">
+            {% endif %}
+            <div class="container your-cards-result">
+                {% for recipes_user in all_recipes %}
+                    {% include 'components/cards/recipe-card.html' %}
+                {% endfor %}
             </div>
         {% endif %}
     </div>
