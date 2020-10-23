@@ -1,6 +1,6 @@
 [{
     "_id": "<ObjectId()>",
-    "image": "<String>",
+    "recipe_image": "<String>",
     "title": "<String>",
     "time": "<String>".
     "difficulty": "<String>",

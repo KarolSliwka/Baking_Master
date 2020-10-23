@@ -13,13 +13,18 @@
             <h2 class="page-title">Your Recipes</h2>
             {% if your_recipes_count == 1 %}
             <p class="lead">You have got {{your_recipes_count}} recipe.</p>
+                {% for recipes_user in all_recipes %}
+                    {% include 'components/cards/recipe-card.html' %}
+                {% endfor %}
             {% else %}
             <p class="lead">You have got {{your_recipes_count}} recipes.</p>
+                {% for recipes_user in all_recipes %}
+                    {% include 'components/cards/recipe-card.html' %}
+                {% endfor %}
             {% endif %} 
             <div class="container recipes-cards-container">
             </div>
         {% endif %}
-        
     </div>
 </div>
 {% endblock %}

@@ -51,7 +51,8 @@ def _force_https(app):
 def home():
     """Renders landing page/home page"""
 
-    return render_template('pages/landing-page.html', body_id='home-page', page_title = "Home Page")
+    return render_template('pages/landing-page.html', 
+    body_id='home-page', page_title = "Home Page")
 
 # All Recieps page
 @app.route('/recipes', methods=["GET", "POST"])
@@ -67,9 +68,11 @@ def recipes():
         """ Get variable from user form"""
         search = req.get('search')
         
-        return  render_template('pages/recipes.html', body_id='recipes-page', page_title='Recieps', search=search)
+        return  render_template('pages/recipes.html', 
+        body_id='recipes-page', page_title='Recieps', search=search)
     
-    return  render_template('pages/recipes.html', body_id='recipes-page', page_title='Recipes')
+    return  render_template('pages/recipes.html', 
+    body_id='recipes-page', page_title='Recipes')
 
 # This Recipe
 @app.route('/recipe', methods=["GET", "POST"])
@@ -103,7 +106,8 @@ def contact():
         msg.subject = 'Message from contact form'
         msg.recipients = [email_from, email_address]
         msg.sender = email_from
-        msg.html = render_template('components/emails/contact-email.html', username = username, contact_message = contact_message)
+        msg.html = render_template('components/emails/contact-email.html', 
+        username = username, contact_message = contact_message)
         Thread(target=send_email, args=(app, msg)).start()
         
         flash('Your message was sent successfully','contact-send')
@@ -167,13 +171,16 @@ def account():
             recipes_count = doc["recipes"]
             fav_recipe_count = len(doc['favourites'])
 
-        return render_template("pages/account.html", body_id="user-account", page_title="User Account",active_user=active_user,email=email,recipes_count=recipes_count,fav_recipe_count=fav_recipe_count)
+        return render_template("pages/account.html", body_id="user-account", 
+        page_title="User Account",active_user=active_user,email=email,
+        recipes_count=recipes_count,fav_recipe_count=fav_recipe_count)
 
     except:
         """
         Return user account page without user name
         """
-        return render_template("pages/account.html", body_id="user-account", page_title="User Account")
+        return render_template("pages/account.html", body_id="user-account", 
+        page_title="User Account")
 
 # Add Recipe
 @app.route('/add-recipe', methods=['GET','POST'])
@@ -234,7 +241,7 @@ def add_recipe():
             preparing_image = request.files['preparing_image']
             mongo.save_file(preparing_image.filename, preparing_image)
             insert_recipe = recipes.insert_one({
-                'image': preparing_image.filename,
+                'recipe_image': preparing_image.filename,
                 'title': recipe_title,
                 'time': recipe_prepare_time,
                 'difficulty': recpie_difficulty,
@@ -256,7 +263,8 @@ def add_recipe():
             
 
         flash('Your recipe was added successfully, enjoy baking!','recipe-added')
-    return render_template('pages/add-recipe.html',body_id='new-recipe-page', page_title='Add Recipe')
+    return render_template('pages/add-recipe.html',
+    body_id='new-recipe-page', page_title='Add Recipe')
 
 # Edit Recipe
 @app.route('/edit-recipe', methods=['GET','POST'])
@@ -264,8 +272,14 @@ def edit_recipe():
     """
     """
 
-    return render_template('pages/edit-recipe.html',body_id='edit-recipe-page', page_title='Edit Recipe')
- 
+    return render_template('pages/edit-recipe.html',
+    body_id='edit-recipe-page', page_title='Edit Recipe')
+
+# Retrive image form MongoDB
+@app.route('/file/<filename>')
+def file(filename):
+    return mongo.send_file(filename)
+
 # Your Recipes 
 @app.route('/your-recipes', methods=['GET','POST'])
 def your_recipes():
@@ -276,10 +290,15 @@ def your_recipes():
     recipes = mongo.db.Recipes
     
     current_user = session['email']
-    current_user = users.find_one({'email':current_user})
-    your_recipes_count = len(current_user['recipes_id'])
-        
-    return render_template('pages/your-recipes.html',body_id='your-recipes-page', page_title='Your Recipes',your_recipes_count=your_recipes_count)   
+    current_user_users = users.find_one({'email':current_user})
+    your_recipes_count = len(current_user_users['recipes_id'])
+    
+    recipes_user = current_user_users['recipes_id']
+    all_recipes = recipes.find({'author':current_user})
+    
+    return render_template('pages/your-recipes.html',body_id='your-recipes-page', 
+    page_title='Your Recipes',your_recipes_count=your_recipes_count,
+    recipes_user=recipes_user,all_recipes=all_recipes)   
     
 # Add to Favourites
 @app.route('/add-to-favourites', methods=['GET','POST'])
@@ -295,7 +314,8 @@ def favourites():
     """
     Renders favourite page only when user is logged in
     """
-    return render_template('pages/favourites.html', body_id='favourites-page', page_title='Favourites')
+    return render_template('pages/favourites.html', 
+    body_id='favourites-page', page_title='Favourites')
 
 
 # Register Page 
@@ -419,7 +439,8 @@ def remove_account():
     session.clear()
     
     flash('Your account has been removed successfully!','account-removed')
-    return render_template('pages/landing-page.html', body_id='home-page', page_title='Home Page',account_removed="account-removed")
+    return render_template('pages/landing-page.html', body_id='home-page', 
+    page_title='Home Page',account_removed="account-removed")
 
 # Logout user
 @app.route('/logout')
@@ -499,7 +520,8 @@ def Error404(error):
     This route renders an error 404
     """
     error_type = str(error)
-    return render_template('pages/error-page.html', error_type=error_type, body_id='error-page',paga_title='Error 404'), 404 
+    return render_template('pages/error-page.html', error_type=error_type, 
+    body_id='error-page404',page_title='Error 404'), 404 
 
 # Server error route
 @app.errorhandler(500)
@@ -508,7 +530,8 @@ def Error500(error):
     This route renders server error 500
     """
     error_type = str(error)
-    return render_template('pages/error-page.html', error_type=error_type, body_id='error-page', page_title='Error 500'), 500
+    return render_template('pages/error-page.html', error_type=error_type,
+    body_id='error-page500', page_title='Error 500'), 500
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
