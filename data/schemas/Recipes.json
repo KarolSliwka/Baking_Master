@@ -4,17 +4,13 @@
     "title": "<String>",
     "time": "<String>".
     "difficulty": "<String>",
-    "ingridients": {
-        "0": "<String>"
+    "ingredients": {
     }
-    "ingridients-scale": {
-        "0": "<String>"
+    "ingredients-scale": {
     }
     "preparation": {
-        "0": "<String>"
     }
     "tips": {
-        "0": "<String>"
     }
     "author": "<String>",
 }]

@@ -5,10 +5,8 @@
     "password": "<Binary>",
     "newsletter": "<String>",
     "recipes": "<Integer>",
-    "recipes-id": {
-        "0": "<ObjectId()>"
+    "recipes_id": {
     },
     "favourites": {
-        "0": "<ObjectId()>"
     }
 }]
