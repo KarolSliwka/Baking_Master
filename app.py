@@ -200,7 +200,6 @@ def add_recipe():
         preparation_array = []  
         tips_array = []
         
-        
         """ loop through each input field contains selected class to created arrays """
         for key in request.form:
             if key !="":
@@ -234,29 +233,27 @@ def add_recipe():
         if 'preparing_image' in request.files:
             preparing_image = request.files['preparing_image']
             mongo.save_file(preparing_image.filename, preparing_image)
-            recipes.insert_one({
+            insert_recipe = recipes.insert_one({
                 'image': preparing_image.filename,
                 'title': recipe_title,
                 'time': recipe_prepare_time,
                 'difficulty': recpie_difficulty,
-                'ingiridnets': ingredients_array,
-                'ingiridnets-scale' :ingredients_scale_array,
+                'ingredients': ingredients_array,
+                'ingredients-scale' :ingredients_scale_array,
                 'preparation': preparation_array,
                 'tips': tips_array,
                 'author': recipe_author
             })
             
-            """ Remove user from Users db """
-            users_result = users.find({'email':recipe_author})
-            for doc in users_result:
-                recipe_count = doc["recipes"]
-                recipe_count = recipe_count + 1
-
+            """ add recipe_id to recipes-id array """
+            users.find_one_and_update({'email': recipe_author},{'$push': {'recipes_id': insert_recipe.inserted_id}})
+            
+            """ find user and update recipe count record """
+            recipe_author_count= users.find_one({'email':recipe_author})
+            recipe_count = len(recipe_author_count['recipes_id'])
             print(recipe_count)
-
             users.find_one_and_update({'email': recipe_author},{'$set': {'recipes': recipe_count}})
 
-        
         flash('Your recipe was added successfully, enjoy baking!','recipe-added')
     return render_template('pages/add-recipe.html',body_id='new-recipe-page', page_title='Add Recipe')
 
@@ -275,13 +272,17 @@ def your_recipes():
     Render user recipes pages, present all user recipes as cards
     """
     users = mongo.db.Users
+    recipes = mongo.db.Recipes
     
     current_user = session['email']
     users_result = users.find({'email':current_user})
     for doc in users_result:
         your_recipes_count = doc["recipes"]
+        
+    current_user_recipes = recipes.find({'email':current_user})
+    print(current_user_recipes)
     
-    return render_template('pages/your-recipes.html',body_id='your-recipes-page', page_title='Your Recipes',your_recipes_count=your_recipes_count)   
+    return render_template('pages/your-recipes.html',body_id='your-recipes-page', page_title='Your Recipes',your_recipes_count=your_recipes_count, current_user_recipes=current_user_recipes)   
     
 # Add to Favourites
 @app.route('/add-to-favourites', methods=['GET','POST'])
