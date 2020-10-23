@@ -17,12 +17,15 @@
     flex-wrap: wrap;
 }
 
-
-.lo {
+.edit-recipe {
     text-align: right;
     color: #51ACEA;
 
     &:hover {
         color: #C471EB;
     }
+}
+
+.remove-recipe{
+    @extend .edit-recipe;
 }
