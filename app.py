@@ -285,7 +285,8 @@ def remove_recipe(recipe_id):
     """ remove recipe from recipes collection """
     mongo.db.Recipes.remove({'_id': ObjectId(recipe_id)})
     
-    """ remove all files and chunks for recipe_id in mongo """
+    """ remove all files and chunks for recipe_id in mongo ???? """
+    
     
     return your_recipes()
 
@@ -323,6 +324,11 @@ def your_recipes():
     return render_template('pages/your-recipes.html',body_id='your-recipes-page', 
     page_title='Your Recipes',your_recipes_count=your_recipes_count,
     recipes_user=recipes_user,all_recipes=all_recipes)   
+    
+@app.route('recipe-page/<recipe_id>', methods=['GET','POST'])
+def recipe_page(recipe_id):
+    
+    return print('recipe page found')
     
 # Add to Favourites
 @app.route('/add-to-favourites', methods=['GET','POST'])
