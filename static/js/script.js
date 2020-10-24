@@ -112,22 +112,3 @@ $('body').on('click', '.removeTip', function() {
         tipCount = document.querySelectorAll('.tip').length;
     }
 });
-
-
-/**
- * This function will animate progress bar for favourites page 
- */
-$(document).ready(function() {
-    let delay = 5;
-    let url = 'x'
-    function countdown() {
-        setTimeout(countdown, 1000);
-        $('#countdown').html(delay);
-        delay--;
-        if (delay < 0) {
-            window.location = url;
-            delay = 0;
-        }
-    }
-    countdown();
-});

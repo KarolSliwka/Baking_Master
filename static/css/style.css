@@ -960,24 +960,11 @@ form p {
   min-height: calc(100% - 400px);
 }
 
-.favourites-text {
-  font-weight: 400;
-  color: #FF3377;
-}
-
 .redicret-message {
   font-weight: 400;
 }
 .redicret-message span {
   color: #FF3377;
-}
-
-.progress {
-  width: 300px;
-}
-
-.progress-bar {
-  background-color: #FF3377;
 }
 
 @media (max-width: 1365px) {

@@ -3,8 +3,12 @@
 <div class="container">
     <h2 class="page-title">Favourites</h2>
     {% if no_user == 'true' %}
-    <p class="lead favourites-text">Please login to see you favurite recipes list.</p>
-    <p class="lead redicret-message">You will be redirect in <span id="countdown">5</span> seconds..</p>
-    {% else %} {% endif %}
+    <p class="lead">Please login to see you favurite recipes list.</p>
+    <div class="container">
+        <button class="btn main-button-small" onclick="window.location.href='{{url_for('login')}}';">Login</button>
+    </div>
+    {% else %}
+    
+    {% endif %}
 </div>
 {% endblock %}
