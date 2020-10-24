@@ -971,6 +971,13 @@ form p {
     bottom: 0;
   }
 }
+#user-account {
+  padding-top: 70px;
+}
+#user-account .main-container {
+  min-height: calc(100% - 400px);
+}
+
 .welcome-lead {
   color: #000;
 }
@@ -1036,6 +1043,14 @@ form p {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+}
+@media (max-width: 1365px) {
+  #user-account {
+    padding-top: 60px;
+  }
+  #user-account .main-container {
+    min-height: calc(100% - 440px);
   }
 }
 #recipes-page .form-control {
@@ -1328,6 +1343,9 @@ form p {
 #new-recipe-page {
   padding-top: 60px;
 }
+#new-recipe-page .main-container {
+  min-height: calc(100% - 400px);
+}
 #new-recipe-page .page-title2 {
   margin-bottom: 30px;
 }
@@ -1538,6 +1556,14 @@ form p {
   #ingredient-scale {
     margin-left: 0;
     max-width: 250px;
+  }
+}
+@media (max-width: 1365px) {
+  #new-recipe-page {
+    padding-top: 60px;
+  }
+  #new-recipe-page .main-container {
+    min-height: calc(100% - 440px);
   }
 }
 #your-recipes-page {
