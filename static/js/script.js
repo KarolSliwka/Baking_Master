@@ -117,11 +117,12 @@ $('body').on('click', '.removeTip', function() {
 /**
  * This function will animate progress bar for favourites page 
  */
-let timeleft = 10;
+let timeleft = 5;
 let downloadTimer = setInterval(function(){
   if(timeleft <= 0){
     clearInterval(downloadTimer);
   }
-  document.getElementById("progressBar").value = 10 - timeleft;
+  document.getElementById("countdown").innerHTML = timeleft;
+  document.getElementById("progressBar").value = 5 - timeleft;
   timeleft -= 1;
 }, 1000);
