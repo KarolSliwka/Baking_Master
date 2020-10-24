@@ -260,12 +260,19 @@ def favourites():
         return render_template('pages/favourites.html', 
         body_id='favourites-page', page_title='Favourites',no_user='true')
     else:
-        
-        
+    
+        """ find user favourite list information """
+        user_info = users_collection.find_one({'email': session['email']})
+        user_info_collection = users_collection.find(user_info)
+        """ Collect user details """
+        for doc in user_info_collection:
+            favourites_count = len(doc['favourites'])
+            favourites_list = doc['favourites']
         
         """ show all favourite recipe cards """
         return render_template('pages/favourites.html', 
-        body_id='favourites-page', page_title='Favourites',no_user='false')
+        body_id='favourites-page', page_title='Favourites',no_user='false',
+        favourites_count=favourites_count, favourites_list=favourites_list)
 
 # Register Page 
 @app.route('/register', methods=["GET", "POST"])

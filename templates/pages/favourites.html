@@ -8,7 +8,16 @@
         <button class="btn main-button-small" onclick="window.location.href='{{url_for('login')}}';">Login</button>
     </div>
     {% else %}
-    
+        {% if favourites_count != 1 %}
+        <p class="lead font-w400">You have got <span class="recipe-count">{{favourites_count}}</span> favourite recipes</p>
+        {% else %}
+        <p class="lead font-w400">You have got <span class="recipe-count">{{favourites_count}}</span> favourite recipe</p>
+        {% endif %}
+        <div class="container">
+            {% for _id in favourites_list %}
+                {% include 'components/cards/recipe-card.html' %}
+            {% endfor %}
+        </div>
     {% endif %}
 </div>
 {% endblock %}
