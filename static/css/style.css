@@ -1543,6 +1543,9 @@ form p {
 #your-recipes-page {
   padding-top: 60px;
 }
+#your-recipes-page .main-container {
+  min-height: calc(100% - 400px);
+}
 
 .font-w400 {
   font-weight: 400;
@@ -1565,6 +1568,15 @@ form p {
 }
 .edit-recipe:hover, .remove-recipe:hover {
   color: #C471EB;
+}
+
+@media (max-width: 1365px) {
+  #your-recipes-page {
+    padding-top: 60px;
+  }
+  #your-recipes-page .main-container {
+    min-height: calc(100% - 440px);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
