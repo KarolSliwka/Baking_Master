@@ -1306,19 +1306,13 @@ form p {
     bottom: 0;
   }
 }
-.error-page-main {
+#error-page404 .error-page-main {
   padding-top: 4rem;
 }
-
-@media screen and (min-height: 983px) and (min-width: 1020px) {
-  #error-page {
-    height: calc(100% - 360px);
-  }
-  #error-page footer {
-    position: fixed;
-    bottom: 0;
-  }
+#error-page404 .main-container {
+  min-height: calc(100% - 400px);
 }
+
 .error-box {
   align-items: center;
   justify-content: center;
@@ -1355,6 +1349,11 @@ form p {
   font-size: 12px;
 }
 
+@media (max-width: 1365px) {
+  #error-page404 .main-container {
+    min-height: calc(100% - 440px);
+  }
+}
 #new-recipe-page {
   padding-top: 60px;
 }

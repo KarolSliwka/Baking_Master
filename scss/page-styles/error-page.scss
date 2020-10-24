@@ -1,18 +1,11 @@
-.error-page-main {
-    padding-top: 4rem;
-}
-
-$a: 100%;
-$b: 360px;
-@media screen and (min-height: 983px) {
-    @media screen and (min-width: 1020px) {
-        #error-page {
-            height: calc(#{$a} - #{$b});
-            footer {
-                position: fixed;
-                bottom: 0;
-            }
-        }
+#error-page404 {
+    .error-page-main {
+        padding-top: 4rem;
+    }
+    .main-container {
+        $a: 100%;
+        $b: 400px;
+        min-height: calc(#{$a} - #{$b});
     }
 }
 
@@ -50,5 +43,15 @@ $b: 360px;
         font-weight: 300;
         color: #a1a1a1;
         font-size: 12px;
+    }
+}
+
+@media (max-width: 1365px) {
+    #error-page404 {
+        .main-container {
+            $a: 100%;
+            $b: 440px;
+            min-height: calc(#{$a} - #{$b});
+        }
     }
 }
