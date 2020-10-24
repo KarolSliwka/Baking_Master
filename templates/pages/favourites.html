@@ -3,11 +3,8 @@
 <div class="container">
     <h2 class="page-title">Favourites</h2>
     {% if no_user == 'true' %}
-    <div class="row">
-        <p class="lead favourites-text">Please login to see you favurite recipes list.</p>
-        <p class="lead redicret-message">You will be redirect in <span id="countdown">5</span> seconds..</p>
-        <progress value="0" max="5" id="progressBar"></progress>
-    </div>
+    <p class="lead favourites-text">Please login to see you favurite recipes list.</p>
+    <p class="lead redicret-message">You will be redirect in <span id="countdown">5</span> seconds..</p>
     {% else %} {% endif %}
 </div>
 {% endblock %}

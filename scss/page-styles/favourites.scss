@@ -19,10 +19,12 @@
     }
 }
 
-#progressBar {
-    color: #FF3377;
+.progress{
+    width: 300px;
 }
-
+.progress-bar {
+    background-color: #FF3377;
+}
 
 @media (max-width: 1365px) {
     #favourites-page {
