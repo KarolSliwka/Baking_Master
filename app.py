@@ -254,13 +254,6 @@ def add_recipe():
             
             """ add recipe_id to recipes-id array """
             users_collection.find_one_and_update({'email': recipe_author},{'$push': {'recipes_id': insert_recipe.inserted_id}})
-            
-            """ find user and update recipe count record """
-            recipe_author_count= users_collection.find_one({'email':recipe_author})
-            recipe_count = len(recipe_author_count['recipes_id'])
-            users_collection.find_one_and_update({'email': recipe_author},{'$set': {'recipes': recipe_count}})
-            
-            
 
         flash('Your recipe was added successfully, enjoy baking!','recipe-added')
     return render_template('pages/add-recipe.html',
@@ -273,16 +266,32 @@ def remove_recipe(recipe_id):
     Render your recipes page and remove recipe record from database
     """
     user_session = session['email']
-    current_user = users_collection.find_one({'email':user_session})
     
     """ remove id from user recipes_id array """
     users_collection.find_one_and_update({'email':user_session},{'$pull':{'recipes_id': ObjectId(recipe_id)}})
     
+    """ remove all files and chunks for recipe_id in mongo ???? """
+    recipe_search = recipes_collection.find_one({'_id':ObjectId(recipe_id)})
+    result = recipes_collection.find(recipe_search)
+    for doc in result:
+        image_name = doc['recipe_image']
+    
+    """ remove file from fs files in mongo db """
+    fs_files_search = mongo.db.fs.files.find_one({'filename':image_name})
+    fsfiles_result = mongo.db.fs.files.find(fs_files_search)
+    for doc in fsfiles_result:
+        fsFiles_id = doc['_id']
+    mongo.db.fs.files.remove({'_id':fsFiles_id})
+    
+    """ remove fs chunks based on file id from mongo db  """
+    fs_chunks_search = mongo.db.fs.chunks.find_one({'files_id': fsFiles_id})
+    fsChunk_result = mongo.db.fs.chunks.find(fs_chunks_search)
+    for doc in fsChunk_result:
+        fsChunk_id = doc['_id']
+    mongo.db.fs.chunks.remove({'_id':fsChunk_id})
+    
     """ remove recipe from recipes collection """
     recipes_collection.remove({'_id': ObjectId(recipe_id)})
-    
-    """ remove all files and chunks for recipe_id in mongo ???? """
-    recipe_search = recipes_collection.find_one(ObjectId(recipe_id))
     
     return your_recipes()
 
