@@ -277,18 +277,16 @@ def remove_recipe(recipe_id):
         image_name = doc['recipe_image']
     
     """ remove file from fs files in mongo db """
+    
     fs_files_search = mongo.db.fs.files.find_one({'filename':image_name})
     fsfiles_result = mongo.db.fs.files.find(fs_files_search)
     for doc in fsfiles_result:
         fsFiles_id = doc['_id']
+        
     mongo.db.fs.files.remove({'_id':fsFiles_id})
     
     """ remove fs chunks based on file id from mongo db  """
-    fs_chunks_search = mongo.db.fs.chunks.find_one({'files_id': fsFiles_id})
-    fsChunk_result = mongo.db.fs.chunks.find(fs_chunks_search)
-    for doc in fsChunk_result:
-        fsChunk_id = doc['_id']
-    mongo.db.fs.chunks.remove({'_id':fsChunk_id})
+    mongo.db.fs.chunks.remove({'files_id':fsFiles_id})
     
     """ remove recipe from recipes collection """
     recipes_collection.remove({'_id': ObjectId(recipe_id)})
