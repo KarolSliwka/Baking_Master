@@ -112,3 +112,16 @@ $('body').on('click', '.removeTip', function() {
         tipCount = document.querySelectorAll('.tip').length;
     }
 });
+
+
+/**
+ * This function will animate progress bar for favourites page 
+ */
+let timeleft = 10;
+let downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+  }
+  document.getElementById("progressBar").value = 10 - timeleft;
+  timeleft -= 1;
+}, 1000);

@@ -1,3 +1,13 @@
 {% extends 'layout/base.html' %} {% set page = "favourites" %}{% block content %}
 <h1 class="hidden">Favourites</h1>
+<div class="container">
+    <h2 class="page-title">Favourites</h2>
+    {% if no_user == 'true' %}
+        <p class="lead favourites-text">Please login to see you favurite recipes list.</p>
+        <p class="lead redicret-message">You will be redirect in <span>5</span> seconds..</p>
+        <progress value="0" max="5" id="progressBar"></progress>
+    {% else %}
+    
+    {% endif %}
+</div>
 {% endblock %}
