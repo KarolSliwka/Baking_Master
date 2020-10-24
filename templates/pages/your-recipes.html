@@ -15,7 +15,7 @@
             {% else %}
             <p class="lead font-w400">You have got <span class="recipe-count">{{your_recipes_count}}</span> recipes :</p>
             {% endif %}
-            <div class="container your-cards-result">
+            <div class="your-cards-result">
                 {% for recipes_user in all_recipes %}
                     {% include 'components/cards/recipe-card.html' %}
                 {% endfor %}
