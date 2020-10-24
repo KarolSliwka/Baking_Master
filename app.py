@@ -78,112 +78,6 @@ def recipes():
     return  render_template('pages/recipes.html', 
     body_id='recipes-page', page_title='Recipes')
 
-# This Recipe
-@app.route('/recipe', methods=["GET", "POST"])
-def this_recipe():
-    
-    return (print('ready'))
-    
-
-# Contact Page
-@app.route('/contact', methods=["GET", "POST"])
-def contact():
-    """
-    This function is sending email from userform in contact page
-    """
-    if request.method == "POST":
-        
-        """ Request information from user form """
-        req = request.form
-        
-        """ Get variable from user form"""
-        username = req.get('contact-name')
-        email_address = req.get('contact-email').lower()
-        contact_message = req.get('contact-message')
-        email_from = os.getenv('EMAIL_USERNAME')
-            
-        """ Run email application """
-        def send_email(app, msg):
-            with app.app_context():
-                mail.send(msg)
-        msg = Message()
-        msg.subject = 'Message from contact form'
-        msg.recipients = [email_from, email_address]
-        msg.sender = email_from
-        msg.html = render_template('components/emails/contact-email.html', 
-        username = username, contact_message = contact_message)
-        Thread(target=send_email, args=(app, msg)).start()
-        
-        flash('Your message was sent successfully','contact-send')
-    return render_template('pages/contact.html', body_id='contact-page', page_title="Contact Page")
- 
-# Login Page   
-@app.route('/login', methods=["GET", "POST"])
-def login():
-    """
-    This funciton will check if user exists in database.
-    When exist, will go to account page. When failed, show flash message.
-    """
-    if request.method == "POST":
-        """ Request information from user form """
-        req = request.form
-        
-        """ Collect information from login form """
-        email_login = req.get('email')
-        password = req.get('password')
-
-        """ Find user details """
-        login_user = users_collection.find_one({'email': email_login.lower()})
-        result = users_collection.find(login_user)
-        for doc in result:
-            username = doc["name"]
-            
-        """ Main login statement """
-        if login_user:
-            if bcrypt.hashpw(password.encode('utf-8'), login_user['password']) == login_user['password']:
-                session['email'] = email_login
-                session['name'] = username
-                flash('You have been successfully logged in!')
-                return redirect(url_for('user_menu'))   
-            flash("Incorrect username or password / user doesn't exist.","incorrect-user")
-            return redirect(url_for('login'))
-        flash("Incorrect username or password / user doesn't exist.","incorrect-user")
-    return render_template('pages/login.html', body_id='login-page', page_title='Sign In')
-   
-# Home page
-@app.route('/user-menu')
-def user_menu():
-    """
-    Render user menu page
-    """
-    return render_template("pages/index.html", body_id="user-menu", page_title='User Menu')
-
-# User account page
-@app.route('/account', methods=['GET','POST'])
-def account():
-    
-    try:
-        """ Return user acocunt page with user information """
-        user_info = users_collection.find_one({'email': session['email']})
-        user_info_collection = users_collection.find(user_info)
-        """ Collect user details """
-        for doc in user_info_collection:
-            active_user = doc['name']
-            email = doc['email']
-            recipes_count = len(doc['recipes_id'])
-            fav_recipe_count = len(doc['favourites'])
-
-        return render_template("pages/account.html", body_id="user-account", 
-        page_title="User Account",active_user=active_user,email=email,
-        recipes_count=recipes_count,fav_recipe_count=fav_recipe_count)
-
-    except:
-        """
-        Return user account page without user name
-        """
-        return render_template("pages/account.html", body_id="user-account", 
-        page_title="User Account")
-
 # Add Recipe
 @app.route('/add-recipe', methods=['GET','POST'])
 def add_recipe():
@@ -259,7 +153,18 @@ def add_recipe():
     return render_template('pages/add-recipe.html',
     body_id='new-recipe-page', page_title='Add Recipe')
 
+
 # Edit Recipe
+@app.route('/edit-recipe', methods=['GET','POST'])
+def edit_recipe():
+    """
+    Render edit recipe page, update edited recipe record
+    """
+
+    return render_template('pages/edit-recipe.html',
+    body_id='edit-recipe-page', page_title='Edit Recipe')
+
+# Remove Recipe
 @app.route('/remove-recipe/<recipe_id>', methods=['GET','POST'])
 def remove_recipe(recipe_id):
     """
@@ -293,15 +198,27 @@ def remove_recipe(recipe_id):
     
     return your_recipes()
 
-# Edit Recipe
-@app.route('/edit-recipe', methods=['GET','POST'])
-def edit_recipe():
+# Add to Favourites
+@app.route('/add-to-favourites', methods=['GET','POST'])
+def add_to_favourites():
     """
-    Render edit recipe page, update edited recipe record
+    Add to favourite list and render refferer page
     """
-
-    return render_template('pages/edit-recipe.html',
-    body_id='edit-recipe-page', page_title='Edit Recipe')
+    
+# Remove from Favourites
+@app.route('/add-to-favourites', methods=['GET','POST'])
+def remove_from_favourites():
+    """
+    Remove from favourite list and reneder reffer page
+    """
+    
+# User menu page
+@app.route('/user-menu')
+def user_menu():
+    """
+    Render user menu page
+    """
+    return render_template("pages/index.html", body_id="user-menu", page_title='User Menu')
 
 # Retrive image form MongoDB
 @app.route('/file/<filename>')
@@ -325,18 +242,10 @@ def your_recipes():
     page_title='Your Recipes',your_recipes_count=your_recipes_count,
     recipes_user=recipes_user,all_recipes=all_recipes)   
     
-@app.route('/recipe-page/<recipe_id>', methods=['GET','POST'])
-def recipe_page(recipe_id):
+@app.route('/recipe-page/', methods=['GET','POST'])
+def recipe_page():
     
     return render_template('pages/your-recipes.html')   
-    
-# Add to Favourites
-@app.route('/add-to-favourites', methods=['GET','POST'])
-def add_to_favourites():
-    """
-    Add to favourite list and render refferer page
-    """
-    
     
 # Favourites Page
 @app.route('/favourites')
@@ -346,7 +255,6 @@ def favourites():
     """
     return render_template('pages/favourites.html', 
     body_id='favourites-page', page_title='Favourites')
-
 
 # Register Page 
 @app.route('/register', methods=["GET", "POST"])
@@ -392,7 +300,66 @@ def register():
             
     """ Return register template """
     return render_template('pages/register.html', body_id='register-page', page_title='Register account')
+ 
+# Login Page   
+@app.route('/login', methods=["GET", "POST"])
+def login():
+    """
+    This funciton will check if user exists in database.
+    When exist, will go to account page. When failed, show flash message.
+    """
+    if request.method == "POST":
+        """ Request information from user form """
+        req = request.form
+        
+        """ Collect information from login form """
+        email_login = req.get('email')
+        password = req.get('password')
 
+        """ Find user details """
+        login_user = users_collection.find_one({'email': email_login.lower()})
+        result = users_collection.find(login_user)
+        for doc in result:
+            username = doc["name"]
+            
+        """ Main login statement """
+        if login_user:
+            if bcrypt.hashpw(password.encode('utf-8'), login_user['password']) == login_user['password']:
+                session['email'] = email_login
+                session['name'] = username
+                flash('You have been successfully logged in!')
+                return redirect(url_for('user_menu'))   
+            flash("Incorrect username or password / user doesn't exist.","incorrect-user")
+            return redirect(url_for('login'))
+        flash("Incorrect username or password / user doesn't exist.","incorrect-user")
+    return render_template('pages/login.html', body_id='login-page', page_title='Sign In')
+
+# User account page
+@app.route('/account', methods=['GET','POST'])
+def account():
+    
+    try:
+        """ Return user acocunt page with user information """
+        user_info = users_collection.find_one({'email': session['email']})
+        user_info_collection = users_collection.find(user_info)
+        """ Collect user details """
+        for doc in user_info_collection:
+            active_user = doc['name']
+            email = doc['email']
+            recipes_count = len(doc['recipes_id'])
+            fav_recipe_count = len(doc['favourites'])
+
+        return render_template("pages/account.html", body_id="user-account", 
+        page_title="User Account",active_user=active_user,email=email,
+        recipes_count=recipes_count,fav_recipe_count=fav_recipe_count)
+
+    except:
+        """
+        Return user account page without user name
+        """
+        return render_template("pages/account.html", body_id="user-account", 
+        page_title="User Account")  
+    
 # Password Recovery Page
 @app.route('/recovery',  methods=["GET", "POST"])
 def recovery():
@@ -433,7 +400,6 @@ def recovery():
     
     """ Return recovery template """
     return render_template('pages/recovery.html', body_id='recovery-page', page_title='Password recovery')
-
 
 # Remove Account
 @app.route('/account-removed')
@@ -476,7 +442,7 @@ def logout():
     """
     session.clear()
     return redirect(url_for('home'))
-
+    
 # About Page
 @app.route('/about')
 def about():
@@ -484,6 +450,38 @@ def about():
     Renders about page
     """
     return  render_template('pages/about.html', body_id='about-page')
+        
+# Contact Page
+@app.route('/contact', methods=["GET", "POST"])
+def contact():
+    """
+    This function is sending email from userform in contact page
+    """
+    if request.method == "POST":
+        
+        """ Request information from user form """
+        req = request.form
+        
+        """ Get variable from user form"""
+        username = req.get('contact-name')
+        email_address = req.get('contact-email').lower()
+        contact_message = req.get('contact-message')
+        email_from = os.getenv('EMAIL_USERNAME')
+            
+        """ Run email application """
+        def send_email(app, msg):
+            with app.app_context():
+                mail.send(msg)
+        msg = Message()
+        msg.subject = 'Message from contact form'
+        msg.recipients = [email_from, email_address]
+        msg.sender = email_from
+        msg.html = render_template('components/emails/contact-email.html', 
+        username = username, contact_message = contact_message)
+        Thread(target=send_email, args=(app, msg)).start()
+        
+        flash('Your message was sent successfully','contact-send')
+    return render_template('pages/contact.html', body_id='contact-page', page_title="Contact Page") 
     
 # Newsletter subscription
 @app.route('/newsletter', methods=["GET", "POST"])
