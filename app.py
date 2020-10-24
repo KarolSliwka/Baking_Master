@@ -253,8 +253,17 @@ def favourites():
     """
     Renders favourite page only when user is logged in
     """
-    return render_template('pages/favourites.html', 
-    body_id='favourites-page', page_title='Favourites')
+    
+    """ check if users exist in session """
+    if session.get('email') is None:
+        """ display message and redirect user to login page """
+        return f"""
+            <h4>Please login to see your favourites recipe list.</h4>
+        """
+    else:
+        """ show all favourite recipe cards """
+        return render_template('pages/favourites.html', 
+        body_id='favourites-page', page_title='Favourites')
 
 # Register Page 
 @app.route('/register', methods=["GET", "POST"])
