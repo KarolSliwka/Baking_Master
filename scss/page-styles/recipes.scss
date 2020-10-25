@@ -7,6 +7,14 @@
         -webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.1);
         -moz-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.1);
     }
+    .main-container {
+        $a: 100%;
+        $b: 450px;
+        min-height: calc(#{$a} - #{$b});
+    }
+    .your-cards-result{
+        margin: 0;
+    }
 }
 
 .search-container {
@@ -29,7 +37,7 @@
 }
 
 .proposed-recipes {
-    margin-top: 20px;
+    padding-top: 20px;
 }
 
 .back-to-recipes {
@@ -47,15 +55,5 @@
 @media (max-width: 460px) {
     .col-min-12 {
         width: 220px;
-    }
-}
-
-@media (max-width: 1365px) {
-    #recipes-page {
-        .main-container {
-            $a: 100%;
-            $b: 440px;
-            min-height: calc(#{$a} - #{$b});
-        }
     }
 }

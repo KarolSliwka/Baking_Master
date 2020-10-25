@@ -404,7 +404,7 @@ ul li:hover ul.dropdown-menu .menu-hr {
 
 .main-carousel-container {
   min-height: 100%;
-  margin-top: 60px;
+  padding-top: 60px;
 }
 
 .carousel-inner {
@@ -874,6 +874,10 @@ form p {
     text-align: left;
   }
 }
+#about-page .main-container {
+  min-height: calc(100% - 400px);
+}
+
 .about-main-container {
   padding-top: 60px;
 }
@@ -1089,6 +1093,12 @@ form p {
   -webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.1);
 }
+#recipes-page .main-container {
+  min-height: calc(100% - 450px);
+}
+#recipes-page .your-cards-result {
+  margin: 0;
+}
 
 .search-container {
   padding-top: 40px;
@@ -1109,7 +1119,7 @@ form p {
 }
 
 .proposed-recipes {
-  margin-top: 20px;
+  padding-top: 20px;
 }
 
 .back-to-recipes {
@@ -1127,11 +1137,6 @@ form p {
 @media (max-width: 460px) {
   .col-min-12 {
     width: 220px;
-  }
-}
-@media (max-width: 1365px) {
-  #recipes-page .main-container {
-    min-height: calc(100% - 440px);
   }
 }
 @media screen and (min-height: 1000px) and (min-width: 1020px) {

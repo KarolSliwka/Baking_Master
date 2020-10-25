@@ -1,3 +1,11 @@
+#about-page {
+    .main-container {
+        $a: 100%;
+        $b: 400px;
+        min-height: calc(#{$a} - #{$b});
+    }
+}
+ 
 .about-main-container {
     padding-top: 60px;
 }
