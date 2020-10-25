@@ -23,12 +23,20 @@
                 {% else %}
                 <div class="card-results">
                     {% if search_count == 0 %}
-                    <p class="back-to-recipes">Nothing was found for '<span class="recipe-count">{{search}}</span>' .. </p>
+                    <p class="back-to-recipes">Nothing was found for '<span class="recipe-count">{{search_text}}</span>' .. </p>
                     </br>
                     <a href="{{url_for('recipes')}}" class="no-results-margin">
                             <button class="btn main-button-small">Back to proposed</button>
-                        </a> {% else %}
-                    <h4 class="lead proposed-recipes">We found {{serach}} result in all Recipes</h4>
+                        </a> 
+                    {% else %}
+                        <h4 class="lead proposed-recipes">We found {{search_count}} result in all Recipes</h4>
+                        <div class="container">
+                            <div class="card-result your-cards-result">
+                            {% for doc in search_request %}
+                                {% include 'components/cards/recipe-card.html' %}
+                            {% endfor %}
+                            </div>
+                        </div>
                     {% endif %}
                 </div>
                 {% endif %} 
@@ -39,7 +47,9 @@
 <!-- Search result container -->
 <div class="container">
     <div class="card-result your-cards-result">
-        {% for doc in random_10 %} {% include 'components/cards/recipe-card.html' %} {% endfor %}
+        {% for doc in random_10 %}
+            {% include 'components/cards/recipe-card.html' %}
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

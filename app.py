@@ -69,13 +69,19 @@ def recipes():
         req = request.form
         
         """ Get variable from user form"""
-        search = req.get('search')
+        search_text = req.get('search')
+
+        """ find matching recipes to search query text """
+        regex_query = { 'title' : {"$regex" : search_text.lower()} }
         
+        search_request = recipes_collection.find(regex_query)
+
         """ search result count size """
-        search_count = 0
+        search_count = search_request.count()
         
         return  render_template('pages/recipes.html', 
-        body_id='recipes-page', page_title='Recieps',search=search,search_result="TRUE",search_count=search_count)
+        body_id='recipes-page', page_title='Recieps',search_text=search_text,search_result="TRUE",
+        search_request=search_request,search_count=search_count)
     
 
     """ get recipes collection size """
