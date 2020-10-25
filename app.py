@@ -218,18 +218,41 @@ def remove_recipe(recipe_id):
     return your_recipes()
 
 # Add to Favourites
-@app.route('/add-to-favourites', methods=['GET','POST'])
-def add_to_favourites():
+@app.route('/add-to-favourites/<recipe_id>', methods=['GET','POST'])
+def add_to_favourites(recipe_id):
     """
     Add to favourite list and render refferer page
     """
     
+    """ check if user is logged in """
+    if session.get('email') is None:
+        """ user need to login """
+
+
+    else:
+        """ find user and add recipe to favourites """
+        users_collection.find_one_and_update({'email':session.get('email')},
+        {'$push':{'favourites': ObjectId(recipe_id)}})
+        return redirect(url_for('recipes'))
+    
+    
 # Remove from Favourites
-@app.route('/add-to-favourites', methods=['GET','POST'])
-def remove_from_favourites():
+@app.route('/add-to-favourites/<recipe_id>', methods=['GET','POST'])
+def remove_from_favourites(recipe_id):
     """
     Remove from favourite list and reneder reffer page
     """
+    
+    """ check if user is logged in """
+    if session.get('email') is None:
+        """ user need to login """
+
+
+    else:
+        """ find user and add recipe to favourites """
+        users_collection.find_one_and_update({'email':session.get('email')},
+        {'$pull':{'favourites': ObjectId(recipe_id)}})
+        return redirect(url_for('recipes'))
     
 # User menu page
 @app.route('/user-menu')

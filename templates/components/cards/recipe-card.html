@@ -12,7 +12,7 @@
         <p class="card-text"><span class="recipe-info">Difficulty - </span>{{doc['difficulty']}}</p>
         <p class="card-text"><span class="recipe-info">Time - </span>{{doc['time']}}</p>
         <div class="card-bottom-section">
-            <a href="{{url_for('add_to_favourites')}}" class="card-fav-icon">
+            <a href="{{url_for('add_to_favourites',recipe_id = doc['_id'])}}" class="card-fav-icon">
                         <i class="far fa-heart fa-hover-hidden"></i>
                         <i class="fas fa-heart fa-hover-show"></i>
                     </a>
