@@ -257,6 +257,7 @@ def favourites():
     """ check if users exist in session """
     if session.get('email') is None:
         """ display message and redirect user to login page """
+        session['url'] = url_for('favourites')
         return render_template('pages/favourites.html', 
         body_id='favourites-page', page_title='Favourites',no_user='true')
     else:
@@ -346,9 +347,16 @@ def login():
                 session['email'] = email_login
                 session['name'] = username
                 flash('You have been successfully logged in!')
-                return redirect(url_for('user_menu'))   
-            flash("Incorrect username or password / user doesn't exist.","incorrect-user")
-            return redirect(url_for('login'))
+                
+                if session.get('email') is not None: #assuming login was successful
+                    if 'url' in session:
+                        return redirect(session['url'])
+                
+                    return redirect(url_for('user_menu'))
+                else:
+                    flash("Incorrect username or password / user doesn't exist.","incorrect-user")
+                    return redirect(url_for('login'))
+                    
         flash("Incorrect username or password / user doesn't exist.","incorrect-user")
     return render_template('pages/login.html', body_id='login-page', page_title='Sign In')
 
