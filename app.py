@@ -2,14 +2,13 @@ import os
 import pymongo
 import requests
 import bcrypt
-import random
 from flask import Flask, render_template, url_for, session, redirect, request, flash
 from flask_mail import Mail
 from flask_mail import Message
 from threading import Thread
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from random import sample 
+
 
 """ Create HTTPS connection for all rdirected urls """
 class ReverseProxied(object):
@@ -84,15 +83,10 @@ def recipes():
     else: 
         recipe_range = 10
             
-    print(recipe_range)
-    
-    
-    """print(random.sample(recipe_range, 4))"""
-    
-    
+    random_10 =  recipes_collection.aggregate([{'$sample': {'size': 10 }}])
     
     return  render_template('pages/recipes.html', 
-    body_id='recipes-page', page_title='Recipes', recipe_range=recipe_range)
+    body_id='recipes-page', page_title='Recipes', recipe_range=recipe_range,random_10=random_10)
 
 # Add Recipe
 @app.route('/add-recipe', methods=['GET','POST'])
