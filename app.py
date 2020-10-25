@@ -92,8 +92,11 @@ def recipes():
     random_10 =  recipes_collection.aggregate([{'$sample': {'size': 10 }}])
     
     """ find current user favourites list """
-    current_user = users_collection.find_one({'email':session.get('email')})
-    my_favourites = current_user['favourites']
+    if session.get('email') is None:
+        my_favourites = []
+    else:
+        current_user = users_collection.find_one({'email':session.get('email')})
+        my_favourites = current_user['favourites']
     
     return  render_template('pages/recipes.html', 
     body_id='recipes-page', page_title='Recipes',recipe_range=recipe_range,
@@ -229,9 +232,12 @@ def add_to_favourites(recipe_id):
     """ check if user is logged in """
     if session.get('email') is None:
         """ user need to login """
-
-
+        session['url'] = request.referrer
+        print(session['url'])
+        
     else:
+        """ get curent session url/uri """
+        
         """ find user and add recipe to favourites """
         users_collection.find_one_and_update({'email':session.get('email')},
         {'$push':{'favourites': ObjectId(recipe_id)}})
