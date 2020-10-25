@@ -22,7 +22,7 @@
         {% if recipe_range == 0 %}
             <h4 class="lead proposed-recipes">Our proposed recipes list is empty... We can't propose you anything</h4>
         {% else %}
-            <h4 class="lead proposed-recipes">Check {{recipe_range}} proposed recipes for you!</h4>
+            <h4 class="lead proposed-recipes">Check {{recipe_range}} randomly selected recipes for you!</h4>
                 <div class="proposed-cards">
                     {% for proposed in random_10 %} {% include 'components/cards/recipe-card.html' %} {% endfor %}
                 </div>
