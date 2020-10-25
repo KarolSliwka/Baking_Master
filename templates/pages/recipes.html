@@ -22,13 +22,22 @@
         {% if recipe_range == 0 %}
             <h4 class="lead proposed-recipes">Our proposed recipes list is empty... We can't propose you anything</h4>
         {% else %}
+            {% if search_result == 'FALSE' %}
             <h4 class="lead proposed-recipes">Check {{recipe_range}} randomly selected recipes for you!</h4>
-                <div class="proposed-cards">
-                    {% for proposed in random_10 %} {% include 'components/cards/recipe-card.html' %} {% endfor %}
+                <div class="card-result">
+                    {% for proposed in random_10 %} 
+                        {% include 'components/cards/recipe-card.html' %} 
+                    {% endfor %}
                 </div>
+            {% else %}
                 <div class="card-results">
-        
+                    {% if search_count == 0 %}
+                        <h4 class="lead proposed-recipes">Nothing was found for {{serach}}</h4>
+                    {% else %}
+                        <h4 class="lead proposed-recipes">We found {{serach}} result in all Recipes</h4>
+                    {% endif %}
                 </div>
+            {% endif %}
         {% endif %}
     </div>
 </div>

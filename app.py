@@ -71,9 +71,11 @@ def recipes():
         """ Get variable from user form"""
         search = req.get('search')
         
+        """ search result count size """
+        search_count = 0
+        
         return  render_template('pages/recipes.html', 
-        body_id='recipes-page', page_title='Recieps', search=search)
-    
+        body_id='recipes-page', page_title='Recieps',search=search,search_result="TRUE",search_count=search_count)
     
 
     """ get recipes collection size """
@@ -86,7 +88,8 @@ def recipes():
     random_10 =  recipes_collection.aggregate([{'$sample': {'size': 10 }}])
     
     return  render_template('pages/recipes.html', 
-    body_id='recipes-page', page_title='Recipes', recipe_range=recipe_range,random_10=random_10)
+    body_id='recipes-page', page_title='Recipes',recipe_range=recipe_range,
+    random_10=random_10,search_result="FALSE")
 
 # Add Recipe
 @app.route('/add-recipe', methods=['GET','POST'])
