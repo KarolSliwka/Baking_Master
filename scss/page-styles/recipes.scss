@@ -28,8 +28,13 @@
     font-weight: 400;
 }
 
-.proposed-recipes{
+.proposed-recipes {
     margin-top: 20px;
+}
+
+.back-to-recipes {
+    color: #000;
+    margin: 6px;
 }
 
 .card-results {
@@ -42,5 +47,15 @@
 @media (max-width: 460px) {
     .col-min-12 {
         width: 220px;
+    }
+}
+
+@media (max-width: 1365px) {
+    #recipes-page {
+        .main-container {
+            $a: 100%;
+            $b: 440px;
+            min-height: calc(#{$a} - #{$b});
+        }
     }
 }

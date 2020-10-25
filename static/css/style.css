@@ -283,7 +283,7 @@ ul li:hover ul.dropdown-menu .menu-hr {
 .card-recipes {
   border-radius: 25px;
   max-width: 220px;
-  margin-left: 10px;
+  margin-left: 8px;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -1106,6 +1106,11 @@ form p {
   margin-top: 20px;
 }
 
+.back-to-recipes {
+  color: #000;
+  margin: 6px;
+}
+
 .card-results {
   margin-top: 40px;
   justify-content: center;
@@ -1116,6 +1121,11 @@ form p {
 @media (max-width: 460px) {
   .col-min-12 {
     width: 220px;
+  }
+}
+@media (max-width: 1365px) {
+  #recipes-page .main-container {
+    min-height: calc(100% - 440px);
   }
 }
 @media screen and (min-height: 1000px) and (min-width: 1020px) {
