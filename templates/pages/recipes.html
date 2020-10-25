@@ -18,8 +18,16 @@
         </div>
     </div>
     <!-- Search result container -->
-    <div class="container card-results">
-        {% include 'components/cards/recipe-card.html' %}
+    <div class="container">
+        <h4 class="lead proposed-recipes">Check our 10 proposed recipes for you!</h4>
+        <div class="proposed-cards">
+            {% for proposed in random_10 %}
+                {% include 'components/cards/recipe-card.html' %}
+            {% endfor %}
+        </div>
+        <div class="card-results">
+
+        </div>
     </div>
 </div>
 {% endblock %}
