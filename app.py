@@ -348,12 +348,14 @@ def login():
                 session['name'] = username
                 flash('You have been successfully logged in!')
                 
-                if session.get('email') is not None: #assuming login was successful
+                """ when redirect from favourites page, successfully logged in, redirect back """
+                if session.get('email') is not None:
                     if 'url' in session:
                         return redirect(session['url'])
                 
                     return redirect(url_for('user_menu'))
                 else:
+                    """ show error message when failed to login in """
                     flash("Incorrect username or password / user doesn't exist.","incorrect-user")
                     return redirect(url_for('login'))
                     
