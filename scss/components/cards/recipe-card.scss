@@ -81,6 +81,7 @@
     flex-direction: column;
 
     .card-title {
+        text-transform: capitalize;
         padding: 0 1rem !important;
         color: #FF3377;
         font-size: 16px;
