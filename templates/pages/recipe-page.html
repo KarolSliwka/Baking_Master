@@ -5,7 +5,7 @@
         <div class="recipe-information">
             <div class="top-info">
                 <img src="/file/{{this_recipe['recipe_image']}}" alt="image - {{this_recipe['title']}}">
-                <h2 class="page-title recipe-title">{{this_recipe['title']}}</h2>
+                <h3 class="page-title recipe-title">{{this_recipe['title']}}</h3>
                 <h5 class="recipe-author">Author: <span>{{author_name}}</span></h5>
                 <h5 class="recipe-author-email">Email: <span>{{this_recipe['author']}}</span></h5>
             </div>
@@ -16,15 +16,24 @@
         </div>
         <div class="recipe-ing-step-tip">
             <div class="recipe-ing">
+                {% for element in ingredients %}
+                <p class="lead">{{element}}</p>
+                {% endfor %}
             </div>
             <div class="recipe-ing-sc">
-                
+                {% for element in ingredients_scale %}
+                <p class="lead">{{element}}</p>
+                {% endfor %}
             </div>
             <div class="recipe-step">
-                
+                {% for element in preparation %}
+                <p class="lead">{{element}}</p>
+                {% endfor %}
             </div>
             <div class="recipe-tip">
-                
+                {% for element in tips %}
+                <p class="lead">{{element}}</p>
+                {% endfor %}
             </div>
         </div>
     </div>

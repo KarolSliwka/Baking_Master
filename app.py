@@ -108,10 +108,17 @@ def recipe_page(recipe_id):
     """ find this recipe _id and retreive information while rendering page """
     this_recipe = recipes_collection.find_one({'_id':ObjectId(recipe_id)})
     recipe_author = users_collection.find_one({'email':this_recipe['author']})
+    
+    """ get all recipe information and store as collections/variables """
     author_name = recipe_author['name']
-
+    ingredients = this_recipe['ingredients']
+    ingredients_scale = this_recipe['ingredients-scale']
+    preparation = this_recipe['preparation']
+    tips = this_recipe['tips']
+    
     return render_template('pages/recipe-page.html',body_id='recipe-page', page_title=this_recipe['title'],
-    this_recipe=this_recipe, author_name=author_name)   
+    this_recipe=this_recipe, author_name=author_name,ingredients=ingredients,ingredients_scale=ingredients_scale,
+    preparation=preparation,tips=tips)   
 
 # Add Recipe
 @app.route('/add-recipe', methods=['GET','POST'])
