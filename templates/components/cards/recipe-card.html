@@ -26,7 +26,7 @@
                 <i class="fas fa-heart fa-hover-show"></i>
             </a>
             {% endif %}
-            <a href="{{url_for('recipe_page')}}" class="card-read-more">Read more</a>
+            <a href="{{url_for('recipe_page',recipe_id = doc['_id'])}}" class="card-read-more">Read more</a>
         </div>
         {% else %}
         <div class="card-image">
