@@ -235,7 +235,7 @@ def add_to_favourites(recipe_id):
         """ find user and add recipe to favourites """
         users_collection.find_one_and_update({'email':session.get('email')},
         {'$push':{'favourites': ObjectId(recipe_id)}})
-        return redirect(url_for('recipes'))
+        return redirect(request.referrer)
     
     
 # Remove from Favourites
@@ -254,7 +254,7 @@ def remove_from_favourites(recipe_id):
         """ find user and add recipe to favourites """
         users_collection.find_one_and_update({'email':session.get('email')},
         {'$pull':{'favourites': ObjectId(recipe_id)}})
-        return redirect(url_for(request.refferrer))
+        return redirect(request.referrer)
     
 # User menu page
 @app.route('/user-menu')
