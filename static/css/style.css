@@ -1631,4 +1631,8 @@ form p {
   min-height: calc(100% - 400px);
 }
 
+.recipe-title {
+  text-transform: capitalize;
+}
+
 /*# sourceMappingURL=style.css.map */

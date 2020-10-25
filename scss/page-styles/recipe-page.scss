@@ -6,3 +6,7 @@
         min-height: calc(#{$a} - #{$b});
     }
 }
+
+.recipe-title {
+    text-transform: capitalize;
+}
