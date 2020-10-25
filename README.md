@@ -255,8 +255,6 @@ Simple and clear design came from heart of the author. Project coloristic was wi
 *   <a href="https://unsplash.com">Carousel photos</a>
 *   <a href="https://www.bbcgoodfood.com">BBCGoodFood.com</a> - Few recipes including images were used to create basic recipe database.
 
-
-
 ## Contact
 If you've got any questions please contact me via email: <a href="mailto:contact@karolsliwka.com">contact@karolsliwka.com</a>
 
