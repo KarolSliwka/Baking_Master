@@ -24,7 +24,9 @@
         {% else %} {% if search_result == 'FALSE' %}
         <h4 class="lead proposed-recipes">Check {{recipe_range}} randomly selected recipes for you!</h4>
         <div class="card-result your-cards-result">
-            {% for proposed in random_10 %} {% include 'components/cards/recipe-card.html' %} {% endfor %}
+            {% for doc in random_10 %}
+                {% include 'components/cards/recipe-card.html' %}
+            {% endfor %}
         </div>
         {% else %}
         <div class="card-results">

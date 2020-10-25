@@ -348,6 +348,7 @@ ul li:hover ul.dropdown-menu .menu-hr {
   overflow: hidden;
   word-wrap: break-word;
   white-space: pre;
+  font-weight: 400;
 }
 
 .card-body {
@@ -394,6 +395,11 @@ ul li:hover ul.dropdown-menu .menu-hr {
   background: white;
   font-size: 14px;
   -webkit-appearance: attachment;
+}
+
+.recipe-info {
+  color: #51ACEA;
+  font-weight: 500;
 }
 
 .main-carousel-container {

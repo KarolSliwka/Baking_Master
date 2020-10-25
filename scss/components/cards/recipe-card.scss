@@ -72,6 +72,7 @@
     overflow: hidden;
     word-wrap: break-word;
     white-space: pre;
+    font-weight: 400;
 }
 
 .card-body {
@@ -122,4 +123,9 @@
     background: white;
     font-size: 14px;
     -webkit-appearance: attachment;
+}
+
+.recipe-info {
+    color: #51ACEA;
+    font-weight: 500;
 }

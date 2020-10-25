@@ -4,12 +4,13 @@
         {% if body_id != 'your-recipes-page' %}
             <div class="card-image">
                 <!-- image source from database -->
-                <img class="card-img-top" src="" alt="">
+                <img class="card-img-top" src="/file/{{doc['recipe_image']}}" alt="{{doc['title']}} image title">
             </div>
             <!-- card top section -->
-            <h2 class="hidden"></h2>
-            <h5 class="card-title"></h5>
-            <p class="card-text"><span class="difficulty-title">Difficulty : </span></p>
+            <h2 class="hidden">{{doc['title']}}</h2>
+            <h5 class="card-title">{{doc['title']}}</h5>
+            <p class="card-text"><span class="recipe-info">Difficulty - </span>{{doc['difficulty']}}</p>
+            <p class="card-text"><span class="recipe-info">Preparation time - </span>{{doc['time']}}</p>
             <div class="card-bottom-section">
                 <a href="{{url_for('add_to_favourites')}}" class="card-fav-icon">
                         <i class="far fa-heart fa-hover-hidden"></i>
