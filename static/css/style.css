@@ -1624,4 +1624,11 @@ form p {
   color: #C471EB;
 }
 
+#recipe-page {
+  padding-top: 70px;
+}
+#recipe-page .main-container {
+  min-height: calc(100% - 400px);
+}
+
 /*# sourceMappingURL=style.css.map */
