@@ -155,7 +155,7 @@ def add_recipe():
             mongo.save_file(preparing_image.filename, preparing_image)
             insert_recipe = recipes_collection.insert_one({
                 'recipe_image': preparing_image.filename,
-                'title': recipe_title,
+                'title': recipe_title.lower(),
                 'time': recipe_prepare_time,
                 'difficulty': recpie_difficulty,
                 'ingredients': ingredients_array,
