@@ -73,7 +73,6 @@ def recipes():
 
         """ find matching recipes to search query text """
         regex_query = { 'title' : {"$regex" : search_text.lower()} }
-        
         search_request = recipes_collection.find(regex_query)
 
         """ search result count size """
@@ -90,12 +89,15 @@ def recipes():
         recipe_range = recipe_range
     else: 
         recipe_range = 10
-            
     random_10 =  recipes_collection.aggregate([{'$sample': {'size': 10 }}])
+    
+    """ find current user favourites list """
+    current_user = users_collection.find_one({'email':session.get('email')})
+    my_favourites = current_user['favourites']
     
     return  render_template('pages/recipes.html', 
     body_id='recipes-page', page_title='Recipes',recipe_range=recipe_range,
-    random_10=random_10,search_result="FALSE")
+    random_10=random_10,search_result="FALSE", my_favourites=my_favourites)
 
 # Add Recipe
 @app.route('/add-recipe', methods=['GET','POST'])
@@ -237,7 +239,7 @@ def add_to_favourites(recipe_id):
     
     
 # Remove from Favourites
-@app.route('/add-to-favourites/<recipe_id>', methods=['GET','POST'])
+@app.route('/remov-from-favourites/<recipe_id>', methods=['GET','POST'])
 def remove_from_favourites(recipe_id):
     """
     Remove from favourite list and reneder reffer page
@@ -252,7 +254,7 @@ def remove_from_favourites(recipe_id):
         """ find user and add recipe to favourites """
         users_collection.find_one_and_update({'email':session.get('email')},
         {'$pull':{'favourites': ObjectId(recipe_id)}})
-        return redirect(url_for('recipes'))
+        return redirect(url_for(request.refferrer))
     
 # User menu page
 @app.route('/user-menu')
