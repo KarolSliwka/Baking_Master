@@ -979,14 +979,6 @@ form p {
   color: #FF3377;
 }
 
-@media (max-width: 1365px) {
-  #favourites-page {
-    padding-top: 60px;
-  }
-  #favourites-page .main-container {
-    min-height: calc(100% - 440px);
-  }
-}
 @media screen and (min-height: 983px) and (min-width: 1020px) {
   #login-page .main-container {
     height: calc(100% - 360px);
