@@ -102,6 +102,11 @@ def recipes():
     body_id='recipes-page', page_title='Recipes',recipe_range=recipe_range,
     random_10=random_10,search_result="FALSE", my_favourites=my_favourites)
 
+@app.route('/recipe-page/<recipe_id>', methods=['GET','POST'])
+def recipe_page(recipe_id):
+    
+    return render_template('pages/recipe-page.html')   
+
 # Add Recipe
 @app.route('/add-recipe', methods=['GET','POST'])
 def add_recipe():
@@ -179,12 +184,13 @@ def add_recipe():
 
 
 # Edit Recipe
-@app.route('/edit-recipe', methods=['GET','POST'])
+@app.route('/edit-recipe/', methods=['GET','POST'])
 def edit_recipe():
     """
     Render edit recipe page, update edited recipe record
     """
-
+    
+    
     return render_template('pages/edit-recipe.html',
     body_id='edit-recipe-page', page_title='Edit Recipe')
 
@@ -284,11 +290,6 @@ def your_recipes():
     page_title='Your Recipes',your_recipes_count=your_recipes_count,
     recipes_user=recipes_user,all_recipes=all_recipes)   
     
-@app.route('/recipe-page/', methods=['GET','POST'])
-def recipe_page():
-    
-    return render_template('pages/your-recipes.html')   
-    
 # Favourites Page
 @app.route('/favourites')
 def favourites():
@@ -305,15 +306,14 @@ def favourites():
     else:
     
         """ find user favourite list information """
-
         current_user = users_collection.find_one({'email': session.get('email')})
             
+        """ get user favourite recipes list """
         my_favourites =[]
         my_fav = current_user['favourites']
         for _id in my_fav:
             fav_id = recipes_collection.find_one({'_id': ObjectId(_id)})
             my_favourites.append(fav_id)
-            
             
         favourites_count = len(current_user['favourites'])
     
