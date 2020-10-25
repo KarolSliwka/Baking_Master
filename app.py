@@ -104,8 +104,11 @@ def recipes():
 
 @app.route('/recipe-page/<recipe_id>', methods=['GET','POST'])
 def recipe_page(recipe_id):
+
+    this_recipe = recipes_collection.find_one({'_id':ObjectId(recipe_id)})
     
-    return render_template('pages/recipe-page.html')   
+    return render_template('pages/recipe-page.html',body_id='recipe-page', page_title=this_recipe['title'],
+    this_recipe=this_recipe)   
 
 # Add Recipe
 @app.route('/add-recipe', methods=['GET','POST'])
