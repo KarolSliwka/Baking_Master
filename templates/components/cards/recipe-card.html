@@ -16,6 +16,10 @@
             <a href="{{url_for('remove_from_favourites',recipe_id = doc['_id'])}}" class="card-fav-icon">
                 <i class="fas fa-heart"></i>
             </a>
+            {% elif doc in my_favourites %}
+            <a href="{{url_for('remove_from_favourites',recipe_id = doc['_id'])}}" class="card-fav-icon">
+                <i class="fas fa-heart"></i>
+            </a>
             {% else %}
             <a href="{{url_for('add_to_favourites',recipe_id = doc['_id'])}}" class="card-fav-icon">
                 <i class="far fa-heart fa-hover-hidden"></i>

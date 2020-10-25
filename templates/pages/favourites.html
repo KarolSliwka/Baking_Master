@@ -14,7 +14,7 @@
         <p class="lead font-w400">You have got <span class="recipe-count">{{favourites_count}}</span> favourite recipe</p>
         {% endif %}
         <div class="container">
-            {% for _id in favourites_list %}
+            {% for doc in my_favourites %}
                 {% include 'components/cards/recipe-card.html' %}
             {% endfor %}
         </div>
