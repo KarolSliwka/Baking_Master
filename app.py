@@ -107,9 +107,11 @@ def recipe_page(recipe_id):
 
     """ find this recipe _id and retreive information while rendering page """
     this_recipe = recipes_collection.find_one({'_id':ObjectId(recipe_id)})
+    recipe_author = users_collection.find_one({'email':this_recipe['author']})
+    author_name = recipe_author['name']
 
     return render_template('pages/recipe-page.html',body_id='recipe-page', page_title=this_recipe['title'],
-    this_recipe=this_recipe)   
+    this_recipe=this_recipe, author_name=author_name)   
 
 # Add Recipe
 @app.route('/add-recipe', methods=['GET','POST'])

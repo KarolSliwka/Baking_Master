@@ -2,13 +2,30 @@
 <div class="container">
     <h1 class="hidden">Recpie - {{this_recipe['title']}}</h1>
     <div class="this-recipe-container">
-        <div class="top-info">
-            <img src="/file/{{this_recipe['recipe_image']}}" alt="image - {{this_recipe['title']}}">
-            <h2 class="page-title recipe-title">{{this_recipe['title']}}</h2>
+        <div class="recipe-information">
+            <div class="top-info">
+                <img src="/file/{{this_recipe['recipe_image']}}" alt="image - {{this_recipe['title']}}">
+                <h2 class="page-title recipe-title">{{this_recipe['title']}}</h2>
+                <h5 class="recipe-author">Author: <span>{{author_name}}</span></h5>
+                <h5 class="recipe-author-email">Email: <span>{{this_recipe['author']}}</span></h5>
+            </div>
+            <div class="prepare-info">
+                <p class="time-info">{{this_recipe['time']}}</p>
+                <p class="difficulty-info">{{this_recipe['difficulty']}}</p>
+            </div>
         </div>
-        <div class="prepare-info">
-            <p class="time-info">{{this_recipe['time']}}</p>
-            <p class="difficulty-info">{{this_recipe['difficulty']}}</p>
+        <div class="recipe-ing-step-tip">
+            <div class="recipe-ing">
+            </div>
+            <div class="recipe-ing-sc">
+                
+            </div>
+            <div class="recipe-step">
+                
+            </div>
+            <div class="recipe-tip">
+                
+            </div>
         </div>
     </div>
 </div>
