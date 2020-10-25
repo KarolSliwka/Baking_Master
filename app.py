@@ -231,10 +231,9 @@ def add_to_favourites(recipe_id):
     
     """ check if user is logged in """
     if session.get('email') is None:
-        """ user need to login """
-        session['url'] = request.referrer
-        print(session['url'])
-        
+        """ redirect user to login page """
+        session['url'] = url_for('recipes')
+        return redirect(url_for('login'))
     else:
         """ get curent session url/uri """
         
@@ -250,17 +249,10 @@ def remove_from_favourites(recipe_id):
     """
     Remove from favourite list and reneder reffer page
     """
-    
-    """ check if user is logged in """
-    if session.get('email') is None:
-        """ user need to login """
-
-
-    else:
-        """ find user and add recipe to favourites """
-        users_collection.find_one_and_update({'email':session.get('email')},
-        {'$pull':{'favourites': ObjectId(recipe_id)}})
-        return redirect(request.referrer)
+    """ find user and add recipe to favourites """
+    users_collection.find_one_and_update({'email':session.get('email')},
+    {'$pull':{'favourites': ObjectId(recipe_id)}})
+    return redirect(request.referrer)
     
 # User menu page
 @app.route('/user-menu')
