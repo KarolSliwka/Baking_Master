@@ -34,14 +34,3 @@
 .remove-recipe {
     @extend .edit-recipe;
 }
-
-@media (max-width: 1365px){
-    #your-recipes-page {
-    padding-top: 60px;
-    .main-container {
-        $a: 100%;
-        $b: 440px;
-        min-height: calc(#{$a} - #{$b});
-    }
-}
-}

@@ -77,14 +77,3 @@
         justify-content: center;
     }
 }
-
-@media (max-width: 1365px) {
-    #user-account {
-        padding-top: 60px;
-        .main-container {
-            $a: 100%;
-            $b: 440px;
-            min-height: calc(#{$a} - #{$b});
-        }
-    }
-}

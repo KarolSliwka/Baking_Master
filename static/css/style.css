@@ -1071,14 +1071,6 @@ form p {
     justify-content: center;
   }
 }
-@media (max-width: 1365px) {
-  #user-account {
-    padding-top: 60px;
-  }
-  #user-account .main-container {
-    min-height: calc(100% - 440px);
-  }
-}
 #recipes-page .form-control {
   border: 1px solid #FF3377;
 }
@@ -1602,14 +1594,6 @@ form p {
     max-width: 250px;
   }
 }
-@media (max-width: 1365px) {
-  #new-recipe-page {
-    padding-top: 60px;
-  }
-  #new-recipe-page .main-container {
-    min-height: calc(100% - 440px);
-  }
-}
 #your-recipes-page {
   padding-top: 60px;
 }
@@ -1638,15 +1622,6 @@ form p {
 }
 .edit-recipe:hover, .remove-recipe:hover {
   color: #C471EB;
-}
-
-@media (max-width: 1365px) {
-  #your-recipes-page {
-    padding-top: 60px;
-  }
-  #your-recipes-page .main-container {
-    min-height: calc(100% - 440px);
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
