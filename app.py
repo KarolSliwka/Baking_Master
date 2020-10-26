@@ -122,6 +122,7 @@ def recipe_page(recipe_id):
     """ get user favourite recipes list """
     if session.get('email') is None:
         my_fav = []
+        session['url'] = request.referrer
     else:
         my_fav = current_user['favourites']
     
