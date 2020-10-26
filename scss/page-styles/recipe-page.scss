@@ -7,6 +7,20 @@
     }
 }
 
+.recipe-photo {
+    display: inherit;
+    justify-content: center;
+    text-align: center;
+    padding-top: 10px;
+    img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 2px solid #FFF;
+        box-shadow: 0px 0px 5px 1px #ccc;
+    }
+}
+
 .recipe-title {
     text-transform: capitalize;
 }

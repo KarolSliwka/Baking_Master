@@ -2,25 +2,25 @@
 <div class="container">
     <h1 class="hidden">Recpie - {{this_recipe['title']}}</h1>
     <div class="this-recipe-container">
-        <div class="recipe-information">
+        <div class="col-lg-12">
             <div class="top-info">
-                <img src="/file/{{this_recipe['recipe_image']}}" alt="image - {{this_recipe['title']}}">
+                <div class="recipe-photo">
+                    <img src="/file/{{this_recipe['recipe_image']}}" alt="image - {{this_recipe['title']}}">
+                </div>
                 <h3 class="page-title recipe-title">{{this_recipe['title']}}</h3>
                 <h5 class="recipe-author">Author: <span>{{author_name}}</span></h5>
                 <h5 class="recipe-author-email">Email: <span>{{this_recipe['author']}}</span></h5>
             </div>
             <div class="favourite">
-            {% if this_recipe['_id'] in my_fav %}
-            <a href="{{url_for('remove_from_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon">
+                {% if this_recipe['_id'] in my_fav %}
+                <a href="{{url_for('remove_from_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon">
                 Remove from favourites <i class="fas fa-heart"></i>
-            </a>
-            {% else %}
-            <a href="{{url_for('add_to_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon">
+            </a> {% else %}
+                <a href="{{url_for('add_to_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon">
                 Add to favourites
                 <i class="far fa-heart fa-hover-hidden"></i>
                 <i class="fas fa-heart fa-hover-show"></i>
-            </a>
-            {% endif %}
+            </a> {% endif %}
             </div>
             <div class="prepare-info">
                 <p class="time-info">{{this_recipe['time']}}</p>
