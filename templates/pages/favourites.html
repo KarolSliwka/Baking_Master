@@ -7,17 +7,16 @@
     <div class="container">
         <button class="btn main-button" onclick="window.location.href='{{url_for('login', favourites_accessed='FALSE')}}';">Login</button>
     </div>
+    {% else %} {% if favourites_count != 1 %}
+    <p class="lead font-w400">You have got <span class="recipe-count">{{favourites_count}}</span> favourite recipes</p>
     {% else %}
-        {% if favourites_count != 1 %}
-        <p class="lead font-w400">You have got <span class="recipe-count">{{favourites_count}}</span> favourite recipes</p>
-        {% else %}
-        <p class="lead font-w400">You have got <span class="recipe-count">{{favourites_count}}</span> favourite recipe</p>
-        {% endif %}
-        <div class="container">
-            {% for doc in my_favourites %}
-                {% include 'components/cards/recipe-card.html' %}
-            {% endfor %}
+    <p class="lead font-w400">You have got <span class="recipe-count">{{favourites_count}}</span> favourite recipe</p>
+    {% endif %}
+    <div class="container">
+        <div class="card-results">
+            {% for doc in my_favourites %} {% include 'components/cards/recipe-card.html' %} {% endfor %}
         </div>
+    </div>
     {% endif %}
 </div>
 {% endblock %}
