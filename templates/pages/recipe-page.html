@@ -7,7 +7,7 @@
                 <div class="recipe-photo">
                     <img src="/file/{{this_recipe['recipe_image']}}" alt="image - {{this_recipe['title']}}">
                 </div>
-                <h3 class="page-title recipe-title">{{this_recipe['title']}}</h3>
+                <h2 class="page-title recipe-title">{{this_recipe['title']}}</h2>
             </div>
             <div class="favourite-link">
                 {% if this_recipe['_id'] in my_fav %}
@@ -27,7 +27,7 @@
         </div>
 
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <h4 class="second-title">Ingredients :</h4>
+            <h3 class="second-title">Ingredients :</h3>
             {% for x in ingredients %}
             <p class="main-ingredient">{{x}} :
                 <span class="ingredient-scale">{{ingredients_scale[ingredients.index(x)]}}</span>
@@ -35,16 +35,16 @@
             {% endfor %}
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <h4 class="second-title">Preparation steps :</h4>
+            <h3 class="second-title">Preparation steps :</h3>
             {% for element in preparation %}
             <div class="prep-container">
-                <h5 class="second-title">Step {{preparation.index(element) + 1}}</h5>
+                <h4 class="second-title">Step {{preparation.index(element) + 1}}</h4>
                 <p class="prep-step">{{element}}</p>
             </div>
             {% endfor %}
         </div>
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h4 class="second-title">Additional tips :</h4>
+            <h3 class="second-title">Additional tips :</h3>
             {% for element in tips %}
             <p class="add-tip">{{element}}</p>
             {% endfor %}
