@@ -12,11 +12,8 @@
     {% else %}
     <p class="lead font-w400">You have got <span class="recipe-count">{{favourites_count}}</span> favourite recipe</p>
     {% endif %}
-    <div class="container">
-        <div class="card-results">
-            {% for doc in my_favourites %} {% include 'components/cards/recipe-card.html' %} {% endfor %}
-        </div>
+    <div class="card-results">
+        {% for doc in my_favourites %} {% include 'components/cards/recipe-card.html' %} {% endfor %} {% endif %}
     </div>
-    {% endif %}
 </div>
 {% endblock %}
