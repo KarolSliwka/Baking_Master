@@ -21,6 +21,11 @@
     }
 }
 
+.separate-line{
+    border-color: #FF3377;
+    opacity: 0.2;
+}
+
 .recipe-title {
     text-transform: capitalize;
 }
@@ -31,7 +36,12 @@
     margin-bottom: 20px;
 }
 
+.prep-container{
+    padding-bottom: 20px;
+}
+
 .step-title {
     color: #000;
     font-size: 1rem;
+    font-style: italic;
 }

@@ -1651,6 +1651,11 @@ form p {
   box-shadow: 0px 0px 5px 1px #ccc;
 }
 
+.separate-line {
+  border-color: #FF3377;
+  opacity: 0.2;
+}
+
 .recipe-title {
   text-transform: capitalize;
 }
@@ -1661,9 +1666,14 @@ form p {
   margin-bottom: 20px;
 }
 
+.prep-container {
+  padding-bottom: 20px;
+}
+
 .step-title {
   color: #000;
   font-size: 1rem;
+  font-style: italic;
 }
 
 /*# sourceMappingURL=style.css.map */

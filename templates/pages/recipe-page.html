@@ -25,9 +25,9 @@
                 <p class="difficulty-info">{{this_recipe['difficulty']}}</p>
             </div>
         </div>
-
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <h3 class="second-title">Ingredients :</h3>
+            <hr class="separate-line">
             {% for x in ingredients %}
             <p class="main-ingredient">{{x}} :
                 <span class="ingredient-scale">{{ingredients_scale[ingredients.index(x)]}}</span>
@@ -36,6 +36,7 @@
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <h3 class="second-title">Preparation steps :</h3>
+            <hr class="separate-line">
             {% for element in preparation %}
             <div class="prep-container">
                 <h4 class="step-title">Step {{preparation.index(element) + 1}}</h4>
@@ -45,6 +46,7 @@
         </div>
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <h3 class="second-title">Additional tips :</h3>
+            <hr class="separate-line">
             {% for element in tips %}
             <p class="add-tip">{{element}}</p>
             {% endfor %}
