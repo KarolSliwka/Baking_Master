@@ -21,17 +21,21 @@
             </a> {% endif %}
             </div>
             <div class="prepare-info">
-                <p class="time-info">{{this_recipe['time']}}</p>
+                <h3 class="time-info"><i class="far fa-clock"></i> Time <span>{{this_recipe['time']}}
+                {% if this_recipe['time'].find("00:") != -1: %}
+                min
+                {% else %}
+                hrs
+                {% endif %}
+                </span></h3>
                 <h3 class="difficulty-info">
-                    <i class="fas fa-align-right"></i>
-                    Difficulty Level
-                <span>{{this_recipe['difficulty']}}</span></h3>
+                    <i class="fas fa-align-right"></i> Difficulty Level
+                    <span>{{this_recipe['difficulty']}}</span></h3>
             </div>
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <h3 class="second-title">Ingredients :</h3>
-            <hr class="separate-line">
-            {% for x in ingredients %}
+            <hr class="separate-line"> {% for x in ingredients %}
             <p class="main-ingredient">{{x}} :
                 <span class="ingredient-scale">{{ingredients_scale[ingredients.index(x)]}}</span>
             </p>
@@ -39,8 +43,7 @@
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <h3 class="second-title">Preparation steps :</h3>
-            <hr class="separate-line">
-            {% for element in preparation %}
+            <hr class="separate-line"> {% for element in preparation %}
             <div class="prep-container">
                 <h4 class="step-title">Step {{preparation.index(element) + 1}}</h4>
                 <p class="prep-step">{{element}}</p>
@@ -49,14 +52,11 @@
         </div>
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <h3 class="second-title">Additional tips :</h3>
-            <hr class="separate-line">
-            {% if tips == [] %}
+            <hr class="separate-line"> {% if tips == [] %}
             <p class="font-w400">No additional tips..</p>
-            {% else %}
-                {% for element in tips %}
-                    <li class="add-tip">{{element}}</li>
-                {% endfor %}
-            {% endif %}
+            {% else %} {% for element in tips %}
+            <li class="add-tip">{{element}}</li>
+            {% endfor %} {% endif %}
         </div>
     </div>
 </div>

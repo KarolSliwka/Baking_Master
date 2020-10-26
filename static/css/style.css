@@ -1636,6 +1636,9 @@ form p {
 #recipe-page .main-container {
   min-height: calc(100% - 400px);
 }
+#recipe-page .page-title {
+  padding: 0;
+}
 
 .recipe-photo {
   display: inherit;
@@ -1651,9 +1654,22 @@ form p {
   box-shadow: 0px 0px 5px 1px #ccc;
 }
 
+.time-info {
+  font-size: 1.2rem;
+}
+.time-info span {
+  font-size: 1rem;
+  margin-left: 10px;
+  padding: 5px 10px 5px 10px;
+  background-color: #1DB0B5;
+  border-radius: 15px;
+  color: #FFF;
+  font-weight: 400;
+}
+
 .difficulty-info {
   font-size: 1.2rem;
-  color: #FF3377;
+  color: #000;
 }
 .difficulty-info span {
   font-size: 1rem;
