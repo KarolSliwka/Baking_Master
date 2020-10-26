@@ -5,6 +5,9 @@
         $b: 400px;
         min-height: calc(#{$a} - #{$b});
     }
+    .main-button{
+        width: 150px;
+    }
 }
 
 .redicret-message {

@@ -971,6 +971,9 @@ form p {
 #favourites-page .main-container {
   min-height: calc(100% - 400px);
 }
+#favourites-page .main-button, #favourites-page .main-button-100w {
+  width: 150px;
+}
 
 .redicret-message {
   font-weight: 400;
