@@ -113,11 +113,19 @@ def recipe_page(recipe_id):
     author_name = recipe_author['name']
     ingredients = this_recipe['ingredients']
     ingredients_scale = this_recipe['ingredients-scale']
+    recipe_ingriedents_array = []
+    count = 0
+    
+    for x in ingredients:
+        ing_scale = x + ": " + ingredients_scale[count]
+        recipe_ingriedents_array.append(ing_scale)
+        count = count + 1
+            
     preparation = this_recipe['preparation']
     tips = this_recipe['tips']
     
     return render_template('pages/recipe-page.html',body_id='recipe-page', page_title=this_recipe['title'],
-    this_recipe=this_recipe, author_name=author_name,ingredients=ingredients,ingredients_scale=ingredients_scale,
+    this_recipe=this_recipe, author_name=author_name,recipe_ingriedents_array=recipe_ingriedents_array,
     preparation=preparation,tips=tips)   
 
 # Add Recipe
