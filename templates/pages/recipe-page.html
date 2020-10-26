@@ -8,10 +8,8 @@
                     <img src="/file/{{this_recipe['recipe_image']}}" alt="image - {{this_recipe['title']}}">
                 </div>
                 <h3 class="page-title recipe-title">{{this_recipe['title']}}</h3>
-                <h5 class="recipe-author">Author: <span>{{author_name}}</span></h5>
-                <h5 class="recipe-author-email">Email: <span>{{this_recipe['author']}}</span></h5>
             </div>
-            <div class="favourite">
+            <div class="favourite-link">
                 {% if this_recipe['_id'] in my_fav %}
                 <a href="{{url_for('remove_from_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon">
                 Remove from favourites <i class="fas fa-heart"></i>
@@ -27,24 +25,29 @@
                 <p class="difficulty-info">{{this_recipe['difficulty']}}</p>
             </div>
         </div>
-        <div class="recipe-ing-step-tip">
-            <div class="recipe-ing">
-                {% for x in ingredients %}
-                <p class="main-ingredient">{{x}} :
-                    <span class="ingredient-scale">{{ingredients_scale[ingredients.index(x)]}}</span>
-                </p>
-                {% endfor %}
+
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <h4 class="second-title">Ingredients :</h4>
+            {% for x in ingredients %}
+            <p class="main-ingredient">{{x}} :
+                <span class="ingredient-scale">{{ingredients_scale[ingredients.index(x)]}}</span>
+            </p>
+            {% endfor %}
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <h4 class="second-title">Preparation steps :</h4>
+            {% for element in preparation %}
+            <div class="prep-container">
+                <h5 class="second-title">Step {{preparation.index(element) + 1}}</h5>
+                <p class="prep-step">{{element}}</p>
             </div>
-            <div class="recipe-step">
-                {% for element in preparation %}
-                <p class="lead">{{element}}</p>
-                {% endfor %}
-            </div>
-            <div class="recipe-tip">
-                {% for element in tips %}
-                <p class="lead">{{element}}</p>
-                {% endfor %}
-            </div>
+            {% endfor %}
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h4 class="second-title">Additional tips :</h4>
+            {% for element in tips %}
+            <p class="add-tip">{{element}}</p>
+            {% endfor %}
         </div>
     </div>
 </div>
