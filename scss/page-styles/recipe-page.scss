@@ -126,3 +126,19 @@
     font-weight: 300;
     font-size: 0.9rem;
 }
+
+
+@media (max-width: 768px) {
+    .top-info,
+    .time-info,
+    .difficulty-info,
+    .ingredient-info,
+    .favourite-link {
+        margin-left: 0;
+    }
+    
+    .recipe-photo {
+        padding-top: 0;
+        padding-bottom: 10px;
+    }
+}
