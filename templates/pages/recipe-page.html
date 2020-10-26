@@ -12,10 +12,10 @@
             <div class="favourite-link">
                 {% if this_recipe['_id'] in my_fav %}
                 <a href="{{url_for('remove_from_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon">
-                Remove from favourites <i class="fas fa-heart"></i>
+                You love me <i class="fas fa-heart"></i>
             </a> {% else %}
                 <a href="{{url_for('add_to_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon">
-                Add to favourites
+                Pick me!
                 <i class="far fa-heart fa-hover-hidden"></i>
                 <i class="fas fa-heart fa-hover-show"></i>
             </a> {% endif %}
