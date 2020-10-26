@@ -1512,13 +1512,13 @@ form p {
 .main-button-small {
   width: 150px;
   background: #FFF;
-  color: #51acea;
-  border: 1px solid #51acea;
+  color: #1DB0B5;
+  border: 1px solid #1DB0B5;
 }
 .main-button-small:hover, .main-button-small:focus {
-  background: linear-gradient(to bottom, #51acea, #2e60eb);
+  background: linear-gradient(to bottom, #1DB0B5, #189599);
   color: #FFF;
-  border: 1px solid #51acea;
+  border: 1px solid #1DB0B5;
 }
 
 .main-button-100w {
