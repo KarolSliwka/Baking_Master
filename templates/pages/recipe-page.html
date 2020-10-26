@@ -21,18 +21,16 @@
                     <h4 class="difficulty-info">
                         <i class="fas fa-align-right"></i> Difficulty Level
                         <span>{{this_recipe['difficulty']}}</span></h4>
-                </div>
-                <div class="favourite-link">
-                    {% if this_recipe['_id'] in my_fav %}
-                    <a href="{{url_for('remove_from_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon hate-love">
-                        <span>You love me</span>
-                        <i class="fas fa-heart"></i>
-                        <i class="fas fa-heart-broken"></i>
+                    <h4 class="ingredient-info"><span>{{ ingredients|length }}</span> Ingredients</h4>
+                    <div class="favourite-link">
+                        {% if this_recipe['_id'] in my_fav %}
+                        <a href="{{url_for('remove_from_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon hate-love">Remove                        <i class="fas fa-heart"></i>
                     </a> {% else %}
-                    <a href="{{url_for('add_to_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon">Pick me!
+                        <a href="{{url_for('add_to_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon">Favourites
                         <i class="far fa-heart fa-hover-hidden"></i>
                         <i class="fas fa-heart fa-hover-show"></i>
                     </a> {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
@@ -55,7 +53,7 @@
         </div>
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <h3 class="second-title">Additional tips :</h3>
-            <hr class="separate-line"> {% if tips == [] %}
+            <hr class="separate-line"> {% if tips|length == 0 %}
             <p class="font-w400">No additional tips..</p>
             {% else %} {% for element in tips %}
             <li class="add-tip">{{element}}</li>

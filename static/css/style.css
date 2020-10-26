@@ -1637,14 +1637,18 @@ form p {
   min-height: calc(100% - 400px);
 }
 #recipe-page .page-title {
-  padding: 1rem 0;
+  padding: 0.8rem 0;
   margin: 0;
 }
-#recipe-page .hate-love:hover span {
-  display: none;
-}
-#recipe-page .hate-love:hover:before {
-  content: "You hate me";
+
+.fancy-span, .difficulty-info span, .time-info span {
+  font-size: 0.85rem;
+  margin-left: 10px;
+  padding: 5px 8px 5px 8px;
+  background-color: #1DB0B5;
+  border-radius: 15px;
+  color: #FFF;
+  font-weight: 400;
 }
 
 .top-recipe-section {
@@ -1680,30 +1684,17 @@ form p {
   padding-bottom: 15px;
   margin-left: -15px;
 }
-.time-info span {
-  font-size: 0.85rem;
-  margin-left: 10px;
-  padding: 5px 8px 5px 8px;
-  background-color: #1DB0B5;
-  border-radius: 15px;
-  color: #FFF;
-  font-weight: 400;
-}
-
 .difficulty-info {
-  margin-left: -10px;
+  margin-left: -5px;
+  padding-bottom: 15px;
 }
-.difficulty-info span {
-  font-size: 0.85rem;
-  margin-left: 10px;
-  padding: 5px 8px 5px 8px;
-  background-color: #1DB0B5;
-  border-radius: 15px;
-  color: #FFF;
-  font-weight: 400;
+.ingredient-info {
+  padding-bottom: 10px;
+  margin-left: -15px;
 }
 
 .favourite-link {
+  margin-left: -40px;
   padding-bottom: 15px;
   color: #000;
 }
