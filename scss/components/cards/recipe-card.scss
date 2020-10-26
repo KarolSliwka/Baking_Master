@@ -26,7 +26,7 @@
         z-index: -1;
         margin: -$border;
         border-radius: inherit;
-        background: linear-gradient(to top, #51ACEA, #C471EB);
+        background: linear-gradient(to top, #1DB0B5, #FF3377);
         box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.1);
         -webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.1);
         -moz-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.1);
@@ -97,7 +97,7 @@
 
     .difficulty-title {
         text-transform: lowercase;
-        color: #51ACEA;
+        color: #1DB0B5;
         font-size: 14px;
         margin-top: 10px;
         font-weight: 500;
@@ -112,10 +112,10 @@
 
 .card-read-more {
     text-align: right;
-    color: #51ACEA;
+    color: #1DB0B5;
 
     &:hover {
-        color: #C471EB;
+        color: #FF3377;
     }
 }
 
@@ -128,6 +128,6 @@
 }
 
 .recipe-info {
-    color: #51ACEA;
+    color: #1DB0B5;
     font-weight: 500;
 }

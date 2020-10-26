@@ -307,7 +307,7 @@ ul li:hover ul.dropdown-menu .menu-hr {
   z-index: -1;
   margin: -5px;
   border-radius: inherit;
-  background: linear-gradient(to top, #51ACEA, #C471EB);
+  background: linear-gradient(to top, #1DB0B5, #FF3377);
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.1);
@@ -371,7 +371,7 @@ ul li:hover ul.dropdown-menu .menu-hr {
 }
 .card-body .difficulty-title {
   text-transform: lowercase;
-  color: #51ACEA;
+  color: #1DB0B5;
   font-size: 14px;
   margin-top: 10px;
   font-weight: 500;
@@ -385,10 +385,10 @@ ul li:hover ul.dropdown-menu .menu-hr {
 
 .card-read-more {
   text-align: right;
-  color: #51ACEA;
+  color: #1DB0B5;
 }
 .card-read-more:hover {
-  color: #C471EB;
+  color: #FF3377;
 }
 
 .none-button {
@@ -400,7 +400,7 @@ ul li:hover ul.dropdown-menu .menu-hr {
 }
 
 .recipe-info {
-  color: #51ACEA;
+  color: #1DB0B5;
   font-weight: 500;
 }
 
@@ -1126,7 +1126,7 @@ form p {
 }
 
 .success-found {
-  color: #C471EB;
+  color: #1DB0B5;
   font-weight: 400;
 }
 
