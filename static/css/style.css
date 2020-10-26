@@ -1637,7 +1637,8 @@ form p {
   min-height: calc(100% - 400px);
 }
 #recipe-page .page-title {
-  padding: 0;
+  padding: 1rem 0;
+  margin: 0;
 }
 #recipe-page .hate-love:hover span {
   display: none;
@@ -1651,7 +1652,7 @@ form p {
 }
 
 .top-info {
-  margin-left: -30px;
+  margin-left: -40px;
 }
 
 .recipe-photo {
@@ -1677,6 +1678,7 @@ form p {
 
 .time-info {
   padding-bottom: 15px;
+  margin-left: -15px;
 }
 .time-info span {
   font-size: 0.85rem;
@@ -1688,6 +1690,9 @@ form p {
   font-weight: 400;
 }
 
+.difficulty-info {
+  margin-left: -10px;
+}
 .difficulty-info span {
   font-size: 0.85rem;
   margin-left: 10px;

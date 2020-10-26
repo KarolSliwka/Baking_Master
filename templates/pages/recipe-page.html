@@ -10,20 +10,6 @@
                 <div class="top-info">
                     <h2 class="page-title recipe-title">{{this_recipe['title']}}</h2>
                 </div>
-                <div class="favourite-link">
-                    {% if this_recipe['_id'] in my_fav %}
-                    <a href="{{url_for('remove_from_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon hate-love">
-                        <span>You love me</span>
-                        <i class="fas fa-heart"></i>
-                        <i class="fas fa-heart-broken"></i>
-                    </a> 
-                    {% else %}
-                    <a href="{{url_for('add_to_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon">Pick me!
-                        <i class="far fa-heart fa-hover-hidden"></i>
-                        <i class="fas fa-heart fa-hover-show"></i>
-                    </a>
-                    {% endif %}
-                </div>
                 <div class="prepare-info">
                     <h4 class="time-info"><i class="far fa-clock"></i> Time <span>{{this_recipe['time']}}
                 {% if this_recipe['time'].find("00:") != -1: %}
@@ -35,6 +21,18 @@
                     <h4 class="difficulty-info">
                         <i class="fas fa-align-right"></i> Difficulty Level
                         <span>{{this_recipe['difficulty']}}</span></h4>
+                </div>
+                <div class="favourite-link">
+                    {% if this_recipe['_id'] in my_fav %}
+                    <a href="{{url_for('remove_from_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon hate-love">
+                        <span>You love me</span>
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-heart-broken"></i>
+                    </a> {% else %}
+                    <a href="{{url_for('add_to_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon">Pick me!
+                        <i class="far fa-heart fa-hover-hidden"></i>
+                        <i class="fas fa-heart fa-hover-show"></i>
+                    </a> {% endif %}
                 </div>
             </div>
         </div>

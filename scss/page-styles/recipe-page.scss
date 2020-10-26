@@ -7,7 +7,8 @@
     }
 
     .page-title {
-        padding: 0;
+        padding: 1rem 0;
+        margin: 0;
     }
 
     .hate-love:hover span {
@@ -23,7 +24,7 @@
 }
 
 .top-info {
-    margin-left: -30px;
+    margin-left: -40px;
 }
 
 .recipe-photo {
@@ -50,6 +51,7 @@
 
 .time-info {
     padding-bottom: 15px;
+    margin-left: -15px;
     span {
         font-size: 0.85rem;
         margin-left: 10px;
@@ -62,6 +64,7 @@
 }
 
 .difficulty-info {
+    margin-left: -10px;
     span {
         font-size: 0.85rem;
         margin-left: 10px;
