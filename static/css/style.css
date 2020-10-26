@@ -1639,6 +1639,20 @@ form p {
 #recipe-page .page-title {
   padding: 0;
 }
+#recipe-page .hate-love:hover span {
+  display: none;
+}
+#recipe-page .hate-love:hover:before {
+  content: "You hate me";
+}
+
+.top-recipe-section {
+  padding: 20px 0;
+}
+
+.top-info {
+  margin-left: -30px;
+}
 
 .recipe-photo {
   display: inherit;

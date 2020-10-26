@@ -2,35 +2,40 @@
 <div class="container">
     <h1 class="hidden">Recpie - {{this_recipe['title']}}</h1>
     <div class="this-recipe-container">
-        <div class="col-lg-12">
-            <div class="top-info">
-                <div class="recipe-photo">
-                    <img src="/file/{{this_recipe['recipe_image']}}" alt="image - {{this_recipe['title']}}">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 top-recipe-section">
+            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 col-xl-3 recipe-photo">
+                <img src="/file/{{this_recipe['recipe_image']}}" alt="image - {{this_recipe['title']}}">
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                <div class="top-info">
+                    <h2 class="page-title recipe-title">{{this_recipe['title']}}</h2>
                 </div>
-                <h2 class="page-title recipe-title">{{this_recipe['title']}}</h2>
-            </div>
-            <div class="favourite-link">
-                {% if this_recipe['_id'] in my_fav %}
-                <a href="{{url_for('remove_from_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon">
-                You love me <i class="fas fa-heart"></i>
-            </a> {% else %}
-                <a href="{{url_for('add_to_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon">
-                Pick me!
-                <i class="far fa-heart fa-hover-hidden"></i>
-                <i class="fas fa-heart fa-hover-show"></i>
-            </a> {% endif %}
-            </div>
-            <div class="prepare-info">
-                <h4 class="time-info"><i class="far fa-clock"></i> Time <span>{{this_recipe['time']}}
+                <div class="favourite-link">
+                    {% if this_recipe['_id'] in my_fav %}
+                    <a href="{{url_for('remove_from_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon hate-love">
+                        <span>You love me</span>
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-heart-broken"></i>
+                    </a> 
+                    {% else %}
+                    <a href="{{url_for('add_to_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon">Pick me!
+                        <i class="far fa-heart fa-hover-hidden"></i>
+                        <i class="fas fa-heart fa-hover-show"></i>
+                    </a>
+                    {% endif %}
+                </div>
+                <div class="prepare-info">
+                    <h4 class="time-info"><i class="far fa-clock"></i> Time <span>{{this_recipe['time']}}
                 {% if this_recipe['time'].find("00:") != -1: %}
                 min
                 {% else %}
                 hrs
                 {% endif %}
                 </span></h4>
-                <h4 class="difficulty-info">
-                    <i class="fas fa-align-right"></i> Difficulty Level
-                    <span>{{this_recipe['difficulty']}}</span></h4>
+                    <h4 class="difficulty-info">
+                        <i class="fas fa-align-right"></i> Difficulty Level
+                        <span>{{this_recipe['difficulty']}}</span></h4>
+                </div>
             </div>
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
