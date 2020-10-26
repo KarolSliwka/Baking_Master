@@ -1698,6 +1698,16 @@ form p {
   font-weight: 400;
 }
 
+.favourite-link {
+  padding-bottom: 15px;
+  color: #000;
+}
+
+.card-fav-icon {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
 .separate-line {
   border-color: #FF3377;
   opacity: 0.2;
