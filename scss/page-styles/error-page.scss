@@ -1,4 +1,5 @@
-#error-page404 {
+#error-page404,
+#error-page505 {
     .error-page-main {
         padding-top: 4rem;
     }
@@ -47,11 +48,13 @@
 }
 
 @media (max-width: 1365px) {
-    #error-page404 {
+    #error-page404,
+    #error-page505 {
         .main-container {
             $a: 100%;
             $b: 440px;
             min-height: calc(#{$a} - #{$b});
         }
     }
+
 }
