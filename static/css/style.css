@@ -1651,6 +1651,20 @@ form p {
   box-shadow: 0px 0px 5px 1px #ccc;
 }
 
+.difficulty-info {
+  font-size: 1.2rem;
+  color: #FF3377;
+}
+.difficulty-info span {
+  font-size: 1rem;
+  margin-left: 10px;
+  padding: 5px 10px 5px 10px;
+  background-color: #1DB0B5;
+  border-radius: 15px;
+  color: #FFF;
+  font-weight: 400;
+}
+
 .separate-line {
   border-color: #FF3377;
   opacity: 0.2;
@@ -1676,7 +1690,9 @@ form p {
   font-style: italic;
 }
 
-.main-ingredient, .prep-step, .add-tip {
+.main-ingredient,
+.prep-step,
+.add-tip {
   font-weight: 300;
   font-size: 0.9rem;
 }
