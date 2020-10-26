@@ -12,7 +12,7 @@
         $b: 450px;
         min-height: calc(#{$a} - #{$b});
     }
-    .your-cards-result{
+    .your-cards-result {
         margin: 0;
     }
 }
@@ -51,8 +51,10 @@
     display: flex;
     flex-wrap: wrap;
 }
-.success-found{
-    color: #5aac17;
+
+.success-found {
+    color: #C471EB;
+    font-weight: 400;
 }
 
 @media (max-width: 460px) {

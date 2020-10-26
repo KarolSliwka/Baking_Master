@@ -1123,7 +1123,8 @@ form p {
 }
 
 .success-found {
-  color: #5aac17;
+  color: #C471EB;
+  font-weight: 400;
 }
 
 @media (max-width: 460px) {
