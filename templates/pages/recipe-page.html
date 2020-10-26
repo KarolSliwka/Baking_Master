@@ -9,6 +9,19 @@
                 <h5 class="recipe-author">Author: <span>{{author_name}}</span></h5>
                 <h5 class="recipe-author-email">Email: <span>{{this_recipe['author']}}</span></h5>
             </div>
+            <div class="favourite">
+            {% if this_recipe['_id'] in my_fav %}
+            <a href="{{url_for('remove_from_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon">
+                Remove from favourites <i class="fas fa-heart"></i>
+            </a>
+            {% else %}
+            <a href="{{url_for('add_to_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon">
+                Add to favourites
+                <i class="far fa-heart fa-hover-hidden"></i>
+                <i class="fas fa-heart fa-hover-show"></i>
+            </a>
+            {% endif %}
+            </div>
             <div class="prepare-info">
                 <p class="time-info">{{this_recipe['time']}}</p>
                 <p class="difficulty-info">{{this_recipe['difficulty']}}</p>
@@ -17,8 +30,8 @@
         <div class="recipe-ing-step-tip">
             <div class="recipe-ing">
                 {% for x in ingredients %}
-                <p class="main-ingredient">{{x}} : 
-                <span class="ingredient-scale">{{ingredients_scale[ingredients.index(x)]}}</span>
+                <p class="main-ingredient">{{x}} :
+                    <span class="ingredient-scale">{{ingredients_scale[ingredients.index(x)]}}</span>
                 </p>
                 {% endfor %}
             </div>

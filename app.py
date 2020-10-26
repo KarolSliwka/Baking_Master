@@ -116,9 +116,15 @@ def recipe_page(recipe_id):
     preparation = this_recipe['preparation']
     tips = this_recipe['tips']
     
+    """ find user favourite list information """
+    current_user = users_collection.find_one({'email': session.get('email')})
+            
+    """ get user favourite recipes list """
+    my_fav = current_user['favourites']
+    
     return render_template('pages/recipe-page.html',body_id='recipe-page', page_title=this_recipe['title'],
     this_recipe=this_recipe, author_name=author_name,ingredients=ingredients,ingredients_scale=ingredients_scale,
-    preparation=preparation,tips=tips)   
+    preparation=preparation,tips=tips,my_fav=my_fav)   
 
 # Add Recipe
 @app.route('/add-recipe', methods=['GET','POST'])
