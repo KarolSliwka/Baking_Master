@@ -120,7 +120,10 @@ def recipe_page(recipe_id):
     current_user = users_collection.find_one({'email': session.get('email')})
             
     """ get user favourite recipes list """
-    my_fav = current_user['favourites']
+    if session.get('email') is None:
+        my_fav = []
+    else:
+        my_fav = current_user['favourites']
     
     return render_template('pages/recipe-page.html',body_id='recipe-page', page_title=this_recipe['title'],
     this_recipe=this_recipe, author_name=author_name,ingredients=ingredients,ingredients_scale=ingredients_scale,
