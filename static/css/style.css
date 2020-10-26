@@ -1020,6 +1020,8 @@ form p {
 .info-label-result {
   margin-top: 10px;
   font-size: 14px;
+  color: #000;
+  font-weight: 300;
 }
 
 .remove-account {
