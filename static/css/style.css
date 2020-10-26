@@ -1662,7 +1662,7 @@ form p {
 
 .second-title {
   color: #FF3377;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-bottom: 20px;
 }
 
@@ -1674,6 +1674,11 @@ form p {
   color: #000;
   font-size: 1rem;
   font-style: italic;
+}
+
+.main-ingredient, .prep-step, .add-tip {
+  font-weight: 300;
+  font-size: 0.9rem;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -47,9 +47,13 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <h3 class="second-title">Additional tips :</h3>
             <hr class="separate-line">
-            {% for element in tips %}
-            <p class="add-tip">{{element}}</p>
-            {% endfor %}
+            {% if tips == [] %}
+            <p class="font-w400">No additional tips..</p>
+            {% else %}
+                {% for element in tips %}
+                    <li class="add-tip">{{element}}</li>
+                {% endfor %}
+            {% endif %}
         </div>
     </div>
 </div>
