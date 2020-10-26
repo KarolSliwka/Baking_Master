@@ -1624,10 +1624,10 @@ form p {
 
 .edit-recipe, .remove-recipe {
   text-align: right;
-  color: #51ACEA;
+  color: #1DB0B5;
 }
 .edit-recipe:hover, .remove-recipe:hover {
-  color: #C471EB;
+  color: #FF3377;
 }
 
 #recipe-page {
