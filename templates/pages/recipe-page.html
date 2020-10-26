@@ -16,8 +16,10 @@
         </div>
         <div class="recipe-ing-step-tip">
             <div class="recipe-ing">
-                {% for ingredient in recipe_ingriedents_array %}
-                <p class="lead">{{ingredient}}</p>
+                {% for x in ingredients %}
+                <p class="main-ingredient">{{x}} : 
+                <span class="ingredient-scale">{{ingredients_scale[ingredients.index(x)]}}</span>
+                </p>
                 {% endfor %}
             </div>
             <div class="recipe-step">
