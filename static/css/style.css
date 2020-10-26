@@ -1654,27 +1654,30 @@ form p {
   box-shadow: 0px 0px 5px 1px #ccc;
 }
 
+.prepare-info {
+  font-size: 1rem;
+}
+.prepare-info h4 {
+  color: #000;
+}
+
 .time-info {
-  font-size: 1.2rem;
+  padding-bottom: 15px;
 }
 .time-info span {
-  font-size: 1rem;
+  font-size: 0.85rem;
   margin-left: 10px;
-  padding: 5px 10px 5px 10px;
+  padding: 5px 8px 5px 8px;
   background-color: #1DB0B5;
   border-radius: 15px;
   color: #FFF;
   font-weight: 400;
 }
 
-.difficulty-info {
-  font-size: 1.2rem;
-  color: #000;
-}
 .difficulty-info span {
-  font-size: 1rem;
+  font-size: 0.85rem;
   margin-left: 10px;
-  padding: 5px 10px 5px 10px;
+  padding: 5px 8px 5px 8px;
   background-color: #1DB0B5;
   border-radius: 15px;
   color: #FFF;

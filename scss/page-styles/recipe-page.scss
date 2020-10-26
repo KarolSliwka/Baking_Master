@@ -5,8 +5,8 @@
         $b: 400px;
         min-height: calc(#{$a} - #{$b});
     }
-    
-    .page-title{
+
+    .page-title {
         padding: 0;
     }
 }
@@ -25,13 +25,20 @@
     }
 }
 
-.time-info{
-    font-size: 1.2rem;
-    
-    span{
-        font-size: 1rem;
+.prepare-info {
+    font-size: 1rem;
+
+    h4 {
+        color: #000;
+    }
+}
+
+.time-info {
+    padding-bottom: 15px;
+    span {
+        font-size: 0.85rem;
         margin-left: 10px;
-        padding: 5px 10px 5px 10px;
+        padding: 5px 8px 5px 8px;
         background-color: #1DB0B5;
         border-radius: 15px;
         color: #FFF;
@@ -40,13 +47,10 @@
 }
 
 .difficulty-info {
-    font-size: 1.2rem;
-    color: #000;
-
     span {
-        font-size: 1rem;
+        font-size: 0.85rem;
         margin-left: 10px;
-        padding: 5px 10px 5px 10px;
+        padding: 5px 8px 5px 8px;
         background-color: #1DB0B5;
         border-radius: 15px;
         color: #FFF;

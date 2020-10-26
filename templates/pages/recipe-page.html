@@ -21,16 +21,16 @@
             </a> {% endif %}
             </div>
             <div class="prepare-info">
-                <h3 class="time-info"><i class="far fa-clock"></i> Time <span>{{this_recipe['time']}}
+                <h4 class="time-info"><i class="far fa-clock"></i> Time <span>{{this_recipe['time']}}
                 {% if this_recipe['time'].find("00:") != -1: %}
                 min
                 {% else %}
                 hrs
                 {% endif %}
-                </span></h3>
-                <h3 class="difficulty-info">
+                </span></h4>
+                <h4 class="difficulty-info">
                     <i class="fas fa-align-right"></i> Difficulty Level
-                    <span>{{this_recipe['difficulty']}}</span></h3>
+                    <span>{{this_recipe['difficulty']}}</span></h4>
             </div>
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
