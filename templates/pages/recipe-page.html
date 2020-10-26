@@ -24,7 +24,8 @@
                     <h4 class="ingredient-info"><span>{{ ingredients|length }}</span> Ingredients</h4>
                     <div class="favourite-link">
                         {% if this_recipe['_id'] in my_fav %}
-                        <a href="{{url_for('remove_from_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon hate-love">Remove                        <i class="fas fa-heart"></i>
+                        <a href="{{url_for('remove_from_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon hate-love">Favourites
+                        <i class="fas fa-heart"></i>
                     </a> {% else %}
                         <a href="{{url_for('add_to_favourites',recipe_id = this_recipe['_id'])}}" class="card-fav-icon">Favourites
                         <i class="far fa-heart fa-hover-hidden"></i>
@@ -37,7 +38,7 @@
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <h3 class="second-title">Ingredients :</h3>
             <hr class="separate-line"> {% for x in ingredients %}
-            <p class="main-ingredient">{{x}} :
+            <p class="main-ingredient">{{ingredients.index(x) + 1}}. {{x}} -
                 <span class="ingredient-scale">{{ingredients_scale[ingredients.index(x)]}}</span>
             </p>
             {% endfor %}

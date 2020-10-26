@@ -1739,11 +1739,20 @@ form p {
   font-style: italic;
 }
 
-.main-ingredient,
 .prep-step,
 .add-tip {
   font-weight: 300;
   font-size: 0.9rem;
+}
+
+.main-ingredient {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.main-ingredient span {
+  font-weight: 500;
+  color: #1DB0B5;
 }
 
 @media (max-width: 768px) {
