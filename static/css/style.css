@@ -1696,7 +1696,17 @@ form p {
 .favourite-link {
   margin-left: -40px;
   padding-bottom: 15px;
+}
+.favourite-link a {
   color: #000;
+}
+.favourite-link a:hover {
+  color: #FF3377;
+  text-decoration: none;
+}
+
+.hate-love {
+  color: #FF3377 !important;
 }
 
 .card-fav-icon {

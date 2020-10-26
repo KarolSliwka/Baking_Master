@@ -69,14 +69,25 @@
 }
 
 .ingredient-info {
-padding-bottom: 10px;
-margin-left: -15px;
+    padding-bottom: 10px;
+    margin-left: -15px;
 }
 
 .favourite-link {
     margin-left: -40px;
     padding-bottom: 15px;
-    color: #000;
+    a {
+        color: #000;
+
+        &:hover {
+            color: #FF3377;
+            text-decoration: none;
+        }
+    }
+}
+
+.hate-love {
+    color: #FF3377!important;
 }
 
 .card-fav-icon {
