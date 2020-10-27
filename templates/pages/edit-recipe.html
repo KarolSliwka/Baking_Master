@@ -1,5 +1,17 @@
 {% extends 'layout/base.html' %} {% set page = "edit-recipe" %} {% block content %}
 <div class="container">
     <h1 class="hidden">Edit Recpie</h1>
+    <h2 class="page-title">Edit you recipes</h2>
+    <form>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Edit rcipe</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option selected>Choose recipe title</option>
+                {% for doc in users_recipes %}
+                <option>{{doc['title']}}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </form>
 </div>
 {% endblock %}
