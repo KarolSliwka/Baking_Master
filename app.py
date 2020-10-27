@@ -211,15 +211,18 @@ def edit_recipe(recipe_id):
     """
     Render edit recipe page, update edited recipe record
     """
+    
+    """ find recipe in recipes collection """
     recipe_doc = recipes_collection.find_one({'_id':ObjectId(recipe_id)})
     
-    """ if request.method == "POST":"""
-    """ Request information from user form """
-    """req = request.form"""
+    if request.method == "POST":
+        
+        """ Request information from user form """
+        req = request.form
     
     
     
-    """ flash('Your recipe has been edited successfully','recipe_edited')"""
+    flash('Your recipe has been edited successfully','recipe_edited')
     return render_template('pages/edit-recipe.html',recipe_doc=recipe_doc,
     body_id='edit-recipe-page', page_title='Edit Recipe')
 
