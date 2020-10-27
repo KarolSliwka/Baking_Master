@@ -69,11 +69,11 @@
                             <div class="step">
                                 <div class="top-step">
                                     <label class="step-label">Step <span>(leave blank to remove)</span></label>
-                                    <button class="removeStep btn main-button-clear" type="button">Clear</button>
+                                    <button class="clearStep btn main-button-clear" type="button">Clear</button>
                                 </div>
                                 <textarea class="form-control" name="preparation-step-old-{{recipe_doc['preparation'].index(step)}}" rows="2" id="preparation-step">{{step}}
                                 </textarea>
-                            </div> 
+                            </div>
                             {% endfor %}
                         </div>
                         <button class="appendStep btn main-button-small" type="button">+ Add Step</button>
@@ -83,6 +83,15 @@
                     <div class="tips-container">
                         <h4 class="page-title2">Additional Tips:</h4>
                         <div id="tips">
+                            {% for tip in recipe_doc['tips'] %}
+                            <div class="tip">
+                                <div class="top-tip">
+                                    <label class="tip-label">Tips <span>(leave blank to remove)</span></label>
+                                    <button class="clearTip btn main-button-clear" type="button">Clear</button>
+                                </div>
+                                <textarea class="form-control" name="tip-step-old-{{recipe_doc['tips'].index(tip)}}" rows="2" id="preparation-tip" placeholder="Tip explanation">{{tip}}</textarea>
+                            </div>
+                            {% endfor %}
                         </div>
                         <button class="appendTip btn main-button-small" type="button">+ Add Tip</button>
                     </div>
