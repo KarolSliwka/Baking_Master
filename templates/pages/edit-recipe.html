@@ -18,7 +18,7 @@
     <div class="edit-recipe-container row">
         <form id="edit-recipe-form" name="edit-recipe-form" action="{{ url_for('edit_recipe',recipe_id = recipe_doc['_id']) }}" method="POST" enctype="multipart/form-data">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-details">
-                <h4 class="page-title2">Recipe Information:</h4>
+                <h4 class="page-title2">Recipe Information: <span>(Don't leave blank fields)</span></h4>
                 <div class="form-row">
                     <label>Image</label>
                     <input type="file" class="form-control" id="preparing-image" name="preparing_image" value="">
