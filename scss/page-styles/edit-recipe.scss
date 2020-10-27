@@ -3,6 +3,9 @@
     .main-button {
         width: 100px;
     }
+    .page-title {
+        padding: 0;
+    }
     @media (max-width: 768px) {
         .main-button {
             width: 100%;

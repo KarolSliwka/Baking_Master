@@ -205,45 +205,28 @@ def add_recipe():
     return render_template('pages/add-recipe.html',
     body_id='new-recipe-page', page_title='Add Recipe')
 
+
+
+
+
+
+
 # Edit Recipe
-@app.route('/edit-recipe/', defaults={'recipe_id': ''}, methods=['GET','POST'])
 @app.route('/edit-recipe/<recipe_id>',methods=['GET','POST'])
 def edit_recipe(recipe_id):
     """
     Render edit recipe page, update edited recipe record
     """
-        
-    """ get current user recipes colletion """
-    current_user = users_collection.find_one({'email':session.get('email')})
-    users_recipes = current_user['recipes_id']
-    
-    recipes_to_edit = []
-    
-    """ append all user recipes to an empty array """
-    for _id in users_recipes:
-        recipe_doc = recipes_collection.find_one({'_id':ObjectId(_id)})
-        recipes_to_edit.append(recipe_doc)
+    """ flash('Your recipe has been edited successfully','recipe_edited')"""
+    return render_template('pages/edit-recipe.html',
+    body_id='edit-recipe-page', page_title='Edit Recipe')
 
-    """ check if recipe_id is empty """
-    if recipe_id == "":
-        recipe_id = ""
-    else:
-        recipe_id = recipes_collection.find_one({'_id':ObjectId(recipe_id)})
-        
-        """ remove recipe from dropdown list when accessed by cards """
-        recipes_to_edit.remove(recipe_id)
-        
-    if request.method == "POST":
-        """ Request information from user form """
-        """ req = request.form """
-        
-        flash('Your recipe has been edited successfully','recipe_edited')
-        return render_template('pages/edit-recipe.html',recipe_id=recipe_id,
-        body_id='edit-recipe-page', page_title='Edit Recipe',recipes_to_edit=recipes_to_edit)
 
-    return render_template('pages/edit-recipe.html',recipe_id=recipe_id,
-    body_id='edit-recipe-page', page_title='Edit Recipe',recipes_to_edit=recipes_to_edit)
-    
+
+
+
+
+
 # Remove Recipe
 @app.route('/remove-recipe/<recipe_id>', methods=['GET','POST'])
 def remove_recipe(recipe_id):

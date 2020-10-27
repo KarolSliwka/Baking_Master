@@ -1602,6 +1602,9 @@ form p {
 #edit-recipe-page .main-button, #edit-recipe-page .main-button-100w {
   width: 100px;
 }
+#edit-recipe-page .page-title {
+  padding: 0;
+}
 @media (max-width: 768px) {
   #edit-recipe-page .main-button, #edit-recipe-page .main-button-100w {
     width: 100%;
