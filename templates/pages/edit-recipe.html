@@ -54,7 +54,20 @@
                     <div class="ingredient-container">
                         <h4 class="page-title2">Ingredients List:</h4>
                         <div id="ingredients">
-
+                            {% for ingredient in recipe_doc['ingredients'] %}
+                            <div class="ingredient">
+                                <div class="top-ingredient">
+                                    <button class="clearIngredient btn main-button-small" type="button">Clear</button>
+                                    <div class="ingredient-inputs">
+                                        <input type="text" class="form-control" id="ingredient-name" name="ingredient-name-old-{{recipe_doc['ingredients'].index(ingredient)}}" 
+                                        placeholder="Ingredient" value="{{ingredient}}">
+                                        
+                                        <input type="text" class="form-control" id="ingredient-scale" name="ingredient-scale-old-{{ingredient}}" placeholder="2g/5ml" 
+                                        value="{{recipe_doc['ingredients-scale'][recipe_doc['ingredients'].index(ingredient)]}}">
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
                         </div>
                         <button class="appendIngredient btn main-button-small" type="button">+ Add Ingredient</button>
                     </div>
@@ -63,12 +76,12 @@
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-preparation">
                 <div class="form-row">
                     <div class="steps-container">
-                        <h4 class="page-title2">Preparation Steps:</h4>
+                        <h4 class="page-title2">Preparation Steps:</h4><span>(leave blank to remove)</span>
                         <div id="steps">
                             {% for step in recipe_doc['preparation'] %}
                             <div class="step">
                                 <div class="top-step">
-                                    <label class="step-label">Step <span>(leave blank to remove)</span></label>
+                                    <label class="step-label">Step</label>
                                     <button class="clearStep btn main-button-clear" type="button">Clear</button>
                                 </div>
                                 <textarea class="form-control" name="preparation-step-old-{{recipe_doc['preparation'].index(step)}}" rows="2" id="preparation-step">{{step}}
