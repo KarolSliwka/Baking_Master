@@ -1,4 +1,5 @@
 #edit-recipe-page {
+    padding-top: 60px;
     .main-button {
         width: 100px;
     }
@@ -6,5 +7,27 @@
         .main-button {
             width: 100%;
         }
+    }
+}
+
+
+.recipe-edited {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 100%;
+    border: 1px solid #FF3366;
+    background-color: rgba(255, 172, 193, 0.6);
+    border-radius: 5px;
+    text-align: left;
+
+    p {
+        margin: 0;
+        padding: 0.5rem;
+        font-size: 0.85rem;
+        font-weight: 400;
+        color: #5aac17;
+        color: #FF3366;
     }
 }
