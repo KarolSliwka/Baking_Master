@@ -50,6 +50,13 @@ $('body').on('click', '.removeingredient', function() {
 });
 
 /**
+ * This function will clear unwanted ingredient fields
+ */
+$('body').on('click', '.clearIngredient', function() {
+    $(this).closest('.ingredient').find("input[type=text]").val("");
+});
+
+/**
  * This function will add another step
  */
 let stepCount = 0;
@@ -69,7 +76,7 @@ $(".appendStep").click(function() {
 });
 
 /**
- * This function will remove unwanted step fields
+ * This function will remove unwanted step field
  */
 $('body').on('click', '.removeStep', function() {
     $(this).closest('.step').remove();
@@ -80,6 +87,14 @@ $('body').on('click', '.removeStep', function() {
         stepCount = document.querySelectorAll('.step').length;
     }
 });
+
+/**
+ * This function will clear unwanted tip field
+ */
+$('body').on('click', '.clearStep', function() {
+    $(this).closest('.step').find("input[type=text], textarea").val("").attr('placeholder','Step explanation');
+});
+
 
 /**
  * This function will add another tip
@@ -101,7 +116,7 @@ $(".appendTip").click(function() {
 });
 
 /**
- * This function will remove unwanted tip fields
+ * This function will remove unwanted tip field
  */
 $('body').on('click', '.removeTip', function() {
     $(this).closest('.tip').remove();
@@ -111,4 +126,11 @@ $('body').on('click', '.removeTip', function() {
     else {
         tipCount = document.querySelectorAll('.tip').length;
     }
+});
+
+/**
+ * This function will clear unwanted tip field
+ */
+$('body').on('click', '.clearTip', function() {
+    $(this).closest('.tip').find("input[type=text], textarea").val("").attr('placeholder','Tip explanation')
 });
