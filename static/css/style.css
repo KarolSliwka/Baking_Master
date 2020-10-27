@@ -1603,6 +1603,15 @@ form p {
     max-width: 250px;
   }
 }
+#edit-recipe-page .main-button, #edit-recipe-page .main-button-100w {
+  width: 100px;
+}
+@media (max-width: 768px) {
+  #edit-recipe-page .main-button, #edit-recipe-page .main-button-100w {
+    width: 100%;
+  }
+}
+
 #your-recipes-page {
   padding-top: 60px;
 }

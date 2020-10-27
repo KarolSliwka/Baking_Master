@@ -213,23 +213,24 @@ def edit_recipe(recipe_id):
     Render edit recipe page, update edited recipe record
     """
     if recipe_id == "":
-        
-        """ get current user recipes colletion """
-        current_user = users_collection.find_one({'email':session.get('email')})
-        users_recipes = current_user['recipes_id']
-        
-        recipes_to_edit = []
-        
-        for _id in users_recipes:
-            recipe_doc = recipes_collection.find_one({'_id':ObjectId(_id)})
-            recipes_to_edit.append(recipe_doc)
+        recipe_id = ""
+    else:
+        recipe_id = recipes_collection.find_one({'_id':ObjectId(recipe_id)})
     
-        return render_template('pages/edit-recipe.html',recipe_id=recipe_id,
-        body_id='edit-recipe-page', page_title='Edit Recipe',recipes_to_edit=recipes_to_edit)
+        
+    """ get current user recipes colletion """
+    current_user = users_collection.find_one({'email':session.get('email')})
+    users_recipes = current_user['recipes_id']
     
-    else: 
-        return render_template('pages/edit-recipe.html',recipe_id=recipe_id,
-        body_id='edit-recipe-page', page_title='Edit Recipe')
+    recipes_to_edit = []
+    
+    for _id in users_recipes:
+        recipe_doc = recipes_collection.find_one({'_id':ObjectId(_id)})
+        recipes_to_edit.append(recipe_doc)
+
+    return render_template('pages/edit-recipe.html',recipe_id=recipe_id,
+    body_id='edit-recipe-page', page_title='Edit Recipe',recipes_to_edit=recipes_to_edit)
+    
     
 # Remove Recipe
 @app.route('/remove-recipe/<recipe_id>', methods=['GET','POST'])
