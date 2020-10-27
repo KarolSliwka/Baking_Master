@@ -44,11 +44,11 @@
                 <div class="form-row">
                     <label>Difficulty</label>
                     <select class="form-control form-control-lg" name="difficulty-level" required>
-                            <option select>{{recipe_doc['difficulty']}}</option>
-                            <option>Easy</option>
-                            <option>Medium</option>
-                            <option>Hard</option>
-                        </select>
+                        <option select>{{recipe_doc['difficulty']}}</option>
+                        <option>Easy</option>
+                        <option>Medium</option>
+                        <option>Hard</option>
+                    </select>
                 </div>
                 <div class="form-row">
                     <div class="ingredient-container">
@@ -61,8 +61,7 @@
                                     <div class="ingredient-inputs">
                                         <input type="text" class="form-control" id="ingredient-name" name="ingredient-name-old-{{recipe_doc['ingredients'].index(ingredient)}}" 
                                         placeholder="Ingredient" value="{{ingredient}}">
-                                        
-                                        <input type="text" class="form-control" id="ingredient-scale" name="ingredient-scale-old-{{ingredient}}" placeholder="2g/5ml" 
+                                        <input type="text" class="form-control" id="ingredient-scale" name="ingredient-scale-old-{{recipe_doc['ingredients'].index(ingredient)}}" placeholder="2g/5ml" 
                                         value="{{recipe_doc['ingredients-scale'][recipe_doc['ingredients'].index(ingredient)]}}">
                                     </div>
                                 </div>
@@ -81,7 +80,7 @@
                             {% for step in recipe_doc['preparation'] %}
                             <div class="step">
                                 <div class="top-step">
-                                    <label class="step-label">Step</label>
+                                    <label class="step-label">Step {{recipe_doc['preparation'].index(step) + 1}}</label>
                                     <button class="clearStep btn main-button-clear" type="button">Clear</button>
                                 </div>
                                 <textarea class="form-control" name="preparation-step-old-{{recipe_doc['preparation'].index(step)}}" rows="2" id="preparation-step">{{step}}
@@ -99,7 +98,7 @@
                             {% for tip in recipe_doc['tips'] %}
                             <div class="tip">
                                 <div class="top-tip">
-                                    <label class="tip-label">Tips <span>(leave blank to remove)</span></label>
+                                    <label class="tip-label">Tips {{recipe_doc['tips'].index(tip) + 1}}<span>(leave blank to remove)</span></label>
                                     <button class="clearTip btn main-button-clear" type="button">Clear</button>
                                 </div>
                                 <textarea class="form-control" name="tip-step-old-{{recipe_doc['tips'].index(tip)}}" rows="2" id="preparation-tip" placeholder="Tip explanation">{{tip}}</textarea>
