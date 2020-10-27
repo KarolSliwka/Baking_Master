@@ -1,18 +1,22 @@
 #edit-recipe-page {
     padding-top: 60px;
-    .main-button {
-        width: 100px;
-    }
     .page-title {
         padding: 0;
     }
-    @media (max-width: 768px) {
-        .main-button {
-            width: 100%;
+    
+    .step-label{
+        span{
+            font-size: 12px;
+            font-weight: 300;
+            color: #8c8c8c;
         }
     }
+    
+    .main-button-clear{
+        
+    }
+    
 }
-
 
 .recipe-edited {
     display: flex;

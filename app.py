@@ -205,27 +205,23 @@ def add_recipe():
     return render_template('pages/add-recipe.html',
     body_id='new-recipe-page', page_title='Add Recipe')
 
-
-
-
-
-
-
 # Edit Recipe
 @app.route('/edit-recipe/<recipe_id>',methods=['GET','POST'])
 def edit_recipe(recipe_id):
     """
     Render edit recipe page, update edited recipe record
     """
+    recipe_doc = recipes_collection.find_one({'_id':ObjectId(recipe_id)})
+    
+    """ if request.method == "POST":"""
+    """ Request information from user form """
+    """req = request.form"""
+    
+    
+    
     """ flash('Your recipe has been edited successfully','recipe_edited')"""
-    return render_template('pages/edit-recipe.html',
+    return render_template('pages/edit-recipe.html',recipe_doc=recipe_doc,
     body_id='edit-recipe-page', page_title='Edit Recipe')
-
-
-
-
-
-
 
 # Remove Recipe
 @app.route('/remove-recipe/<recipe_id>', methods=['GET','POST'])

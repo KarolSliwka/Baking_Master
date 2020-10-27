@@ -62,6 +62,18 @@
                     <div class="steps-container">
                         <h4 class="page-title2">Preparation Steps:</h4>
                         <div id="steps">
+                            $('#ingredients').append('
+                            <div class="ingredient">
+                                <div class="top-ingredient">
+                                { for steps in recipe_doc['steps']}
+                                    <button class="removeingredient btn main-button-small" type="button">x</button>
+                                    <div class="ingredient-inputs">
+                                        <input type="text" class="form-control" id="ingredient-name" name="ingredient-name-' {{}} '" placeholder="Ingredient" >
+                                        <input type="text" class="form-control" id="ingredient-scale" name="ingredient-scale- ' {{}} '"placeholder="2g/5ml" >
+                                    </div>
+                                {% endfor %}
+                                </div>
+                            </div>
                         </div>
                         <button class="appendStep btn main-button-small" type="button">+ Add Step</button>
                     </div>

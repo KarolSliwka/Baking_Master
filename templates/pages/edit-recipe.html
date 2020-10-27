@@ -11,5 +11,85 @@
         </div>
         {% endif %} {% endwith %}
     </div>
+    <!-- edit recipe form -->
+    <div class="edit-recipe-container">
+        <form id="new-recipe-form" name="new-recipe-form" action="{{ url_for('add_recipe') }}" method="POST" enctype="multipart/form-data">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-details">
+                <h4 class="page-title2">Recipe Information:</h4>
+                <div class="form-row">
+                    <label>Image</label>
+                    <input type="file" class="form-control" id="preparing-image" name="preparing_image" value="">
+                </div>
+                <div class="form-row">
+                    <label>Title</label>
+                    <input type="text" class="form-control" id="recipe-title" name="recipe-title" value="{{recipe_doc['title']}}">
+                </div>
+                <div class="form-row">
+                    <label>Preparing Time
+                        <p class="prepare-tip"><i class="fas fa-question"></i>
+                            <span class="tooltiptext">Please keep '00' format</br> exemple: 02hrs, 33min</span>
+                        </p>
+                    </label>
+                    <div class="prepare-time">
+                        <div class="sticky-container">
+                            <input type="text" class="form-control time-text" id="preparing-time-hrs" name="preparing-time-hrs" placeholder="00" maxlength="2" minlength="2" value="{{recipe_doc['time'][:2]}}">
+                            <small>hrs</small>
+                        </div>
+                        <div class="sticky-container">
+                            <input type="text" class="form-control time-text" id="preparing-time-min" name="preparing-time-min" placeholder="00" maxlength="2" minlength="2" value="{{recipe_doc['time'][-2:]}}">
+                            <small>min</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label>Difficulty</label>
+                    <select class="form-control form-control-lg" name="difficulty-level" required>
+                            <option select>{{recipe_doc['difficulty']}}</option>
+                            <option>Easy</option>
+                            <option>Medium</option>
+                            <option>Hard</option>
+                        </select>
+                </div>
+                <div class="form-row">
+                    <div class="ingredient-container">
+                        <h4 class="page-title2">Ingredients List:</h4>
+                        <div id="ingredients">
+
+                        </div>
+                        <button class="appendIngredient btn main-button-small" type="button">+ Add Ingredient</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-preparation">
+                <div class="form-row">
+                    <div class="steps-container">
+                        <h4 class="page-title2">Preparation Steps:</h4>
+                        <div id="steps">
+                            {% for step in recipe_doc['preparation'] %}
+                            <div class="step">
+                                <div class="top-step">
+                                    <label class="step-label">Step <span>(leave blank to remove)</span></label>
+                                    <button class="removeStep btn main-button-clear" type="button">Clear</button>
+                                </div>
+                                <textarea class="form-control" name="preparation-step-old-{{recipe_doc['preparation'].index(step)}}" rows="2" id="preparation-step">{{step}}
+                                </textarea>
+                            </div> 
+                            {% endfor %}
+                        </div>
+                        <button class="appendStep btn main-button-small" type="button">+ Add Step</button>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="tips-container">
+                        <h4 class="page-title2">Additional Tips:</h4>
+                        <div id="tips">
+                        </div>
+                        <button class="appendTip btn main-button-small" type="button">+ Add Tip</button>
+                    </div>
+                </div>
+            </div>
+            <button class="btn main-button-100w" type="submit" name="add-recipe">Add to Recipes</button>
+        </form>
+    </div>
 </div>
 {% endblock %}

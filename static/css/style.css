@@ -1599,18 +1599,14 @@ form p {
 #edit-recipe-page {
   padding-top: 60px;
 }
-#edit-recipe-page .main-button, #edit-recipe-page .main-button-100w {
-  width: 100px;
-}
 #edit-recipe-page .page-title {
   padding: 0;
 }
-@media (max-width: 768px) {
-  #edit-recipe-page .main-button, #edit-recipe-page .main-button-100w {
-    width: 100%;
-  }
+#edit-recipe-page .step-label span {
+  font-size: 12px;
+  font-weight: 300;
+  color: #8c8c8c;
 }
-
 .recipe-edited {
   display: flex;
   align-items: center;
