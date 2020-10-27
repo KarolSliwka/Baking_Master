@@ -2,18 +2,23 @@
 <div class="container">
     <h1 class="hidden">Edit Recpie</h1>
     <h2 class="page-title">Edit you recipes</h2>
-    <form>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Edit rcipe</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <form>
+            <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <label for="exampleFormControlSelect1">Edit rcipe</label>
+                <select class="form-control" id="exampleFormControlSelect1">
                 <option value="" selected disabled>Please select recipe</option>
                 {% for doc in recipes_to_edit %}
                 <option>{{doc['title']}}</option>
                 {% endfor %}
             </select>
-            <div class="edit-contianer">
             </div>
-        </div>
-    </form>
+            <div class="form-group col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <button type="submit" name="button" class="btn main-button">Edit</button>
+            </div>
+        </form>
+    </div>
+    <div class="edit-contianer">
+    </div>
 </div>
 {% endblock %}
