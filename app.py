@@ -205,14 +205,18 @@ def add_recipe():
     return render_template('pages/add-recipe.html',
     body_id='new-recipe-page', page_title='Add Recipe')
 
-
 # Edit Recipe
-@app.route('/edit-recipe/', methods=['GET','POST'])
-def edit_recipe():
+@app.route('/edit-recipe/', defaults={'recipe_id': ''})
+@app.route('/edit-recipe/<recipe_id>',methods=['GET','POST'])
+def edit_recipe(recipe_id):
     """
     Render edit recipe page, update edited recipe record
     """
-    
+    if recipe_id == "":
+        print('no ID')
+    else: 
+        print("ID ID ID")
+        
     """ get current user recipes colletion """
     current_user = users_collection.find_one({'email':session.get('email')})
     users_recipes = current_user['recipes_id']
@@ -222,9 +226,11 @@ def edit_recipe():
     for _id in users_recipes:
         recipe_doc = recipes_collection.find_one({'_id':ObjectId(_id)})
         recipes_to_edit.append(recipe_doc)
-    
-    return render_template('pages/edit-recipe.html',
+
+
+    return render_template('pages/edit-recipe.html',recipe_id=recipe_id,
     body_id='edit-recipe-page', page_title='Edit Recipe',recipes_to_edit=recipes_to_edit)
+    
 
 # Remove Recipe
 @app.route('/remove-recipe/<recipe_id>', methods=['GET','POST'])
