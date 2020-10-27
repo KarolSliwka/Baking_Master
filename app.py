@@ -217,10 +217,14 @@ def edit_recipe():
     current_user = users_collection.find_one({'email':session.get('email')})
     users_recipes = current_user['recipes_id']
     
-    print(users_recipes)
+    recipes_to_edit = []
+    
+    for _id in users_recipes:
+        recipe_doc = recipes_collection.find_one({'_id':ObjectId(_id)})
+        recipes_to_edit.append(recipe_doc)
     
     return render_template('pages/edit-recipe.html',
-    body_id='edit-recipe-page', page_title='Edit Recipe',users_recipes=users_recipes)
+    body_id='edit-recipe-page', page_title='Edit Recipe',recipes_to_edit=recipes_to_edit)
 
 # Remove Recipe
 @app.route('/remove-recipe/<recipe_id>', methods=['GET','POST'])

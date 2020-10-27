@@ -6,11 +6,13 @@
         <div class="form-group">
             <label for="exampleFormControlSelect1">Edit rcipe</label>
             <select class="form-control" id="exampleFormControlSelect1">
-                <option selected>Choose recipe title</option>
-                {% for doc in users_recipes %}
+                <option value="" selected disabled>Please select recipe</option>
+                {% for doc in recipes_to_edit %}
                 <option>{{doc['title']}}</option>
                 {% endfor %}
             </select>
+            <div class="edit-contianer">
+            </div>
         </div>
     </form>
 </div>
