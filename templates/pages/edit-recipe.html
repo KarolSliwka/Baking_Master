@@ -52,8 +52,7 @@
                 </div>
                 <div class="form-row">
                     <div class="ingredient-container">
-                        <h4 class="page-title2">Ingredients List:</h4>
-                        <span>(leave blank to remove)</span>
+                        <h4 class="page-title2">Ingredients List: <span>(leave blank to remove)</span></h4>
                         <div id="ingredients">
                             {% for ingredient in recipe_doc['ingredients'] %}
                             <div class="ingredient">
@@ -74,7 +73,7 @@
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-preparation">
                 <div class="form-row">
                     <div class="steps-container">
-                        <h4 class="page-title2">Preparation Steps:</h4><span>(leave blank to remove)</span>
+                        <h4 class="page-title2">Preparation Steps: <span>(leave blank to remove)</span></h4>
                         <div id="steps">
                             {% for step in recipe_doc['preparation'] %}
                             <div class="step">
@@ -92,8 +91,7 @@
                 </div>
                 <div class="form-row">
                     <div class="tips-container">
-                        <h4 class="page-title2">Additional Tips:</h4>
-                        <span>(leave blank to remove)</span>
+                        <h4 class="page-title2">Additional Tips: <span>(leave blank to remove)</span></h4>
                         <div id="tips">
                             {% for tip in recipe_doc['tips'] %}
                             <div class="tip">

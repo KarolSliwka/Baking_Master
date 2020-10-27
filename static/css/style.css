@@ -1602,14 +1602,16 @@ form p {
 #edit-recipe-page .page-title {
   padding: 0;
 }
-#edit-recipe-page .step-label span {
+#edit-recipe-page .page-title2 {
+  margin-bottom: 20px;
+}
+#edit-recipe-page .page-title2 span {
   font-size: 12px;
   font-weight: 300;
   color: #8c8c8c;
 }
 #edit-recipe-page .main-button-clear {
   padding: 0;
-  height: 33px;
   width: 50px;
   margin-top: -8px;
   margin-right: 10px;
@@ -1621,6 +1623,10 @@ form p {
   background: linear-gradient(to bottom, #1DB0B5, #189599);
   color: #FFF;
   border: 1px solid #1DB0B5;
+}
+#edit-recipe-page .top-step .main-button-clear {
+  margin-top: 0;
+  margin-right: 0;
 }
 
 .recipe-edited {
