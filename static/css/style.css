@@ -1597,10 +1597,17 @@ form p {
   }
 }
 #edit-recipe-page {
-  padding-top: 60px;
+  padding-top: 70px;
+}
+#edit-recipe-page .main-container {
+  min-height: calc(100% - 400px);
 }
 #edit-recipe-page .page-title {
-  padding: 0;
+  padding: 0 10px;
+}
+#edit-recipe-page .page-title span {
+  text-transform: capitalize;
+  color: #1DB0B5;
 }
 #edit-recipe-page .page-title2 {
   margin-bottom: 20px;
@@ -1627,6 +1634,30 @@ form p {
 #edit-recipe-page .top-step .main-button-clear {
   margin-top: 0;
   margin-right: 0;
+}
+@media (max-width: 798px) {
+  #edit-recipe-page .row {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+.top-title {
+  display: flex;
+}
+
+.edit-recipe-container {
+  margin-top: 20px;
+}
+
+.edit-recipe-photo img {
+  margin-top: 8px;
+  margin-left: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #FFF;
+  box-shadow: 0px 0px 5px 1px #ccc;
 }
 
 .recipe-edited {

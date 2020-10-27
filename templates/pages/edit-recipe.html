@@ -1,18 +1,21 @@
 {% extends 'layout/base.html' %} {% set page = "edit-recipe" %} {% block content %}
 <div class="container">
     <h1 class="hidden">Edit Recipe</h1>
-    <div class="col-lg-12">
-        <h2 class="page-title">Edit you recipe</h2>
-        {% with errors = get_flashed_messages(category_filter=["recipe-edited"]) %} {% if errors %}
-        <div id="flash-message" class="{{'recipe-edited' if recipe_edited !='' else 'hidden'}}">
-            {%- for msg in errors %}
-            <p>{{ msg }}</p>
-            {% endfor -%}
+    <div class="row top-title">
+        <h2 class="page-title"><span>"{{recipe_doc['title']}}"</span></h2>
+        <div class="edit-recipe-photo">
+            <img src="/file/{{recipe_doc['recipe_image']}}" alt="image - {{recipe_doc['title']}}">
         </div>
-        {% endif %} {% endwith %}
     </div>
+    {% with errors = get_flashed_messages(category_filter=["recipe-edited"]) %} {% if errors %}
+    <div id="flash-message" class="{{'recipe-edited' if recipe_edited !='' else 'hidden'}}">
+        {%- for msg in errors %}
+        <p>{{ msg }}</p>
+        {% endfor -%}
+    </div>
+    {% endif %} {% endwith %}
     <!-- edit recipe form -->
-    <div class="edit-recipe-container">
+    <div class="edit-recipe-container row">
         <form id="edit-recipe-form" name="edit-recipe-form" action="{{ url_for('edit_recipe',recipe_id = recipe_doc['_id']) }}" method="POST" enctype="multipart/form-data">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-details">
                 <h4 class="page-title2">Recipe Information:</h4>

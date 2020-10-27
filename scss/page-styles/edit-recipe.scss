@@ -1,9 +1,18 @@
 #edit-recipe-page {
-    padding-top: 60px;
-    .page-title {
-        padding: 0;
+    padding-top: 70px;
+    .main-container {
+        $a: 100%;
+        $b: 400px;
+        min-height: calc(#{$a} - #{$b});
     }
+    .page-title {
+        padding: 0 10px;
 
+        span {
+            text-transform: capitalize;
+            color: #1DB0B5;
+        }
+    }
     .page-title2 {
         margin-bottom: 20px;
         span {
@@ -36,6 +45,33 @@
         }
     }
 
+    @media (max-width: 798px) {
+        .row {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+
+}
+
+.top-title {
+    display: flex;
+}
+
+.edit-recipe-container {
+    margin-top: 20px;
+}
+
+.edit-recipe-photo {
+    img {
+        margin-top: 8px;
+        margin-left: 10px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid #FFF;
+        box-shadow: 0px 0px 5px 1px #ccc;
+    }
 }
 
 .recipe-edited {
