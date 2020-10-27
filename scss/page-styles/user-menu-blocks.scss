@@ -2,6 +2,11 @@
     .row {
         margin: 0;
     }
+    .main-container {
+        $a: 100%;
+        $b: 400px;
+        min-height: calc(#{$a} - #{$b})!important;
+    }
 }
 
 .main-user-block-container {
@@ -39,9 +44,9 @@
     img {
         margin: 0 auto;
     }
-    
+
     &:hover {
-            box-shadow: 0 5px 7px 0 rgba(255,51,119, 0.25), 0 5px 5px 0 rgba(255,51,119, 0.25);
+        box-shadow: 0 5px 7px 0 rgba(255, 51, 119, 0.25), 0 5px 5px 0 rgba(255, 51, 119, 0.25);
     }
 }
 
@@ -55,21 +60,4 @@
     margin: 0;
     padding: 0;
     padding-top: 15px;
-}
-
-$a: 100%;
-$b: 450px;
-@media screen and (min-height: 1050px) {
-    @media screen and (min-width: 1020px) {
-        #user-menu {
-            .main-container {
-                height: calc(#{$a} - #{$b});
-                padding-top: 2rem;
-            }
-            footer {
-                position: fixed;
-                bottom: 0;
-            }
-        }
-    }
 }

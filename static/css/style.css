@@ -1273,6 +1273,9 @@ form p {
 #user-menu .row {
   margin: 0;
 }
+#user-menu .main-container {
+  min-height: calc(100% - 400px) !important;
+}
 
 .main-user-block-container {
   padding-top: 80px;
@@ -1324,16 +1327,6 @@ form p {
   padding-top: 15px;
 }
 
-@media screen and (min-height: 1050px) and (min-width: 1020px) {
-  #user-menu .main-container {
-    height: calc(100% - 450px);
-    padding-top: 2rem;
-  }
-  #user-menu footer {
-    position: fixed;
-    bottom: 0;
-  }
-}
 #error-page404 .error-page-main,
 #error-page505 .error-page-main {
   padding-top: 4rem;
