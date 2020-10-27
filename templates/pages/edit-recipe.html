@@ -53,16 +53,15 @@
                 <div class="form-row">
                     <div class="ingredient-container">
                         <h4 class="page-title2">Ingredients List:</h4>
+                        <span>(leave blank to remove)</span>
                         <div id="ingredients">
                             {% for ingredient in recipe_doc['ingredients'] %}
                             <div class="ingredient">
                                 <div class="top-ingredient">
-                                    <button class="clearIngredient btn main-button-small" type="button">Clear</button>
+                                    <button class="clearIngredient btn main-button-clear" type="button">clear</button>
                                     <div class="ingredient-inputs">
-                                        <input type="text" class="form-control" id="ingredient-name" name="ingredient-name-old-{{recipe_doc['ingredients'].index(ingredient)}}" 
-                                        placeholder="Ingredient" value="{{ingredient}}">
-                                        <input type="text" class="form-control" id="ingredient-scale" name="ingredient-scale-old-{{recipe_doc['ingredients'].index(ingredient)}}" placeholder="2g/5ml" 
-                                        value="{{recipe_doc['ingredients-scale'][recipe_doc['ingredients'].index(ingredient)]}}">
+                                        <input type="text" class="form-control" id="ingredient-name" name="ingredient-name-old-{{recipe_doc['ingredients'].index(ingredient)}}" placeholder="Ingredient" value="{{ingredient}}">
+                                        <input type="text" class="form-control" id="ingredient-scale" name="ingredient-scale-old-{{recipe_doc['ingredients'].index(ingredient)}}" placeholder="2g/5ml" value="{{recipe_doc['ingredients-scale'][recipe_doc['ingredients'].index(ingredient)]}}">
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +80,7 @@
                             <div class="step">
                                 <div class="top-step">
                                     <label class="step-label">Step {{recipe_doc['preparation'].index(step) + 1}}</label>
-                                    <button class="clearStep btn main-button-clear" type="button">Clear</button>
+                                    <button class="clearStep btn main-button-clear" type="button">clear</button>
                                 </div>
                                 <textarea class="form-control" name="preparation-step-old-{{recipe_doc['preparation'].index(step)}}" rows="2" id="preparation-step">{{step}}
                                 </textarea>
@@ -94,12 +93,13 @@
                 <div class="form-row">
                     <div class="tips-container">
                         <h4 class="page-title2">Additional Tips:</h4>
+                        <span>(leave blank to remove)</span>
                         <div id="tips">
                             {% for tip in recipe_doc['tips'] %}
                             <div class="tip">
                                 <div class="top-tip">
-                                    <label class="tip-label">Tips {{recipe_doc['tips'].index(tip) + 1}}<span>(leave blank to remove)</span></label>
-                                    <button class="clearTip btn main-button-clear" type="button">Clear</button>
+                                    <label class="tip-label">Tips {{recipe_doc['tips'].index(tip) + 1}}</label>
+                                    <button class="clearTip btn main-button-clear" type="button">clear</button>
                                 </div>
                                 <textarea class="form-control" name="tip-step-old-{{recipe_doc['tips'].index(tip)}}" rows="2" id="preparation-tip" placeholder="Tip explanation">{{tip}}</textarea>
                             </div>
@@ -109,7 +109,7 @@
                     </div>
                 </div>
             </div>
-            <button class="btn main-button-100w" type="submit" name="add-recipe">Add to Recipes</button>
+            <button class="btn main-button-100w" type="submit" name="add-recipe">Update Recipe</button>
         </form>
     </div>
 </div>

@@ -1607,6 +1607,22 @@ form p {
   font-weight: 300;
   color: #8c8c8c;
 }
+#edit-recipe-page .main-button-clear {
+  padding: 0;
+  height: 33px;
+  width: 50px;
+  margin-top: -8px;
+  margin-right: 10px;
+  background: #FFF;
+  color: #1DB0B5;
+  border: 1px solid #1DB0B5;
+}
+#edit-recipe-page .main-button-clear:hover, #edit-recipe-page .main-button-clear:focus {
+  background: linear-gradient(to bottom, #1DB0B5, #189599);
+  color: #FFF;
+  border: 1px solid #1DB0B5;
+}
+
 .recipe-edited {
   display: flex;
   align-items: center;

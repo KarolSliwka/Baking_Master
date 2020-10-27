@@ -3,19 +3,33 @@
     .page-title {
         padding: 0;
     }
-    
-    .step-label{
-        span{
+
+    .step-label {
+        span {
             font-size: 12px;
             font-weight: 300;
             color: #8c8c8c;
         }
     }
-    
-    .main-button-clear{
-        
+
+    .main-button-clear {
+        padding: 0;
+        height: 33px;
+        width: 50px;
+        margin-top: -8px;
+        margin-right: 10px;
+        background: $main-button-bg;
+        color: #1DB0B5;
+        border: 1px solid #1DB0B5;
+
+        &:hover,
+        &:focus {
+            background: linear-gradient(to bottom, #1DB0B5, #189599);
+            color: $main-button-color-hv;
+            border: 1px solid #1DB0B5;
+        }
     }
-    
+
 }
 
 .recipe-edited {
