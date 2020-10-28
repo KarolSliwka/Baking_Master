@@ -41,9 +41,12 @@
                     <label>Difficulty</label>
                     <select class="form-control form-control-lg" name="difficulty-level" required>
                         <option select>{{recipe_doc['difficulty']}}</option>
-                        <option>Easy</option>
-                        <option>Medium</option>
-                        <option>Hard</option>
+                        {% for item in ['Easy','Medium','Hard']%}
+                        {% if recipe_doc['difficulty'] == item %}
+                        {% else %}
+                        <option>{{item}}</option>
+                        {% endif %}
+                        {% endfor %}
                     </select>
                 </div>
                 <div class="form-row">
