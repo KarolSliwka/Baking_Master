@@ -10,8 +10,9 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
 
-""" Create HTTPS connection for all rdirected urls """
+
 class ReverseProxied(object):
+    """ Create HTTPS connection for all rdirected urls """
     def __init__(self, app):
         self.app = app
 
@@ -53,7 +54,9 @@ recipes_collection = mongo.db.Recipes
 # Home page
 @app.route('/')
 def home():
-    """Renders landing page/home page"""
+    """
+    Renders landing page/home page
+    """
 
     return render_template('pages/landing-page.html', 
     body_id='home-page', page_title = "Home Page")
@@ -65,25 +68,19 @@ def recipes():
     Renders recipes search page and return search result
     """
     if request.method == "POST": 
-        """ Request information from user form """
-        req = request.form
         
-        """ Get variable from user form"""
+        req = request.form
         search_text = req.get('search')
 
-        """ find matching recipes to search query text """
         regex_query = { 'title' : {"$regex" : search_text.lower()} }
         search_request = recipes_collection.find(regex_query)
 
-        """ search result count size """
         search_count = search_request.count()
         
         return  render_template('pages/recipes.html', 
         body_id='recipes-page', page_title='Recieps',search_text=search_text,search_result="TRUE",
         search_request=search_request,search_count=search_count)
     
-
-    """ get recipes collection size """
     recipe_range = recipes_collection.count()
     if recipe_range <= 9:
         recipe_range = recipe_range
@@ -91,7 +88,6 @@ def recipes():
         recipe_range = 10
     random_10 =  recipes_collection.aggregate([{'$sample': {'size': 10 }}])
     
-    """ find current user favourites list """
     if session.get('email') is None:
         my_favourites = []
     else:
@@ -104,22 +100,21 @@ def recipes():
 
 @app.route('/recipe-page/<recipe_id>', methods=['GET','POST'])
 def recipe_page(recipe_id):
+    """
+    Render recipe page
+    """
 
-    """ find this recipe _id and retreive information while rendering page """
     this_recipe = recipes_collection.find_one({'_id':ObjectId(recipe_id)})
     recipe_author = users_collection.find_one({'email':this_recipe['author']})
     
-    """ get all recipe information and store as collections/variables """
     author_name = recipe_author['name']
     ingredients = this_recipe['ingredients']
     ingredients_scale = this_recipe['ingredients-scale']
     preparation = this_recipe['preparation']
     tips = this_recipe['tips']
-    
-    """ find user favourite list information """
+
     current_user = users_collection.find_one({'email': session.get('email')})
-            
-    """ get user favourite recipes list """
+
     if session.get('email') is None:
         my_fav = []
         session['url'] = request.referrer
@@ -138,21 +133,17 @@ def add_recipe():
     """
     
     if request.method == "POST":
-        """ Request information from user form """
         req = request.form
         
-        """ collect userform information """
         recipe_title = req.get('recipe-title')
         recipe_prepare_time = req.get('preparing-time-hrs') + ":" + req.get('preparing-time-min')
         recpie_difficulty = req.get('difficulty-level')
         
-        """ collect all information into arrays """
         ingredients_array = []
         ingredients_scale_array = []
         preparation_array = []  
         tips_array = []
         
-        """ loop through each input field contains selected class to created arrays """
         for key in request.form:
             if key !="":
                 if key.startswith('ingredient-name-'):
@@ -177,12 +168,8 @@ def add_recipe():
                     value = request.form[key]
                     tips_array.append(value)
                     
-            
-        """ collect user email addres to assing it as recipe author """
         recipe_author = session['email']
         
-
-        """ save recipe image to database with current filename and recipe information """ 
         if 'preparing_image' in request.files:
             preparing_image = request.files['preparing_image']
             mongo.save_file(preparing_image.filename, preparing_image)
@@ -198,7 +185,6 @@ def add_recipe():
                 'author': recipe_author,
             })
             
-            """ add recipe_id to recipes-id array """
             users_collection.find_one_and_update({'email': recipe_author},{'$push': {'recipes_id': insert_recipe.inserted_id}})
 
         flash('Your recipe was added successfully, enjoy baking!','recipe-added')
@@ -211,8 +197,7 @@ def edit_recipe(recipe_id):
     """
     Render edit recipe page, update edited recipe record
     """
-    
-    """ find recipe in recipes collection """
+
     recipe_doc = recipes_collection.find_one({'_id':ObjectId(recipe_id)})
     
     if request.method == "POST":
@@ -233,29 +218,21 @@ def remove_recipe(recipe_id):
     Render your recipes page and remove recipe record from database
     """
     user_session = session['email']
-    
-    """ remove id from user recipes_id array """
     users_collection.find_one_and_update({'email':user_session},{'$pull':{'recipes_id': ObjectId(recipe_id)}})
     
-    """ remove all files and chunks for recipe_id in mongo ???? """
     recipe_search = recipes_collection.find_one({'_id':ObjectId(recipe_id)})
     result = recipes_collection.find(recipe_search)
     for doc in result:
         image_name = doc['recipe_image']
-    
-    """ remove file from fs files in mongo db """
-    
+
     fs_files_search = mongo.db.fs.files.find_one({'filename':image_name})
     fsfiles_result = mongo.db.fs.files.find(fs_files_search)
     for doc in fsfiles_result:
         fsFiles_id = doc['_id']
         
     mongo.db.fs.files.remove({'_id':fsFiles_id})
-    
-    """ remove fs chunks based on file id from mongo db  """
     mongo.db.fs.chunks.remove({'files_id':fsFiles_id})
     
-    """ remove recipe from recipes collection """
     recipes_collection.remove({'_id': ObjectId(recipe_id)})
     
     return your_recipes()
@@ -267,15 +244,11 @@ def add_to_favourites(recipe_id):
     Add to favourite list and render refferer page
     """
     
-    """ check if user is logged in """
     if session.get('email') is None:
         """ redirect user to login page """
         session['url'] = url_for('recipes')
         return redirect(url_for('login'))
     else:
-        """ get curent session url/uri """
-        
-        """ find user and add recipe to favourites """
         users_collection.find_one_and_update({'email':session.get('email')},
         {'$push':{'favourites': ObjectId(recipe_id)}})
         return redirect(request.referrer)
@@ -287,7 +260,7 @@ def remove_from_favourites(recipe_id):
     """
     Remove from favourite list and reneder reffer page
     """
-    """ find user and add recipe to favourites """
+    
     users_collection.find_one_and_update({'email':session.get('email')},
     {'$pull':{'favourites': ObjectId(recipe_id)}})
     return redirect(request.referrer)
@@ -303,6 +276,9 @@ def user_menu():
 # Retrive image form MongoDB
 @app.route('/file/<filename>')
 def file(filename):
+    """
+    Return recipe image from database
+    """
     return mongo.send_file(filename)
 
 # Your Recipes 
@@ -329,18 +305,13 @@ def favourites():
     Renders favourite page only when user is logged in
     """
     
-    """ check if users exist in session """
     if session.get('email') is None:
-        """ display message and redirect user to login page """
         session['url'] = url_for('favourites')
         return render_template('pages/favourites.html', 
         body_id='favourites-page', page_title='Favourites',no_user='true')
     else:
-    
-        """ find user favourite list information """
         current_user = users_collection.find_one({'email': session.get('email')})
             
-        """ get user favourite recipes list """
         my_favourites =[]
         my_fav = current_user['favourites']
         for _id in my_fav:
@@ -349,7 +320,6 @@ def favourites():
             
         favourites_count = len(current_user['favourites'])
     
-        """ show all favourite recipe cards """
         return render_template('pages/favourites.html', 
         body_id='favourites-page', page_title='Favourites',no_user='false',
         favourites_count=favourites_count,my_favourites=my_favourites)
@@ -362,10 +332,8 @@ def register():
     When form is validated correctly, new user is added into database.
     """
     if request.method == "POST":
-        """ Request information from user form """
         req = request.form
         
-        """ Get all necessery variables from user form"""
         name = req.get('name')
         email = req.get('email')
         password = req.get('password')
@@ -374,11 +342,9 @@ def register():
         empty_recipes_id = []
         empty_favourites = []
         
-        """ Check if users exist in databas """
         current_user = users_collection.find_one({'email': email})
         if current_user is None:
             
-            """ Insert new user, new record to database """
             users_collection.insert_one({
                 'name' : name,
                 'email' : email.lower(),
@@ -388,15 +354,13 @@ def register():
                 'favourites' : empty_favourites
             })
             
-            """ Use add to newsletter funtcion to add new user to newsletter database """
             login_newsletter = email
             add_to_newsletter(login_newsletter)
         
             flash('Your account was created successfully! Enjoy browsing our amazing recipes','register-added')
             return render_template('pages/login.html', body_id='login-page', page_title='Sign In')
         flash('This email account already exist. Please use different email addres or recover your password','register-exist')
-            
-    """ Return register template """
+
     return render_template('pages/register.html', body_id='register-page', page_title='Register account')
  
 # Login Page   
@@ -407,34 +371,29 @@ def login():
     When exist, will go to account page. When failed, show flash message.
     """
     if request.method == "POST":
-        """ Request information from user form """
         req = request.form
         
-        """ Collect information from login form """
         email_login = req.get('email')
         password = req.get('password')
 
-        """ Find user details """
         login_user = users_collection.find_one({'email': email_login.lower()})
         result = users_collection.find(login_user)
         for doc in result:
             username = doc["name"]
             
-        """ Main login statement """
         if login_user:
             if bcrypt.hashpw(password.encode('utf-8'), login_user['password']) == login_user['password']:
                 session['email'] = email_login
                 session['name'] = username
                 flash('You have been successfully logged in!')
                 
-                """ when redirect from favourites page, successfully logged in, redirect back """
                 if session.get('email') is not None:
                     if 'url' in session:
                         return redirect(session['url'])
                 
                     return redirect(url_for('user_menu'))
                 else:
-                    """ show error message when failed to login in """
+                    
                     flash("Incorrect username or password / user doesn't exist.","incorrect-user")
                     return redirect(url_for('login'))
                     
@@ -446,10 +405,9 @@ def login():
 def account():
     
     try:
-        """ Return user acocunt page with user information """
         user_info = users_collection.find_one({'email': session['email']})
         user_info_collection = users_collection.find(user_info)
-        """ Collect user details """
+
         for doc in user_info_collection:
             active_user = doc['name']
             email = doc['email']
@@ -474,23 +432,15 @@ def recovery():
     This function is sendind recovery message when submit
     """
     if request.method == "POST":
-        """ Request information from user form """
         req = request.form
         
-        """ Get variable from user form"""
         email = req.get('recovery_email').lower()
-        """ Prevent to sending request when field is empty"""
-        
-        """ Check if users exist in databas """
         current_user = users_collection.find_one({'email': email})
         
-        """ If users exist do next steps, else show error message """
         if current_user is not None:
-            """ If user is found, collect all information from database"""
             current_user_name = current_user['name']
             current_user_email = current_user['email']
             
-            """ Run email application """
             def send_email(app, msg):
                 with app.app_context():
                     mail.send(msg)
@@ -505,7 +455,6 @@ def recovery():
             return render_template('pages/recovery.html', body_id='login-page', page_title='Sign In')
         flash("This email account doesn't exist is our database. Check email address and try once again.","recovery-negative")
     
-    """ Return recovery template """
     return render_template('pages/recovery.html', body_id='recovery-page', page_title='Password recovery')
 
 # Remove Account
@@ -520,20 +469,15 @@ def remove_account():
     users_email = users_collection.find_one({'email': session['email']})
     users_newsletter = newsletter.find_one({'email': session['email']})
     
-    """ Remove user from Users db """
     users_result = users_collection.find(users_email)
     for doc in users_result:
         user_id = doc["_id"]
     mongo.db.Users.remove({'_id': user_id})
     
-    """ Remove user from Newsletter db """
     newsletter_result = newsletter.find(users_newsletter)
     for doc in newsletter_result:
         newsletter_user_id = doc["_id"]
     mongo.db.Newsletter.remove({'_id': newsletter_user_id})
-    
-    """ Clear session and redirect to main page"""
-    """ Show flash message on main page after redirecting """
     session.clear()
     
     flash('Your account has been removed successfully!','account-removed')
@@ -565,17 +509,13 @@ def contact():
     This function is sending email from userform in contact page
     """
     if request.method == "POST":
-        
-        """ Request information from user form """
         req = request.form
         
-        """ Get variable from user form"""
         username = req.get('contact-name')
         email_address = req.get('contact-email').lower()
         contact_message = req.get('contact-message')
         email_from = os.getenv('EMAIL_USERNAME')
-            
-        """ Run email application """
+
         def send_email(app, msg):
             with app.app_context():
                 mail.send(msg)
@@ -600,7 +540,6 @@ def add_to_newsletter(login_newsletter):
     if request.method == "POST":
         newsletter = mongo.db.Newsletter
         
-        """ Check if register form string is not empty """
         if login_newsletter !='':
             
             exist_in_newsletter = newsletter.find_one({'email': login_newsletter})
@@ -613,20 +552,14 @@ def add_to_newsletter(login_newsletter):
             
         else:
         
-            """ Request information from user form """
             req = request.form
-            
-            """ Get email as variable from user form"""
             newsletter_email = req.get('newsletter-email').lower()
             
-            """ Search for email address in User database """
             existing_user = users_collection.find_one({'email' : newsletter_email})
-        
-            """ If user exisit show flash message with error """
+
             if existing_user is not None:
                 flash('You are subscribing newsletter already', 'newsletter-error')
             else:
-                """ Check if email address already exist in newsletter database """
                 exist_in_newsletter = newsletter.find_one({'email': newsletter_email})
                 if exist_in_newsletter is None:
             
