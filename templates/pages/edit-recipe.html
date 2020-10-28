@@ -11,14 +11,14 @@
     <div class="edit-recipe-container row">
         <form id="edit-recipe-form" name="edit-recipe-form" action="{{ url_for('edit_recipe',recipe_id = recipe_doc['_id']) }}" method="POST" enctype="multipart/form-data">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-details">
-                <h4 class="page-title2">Recipe Information: <span>(Don't leave blank fields)</span></h4>
+                <h4 class="page-title2">Recipe Information:</h4>
                 <div class="form-row">
                     <label>Image</label>
                     <input type="file" class="form-control" id="preparing-image" name="preparing_image" value="">
                 </div>
                 <div class="form-row">
                     <label>Title</label>
-                    <input type="text" class="form-control" id="recipe-title" name="recipe-title" value="{{recipe_doc['title']}}">
+                    <input type="text" class="form-control" id="recipe-title" name="recipe-title" value="{{recipe_doc['title']}}" required>
                 </div>
                 <div class="form-row">
                     <label>Preparing Time
@@ -28,11 +28,11 @@
                     </label>
                     <div class="prepare-time">
                         <div class="sticky-container">
-                            <input type="text" class="form-control time-text" id="preparing-time-hrs" name="preparing-time-hrs" placeholder="00" maxlength="2" minlength="2" value="{{recipe_doc['time'][:2]}}">
+                            <input type="text" class="form-control time-text" id="preparing-time-hrs" name="preparing-time-hrs" placeholder="00" maxlength="2" minlength="2" value="{{recipe_doc['time'][:2]}}" required>
                             <small>hrs</small>
                         </div>
                         <div class="sticky-container">
-                            <input type="text" class="form-control time-text" id="preparing-time-min" name="preparing-time-min" placeholder="00" maxlength="2" minlength="2" value="{{recipe_doc['time'][-2:]}}">
+                            <input type="text" class="form-control time-text" id="preparing-time-min" name="preparing-time-min" placeholder="00" maxlength="2" minlength="2" value="{{recipe_doc['time'][-2:]}}" required>
                             <small>min</small>
                         </div>
                     </div>
@@ -51,15 +51,15 @@
                 </div>
                 <div class="form-row">
                     <div class="ingredient-container">
-                        <h4 class="page-title2">Ingredients List: <span>(leave blank to remove)</span></h4>
+                        <h4 class="page-title2">Ingredients List:</h4>
                         <div id="ingredients">
                             {% for ingredient in recipe_doc['ingredients'] %}
                             <div class="ingredient">
                                 <div class="top-ingredient">
                                     <button class="clearIngredient btn main-button-clear" type="button">clear</button>
                                     <div class="ingredient-inputs">
-                                        <input type="text" class="form-control" id="ingredient-name" name="ingredient-name-old-{{recipe_doc['ingredients'].index(ingredient)}}" placeholder="Ingredient" value="{{ingredient}}">
-                                        <input type="text" class="form-control" id="ingredient-scale" name="ingredient-scale-old-{{recipe_doc['ingredients'].index(ingredient)}}" placeholder="2g/5ml" value="{{recipe_doc['ingredients-scale'][recipe_doc['ingredients'].index(ingredient)]}}">
+                                        <input type="text" class="form-control" id="ingredient-name" name="ingredient-name-{{recipe_doc['ingredients'].index(ingredient)}}" placeholder="Ingredient" value="{{ingredient}}">
+                                        <input type="text" class="form-control" id="ingredient-scale" name="ingredient-scale-{{recipe_doc['ingredients'].index(ingredient)}}" placeholder="2g/5ml" value="{{recipe_doc['ingredients-scale'][recipe_doc['ingredients'].index(ingredient)]}}">
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 recipe-preparation">
                 <div class="form-row">
                     <div class="steps-container">
-                        <h4 class="page-title2">Preparation Steps: <span>(leave blank to remove)</span></h4>
+                        <h4 class="page-title2">Preparation Steps:</h4>
                         <div id="steps">
                             {% for step in recipe_doc['preparation'] %}
                             <div class="step">
@@ -80,7 +80,7 @@
                                     <label class="step-label">Step {{recipe_doc['preparation'].index(step) + 1}}</label>
                                     <button class="clearStep btn main-button-clear" type="button">clear</button>
                                 </div>
-                                <textarea class="form-control" name="preparation-step-old-{{recipe_doc['preparation'].index(step)}}" rows="2" id="preparation-step">{{step}}
+                                <textarea class="form-control" name="preparation-step-{{recipe_doc['preparation'].index(step)}}" rows="2" id="preparation-step">{{step}}
                                 </textarea>
                             </div>
                             {% endfor %}
@@ -90,7 +90,7 @@
                 </div>
                 <div class="form-row">
                     <div class="tips-container">
-                        <h4 class="page-title2">Additional Tips: <span>(leave blank to remove)</span></h4>
+                        <h4 class="page-title2">Additional Tips:</h4>
                         <div id="tips">
                             {% for tip in recipe_doc['tips'] %}
                             <div class="tip">
@@ -98,7 +98,7 @@
                                     <label class="tip-label">Tips {{recipe_doc['tips'].index(tip) + 1}}</label>
                                     <button class="clearTip btn main-button-clear" type="button">clear</button>
                                 </div>
-                                <textarea class="form-control" name="tip-step-old-{{recipe_doc['tips'].index(tip)}}" rows="2" id="preparation-tip" placeholder="Tip explanation">{{tip}}</textarea>
+                                <textarea class="form-control" name="tip-step-{{recipe_doc['tips'].index(tip)}}" rows="2" id="preparation-tip" placeholder="Tip explanation">{{tip}}</textarea>
                             </div>
                             {% endfor %}
                         </div>
