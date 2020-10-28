@@ -1664,7 +1664,7 @@ form p {
   box-shadow: 0px 0px 5px 1px #ccc;
 }
 
-.recipe-edited {
+.recipe-edited, .recipe-not-edited {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1675,12 +1675,20 @@ form p {
   border-radius: 5px;
   text-align: left;
 }
-.recipe-edited p {
+.recipe-edited p, .recipe-not-edited p {
   margin: 0;
   padding: 0.5rem;
   font-size: 0.85rem;
   font-weight: 400;
   color: #5aac17;
+}
+
+.recipe-not-edited {
+  border: 1px solid #ff9f00;
+  background-color: rgba(255, 249, 172, 0.6);
+}
+.recipe-not-edited p {
+  color: #ff9f00;
 }
 
 #your-recipes-page {

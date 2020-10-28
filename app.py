@@ -235,13 +235,26 @@ def edit_recipe(recipe_id):
                 if key.startswith('tip-step-'):
                     value = request.form[key]
                     tips_array.append(value)
+        
+        count = 0
 
         #check if title is different then database record
         if recipe_title != recipe_doc['title']:
             recipes_collection.find_one_and_update({'_id':ObjectId(recipe_doc['_id'])},{'$set':{'title': recipe_title}})
+            count = count + 1
         
-        flash('Your recipe has been edited successfully','recipe_edited')
-        return redirect(url_for('recipe_page',recipe_id = recipe_doc['_id'],recipe_edited="Edited Successfully"))
+        if recipe_prepare_time != recipe_doc['time']:
+            recipes_collection.find_one_and_update({'_id':ObjectId(recipe_doc['_id'])},{'$set':{'time': recipe_prepare_time}})
+            count = count + 1
+        
+        print(count)
+        
+        if count != 0:
+            flash('Your recipe has been edited successfully, looks good!','recipe_edited')
+            return redirect(url_for('recipe_page',recipe_id = recipe_doc['_id'],recipe_edited="Edited Successfully"))
+        else:
+            flash("You didn't make any changes",'recipe_not_edited')
+            return redirect(url_for('recipe_page',recipe_id = recipe_doc['_id'],recipe_not_edited="Nothing Changed"))
             
     return render_template('pages/edit-recipe.html',recipe_doc=recipe_doc,
     body_id='edit-recipe-page', page_title='Edit Recipe')

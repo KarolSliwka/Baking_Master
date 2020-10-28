@@ -8,6 +8,13 @@
             <p>{{ msg }}</p>
             {% endfor -%}
         </div>
+        {% endif %} {% endwith %} 
+        {% with errors = get_flashed_messages(category_filter=["recipe_not_edited"]) %} {% if errors %}
+        <div id="flash-message" class="{{'recipe-not-edited' if recipe_edited !='' else 'hidden'}}">
+            {%- for msg in errors %}
+            <p>{{ msg }}</p>
+            {% endfor -%}
+        </div>
         {% endif %} {% endwith %}
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 top-recipe-section">
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 col-xl-3">

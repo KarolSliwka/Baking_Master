@@ -93,3 +93,12 @@
         color: #5aac17;
     }
 }
+
+.recipe-not-edited {
+    @extend .recipe-edited;
+    border: 1px solid #ff9f00;
+    background-color: rgba(255, 249, 172, 0.6);
+    p {
+        color: #ff9f00;
+    }
+}
