@@ -1768,7 +1768,7 @@ form p {
   text-decoration: none;
 }
 
-.edit-button {
+.edit-button, .delete-button {
   position: absolute;
   height: 50px;
   width: 50px;
@@ -1780,7 +1780,19 @@ form p {
   color: #FFF;
   text-align: center;
 }
-.edit-button:hover {
+.edit-button:hover, .delete-button:hover {
+  background-color: #1DB0B5;
+}
+
+.delete-button {
+  margin-left: -10px;
+  margin-top: 45px;
+  padding: 5px;
+  width: 35px;
+  height: 35px;
+  background-color: red;
+}
+.delete-button:hover {
   background-color: #1DB0B5;
 }
 

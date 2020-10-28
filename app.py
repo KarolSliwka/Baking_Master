@@ -143,28 +143,21 @@ def add_recipe():
         tips_array = []
         
         for key in request.form:
-            if key !="":
-                if key.startswith('ingredient-name-'):
-                    value = request.form[key]
-                    ingredients_array.append(value)
+            if key.startswith('ingredient-name-'):
+                value = request.form[key]
+                ingredients_array.append(value)
                     
-        for key in request.form:
-            if key !="":
-                if key.startswith('ingredient-scale-'):
-                    value = request.form[key]
-                    ingredients_scale_array.append(value)
+            if key.startswith('ingredient-scale-'):
+                value = request.form[key]
+                ingredients_scale_array.append(value)
                 
-        for key in request.form:
-            if key != "":
-                if key.startswith('preparation-step-'):
-                    value = request.form[key]
-                    preparation_array.append(value)
+            if key.startswith('preparation-step-'):
+                value = request.form[key]
+                preparation_array.append(value)
                 
-        for key in request.form:
-            if key !="":
-                if key.startswith('tip-step-'):
-                    value = request.form[key]
-                    tips_array.append(value)
+            if key.startswith('tip-step-'):
+                value = request.form[key]
+                tips_array.append(value)
                     
         recipe_author = session['email']
         
@@ -199,8 +192,6 @@ def edit_recipe(recipe_id):
     recipe_doc = recipes_collection.find_one({'_id':ObjectId(recipe_id)})
     
     if request.method == "POST":
-        
-        """ Request information from user form """
         req = request.form
         
         recipe_title = req.get('recipe-title')
@@ -213,32 +204,24 @@ def edit_recipe(recipe_id):
         tips_array = []
         
         for key in request.form:
-            if key !="":
-                if key.startswith('ingredient-name-'):
-                    value = request.form[key]
-                    ingredients_array.append(value)
+            if key.startswith('ingredient-name-'):
+                value = request.form[key]
+                ingredients_array.append(value)
                     
-        for key in request.form:
-            if key !="":
-                if key.startswith('ingredient-scale-'):
-                    value = request.form[key]
-                    ingredients_scale_array.append(value)
+            if key.startswith('ingredient-scale-'):
+                value = request.form[key]
+                ingredients_scale_array.append(value)
                 
-        for key in request.form:
-            if key != "":
-                if key.startswith('preparation-step-'):
-                    value = request.form[key]
-                    preparation_array.append(value)
+            if key.startswith('preparation-step-'):
+                value = request.form[key]
+                preparation_array.append(value)
                 
-        for key in request.form:
-            if key !="":
-                if key.startswith('tip-step-'):
-                    value = request.form[key]
-                    tips_array.append(value)
-        
+            if key.startswith('tip-step-'):
+                value = request.form[key]
+                tips_array.append(value)
+    
         count = 0
-
-        #check if title is different then database record
+        """
         if recipe_title != recipe_doc['title']:
             recipes_collection.find_one_and_update({'_id':ObjectId(recipe_doc['_id'])},{'$set':{'title': recipe_title}})
             count = count + 1
@@ -246,8 +229,20 @@ def edit_recipe(recipe_id):
         if recipe_prepare_time != recipe_doc['time']:
             recipes_collection.find_one_and_update({'_id':ObjectId(recipe_doc['_id'])},{'$set':{'time': recipe_prepare_time}})
             count = count + 1
+            
+        if recpie_difficulty != recipe_doc['difficulty']:
+            recipes_collection.find_one_and_update({'_id':ObjectId(recipe_doc['_id'])},{'$set':{'difficulty': recpie_difficulty}})
+            count = count + 1 
+        """
         
-        print(count)
+        for prep in preparation_array:
+            if prep == recipe_doc['preparation'][preparation_array.index(prep)]:
+                print(prep)
+
+
+
+        print(ingredients_array,ingredients_scale_array,preparation_array,tips_array)
+
         
         if count != 0:
             flash('Your recipe has been edited successfully, looks good!','recipe_edited')

@@ -8,8 +8,7 @@
             <p>{{ msg }}</p>
             {% endfor -%}
         </div>
-        {% endif %} {% endwith %} 
-        {% with errors = get_flashed_messages(category_filter=["recipe_not_edited"]) %} {% if errors %}
+        {% endif %} {% endwith %} {% with errors = get_flashed_messages(category_filter=["recipe_not_edited"]) %} {% if errors %}
         <div id="flash-message" class="{{'recipe-not-edited' if recipe_edited !='' else 'hidden'}}">
             {%- for msg in errors %}
             <p>{{ msg }}</p>
@@ -20,6 +19,7 @@
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 col-xl-3">
                 <div class="recipe-photo">
                     <button class="btn edit-button" onclick="window.location.href='{{url_for('edit_recipe',recipe_id = this_recipe['_id'])}}';">Edit</button>
+                    <button class="btn delete-button" onclick="window.location.href='{{url_for('remove_recipe',recipe_id = this_recipe['_id'])}}';">Del</button>
                     <img src="/file/{{this_recipe['recipe_image']}}" alt="image - {{this_recipe['title']}}">
                 </div>
             </div>

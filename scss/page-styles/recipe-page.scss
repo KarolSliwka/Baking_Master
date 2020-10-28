@@ -61,9 +61,22 @@
     font-weight: 400;
     color: #FFF;
     text-align: center;
-    
-    &:hover{
-          background-color: #1DB0B5;
+
+    &:hover {
+        background-color: #1DB0B5;
+    }
+}
+
+.delete-button {
+    @extend .edit-button;
+    margin-left: -10px;
+    margin-top: 45px;
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+    background-color: red;
+    &:hover {
+        background-color: #1DB0B5;
     }
 }
 
