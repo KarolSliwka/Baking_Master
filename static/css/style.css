@@ -1607,19 +1607,17 @@ form p {
   min-height: calc(100% - 400px);
 }
 #edit-recipe-page .page-title {
+  font-size: 20px;
   padding: 0 10px;
 }
 #edit-recipe-page .page-title span {
+  font-size: 24px;
   text-transform: capitalize;
   color: #1DB0B5;
+  margin-left: 10px;
 }
 #edit-recipe-page .page-title2 {
   margin-bottom: 20px;
-}
-#edit-recipe-page .page-title2 span {
-  font-size: 12px;
-  font-weight: 300;
-  color: #8c8c8c;
 }
 #edit-recipe-page .main-button-clear {
   padding: 0;

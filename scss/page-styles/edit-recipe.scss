@@ -6,11 +6,14 @@
         min-height: calc(#{$a} - #{$b});
     }
     .page-title {
+        font-size: 20px;
         padding: 0 10px;
 
         span {
+            font-size: 24px;
             text-transform: capitalize;
             color: #1DB0B5;
+            margin-left: 10px;
         }
     }
     .page-title2 {
