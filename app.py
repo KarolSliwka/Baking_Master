@@ -9,8 +9,6 @@ from threading import Thread
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
-
-
 class ReverseProxied(object):
     """ Create HTTPS connection for all rdirected urls """
     def __init__(self, app):
@@ -98,7 +96,7 @@ def recipes():
     body_id='recipes-page', page_title='Recipes',recipe_range=recipe_range,
     random_10=random_10,search_result="FALSE", my_favourites=my_favourites)
 
-@app.route('/recipe-page/<recipe_id>', methods=['GET','POST'])
+@app.route('/recipe/<recipe_id>', methods=['GET','POST'])
 def recipe_page(recipe_id):
     """
     Render recipe page
@@ -126,7 +124,7 @@ def recipe_page(recipe_id):
     preparation=preparation,tips=tips,my_fav=my_fav)   
 
 # Add Recipe
-@app.route('/add-recipe', methods=['GET','POST'])
+@app.route('/add/recipe', methods=['GET','POST'])
 def add_recipe():
     """
     Render Add Recipe page, load first step number and allocate it to steps-count
@@ -192,7 +190,7 @@ def add_recipe():
     body_id='new-recipe-page', page_title='Add Recipe')
 
 # Edit Recipe
-@app.route('/edit-recipe/<recipe_id>',methods=['GET','POST'])
+@app.route('/edit/recipe/<recipe_id>',methods=['GET','POST'])
 def edit_recipe(recipe_id):
     """
     Render edit recipe page, update edited recipe record
@@ -206,13 +204,12 @@ def edit_recipe(recipe_id):
         req = request.form
     
     
-    
     flash('Your recipe has been edited successfully','recipe_edited')
     return render_template('pages/edit-recipe.html',recipe_doc=recipe_doc,
     body_id='edit-recipe-page', page_title='Edit Recipe')
 
 # Remove Recipe
-@app.route('/remove-recipe/<recipe_id>', methods=['GET','POST'])
+@app.route('/delete/recipe/<recipe_id>', methods=['GET','POST'])
 def remove_recipe(recipe_id):
     """
     Render your recipes page and remove recipe record from database
@@ -238,7 +235,7 @@ def remove_recipe(recipe_id):
     return your_recipes()
 
 # Add to Favourites
-@app.route('/add-to-favourites/<recipe_id>', methods=['GET','POST'])
+@app.route('/favourites/add/<recipe_id>', methods=['GET','POST'])
 def add_to_favourites(recipe_id):
     """
     Add to favourite list and render refferer page
@@ -253,9 +250,8 @@ def add_to_favourites(recipe_id):
         {'$push':{'favourites': ObjectId(recipe_id)}})
         return redirect(request.referrer)
     
-    
 # Remove from Favourites
-@app.route('/remov-from-favourites/<recipe_id>', methods=['GET','POST'])
+@app.route('/favourites/remove/<recipe_id>', methods=['GET','POST'])
 def remove_from_favourites(recipe_id):
     """
     Remove from favourite list and reneder reffer page
@@ -266,7 +262,7 @@ def remove_from_favourites(recipe_id):
     return redirect(request.referrer)
     
 # User menu page
-@app.route('/user-menu')
+@app.route('/user/menu')
 def user_menu():
     """
     Render user menu page
@@ -282,7 +278,7 @@ def file(filename):
     return mongo.send_file(filename)
 
 # Your Recipes 
-@app.route('/your-recipes', methods=['GET','POST'])
+@app.route('/user/recipes', methods=['GET','POST'])
 def your_recipes():
     """
     Render user recipes pages, present all user recipes as cards
@@ -401,7 +397,7 @@ def login():
     return render_template('pages/login.html', body_id='login-page', page_title='Sign In')
 
 # User account page
-@app.route('/account', methods=['GET','POST'])
+@app.route('/user/account', methods=['GET','POST'])
 def account():
     
     try:
@@ -458,7 +454,7 @@ def recovery():
     return render_template('pages/recovery.html', body_id='recovery-page', page_title='Password recovery')
 
 # Remove Account
-@app.route('/account-removed')
+@app.route('/remove/account')
 def remove_account():
     """
     Renders remove account page
