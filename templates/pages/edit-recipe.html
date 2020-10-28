@@ -4,16 +4,9 @@
     <div class="row top-title">
         <h2 class="page-title"><span>"{{recipe_doc['title']}}"</span></h2>
         <div class="edit-recipe-photo">
-            <img src="/file/{{recipe_doc['recipe_image']}}" alt="image - {{recipe_doc['title']}}">
+            <img src="/file/{{recipe_doc['recipe_image']}}" alt="image-{{recipe_doc['title']}}">
         </div>
     </div>
-    {% with errors = get_flashed_messages(category_filter=["recipe-edited"]) %} {% if errors %}
-    <div id="flash-message" class="{{'recipe-edited' if recipe_edited !='' else 'hidden'}}">
-        {%- for msg in errors %}
-        <p>{{ msg }}</p>
-        {% endfor -%}
-    </div>
-    {% endif %} {% endwith %}
     <!-- edit recipe form -->
     <div class="edit-recipe-container row">
         <form id="edit-recipe-form" name="edit-recipe-form" action="{{ url_for('edit_recipe',recipe_id = recipe_doc['_id']) }}" method="POST" enctype="multipart/form-data">

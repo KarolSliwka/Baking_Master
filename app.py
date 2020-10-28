@@ -202,9 +202,47 @@ def edit_recipe(recipe_id):
         
         """ Request information from user form """
         req = request.form
-    
-    
-    flash('Your recipe has been edited successfully','recipe_edited')
+        
+        recipe_title = req.get('recipe-title')
+        recipe_prepare_time = req.get('preparing-time-hrs') + ":" + req.get('preparing-time-min')
+        recpie_difficulty = req.get('difficulty-level')
+        
+        ingredients_array = []
+        ingredients_scale_array = []
+        preparation_array = []  
+        tips_array = []
+        
+        for key in request.form:
+            if key !="":
+                if key.startswith('ingredient-name-'):
+                    value = request.form[key]
+                    ingredients_array.append(value)
+                    
+        for key in request.form:
+            if key !="":
+                if key.startswith('ingredient-scale-'):
+                    value = request.form[key]
+                    ingredients_scale_array.append(value)
+                
+        for key in request.form:
+            if key != "":
+                if key.startswith('preparation-step-'):
+                    value = request.form[key]
+                    preparation_array.append(value)
+                
+        for key in request.form:
+            if key !="":
+                if key.startswith('tip-step-'):
+                    value = request.form[key]
+                    tips_array.append(value)
+
+        #check if title is different then database record
+        if recipe_title != recipe_doc['title']:
+            recipes_collection.find_one_and_update({'_id':ObjectId(recipe_doc['_id'])},{'$set':{'title': recipe_title}})
+        
+        flash('Your recipe has been edited successfully','recipe_edited')
+        return redirect(url_for('recipe_page',recipe_id = recipe_doc['_id']))
+            
     return render_template('pages/edit-recipe.html',recipe_doc=recipe_doc,
     body_id='edit-recipe-page', page_title='Edit Recipe')
 
