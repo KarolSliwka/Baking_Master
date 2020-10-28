@@ -34,7 +34,7 @@ $('#myCollapsible').collapse({
 /**
  * This function will add another ingredient
  */
-let ingrCount = 0;
+let ingrCount = $('.ingredient').length;
 $(".appendIngredient").click(function() {
     $('#ingredients').append('<div class="ingredient"><div class="top-ingredient"><button class="removeingredient btn main-button-small" type="button">x</button><div class="ingredient-inputs"><input type="text" class="form-control" id="ingredient-name" name="ingredient-name-' + ingrCount + '" placeholder="Ingredient" required><input type="text" class="form-control" id="ingredient-scale" name="ingredient-scale- ' + ingrCount + '" placeholder="2g/5ml" required></div></div></div>');
     ingrCount++;
@@ -52,7 +52,7 @@ $('body').on('click', '.removeingredient', function() {
 /**
  * This function will add another step
  */
-let stepCount = 0;
+let stepCount = $('.step').length;
 $(".appendStep").click(function() {
 
     if ($('.step')[0]) {
@@ -84,7 +84,7 @@ $('body').on('click', '.removeStep', function() {
 /**
  * This function will add another tip
  */
-let tipCount = 0;
+let tipCount = $('.tip').length;
 $(".appendTip").click(function() {
 
     if ($('.tips')[0]) {
