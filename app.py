@@ -121,7 +121,7 @@ def recipe_page(recipe_id):
     
     return render_template('pages/recipe.html',body_id='recipe-page', page_title=this_recipe['title'],
     this_recipe=this_recipe, author_name=author_name,ingredients=ingredients,ingredients_scale=ingredients_scale,
-    preparation=preparation,tips=tips,my_fav=my_fav)   
+    preparation=preparation,tips=tips,my_fav=my_fav,recipe_author=recipe_author)   
 
 # Add Recipe
 @app.route('/add/recipe', methods=['GET','POST'])
@@ -241,7 +241,7 @@ def edit_recipe(recipe_id):
             recipes_collection.find_one_and_update({'_id':ObjectId(recipe_doc['_id'])},{'$set':{'title': recipe_title}})
         
         flash('Your recipe has been edited successfully','recipe_edited')
-        return redirect(url_for('recipe_page',recipe_id = recipe_doc['_id']))
+        return redirect(url_for('recipe_page',recipe_id = recipe_doc['_id'],recipe_edited="Edited Successfully"))
             
     return render_template('pages/edit-recipe.html',recipe_doc=recipe_doc,
     body_id='edit-recipe-page', page_title='Edit Recipe')
