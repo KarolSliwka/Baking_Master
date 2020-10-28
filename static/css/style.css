@@ -1219,6 +1219,10 @@ form p {
   font-weight: 400;
 }
 
+.text-muted {
+  color: #1DB0B5;
+}
+
 .bottom-landing-page {
   padding-top: 60px;
 }
