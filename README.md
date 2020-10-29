@@ -202,9 +202,8 @@ Click on Get Started with AWS Cloud 9 and follow all the instruction untill acco
 
 <img src="https://www.abovewave.kylos.pl/bakingMaster/gtihub_info.png"/>
 2: Type or paste into your bash command.
-```
-git clone https://github.com/KarolSliwka/Baking_Master.git
-```
+
+```git clone https://github.com/KarolSliwka/Baking_Master.git```
 
 <strong>WARNING! You may need to follow a different guide when working in other IDE than AWS Cloud9.
 <em>Read more here <a href="https://python.readthedocs.io/en/latest/library/venv.html">Creating Python Environment</a></em></strong>
@@ -231,10 +230,9 @@ nano .bashrc
 <img src="https://www.abovewave.kylos.pl/bakingMaster/ide_run.png"/>
 ```
 flask run 
-```
+
 or 
 
-```
 Python3 app.py
 ```
 
