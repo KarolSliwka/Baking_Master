@@ -175,10 +175,20 @@ Whole application was tested durign the designing and deploying period. Each fea
 <p>During working on this project I faced lots of different issues. Some of them were created because of lack of knowledge and wrong code semantic...</p>
 
 ## Deployment
-BakingMaster app was developed in AWS Cloud9. GIT and GitHub was used to store Repository.
-The code can also be run locally. For this example I will strongly recommend using Amazon AWS Cloud 9.
-If you are using different IDE to clone this repository please read Deployment section before deploying.
-Make sure you checked carefully all requirements.
+BakingMaster app was created in AWS Cloud9 IDE by using source code management functionality of Git, hosted on GitHub and deployed on Heroku Pages.
+
+## Setting up an AWS Cloud9
+1.If you haven't got a Cloud9 account on AWS you create it <a href="https://aws.amazon.com/cloud9/">here</a>.
+Click on Get Started with AWS Cloud 9 and follow all the instruction untill account is created.
+
+2.Click on the Create Environment button.
+
+3.Create a individual Name for the Environment and write a app description and click - Next Step.
+
+4.Leave the Configuration Settings as default values and click - Next Step.
+
+5.On the Review page simply click Create Environment button. It will take a couple of minutes to create your environment.
+
 
 ### Cloning BakingMaster from GitHub
 
