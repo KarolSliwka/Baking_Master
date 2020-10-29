@@ -177,7 +177,7 @@ Whole application was tested durign the designing and deploying period. Each fea
 ## Deployment
 BakingMaster app was created in AWS Cloud9 IDE by using source code management functionality of Git, hosted on GitHub and deployed on Heroku Pages.
 
-## Setting up an AWS Cloud9
+### Setting up an AWS Cloud9
 1.If you haven't got a Cloud9 account on AWS you create it <a href="https://aws.amazon.com/cloud9/">here</a>.
 Click on Get Started with AWS Cloud 9 and follow all the instruction untill account is created.
 
@@ -189,17 +189,7 @@ Click on Get Started with AWS Cloud 9 and follow all the instruction untill acco
 
 5.On the Review page simply click Create Environment button. It will take a couple of minutes to create your environment.
 
-
-
-
 ### Cloning BakingMaster from GitHub to AWS Cloud9
-
-1: You can clone BakingMaster repository by downloading it from <a href="https://github.com/KarolSliwka/Baking_Master">GitHub/BakingMaster</a> or if you have Git installed, by typing the following command into your terminal.
-<img src="https://www.abovewave.kylos.pl/bakingMaster/gtihub_info.png"/>
-2. Type or paste into your bash command 
-```bash
-git clone https://github.com/KarolSliwka/Baking_Master.git
-```
 
 <strong>Ensure</strong> you have the following installed:
 * PIP 
@@ -208,28 +198,24 @@ git clone https://github.com/KarolSliwka/Baking_Master.git
 * PyMongo
 * GIT
 
-If you have got issues with PIP not working try to run bellow command
-```python -m ensurepip --default-pip```
+1: You can clone BakingMaster repository by downloading it from <a href="https://github.com/KarolSliwka/Baking_Master">GitHub/BakingMaster</a> or if you have Git installed, by typing the following command into your terminal.
 
+<img src="https://www.abovewave.kylos.pl/bakingMaster/gtihub_info.png"/>
+2. Type or paste into your bash command 
+```bash
+git clone https://github.com/KarolSliwka/Baking_Master.git
+```
 
-
-
-
-3. In order to run the Flask app we need to be inside the app folder.
-4. Click Run Application or type in terminal ```python app.py```
-5. Click Preview Running Application to see the app.
-
-
-
-
+<strong>WARNING! You may need to follow a different guide when working in other IDE than AWS Cloud9.
+<em>Read more here <a href="https://python.readthedocs.io/en/latest/library/venv.html">Creating Python Environment</a></em></strong>
 
 <strong>You need to have an account at <a href="https://www.mongodb.com/">MongoDB</a> to create the database.</strong>
 
-* 2: <strong>Install</strong> the relevant requirements & dependancies from the requirements.txt file.
+3: <strong>Install</strong> the relevant requirements & dependancies from the requirements.txt file.
 ```bash
-pip3 -r requirements.txt
+sudo pip3 install -r requirements.txt
 ```
-* 3: In your IDE you need to add some variables that can be get through environment. You can add them into <strong>.bashrc</strong> file using commands below to edit file. Make sure you are in you are not in your environemt folder.
+4: In your IDE you need to add some variables that can be get through environment. You can add them into <strong>.bashrc</strong> file using commands below to edit file. Make sure you are in you are not in your environemt folder.
 ```bash
 cd ..
 nano .bashrc
@@ -238,7 +224,11 @@ nano .bashrc
 
     IP, PORT, MONGO URI, SECRET KEY, EMAILUSERNAME, EMAIL PASSWORD, MAIL SERVER, MAIL PORT
 
-* 4: Run the application using <strong>Run</strong> button in your IDE Dashboard or 
+5:  In order to run the Flask app we need to be inside the app folder.
+ * Click Run Application or type in terminal ```python app.py```
+ * Click Preview Running Application to see the app.
+ 
+<img src="https://www.abovewave.kylos.pl/bakingMaster/ide_run.png"/>
 ```bash
 flask run 
 ```
@@ -257,9 +247,11 @@ pip3 freeze --local > "requirements.txt"
 ```bash
 echo web: python3 app.py > Procfile
 ```
-* 3: Push all files to your repository.
-* 4: Create a new application for this project on the Heroku Pages.
-* 5: Select your deployment method by clicking on the <strong>deployment</strong> method button and select GitHub.
+* 3: Push all files to your git repository.
+``` git push origin master ``` - your master branch
+* 4: Create a new application for this project on the Heroku Pages. Click on 'New App' button and follow steps to create new app.
+* 5: Select your deployment method by clicking on the <strong>deployment</strong> method button.
+* 7: You can either follow Heroku Git deployment method or GitHub connect (I did it  this time - project is deployed automatically when master branch is pushed to repository)
 * 6: Set the following config variables:
 
 **Key**|**Value**
