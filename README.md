@@ -190,21 +190,41 @@ Click on Get Started with AWS Cloud 9 and follow all the instruction untill acco
 5.On the Review page simply click Create Environment button. It will take a couple of minutes to create your environment.
 
 
-### Cloning BakingMaster from GitHub
 
-<strong>Ensure</strong> you have the following installed:
-* PIP
-* Python 3
-* Flask
-* PyMongo
-* GIT
 
-<strong>You need to have an account at <a href="https://www.mongodb.com/">MongoDB</a> to create the database.</strong>
+### Cloning BakingMaster from GitHub to AWS Cloud9
 
-* 1: <strong>Clone</strong> the BakingMaster repository by either downloading from <a href="https://github.com/KarolSliwka/Baking_Master"> here</a>, or if you have Git installed typing the following command into your terminal.
+1: You can clone BakingMaster repository by downloading it from <a href="https://github.com/KarolSliwka/Baking_Master">GitHub/BakingMaster</a> or if you have Git installed, by typing the following command into your terminal.
+<img src="https://www.abovewave.kylos.pl/bakingMaster/gtihub_info.png"/>
+2. Type or paste into your bash command 
 ```bash
 git clone https://github.com/KarolSliwka/Baking_Master.git
 ```
+
+<strong>Ensure</strong> you have the following installed:
+* PIP 
+* Python 3 
+* Flask 
+* PyMongo
+* GIT
+
+If you have got issues with PIP not working try to run bellow command
+```python -m ensurepip --default-pip```
+
+
+
+
+
+3. In order to run the Flask app we need to be inside the app folder.
+4. Click Run Application or type in terminal ```python app.py```
+5. Click Preview Running Application to see the app.
+
+
+
+
+
+<strong>You need to have an account at <a href="https://www.mongodb.com/">MongoDB</a> to create the database.</strong>
+
 * 2: <strong>Install</strong> the relevant requirements & dependancies from the requirements.txt file.
 ```bash
 pip3 -r requirements.txt
