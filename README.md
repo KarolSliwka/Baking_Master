@@ -175,7 +175,10 @@ Whole application was tested durign the designing and deploying period. Each fea
 <p>During working on this project I faced lots of different issues. Some of them were created because of lack of knowledge and wrong code semantic...</p>
 
 ## Deployment
-BakingMaster was developed in AWS Cloud9. GIT and GitHub was used to store Repository.
+BakingMaster app was developed in AWS Cloud9. GIT and GitHub was used to store Repository.
+The code can also be run locally. For this example I will strongly recommend using Amazon AWS Cloud 9.
+If you are using different IDE to clone this repository please read Deployment section before deploying.
+Make sure you checked carefully all requirements.
 
 ### Cloning BakingMaster from GitHub
 
