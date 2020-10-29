@@ -194,62 +194,68 @@ def edit_recipe(recipe_id):
     if request.method == "POST":
         req = request.form
         
+        recipe_image = recipe_doc['recipe_image']
+
         recipe_title = req.get('recipe-title')
         recipe_prepare_time = req.get('preparing-time-hrs') + ":" + req.get('preparing-time-min')
         recpie_difficulty = req.get('difficulty-level')
+        recipe_author = recipe_doc['author']
         
         ingredients_array = []
         ingredients_scale_array = []
         preparation_array = []  
         tips_array = []
+        preparing_image = []
         
         for key in request.form:
-            if key.startswith('ingredient-name-'):
-                value = request.form[key]
-                ingredients_array.append(value)
-                    
-            if key.startswith('ingredient-scale-'):
-                value = request.form[key]
-                ingredients_scale_array.append(value)
+            if key !="":
+                if key.startswith('ingredient-name-'):
+                    value = request.form[key]
+                    ingredients_array.append(value)
                 
-            if key.startswith('preparation-step-'):
-                value = request.form[key]
-                preparation_array.append(value)
-                
-            if key.startswith('tip-step-'):
-                value = request.form[key]
-                tips_array.append(value)
-    
-        count = 0
-        """
-        if recipe_title != recipe_doc['title']:
-            recipes_collection.find_one_and_update({'_id':ObjectId(recipe_doc['_id'])},{'$set':{'title': recipe_title}})
-            count = count + 1
-        
-        if recipe_prepare_time != recipe_doc['time']:
-            recipes_collection.find_one_and_update({'_id':ObjectId(recipe_doc['_id'])},{'$set':{'time': recipe_prepare_time}})
-            count = count + 1
+                if key.startswith('ingredient-scale-'):
+                    value = request.form[key]
+                    ingredients_scale_array.append(value)
             
-        if recpie_difficulty != recipe_doc['difficulty']:
-            recipes_collection.find_one_and_update({'_id':ObjectId(recipe_doc['_id'])},{'$set':{'difficulty': recpie_difficulty}})
-            count = count + 1 
-        """
-        
-        for prep in preparation_array:
-            if prep == recipe_doc['preparation'][preparation_array.index(prep)]:
-                print(prep)
+                if key.startswith('preparation-step-'):
+                    value = request.form[key]
+                    preparation_array.append(value)
 
-
-
-        print(ingredients_array,ingredients_scale_array,preparation_array,tips_array)
-
-        
-        if count != 0:
-            flash('Your recipe has been edited successfully, looks good!','recipe_edited')
-            return redirect(url_for('recipe_page',recipe_id = recipe_doc['_id'],recipe_edited="Edited Successfully"))
+                if key.startswith('tip-step-'):
+                    value = request.form[key]
+                    tips_array.append(value)
+                    
+                    
+        preparing_image = request.files['preparing_image']
+        if not preparing_image:
+            preparing_image.filename = recipe_image
+            
         else:
-            flash("You didn't make any changes",'recipe_not_edited')
-            return redirect(url_for('recipe_page',recipe_id = recipe_doc['_id'],recipe_not_edited="Nothing Changed"))
+            fs_files_search = mongo.db.fs.files.find_one({'filename':recipe_image})
+            fsfiles_result = mongo.db.fs.files.find(fs_files_search)
+            for doc in fsfiles_result:
+                fsFiles_id = doc['_id']
+            
+            mongo.db.fs.files.remove({'_id':fsFiles_id})
+            mongo.db.fs.chunks.remove({'files_id':fsFiles_id})
+        
+            preparing_image = request.files['preparing_image']
+            mongo.save_file(preparing_image.filename, preparing_image)
+
+        recipes_collection.find_one_and_replace({'_id':ObjectId(recipe_doc['_id'])},{
+            'recipe_image': preparing_image.filename,
+            'title': recipe_title.lower(),
+            'time': recipe_prepare_time,
+            'difficulty': recpie_difficulty,
+            'ingredients': ingredients_array,
+            'ingredients-scale' :ingredients_scale_array,
+            'preparation': preparation_array,
+            'tips': tips_array,
+            'author': recipe_author
+        })
+
+        flash('Your recipe has been edited successfully, looks good!','recipe_edited')
+        return redirect(url_for('recipe_page',recipe_id = recipe_doc['_id'],recipe_edited="Edited Successfully"))
             
     return render_template('pages/edit-recipe.html',recipe_doc=recipe_doc,
     body_id='edit-recipe-page', page_title='Edit Recipe')
