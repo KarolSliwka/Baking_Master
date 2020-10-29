@@ -201,8 +201,8 @@ Click on Get Started with AWS Cloud 9 and follow all the instruction untill acco
 1: You can clone BakingMaster repository by downloading it from <a href="https://github.com/KarolSliwka/Baking_Master">GitHub/BakingMaster</a> or if you have Git installed, by typing the following command into your terminal.
 
 <img src="https://www.abovewave.kylos.pl/bakingMaster/gtihub_info.png"/>
-2. Type or paste into your bash command 
-```bash
+2: Type or paste into your bash command.
+```
 git clone https://github.com/KarolSliwka/Baking_Master.git
 ```
 
@@ -212,11 +212,11 @@ git clone https://github.com/KarolSliwka/Baking_Master.git
 <strong>You need to have an account at <a href="https://www.mongodb.com/">MongoDB</a> to create the database.</strong>
 
 3: <strong>Install</strong> the relevant requirements & dependancies from the requirements.txt file.
-```bash
+```
 sudo pip3 install -r requirements.txt
 ```
 4: In your IDE you need to add some variables that can be get through environment. You can add them into <strong>.bashrc</strong> file using commands below to edit file. Make sure you are in you are not in your environemt folder.
-```bash
+```
 cd ..
 nano .bashrc
 ```
@@ -229,11 +229,12 @@ nano .bashrc
  * Click Preview Running Application to see the app.
  
 <img src="https://www.abovewave.kylos.pl/bakingMaster/ide_run.png"/>
-```bash
+```
 flask run 
 ```
 or 
-```bash
+
+```
 Python3 app.py
 ```
 
