@@ -55,7 +55,6 @@ def home():
     """
     Renders landing page/home page
     """
-
     return render_template('pages/landing-page.html', 
     body_id='home-page', page_title = "Home Page")
 
@@ -101,7 +100,6 @@ def recipe_page(recipe_id):
     """
     Render recipe page
     """
-
     this_recipe = recipes_collection.find_one({'_id':ObjectId(recipe_id)})
     recipe_author = users_collection.find_one({'email':this_recipe['author']})
     
@@ -129,7 +127,6 @@ def add_recipe():
     """
     Render Add Recipe page, load first step number and allocate it to steps-count
     """
-    
     if request.method == "POST":
         req = request.form
         
@@ -188,14 +185,12 @@ def edit_recipe(recipe_id):
     """
     Render edit recipe page, update edited recipe record
     """
-
     recipe_doc = recipes_collection.find_one({'_id':ObjectId(recipe_id)})
     
     if request.method == "POST":
         req = request.form
         
         recipe_image = recipe_doc['recipe_image']
-
         recipe_title = req.get('recipe-title')
         recipe_prepare_time = req.get('preparing-time-hrs') + ":" + req.get('preparing-time-min')
         recpie_difficulty = req.get('difficulty-level')
@@ -224,7 +219,6 @@ def edit_recipe(recipe_id):
                 if key.startswith('tip-step-'):
                     value = request.form[key]
                     tips_array.append(value)
-                    
                     
         preparing_image = request.files['preparing_image']
         if not preparing_image:
@@ -292,7 +286,6 @@ def add_to_favourites(recipe_id):
     """
     Add to favourite list and render refferer page
     """
-    
     if session.get('email') is None:
         """ redirect user to login page """
         session['url'] = url_for('recipes')
@@ -308,7 +301,6 @@ def remove_from_favourites(recipe_id):
     """
     Remove from favourite list and reneder reffer page
     """
-    
     users_collection.find_one_and_update({'email':session.get('email')},
     {'$pull':{'favourites': ObjectId(recipe_id)}})
     return redirect(request.referrer)
@@ -352,7 +344,6 @@ def favourites():
     """
     Renders favourite page only when user is logged in
     """
-    
     if session.get('email') is None:
         session['url'] = url_for('favourites')
         return render_template('pages/favourites.html', 
@@ -438,7 +429,6 @@ def login():
                 if session.get('email') is not None:
                     if 'url' in session:
                         return redirect(session['url'])
-                
                     return redirect(url_for('user_menu'))
                 else:
                     
@@ -481,7 +471,7 @@ def recovery():
     """
     if request.method == "POST":
         req = request.form
-        
+
         email = req.get('recovery_email').lower()
         current_user = users_collection.find_one({'email': email})
         
@@ -589,10 +579,8 @@ def add_to_newsletter(login_newsletter):
         newsletter = mongo.db.Newsletter
         
         if login_newsletter !='':
-            
             exist_in_newsletter = newsletter.find_one({'email': login_newsletter})
             if exist_in_newsletter is None:
-            
                 newsletter.insert_one({
                 'email' : login_newsletter,
                 'newsletter' : 'Y'
@@ -610,7 +598,6 @@ def add_to_newsletter(login_newsletter):
             else:
                 exist_in_newsletter = newsletter.find_one({'email': newsletter_email})
                 if exist_in_newsletter is None:
-            
                     newsletter.insert_one({
                         'email' : newsletter_email,
                         'newsletter' : 'Y'
